@@ -19,6 +19,14 @@ body{
     
 }
 
+#main_title h1{
+    margin:0;
+}
+
+#title_info h4{
+    margin:0;
+}
+
 #title_info {
     
     color:#459d51;

@@ -9,7 +9,8 @@ body{
     font-size:30px;
     letter-spacing: .2em;
     
-    margin:auto;
+    margin-left:auto;
+    margin-right:auto;
     margin-top:20px;
     margin-bottom:0px;
     width:50%;
@@ -17,9 +18,12 @@ body{
 }
 
 #title_info {
-    margin:auto;
+    
+    color:#459d51;
     font-family:"Lucida Console", Monaco, monospace;
+    
     margin-top:0px;
+    margin:auto;
     width:50%;
 }
 

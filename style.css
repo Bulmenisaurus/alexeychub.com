@@ -3,7 +3,7 @@ body{
 }
 
 #main_title{
-    color:#AA4926;
+    color:#CC7832;
     
     font-family:"Lucida Console", Monaco, monospace;
     font-size:30px;
@@ -14,6 +14,8 @@ body{
     margin-top:20px;
     margin-bottom:0px;
     width:50%;
+
+    padding:0px;
     
 }
 
@@ -33,5 +35,10 @@ hr {
 }
 /* 
 background = #2B2B2B
-title either #AA4926, or #6CDADA
+color palette: 
+1. CC7832 (orangeish) # main color
+2. 052B52 complementry -ish (dark blue)
+3. 2B2B2B main color, background (drk grey)
+4. A9B7C6 light color (ripping off pycharms text)
+
 */

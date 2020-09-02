@@ -1,0 +1,33 @@
+body{
+    background-color:#2B2B2B;
+}
+
+#main_title{
+    color:#AA4926;
+    
+    font-family:"Lucida Console", Monaco, monospace;
+    font-size:30px;
+    letter-spacing: .2em;
+    
+    margin:auto;
+    margin-top:20px;
+    margin-bottom:0px;
+    width:50%;
+    
+}
+
+#title_info {
+    margin:auto;
+    font-family:"Lucida Console", Monaco, monospace;
+    margin-top:0px;
+    width:50%;
+}
+
+hr {
+    /* All those boxes n' stuff are a bit complicated for sperating*/
+    border-color:#202020;
+}
+/* 
+background = #2B2B2B
+title either #AA4926, or #6CDADA
+*/

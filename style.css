@@ -2,6 +2,7 @@ body{
     background-color:#2B2B2B;
 }
 
+/*  CLASSES AND MAIN ELEMENTSSS */
 #main_title{
     color:#CC7832;
     text-shadow: 0px 1px 10px #000000;
@@ -9,7 +10,8 @@ body{
     font-family:"Lucida Console", Monaco, monospace;
     font-size:30px;
     letter-spacing: .2em;
-    
+    font-weight:100;
+
     text-align:center;
     margin-top:20px;
     padding:0px;  
@@ -47,20 +49,33 @@ hr {
     font-size:14px;
 }
 
+/* ID'S */
+
 .grid-container {
     display: grid;
     grid-template-columns: 50% 50%;
     padding: 10px;
-  }
+}
   
-  .grid-item {
+.grid-item {
     background-color:#2B2B2B;
     border: 10px solid #181818;
     
     padding: 20px;
     margin:10px;
     border-radius:24px;
-  }
+}
+
+/* SINGLE ELEMENTS */
+
+/* SMALL CHANGES*/
+::selection {
+    background: #CC00FF;
+}
+
+a {
+    color:#FFF;
+}
 
 /* 
 background = #2B2B2B

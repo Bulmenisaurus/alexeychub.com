@@ -32,11 +32,11 @@ body{
 
 hr {
     /* All those boxes n' stuff are a bit complicated for seperating*/
-    border-color:#202020;
+    border-color:#181818;
 }
 
-.container {
-    margin:30px;
+.text_container {
+    margin:15px;
     width:75%;
 
     color:#A9B7C6;
@@ -47,6 +47,20 @@ hr {
     font-size:14px;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 10px;
+  }
+  
+  .grid-item {
+    background-color:#2B2B2B;
+    border: 10px solid #181818;
+    
+    padding: 20px;
+    margin:10px;
+    border-radius:24px;
+  }
 
 /* 
 background = #2B2B2B

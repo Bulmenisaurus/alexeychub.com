@@ -26,7 +26,7 @@ body{
 }
 
 #title_info {
-    color:#459d51;
+    color:#A9B7C6;
     font-family:"Lucida Console", Monaco, monospace;
     
     text-align:center;
@@ -77,6 +77,14 @@ hr {
     border-color:#181818;
 }
 
+footer img {
+    margin: 10px auto 20px;
+    display: block;
+
+    border: 3px solid none;
+    border-radius:34px;
+}
+
 #t1 {
     color:#CC7832;
 }
@@ -92,6 +100,7 @@ hr {
 #t4{ /* com */
     color: #9876AA;
 }
+
 
 /* 
 background = #2B2B2B

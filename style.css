@@ -48,8 +48,6 @@ footer a {
     text-decoration: none;
 }
 
-/* ID'S */
-
 .grid-container {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -77,6 +75,22 @@ a {
 hr {
     /* All those boxes n' stuff are a bit complicated for seperating*/
     border-color:#181818;
+}
+
+#t1 {
+    color:#CC7832;
+}
+
+#t2 { /* Chub */
+    color:#EE7832;
+}
+
+#t3 { /* . */
+    color:#6897BB;
+}
+
+#t4{ /* com */
+    color: #9876AA;
 }
 
 /* 

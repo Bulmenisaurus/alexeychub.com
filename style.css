@@ -4,6 +4,7 @@ body{
 
 #main_title{
     color:#CC7832;
+    text-shadow: 0px 1px 10px #000000;
     
     font-family:"Lucida Console", Monaco, monospace;
     font-size:30px;
@@ -42,16 +43,16 @@ hr {
     font-family:Arial, Helvetica, sans-serif;
     line-height:1.6;
     letter-spacing:.5px;
+    font-weight:400;
+    font-size:14px;
 }
 
-.container h5 {
-    font-weight:400;
-}
+
 /* 
 background = #2B2B2B
 color palette: 
 1. CC7832 (orangeish) # main color
-2. 052B52 complementry -ish (dark blue)
+2. A020F0 complementry -ish (purple)
 3. 2B2B2B main color, background (drk grey)
 4. A9B7C6 light color (ripping off pycharms text)
 

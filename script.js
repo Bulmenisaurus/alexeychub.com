@@ -19,12 +19,9 @@ setTimeout(changeColor, 10000)
 
 
 function resize_grid() {
-  var ratio = window.innerWidth / window.innerHeight
   var grid = document.getElementsByClassName("grid-container")
 
-  document.getElementById("ratio").innerHTML = ratio;
-
-  if (ratio < 1) {
+  if (window.innerWidth <  window.innerHeight) {
     grid[0].style.display = "block"
   } else {
     grid[0].style.display = "grid"

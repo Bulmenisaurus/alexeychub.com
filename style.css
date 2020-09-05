@@ -26,7 +26,7 @@ body{
 }
 
 #title_info {
-    color:#A9B7C6;
+    color:#C1CBD6;
     font-family:"Lucida Console", Monaco, monospace;
     
     text-align:center;
@@ -36,7 +36,7 @@ body{
     margin:15px;
     width:75%;
 
-    color:#A9B7C6;
+    color:#C1CBD6;
     font-family:Arial, Helvetica, sans-serif;
     line-height:1.6;
     letter-spacing:.5px;
@@ -56,7 +56,7 @@ footer a {
   
 .grid-item {
     background-color:#2B2B2B;
-    border: 10px solid #181818;
+    border: 3px solid #181818;
     box-shadow: 0px 0px 41px -13px rgba(255,255,255,0.21);
     
     padding: 20px;

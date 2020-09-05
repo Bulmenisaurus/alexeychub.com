@@ -12,7 +12,7 @@ setInterval(() => {
 }, 5000)
 
 
-// start color animation as soon as document is ready
+
 setTimeout(changeColor, 10000)
 
 // Draws the grid above/below instead of left/right when the site is thin enough
@@ -21,6 +21,8 @@ setTimeout(changeColor, 10000)
 function resize_grid() {
   var ratio = window.innerWidth / window.innerHeight
   var grid = document.getElementsByClassName("grid-container")
+
+  document.getElementById("ratio").innerHTML = ratio;
 
   if (ratio < 1) {
     grid[0].style.display = "block"

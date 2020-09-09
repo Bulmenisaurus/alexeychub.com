@@ -12,7 +12,7 @@ input.addEventListener("keyup", function(event) {
     event.preventDefault(); //idk what this does
     
     //outputs command
-    document.getElementById("terminal_alltext").innerHTML = terminal_text + "<br><span id='arrow'>>>></span> " + terminal_command
+    document.getElementById("terminal_alltext").innerHTML = terminal_text + "<br><span class='user_input'>" + "»»» " + terminal_command + '</span>'
     //reset input
     document.getElementById("command").value = ''
   }
@@ -77,23 +77,23 @@ function terminal_init() {
   setTimeout(function(){{Edit("Installing Encode.exe...")}; }, 833);
 
   setTimeout(function(){{Edit("Installing Decode.exe")}; }, 1000);
-  setTimeout(function(){{Edit("Installing Decode.exe.")}; }, 1666);
-  setTimeout(function(){{Edit("Installing Decode.exe..")}; }, 1833);
-  setTimeout(function(){{Edit("Installing Decode.exe...")}; }, 2000);
+  setTimeout(function(){{Edit("Installing Decode.exe.")}; }, 1250);
+  setTimeout(function(){{Edit("Installing Decode.exe..")}; }, 1500);
+  setTimeout(function(){{Edit("Installing Decode.exe...")}; }, 1750);
 
   var session_id = [...Array(30)].map(() => Math.random().toString(36)[2]).join('')
-  setTimeout(function(){{Post("Connecting to valid session...")}; }, 3000);
-  setTimeout(function(){{Edit("Session found!")}; }, 6000);
-  setTimeout(function(){{Post(session_id)}; }, 6100);
+  setTimeout(function(){{Post("Connecting to valid session...")}; }, 2500);
+  setTimeout(function(){{Edit("Session found!")}; }, 3000);
+  setTimeout(function(){{Post(session_id)}; }, 3001);
 
-  setTimeout(function(){{Post('Finding token...')}; }, 6200);
-  setTimeout(function(){{Edit("Token found!")}; }, 7000);
+  setTimeout(function(){{Post('Finding token...')}; }, 3200);
+  setTimeout(function(){{Edit("Token found!")}; }, 3800);
 
-  setTimeout(function(){{Post([...Array(60)].map(() => Math.random().toString(36)[2]).join(''))}; }, 7500);
-  setTimeout(function(){{Post("Sending encrypted data key for HACKORZ.exe")}; }, 8000);
-  setTimeout(function(){{Post("⌟ᶆᶲᶱᶪᶵᶤᶷᶶᵤᵣᶜᶲᶸᵣᶩᶲᶸᶱᶧᵣᶤᶱᵣᶨᶤᶶᶷᶨᶵᵣᶨᶪᶪᵤᵣᵫᵴᵲᵴᵳᵬ")}; }, 9000);
-  setTimeout(function(){{Post("Done! You will be able to write shortly!")}; }, 10000);
-  setTimeout(function(){{Delete("max")}; }, 15000);
+  setTimeout(function(){{Post([...Array(60)].map(() => Math.random().toString(36)[2]).join(''))}; }, 3900);
+  setTimeout(function(){{Post("Sending encrypted data key for HACKORZ.exe")}; }, 4000);
+  setTimeout(function(){{Post("⌟ᶆᶲᶱᶪᶵᶤᶷᶶᵤᵣᶜᶲᶸᵣᶩᶲᶸᶱᶧᵣᶤᶱᵣᶨᶤᶶᶷᶨᶵᵣᶨᶪᶪᵤᵣᵫᵴᵲᵴᵳᵬ")}; }, 4500);
+  setTimeout(function(){{Post("Done! You will be able to write shortly!")}; }, 5000);
+  setTimeout(function(){{Delete("max")}; }, 7000);
   
   document.getElementById("command").readOnly = false;
   document.getElementById(terminal_alltext).innerHTML = "Welcome to Encrypt and Decrypt machine, or know more simply as DAE!"
@@ -101,4 +101,4 @@ function terminal_init() {
 
 
 
-setTimeout(terminal_init, 3000)
+setTimeout(terminal_init, 1500)

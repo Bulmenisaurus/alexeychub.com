@@ -12,7 +12,7 @@ input.addEventListener("keyup", function(event) {
     event.preventDefault(); //idk what this does
     
     //outputs command
-    document.getElementById("terminal_alltext").innerHTML = terminal_text + "<br><span class='user_input'>" + "»»» " + terminal_command + '</span>'
+    document.getElementById("terminal_alltext").innerHTML = terminal_text + "<br><span class='user_text'>" + "»»» " + terminal_command + '</span>'
     //reset input
     document.getElementById("command").value = ''
   }
@@ -21,9 +21,11 @@ input.addEventListener("keyup", function(event) {
 // Post message (no >>>)
 function Post(message) {
   var terminal_text = document.getElementById("terminal_alltext").innerHTML 
-  document.getElementById("terminal_alltext").innerHTML = terminal_text +  '<br>' + message
+  document.getElementById("terminal_alltext").innerHTML = terminal_text +  '<br>' + "<span class='bot_text'>" + message + '</span>'
+  console.log(message)
+  console.log('<br>' + "<span class='bot_text'>" + message + '</span>')
 
-  return "Message posted"
+  return message
 }
 
 // Edit last message
@@ -34,9 +36,12 @@ function Edit(to_edit) {
 
   before_edit = text_array.pop() // deletes last message
 
+  to_edit = "<span class='bot_text'>" + to_edit + '</span>' // formatting
+
   text_array.push(to_edit) // Adds edit
 
   var edited_text = text_array.join("<br>") // Joins array into string
+
 
   document.getElementById("terminal_alltext").innerHTML = edited_text // Modifies the html
 

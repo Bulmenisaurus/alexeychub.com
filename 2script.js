@@ -19,38 +19,45 @@ input.addEventListener("keyup", function(event) {
 });
 
 // Post message (no >>>)
-function Post(message) {
+function Post(message, wait=0) {
   var terminal_text = document.getElementById("terminal_alltext").innerHTML 
-  document.getElementById("terminal_alltext").innerHTML = terminal_text +  '<br>' + "<span class='bot_text'>" + message + '</span>'
-  console.log(message)
-  console.log('<br>' + "<span class='bot_text'>" + message + '</span>')
+
+  function dostuff() {
+    document.getElementById("terminal_alltext").innerHTML = terminal_text +  '<br>' + "<span class='bot_text'>" + message + '</span>'
+  }
+  setTimeout(dostuff, wait);
 
   return message
 }
 
-// Edit last message
-function Edit(to_edit) {
+
+
+function Edit(to_edit, wait=0) {
   // array with each element was split by <br>
   var text = document.getElementById("terminal_alltext").innerHTML 
   var text_array = text.split('<br>')
-
-  before_edit = text_array.pop() // deletes last message
-
-  to_edit = "<span class='bot_text'>" + to_edit + '</span>' // formatting
-
-  text_array.push(to_edit) // Adds edit
-
-  var edited_text = text_array.join("<br>") // Joins array into string
+  before_edit = text_array.pop()                              // deletes last message
+  to_edit = "<span class='bot_text'>" + to_edit + '</span>'   // formatting
+  text_array.push(to_edit)                                    // Adds edit
+  var edited_text = text_array.join("<br>")                   // Joins array into string
 
 
-  document.getElementById("terminal_alltext").innerHTML = edited_text // Modifies the html
+  // this thing maks a builtin wait, so it waits x millisecs until editing
+  // I have no idea how there is no problems with global/local variables, but dont question it
+
+  function dostuff() {
+    document.getElementById("terminal_alltext").innerHTML = edited_text // Modifies the html
+  }
+  setTimeout(dostuff, wait);
 
   var return_message = 'edit(' + before_edit + ' --> ' + to_edit + ')'
   return return_message
 }
 
+
+
 // Deletes X message (default is 1)
-function Delete(how_many = 1) {
+function Delete(how_many=1, wait=0) {
   // array with each element was split by <br>
   var text = document.getElementById("terminal_alltext").innerHTML 
   var text_array = text.split('<br>')
@@ -64,11 +71,14 @@ function Delete(how_many = 1) {
   } else if (how_many=="max") { // all messages
     text_array = ['']
   } else if (how_many=='first') { //first message
-    text_array[0] = ['']
+    text_array[0] = ''
   }
-  
   var edited_text = text_array.join("<br>")
-  document.getElementById("terminal_alltext").innerHTML = edited_text
+
+  function dostuff() {
+    document.getElementById("terminal_alltext").innerHTML = edited_text
+  }
+  setTimeout(dostuff, wait);
 
   return_message = how_many + " messages deleted"
   return return_message
@@ -103,6 +113,7 @@ function terminal_init() {
   document.getElementById("command").readOnly = false;
   document.getElementById(terminal_alltext).innerHTML = "Welcome to Encrypt and Decrypt machine, or know more simply as DAE!"
 }
+
 
 
 

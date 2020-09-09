@@ -77,8 +77,12 @@ body {
     margin-left:3px;
 }
 
-.user_input {
+.user_text {
     color:rgb(45, 58, 175);
+}
+
+.bot_text {
+    color:rgb(189, 69, 0);
 }
 
 .terminal label {

@@ -79,32 +79,36 @@ function Delete(how_many=1, wait=0) {
 
 function terminal_init() {
   Post("Installing HACKORZ.exe...", 50);
-  Post("Installing Encode.exe", 250)
-  Edit("Installing Encode.exe.", 500)
-  Edit("Installing Encode.exe..", 666)
-  Edit("Installing Encode.exe...", 833)
+  Post("Installing Encode.exe", 150)
+  Edit("Installing Encode.exe.", 200)
+  Edit("Installing Encode.exe..", 250)
+  Edit("Installing Encode.exe...", 300)
 
-  Edit("Installing Decode.exe", 1000)
-  Edit("Installing Decode.exe.", 1250)
-  Edit("Installing Decode.exe..", 1500)
-  Edit("Installing Decode.exe...", 1750)
+  Edit("Installing Decode.exe", 500)
+  Edit("Installing Decode.exe.", 550)
+  Edit("Installing Decode.exe..", 600)
+  Edit("Installing Decode.exe...", 650)
 
   var session_id = [...Array(30)].map(() => Math.random().toString(36)[2]).join('')
-  Post("Connecting to valid session...", 2500)
-  Edit("Session found!", 3000)
-  Post(session_id, 3001)
+  Post("Connecting to valid session...", 900)
+  Edit("Session found!", 910)
+  Post(session_id, 1200)
 
-  Post('Finding token...', 3200)
-  Edit("Token found!", 3800)
+  Post('Finding token...', 1300)
+  Edit("Token found!", 1500)
 
-  Post([...Array(60)].map(() => Math.random().toString(36)[2]).join(''), 3900)
-  Post("Sending encrypted data key for HACKORZ.exe", 4000)
-  Post("⌟ᶆᶲᶱᶪᶵᶤᶷᶶᵤᵣᶜᶲᶸᵣᶩᶲᶸᶱᶧᵣᶤᶱᵣᶨᶤᶶᶷᶨᶵᵣᶨᶪᶪᵤᵣᵫᵴᵲᵴᵳᵬ", 4500)
-  Post("Done! You will be able to write shortly!", 5000)
-  Delete("max", 7000)
+  Post([...Array(60)].map(() => Math.random().toString(36)[2]).join(''), 1550)
+  Post("Sending encrypted data key for HACKORZ.exe", 1700)
+  Post("⌟ᶆᶲᶱᶪᶵᶤᶷᶶᵤᵣᶜᶲᶸᵣᶩᶲᶸᶱᶧᵣᶤᶱᵣᶨᶤᶶᶷᶨᶵᵣᶨᶪᶪᵤᵣᵫᵴᵲᵴᵳᵬ", 1900)
+  Post("Done! You will be able to write shortly!", 3500)
+  Delete("max", 3700)
   
+  function unlock() {
   document.getElementById("command").readOnly = false;
-  document.getElementById('terminal_alltext').innerHTML = "Welcome to Encrypt and Decrypt machine, or know more simply as DAE!"
+  document.getElementById('terminal_alltext').innerHTML = "Welcome to Decrypt and Encrypt machine, or know more simply as DAE!"
+  }
+
+  setTimeout(unlock, 3800)
 }
 
 

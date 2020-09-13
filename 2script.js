@@ -15,6 +15,13 @@ input.addEventListener("keyup", function(event) {
     document.getElementById("terminal_alltext").innerHTML = terminal_text + "<br><span class='user_text'>" + "»»» " + terminal_command + '</span>'
     //reset input
     document.getElementById("command").value = ''
+    if (parseInt(document.getElementById("var").innerHTML) > 0) {
+      if (document.getElementById("var").innerHTML == 2) {
+        Post("What message would you like to?")
+        document.getElementById("command").placeholder = "<your message here>"
+        document.getElementById("var").innerHTML = 3
+      }
+    }
   }
 });
 
@@ -111,7 +118,19 @@ function terminal_init() {
   setTimeout(unlock, 3800)
 }
 
+function setup_script() {
+  document.getElementById('var').innerHTML = 1
+  Post('Would you like to decode or encode a message?')
+  document.getElementById("command").placeholder = "(encode/decode)"
+  document.getElementById("var").innerHTML = 2
+}
+
+
+
+
 
 
 
 setTimeout(terminal_init, 1500)
+setTimeout(setup_script, 5301)
+

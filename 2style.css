@@ -89,3 +89,8 @@ body {
 .terminal label {
     color:rgb(45, 58, 175);
 }
+
+#var {
+    /*display:none;*/
+    color:white;
+}

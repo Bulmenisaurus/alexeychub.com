@@ -23,6 +23,7 @@ messages = [
 'Why are you reading a 404 page? This isn\'t supposed to be fun or anything.<br> Now shooo!',
 '<a href=\'https://youtu.be/oHg5SJYRHA0\'>Definetely not a rickroll or anything....<a>',
 null,
-'Wow. You broke my site! Amazing. <br>Now what am I gonna do!'];
+'Wow. You broke my site! Amazing. <br>Now what am I gonna do!',
+'This page doesn\'t exist. Oh well!'];
 
 document.getElementById('404_message').innerHTML = messages[message_hash]; 

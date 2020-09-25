@@ -12,7 +12,8 @@ String.prototype.hashCode = function() {
 }
 
 
-var message_hash = parseInt(window.location.href.hashCode().toString()[0])
+var message_hash = window.location.href.hashCode().toString();
+var message_hash = parseInt(message_hash[message_hash.length - 1]);
 messages = [
 'Ouch! Alexey\'s evil AI must\'ve deleted another site! Dangit.... <br>While I\'m busy with Mr. Poodles, have this gem: 💎',
 'Oh no! What are these weird numbers? Is it a secret code? <br>Are aliens communicating with me? o_O',
@@ -22,6 +23,6 @@ messages = [
 'Why are you reading a 404 page? This isn\'t supposed to be fun or anything.<br> Now shooo!',
 '<a href=\'https://youtu.be/oHg5SJYRHA0\'>Definetely not a rickroll or anything....<a>',
 null,
-'Wow. You broke my site! Amazing. <br>Now what am I gonna do!']
+'Wow. You broke my site! Amazing. <br>Now what am I gonna do!'];
 
-document.getElementById('404_message').innerHTML = messages[message_hash]
+document.getElementById('404_message').innerHTML = messages[message_hash]; 

@@ -11,8 +11,8 @@ String.prototype.hashCode = function() {
     return hash;
 }
 
-var to_hash = window.location.href+'poiuytrewq'
-var message_hash = parseInt(to_hash.hashCode().toString()[0])
+
+var message_hash = parseInt(window.location.href.hashCode().toString()[0])
 messages = [
 'Ouch! Alexey\'s evil AI must\'ve deleted another site! Dangit.... <br>While I\'m busy with Mr. Poodles, have this gem: 💎',
 'Oh no! What are these weird numbers? Is it a secret code? <br>Are aliens communicating with me? o_O',

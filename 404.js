@@ -23,4 +23,4 @@ messages = [
 null,
 'Wow. You broke my site! Amazing. <br>Now what am I gonna do!']
 
-document.getElementById('404_message').innerHTML = messages[0]
+document.getElementById('404_message').innerHTML = messages[message_hash]

@@ -48,10 +48,16 @@ footer a {
     text-decoration: none;
 }
 
-.grid-container {
+.grid-container.columns-1 {
     display: grid;
-    grid-template-columns: 50% 50%;
     padding: 10px;
+    grid-template-columns: 100%;
+}
+
+.grid-container.columns-2 {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 50% 50%; 
 }
   
 .grid-item {
@@ -71,6 +77,10 @@ footer a {
 
 a {
     color:#CC00FF;
+}
+
+q {
+    font-style: italic;
 }
 
 hr {
@@ -106,7 +116,19 @@ footer img {
     transition: color 5s;
 }
 
+#easter-egg {
+    background-color: #4CAF50;
+    color: #000000;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    transition-duration: 0.4s;
 
+}
+
+#easter-egg:hover {
+    background-color: #347736;
+  }
 /* 
 background = #2B2B2B
 color palette: 
@@ -114,5 +136,4 @@ color palette:
 2. A020F0 complementry -ish (purple)
 3. 2B2B2B main color, background (drk grey)
 4. A9B7C6 light color (ripping off pycharms text)
-
 */

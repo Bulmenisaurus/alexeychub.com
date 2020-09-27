@@ -3,6 +3,8 @@
         <head>
             <link rel="icon" type="image/png" href="/downloads/c-pixilart.png">
             <title>AlexeyChub</title>
+            <link rel="stylesheet" type="text/css" href="popup.css">
+            <!--I want the popup to overwrite the usual styles, bc it's more important-->
             <link rel="stylesheet" type="text/css" href="style.css">
             <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178719317-1"></script>
@@ -24,7 +26,7 @@
         </div>
         
         <hr>
-        <div class="grid-container">
+        <div class="grid-container columns-2">
                 <div class="grid-item">
                         <div class="text_container">
                                 <h1>Welcome!</h1>
@@ -64,14 +66,47 @@
                         </div>    
                 </div>
         </div>
+        <div class='grid-container columns-1'>
+                <div class="grid-item">
+                        <div class="text_container">
+                                <h1>Easter Eggs:</h1>
+                                <p>
+                                <q>An unexpected or undocumented feature in a piece of computer software or on a DVD, included as a joke or a bonus.</q>
+                                <br>
+                                - Oxford languages, 2020
+                                <br><br>
+                                There are a couple of these Easter eggs scattered all across this site. Can you find them all?
+                                To help you a bit, here's an easy one, although the other ones will be a bit more challenging:
+                                </p>
+                                <button id='easter-egg'>An easter egg!</button>
+                        </div>
+                </div>
+        </div>
         <br>
-        <hr>
+        <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                        <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>A free easter egg!</h2>
+                        </div>
+                        <div class="modal-body">
+                        <p>Hey! Niceee, you got an easter egg! Here it is: 🥚</p>
+                        <p>I forgot to paint it though, so maybe ignore that, ok?</p>
+                        </div>
+                        <div class="modal-footer">
+                        <h3>id: free_egg</h3>
+                        </div>
+                </div>
+        </div>
         <footer>
+                <hr>
                 <span id="ratio"></span>
                 <a href="https://github.com/Bulmenisaurus/alexeychub.com">
                 <img src="http://alexeychub.com/Users/meow/Downloads/GitHub-Mark/PNG/GitHub-Mark-64px.PNG" alt="github">
                 </a>
         </footer>
         <script src="script.js"></script>
+        <script src="popup.js"></script>
     </body>
 </html>

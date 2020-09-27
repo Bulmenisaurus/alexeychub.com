@@ -62,8 +62,14 @@ body {font-family: Arial, Helvetica, sans-serif;}
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   vertical-align: top;
-  padding: 0px 16px;
-  border-bottom: 1px solid;
+
+  margin: 0;
+  padding: 7px 16px;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;  
 }
 
 .modal-body {padding: 0px 16px;}

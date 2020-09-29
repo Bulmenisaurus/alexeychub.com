@@ -96,6 +96,10 @@ footer img {
     border-radius:34px;
 }
 
+h2 {
+    font-size: 2em;
+}
+
 #t1 {
     color:#CC7832;
     transition: color 5s;

@@ -73,10 +73,13 @@ function resize_grid() {
   }
 }
 
-var secret_button = document.getElementById("t3");
+var secret_button = document.getElementById("t3"); 
 var secret_text = document.getElementById('title_info')
+click_amt = -10
+
 secret_button.onclick = function() {
-  secret_text.innerHTML = 'Wow! Why did you even click on this? id: thats_a_button'
+  secret_text.innerHTML = (click_amt >= 0) ? 'Why did you click on this even more? id: thats_definetely_a_button' : 'Wow! Why did you even click on this? id: thats_a_button'
+  click_amt++
 }
 
 resize_grid();

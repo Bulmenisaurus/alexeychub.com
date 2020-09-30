@@ -29,9 +29,9 @@
         
         <hr>
         <div class="grid-container columns-2">
-                <div class="grid-item">
+                <div class="grid-item" id='drg_main_'>
                         <div class="text_container">
-                                <h2>Welcome!</h2>
+                                <h2 id='drg_main_header'>Welcome!</h2>
                                 <p>
                                 Welcome to my site! If you're lucky, about now I'm planning what cool things to 
                                 put on my site! ;) Also, if you have any suggestions on how to improve AlexeyChub.com, 
@@ -68,26 +68,27 @@
                         </div>    
                 </div>
         </div>
-        <div class='grid-container columns-1'>
-                <div class="grid-item">
-                        <div class="text_container">
-                                <h2 title="Wow! That was an easy one! id: easy_peasy">Easter Eggs:</h2>
-                                <p>
-                                <q>An unexpected or undocumented feature in a piece of computer software or on a DVD, included as a joke or a bonus.</q>
-                                <br>
-                                - Oxford languages, 2020
-                                <br><br>
-                                There are a couple of these Easter eggs scattered all across this site. Can you find them all? 
-                                Easter eggs might be pretty difficult to spot, but if you have some initial knowledge, it might be a piece of cake! 
-                                Some times you might need to open up the console, or hover over some text (sorry, mobile users),
-                                or click on something you wouldn't otherwise. You might have to select some text, press a button, or go to 
-                                a secret page.
-                                To help you a bit, here's an easy one, although the other ones will be a bit more challenging:
-                                </p>
-                                <button id='easter-egg'>An easter egg!</button>
+        <div class="grid-item" id='mydiv'>
+                <div class="text_container">
+                        <div id="mydivheader">
+                        <h2 title="Wow! That was an easy one! id: easy_peasy">Easter Eggs:</h2>
                         </div>
+                        <p>
+                        <q>An unexpected or undocumented feature in a piece of computer software or on a DVD, included as a joke or a bonus.</q>
+                        <br>
+                        - Oxford languages, 2020
+                        <br><br>
+                        There are a couple of these Easter eggs scattered all across this site. Can you find them all? 
+                        Easter eggs might be pretty difficult to spot, but if you have some initial knowledge, it might be a piece of cake! 
+                        Some times you might need to open up the console, or hover over some text (sorry, mobile users),
+                        or click on something you wouldn't otherwise. You might have to select some text, press a button, or go to 
+                        a secret page.
+                        To help you a bit, here's an easy one, although the other ones will be a bit more challenging:
+                        </p>
+                        <button id='easter-egg'>An easter egg!</button>
                 </div>
         </div>
+
         <br>
         <div id="myModal" class="modal">
                 <!-- Modal content -->
@@ -105,6 +106,9 @@
                         </div>
                 </div>
         </div>
+        <br><br><br><br><br><br><br>
+        <p class="text_container" aria-hidden='true' style='text-align: center;'>Oh hey! Another easta' egg :)<br>id: drag_n_drop</p>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
         <footer>
                 <hr>
                 <span id="ratio"></span>

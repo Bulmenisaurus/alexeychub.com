@@ -21,9 +21,9 @@ setTimeout(changeColor, 10000)
 function resize_grid() {
   var grid = document.getElementsByClassName("grid-container");
 
-  if (window.innerWidth <  window.innerHeight) {
+  if (window.innerWidth <  window.innerHeight && grid[0].style.display != "block"){
     grid[0].style.display = "block";
-  } else {
+  } else if (grid[0].style.display != "grid") {
     grid[0].style.display = "grid";
   }
 }

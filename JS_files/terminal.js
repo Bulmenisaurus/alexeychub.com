@@ -19,7 +19,7 @@ input.addEventListener("keyup", function(event) {
         Post('restarting...')
         setup_script()
         terminal_state = 1
-      } else {
+      } else if (terminal_state == 2){
         terminal_state = 2
         if (document.getElementById('command').value[0] == 'e') {
           var action = 'encode'
@@ -143,7 +143,15 @@ function setup_script() {
   document.getElementById("command").placeholder = "(encode/decode)"
 }
 
-
+function encode(to_encode) {
+  to_encode = to_encode.toString()
+  var key = 'abcdefghijklmnopqrstuvwxyz'.split('')
+  var newstr = ''
+  for (j = 0; j < to_encode.length; j++){
+    newstr += (key.includes(to_encode[j])) ? key[((key.indexOf(to_encode[j]))+j)%key.length] : to_encode[j]
+  }
+  return newstr
+}
 
 setTimeout(terminal_init, 1500)
 setTimeout(setup_script, 5400)

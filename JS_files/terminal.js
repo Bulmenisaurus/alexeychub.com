@@ -13,25 +13,25 @@ input.addEventListener("keyup", function(event) {
     
     //outputs command
     document.getElementById("terminal_alltext").innerHTML = terminal_text + "<br><span class='user_text'>" + "»»» " + terminal_command + '</span>'
-    if (parseInt(document.getElementById("var").innerHTML) > 0) {
-      if (!['e', 'd'].includes(document.getElementById('command').value[0]) && document.getElementById("var")==2) { // if input[0] not d or e, restart
+    if (terminal_state > 0) {
+      if (!['e', 'd'].includes(document.getElementById('command').value[0]) && temrinal_state == 2) { // if input[0] not d or e, restart
         console.log(document.getElementById('command').value[0])
         Post('restarting...')
         setup_script()
-        document.getElementById("var").innerHTML = 1
+        terminal_state = 1
       } else {
-        document.getElementById("var").innerHTML = 2
+        terminal_state = 2
         if (document.getElementById('command').value[0] == 'e') {
           var action = 'encode'
         } else {
           var action = 'decode'
         }
       }
-      if (document.getElementById("var").innerHTML == 2) {
+      if (terminal_state == 2) {
         Post("What message would you like to " + action + "?")
         document.getElementById("command").placeholder = "<your message here>"
-        document.getElementById("var").innerHTML = 3
-      } else if (document.getElementById("var").innerHTML == 3) {
+        terminal_state = 3
+      } else if (terminal_state == 3) {
         var text = document.getElementById('command').value
         if (action == 'encode') {
           var uni_text = text.hexEncode()
@@ -138,41 +138,10 @@ function terminal_init() {
 }
 
 function setup_script() {
-  document.getElementById('var').innerHTML = 2
+  terminal_state = 2
   Post('Would you like to decode or encode a message?')
   document.getElementById("command").placeholder = "(encode/decode)"
 }
-
-String.prototype.hexEncode = function(){
-  var hex, i
-
-  var result = []
-  for (i=0; i<this.length; i++) {
-      hex = this.charCodeAt(i).toString(16)
-      result.push(("000"+hex).slice(-4))
-  }
-  return result
-}
-
-String.prototype.hexDecode = function(){
-  var j
-  var hexes = this.match(/.{1,4}/g) || []
-  var back = ""
-  for(j = 0; j<hexes.length; j++) {
-      back += String.fromCharCode(parseInt(hexes[j], 16))
-  }
-
-  return back
-}
-
-function encrypt(to_encrypt, offset=Math.floor(Math.random() * 140_000)+10_000) {
-  var encoded = ((offset+1500).toString(16)).hexDecode()
-    for (i=0; i<to_encrypt.length; i++)
-      var letter_encrypted = parseInt((to_encrypt[i]).hexEncode(), 16) + offset).toString(16).hexDecode()
-      
-    return encoded
-}
-
 
 
 

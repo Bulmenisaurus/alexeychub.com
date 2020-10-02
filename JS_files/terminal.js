@@ -14,41 +14,54 @@ input.addEventListener("keyup", function(event) {
     //outputs command
     document.getElementById("terminal_alltext").innerHTML = terminal_text + "<br><span class='user_text'>" + "»»» " + terminal_command + '</span>'
     if (terminal_state > 0) {
-      if (!['e', 'd'].includes(document.getElementById('command').value[0]) && temrinal_state == 2) { // if input[0] not d or e, restart
+      if (!['e', 'd'].includes(document.getElementById('command').value[0]) && terminal_state == 2) { // if input[0] not d or e, restart
         console.log(document.getElementById('command').value[0])
         Post('restarting...')
-        setup_script()
         terminal_state = 1
+        setup_script()
       } else if (terminal_state == 2){
-        terminal_state = 2
         if (document.getElementById('command').value[0] == 'e') {
-          var action = 'encode'
+          action = 'encode'
         } else {
-          var action = 'decode'
+          action = 'decode'
         }
+        console.log(action)
+        terminal_state = 2
       }
       if (terminal_state == 2) {
         Post("What message would you like to " + action + "?")
+        document.getElementById("command").value = ''
         document.getElementById("command").placeholder = "<your message here>"
         terminal_state = 3
       } else if (terminal_state == 3) {
         var text = document.getElementById('command').value
         if (action == 'encode') {
-          var uni_text = text.hexEncode()
-
+          Post(encode(text))
+        } else {
+          Post(decode(text))
         }
+        Post('<br>')
+        Post('<br>')
+        setup_script()
       }
     }
     //reset input
-    document.getElementById("command").value = ''
+    //document.getElementById("command").value = ''
   }
 });
 
 // Post message (no '>>>')
 function Post(message, wait=0) {
   function dostuff() {
-    var terminal_text = document.getElementById("terminal_alltext").innerHTML 
     document.getElementById("terminal_alltext").innerHTML = terminal_text + '<br>' + "<span class='bot_text'>" + message + '</span>'
+    var terminal_text = document.getElementById("terminal_alltext").innerHTML 
+    var text_array = terminal_text.split('<br>');
+    if (text_array.length > 18) {
+      console.log(text_array.length)
+      for (x = 0; x < text_array.length - 18; x++){
+        Delete('first')
+      }
+    }
   }
   setTimeout(dostuff, wait);
 
@@ -140,6 +153,7 @@ function terminal_init() {
 function setup_script() {
   terminal_state = 2
   Post('Would you like to decode or encode a message?')
+  document.getElementById("command").value = '' 
   document.getElementById("command").placeholder = "(encode/decode)"
 }
 
@@ -153,8 +167,31 @@ function encode(to_encode) {
   return newstr
 }
 
-setTimeout(terminal_init, 1500)
-setTimeout(setup_script, 5400)
+function decode(to_decode) {
+  to_decode = to_decode.toString()
+  var key = 'abcdefghijklmnopqrstuvwxyz'.split('')
+  var newstr = ''
+  for (j = 0; j < to_decode.length; j++) {
+    if (key.includes(to_decode[j])) {
+      decode_num = key.indexOf(to_decode[j])-j
+      if (decode_num < 0) {
+        decode_num = key.length - Math.abs(decode_num)
+      }
+      newstr += key[decode_num]
+    } else {
+      newstr += to_decode[j]
+    }
+  }
+  return newstr
+}
+
+//setTimeout(terminal_init, 1500)
+function unlock() {
+  document.getElementById("command").readOnly = false;
+  document.getElementById('terminal_alltext').innerHTML = "Welcome to Decrypt and Encrypt machine, or know more simply as DAE!"
+}
+unlock()
+setTimeout(setup_script, 100)
 
 /* var=0 no input yet
 var=1 inputError, restarting

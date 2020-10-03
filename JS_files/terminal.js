@@ -12,7 +12,7 @@ input.addEventListener("keyup", function(event) {
     event.preventDefault(); //idk what this does
     
     //outputs command
-    document.getElementById("terminal_alltext").innerHTML = terminal_text + "<br><span class='user_text'>" + "»»» " + terminal_command + '</span>'
+    document.getElementById("terminal_alltext").innerHTML += "<br><span class='user_text'>" + "»»» " + terminal_command + '</span>'
     if (terminal_state > 0) {
       if (!['e', 'd'].includes(document.getElementById('command').value[0]) && terminal_state == 2) { // if input[0] not d or e, restart
         console.log(document.getElementById('command').value[0])
@@ -41,7 +41,6 @@ input.addEventListener("keyup", function(event) {
           Post(decode(text))
         }
         Post('<br>')
-        Post('<br>')
         setup_script()
       }
     }
@@ -53,12 +52,12 @@ input.addEventListener("keyup", function(event) {
 // Post message (no '>>>')
 function Post(message, wait=0) {
   function dostuff() {
-    document.getElementById("terminal_alltext").innerHTML = terminal_text + '<br>' + "<span class='bot_text'>" + message + '</span>'
+    document.getElementById("terminal_alltext").innerHTML += '<br>' + "<span class='bot_text'>" + message + '</span>'
     var terminal_text = document.getElementById("terminal_alltext").innerHTML 
     var text_array = terminal_text.split('<br>');
     if (text_array.length > 18) {
       console.log(text_array.length)
-      for (x = 0; x < text_array.length - 18; x++){
+      for (x = 0; x < (text_array.length) - 18; x++){
         Delete('first')
       }
     }

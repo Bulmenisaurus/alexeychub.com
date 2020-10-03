@@ -46,8 +46,8 @@ function dragElement(elmnt) {
 // Smoothly transitions the title colors
 
 const randomColor = () => '#' + Math.floor(Math.random()*16777215).toString(16);
-const changeColor = (id_type) => document.getElementById(id_type).style.color = randomColor();
 
+const changeColor = (id_type) => document.getElementById(id_type).style.color = randomColor();
 
 setInterval(() => {
   changeColor("t1");

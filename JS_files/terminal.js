@@ -29,8 +29,9 @@ input.addEventListener("keyup", function(event) {
         terminal_state = 2
       }
       if (terminal_state == 2) {
-        Post("What message would you like to " + action + "?")
-        document.getElementById("command").value = ''
+        if (action) {Post("What message would you like to " + action + "?")};
+        action = 0
+        document.getElementById("command").value = '';
         document.getElementById("command").placeholder = "<your message here>"
         terminal_state = 3
       } else if (terminal_state == 3) {
@@ -54,12 +55,11 @@ function Post(message, wait=0) {
   function dostuff() {
     document.getElementById("terminal_alltext").innerHTML += '<br>' + "<span class='bot_text'>" + message + '</span>'
     var terminal_text = document.getElementById("terminal_alltext").innerHTML 
-    var text_array = terminal_text.split('<br>');
-    if (text_array.length > 18) {
-      console.log(text_array.length)
-      for (x = 0; x < (text_array.length) - 18; x++){
-        Delete('first')
-      }
+    var text_array_len = terminal_text.split('<br>').length + 1;
+    while (text_array_len > 17) {
+      Delete('first')
+      var terminal_text = document.getElementById("terminal_alltext").innerHTML 
+      var text_array_len = terminal_text.split('<br>').length + 1;
     }
   }
   setTimeout(dostuff, wait);
@@ -174,7 +174,7 @@ function decode(to_decode) {
     if (key.includes(to_decode[j])) {
       decode_num = key.indexOf(to_decode[j])-j
       if (decode_num < 0) {
-        decode_num = key.length - Math.abs(decode_num)
+        decode_num = key.length - Math.abs(decode_num%26)
       }
       newstr += key[decode_num]
     } else {
@@ -188,6 +188,7 @@ function decode(to_decode) {
 function unlock() {
   document.getElementById("command").readOnly = false;
   document.getElementById('terminal_alltext').innerHTML = "Welcome to Decrypt and Encrypt machine, or know more simply as DAE!"
+  action = 0
 }
 unlock()
 setTimeout(setup_script, 100)

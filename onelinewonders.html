@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="CSS_files/onelinewonders.css">
-    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="CSS_files/code.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@800&display=swap?family=Ubuntu+Mono&display=swap" rel="stylesheet">
     <title>One line wonders</title>
 </head>
 <body>
@@ -13,8 +14,36 @@
                 <h1>One line wonders</h1>
         </div>
     </header>
-    <p>Ya so this is a cool site an whatever so ya lmao.</p>
-    <pre><code>Never gonna give you up</code></pre>
-
+    <div class='text_container'><p>This, in my opinion, is a pretty useful website. 
+        You can generate birthday, valentine, and other types of wonderful cards, all in
+        one line of python!
+    </p>
+    <div class="highlight"><pre class="oneline"><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Let&#39;s get started!&quot;</span><span class="p">)</span></pre></div>    
+    <h2>A basic b-day card:</h2>
+    <p>A classic b-day card! You can't go wrong with this, so give it a try! Remember - type \n to get a line break, but dont type any other back-slashes, as that could break the code! Because of the f-strings, this only works in python 3.6=&lt;</p>
+    <input type="text" id="b-day_name_inp" placeholder="Recipients name"><input type="text" id="b-day_message_inp" placeholder='A heart-warming message goes here!'>
+    <div class="highlight"><pre class="oneline" id='b-day'><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">f&quot;</span><span class="se">\033</span><span class="s2">[35m{</span><span class="s1">&#39;Happy B-day <span id="b-day_name">{your name here}</span>!&#39;</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>}<span class="se">\033[90m</span><span class="se">\n</span><span class="s2">{chr(60)+(l_1 := &#39;------~~~~~~**&#39;) + l_1[::-1]+chr(62)}</span><span class="se">\033[0m</span><span class="se">\n\n</span><span class="s2">{&#39;<span id="b-day_message">{your message here}</span>&#39;}</span><span class='se'>\n\033[90m</span><span class="s2">{chr(60)+l_1+l_1[::-1]+chr(62)}</span><span class="se">\033[0m&quot;</span><span class="p">)</span></pre></div>
+    <br>
+    <h2>The Ultimate valentines card:</h2>
+    <p>This is much like the birthday card, but with more hearts!</p>
+    <input type="text" id="valentine_name_inp" placeholder="Who's getting love?"><input type="text" id="valentine_message_inp" placeholder="A romantic valentine note here!">
+    <div class="highlight"><pre class="oneline" id="valentines"><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">f&quot;</span><span class="se">\n\n</span><span class="si">{</span><span class="p">(</span><span class="n">message</span> <span class="o">:=</span> <span class="s1">f&#39; Happy Valetine</span><span class="si">{</span><span class="nb">chr</span><span class="p">(</span><span class="mi">39</span><span class="p">)</span><span class="si">}</span><span class="s1">s day, <span id="valentine_name">{your name here}</span>&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="p">(</span><span class="n">line</span> <span class="o">:=</span> <span class="p">(</span><span class="n">hrt</span> <span class="o">:=</span> <span class="s1">&#39;💕&#39;</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;—&#39;</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="o">+</span><span class="n">hrt</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2"><span id="valentine_message">{your message here}</span></span><span class="se">\n\n</span><span class="si">{line}</span><span class="se">\n</span><span class="s2">— </span><span class="se">\033</span><span class="s2">[1mEnt0_3301</span><span class="se">\033</span><span class="s2">[0m, with love</span><span class="se">&quot;</span><span class="s2">)</span></pre></div>
+    <pre id="p5">              \ /
+            --&gt;*&lt;--
+              /o\
+             /_\_\
+            /_/_0_\
+           /_o_\_\_\
+          /_/_/_/_/o\
+         /@\_\_\@\_\_\
+        /_/_/O/_/_/_/_\
+       /_\_\_\_\_\o\_\_\
+      /_/0/_/_/_0_/_/@/_\
+     /_\_\_\_\_\_\_\_\_\_\
+    /_/o/_/_/@/_/_/o/_/0/_\
+   jgs       [___]
+</pre>
+    </div>
+    <script src="JS_files/onelinewonders.js"></script>
 </body>
 </html>

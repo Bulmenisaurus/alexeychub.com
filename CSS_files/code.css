@@ -11,7 +11,7 @@ pre {
     
 }
 
-pre#b-day{border-top-left-radius: 0}
+pre#b-day, pre#valentine{border-top-left-radius: 0}
 
 pre.oneline{
     overflow-x: auto;

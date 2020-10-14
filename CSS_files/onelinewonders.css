@@ -54,9 +54,13 @@ input{
     border-bottom: none;
 }
 
+#b-day_message_inp, #valentine_from_inp{
+    border-radius: 0px 3px 0px 0px;
+    min-width: 170px;
+}
+
 #b-day_message_inp, #valentine_message_inp{
     width:300px; 
-    border-radius: 0px 3px 0px 0px
 }
 
 #b-day_name_inp, #valentine_name_inp{

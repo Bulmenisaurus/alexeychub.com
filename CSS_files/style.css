@@ -141,17 +141,6 @@ h2 {
     background-color: #347736;
 }
 
-#mydivheader {
-    cursor: move;
-}
-
-#mydiv {
-    position: absolute; 
-    margin:0;
-    display: table;
-    width: 90%;
-    left: 30px;
-}
 /* 
 background = #2B2B2B
 color palette: 

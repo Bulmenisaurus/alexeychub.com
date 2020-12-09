@@ -2,12 +2,7 @@
 var modal = document.getElementById("myModal");
 
 
-console.log('%cHey! Stop peeking down here! Easter eggs are too easy....\nid: peekaboo', `
-  background: white;
-  color: #09f;
-  font-size: 14px;
-  font-family:"Lucida Console", Monaco, monospace;
-`);
+
 // Get the button that opens the modal
 var btn = document.getElementById("easter-egg");
 

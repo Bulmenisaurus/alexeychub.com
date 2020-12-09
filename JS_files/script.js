@@ -12,9 +12,6 @@ setInterval(() => {
 }, 5000)
 
 
-
-setTimeout(changeColor, 10000)
-
 // Draws the grid above/below instead of left/right when the site is thin enough
 
 

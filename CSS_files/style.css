@@ -1,151 +1,145 @@
-* {
-    font-weight: normal;
+:root{
+    --blueapron-blue: /*#002c9b*/#002279;
+    --clean-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body{
-    background-color:#2B2B2B;
+*{
+    margin: 0;
+    padding: 0;
 }
 
-/*  CLASSES AND MAIN ELEMENTSSS */
-#main_title{
-    /*text-shadow: 0px 1px 10px #000000;*/
-    
-    font-family: "Quicksand", "Lucida Console", Monaco, monospace;
-    font-size:30px;
-    letter-spacing: .2em;
-    font-weight:100;
-
-    text-align:center;
-    margin-top:20px;
-    padding:0px;  
+.page{
+    /* Thanks to https://codepen.io/rafaelcastrocouto/pen/LFAes */
+    width: 21cm;
+    height: 29.7cm;
+    background: white;
+    display: block;
+    margin: 30px auto;
+    margin-bottom: 0.5cm;
+    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
 }
 
-#main_title h1 {
-    margin:0;
+img {
+    width: 100%;
+    height: 100%;
 }
 
-#title_info p {
-    margin:0;
-}
+/*!!! PAGE 1 !!!*/
 
-#title_info {
-    color:rgb(15, 177, 50);
-    font-family:"Lucida Console", Monaco, monospace;
-    
-    text-align:center;
-    font-size: 1em;
-}
-
-.text_container {
-    margin:15px;
-    width:75%;
-
-    color:#C1CBD6;
-    font-family: Roboto, Helvetica, sans-serif;
-    line-height:1.6;
-    letter-spacing:.5px;
-    font-weight:400;
-    font-size:14px;
-}
-
-footer a {
-    text-decoration: none;
-}
-
-.grid-container.columns-1 {
+#grid-container-p1{
     display: grid;
-    padding: 10px;
-    grid-template-columns: 100%;
+    grid-template-columns: 34% 66%;
+    grid-gap: 0;
 }
 
-.grid-container.columns-2 {
+#title{
+    background-color: var(--blueapron-blue);
+    margin: 5% 5% 5% 0;
+    font-size: 30px;
+    color: white;
+    padding: 30px;
+    line-height: 30px;
+    font-family: var(--clean-font);
+}
+
+
+#title i{
+    font-size: 20px;
+    font-family: initial;
+}
+
+.bt{
+    font-weight: bold;
+    color: var(--blueapron-blue);
+    font-family: var(--clean-font);
+    letter-spacing: 1px;
+}
+
+#desc-info .bt{
+    font-size: 12px;
+}
+
+#description{
+    margin-left: 20px;
+}
+
+#desc-main{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-right: 5%;
+}
+
+hr{
+    border: 4px solid var(--blueapron-blue);
+}
+
+#ingredients-grid{
     display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
     padding: 10px;
-    grid-template-columns: 50% 50%; 
+}
+
+.ingredient{
+    text-align: center;
+    font-family: var(--clean-font);
+    text-transform: uppercase;
+    margin: 10px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+.q{
+    font-family: initial;
+    text-transform: initial;
+    font-size: 12px;
+    font-weight: initial;
+}
+
+#ingredients .bt{
+    margin: 10px 15px;
+}
+
+/*!!! PAGE 2 !!!*/
+
+#instructions{
+    padding: 35px;
+    padding-left: 50px;
+}
+
+/*from https://stackoverflow.com/a/54153183 (custom numbering is hella confusing O-O)*/
+ol{
+    counter-reset: count;
 }
   
-.grid-item {
-    background-color:#2B2B2B;
-    border: 3px solid #181818;
-    box-shadow: 0px 0px 41px -13px rgba(255,255,255,0.21);
-    
-    padding: 20px;
-    padding-top: 0;
-    margin:10px;
-    border-radius:24px;
+  ol li{
+    list-style-type: none;
+    position: relative;
+}
+  
+  ol li:before {
+    counter-increment: count;
+    content: counter(count)" ";
+    margin-right: 0.5em;
+    display: inline-block;
+    padding: 0 5px;
+    border-radius: 50%;
+    color: #fff;
+    background: var(--blueapron-blue);
+    font-family: var(--clean-font)
 }
 
-/* SMALL CHANGES & SINGLE ELEMENTS*/
-::selection {
-    background: #14A35B;
-}
-a {
-    color:#CC00FF;
+input[type="checkbox"]{
+    margin: 5px;
 }
 
-q {
-    font-style: italic;
+#_1-4, #_2-3, #_3-2{margin-bottom: 20px;}
+#_1-1, #_2-1, #_3-1{margin-top: 15px;}
+
+.ib{
+    /*ingredient bold*/
+    font-weight: bold;
+    font-family: var(--clean-font);
+    letter-spacing: 1px;
+    font-size: 12px;
 }
-
-hr {
-    /* All those boxes n' stuff are a bit complicated for seperating*/
-    border-color:#181818;
-}
-
-footer img {
-    margin: 10px auto 20px;
-    display: block;
-}
-
-h2 {
-    font-size: 2em;
-}
-
-#t1 {
-    color:#CC7832;
-    transition: color 5s;
-}
-
-#t2 { /* Chub */
-    color:#EE7832;
-    transition: color 5s;
-}
-
-#t3 { /* . */
-    color:#6897BB;
-    transition: color 5s;
-    cursor: cell;
-}
-
-#t4{ /* com */
-    color: #9876AA;
-    transition: color 5s;
-}
-
-#easter-egg {
-    background-color: #4CAF50;
-    color: #000000;
-    border: none;
-    padding: 10px;
-    border-radius: 4px;
-    transition-duration: 0.4s;
-    user-select: none; /* supported by Chrome and Opera */
-   -webkit-user-select: none; /* Safari */
-   -khtml-user-select: none; /* Konqueror HTML */
-   -moz-user-select: none; /* Firefox */
-   -ms-user-select: none; /* Internet Explorer/Edge */
-
-}
-
-#easter-egg:hover {
-    background-color: #347736;
-}
-
-/* 
-background = #2B2B2B
-color palette: 
-1. CC7832 (orangeish) # main color
-2. A020F0 complementry -ish (purple)
-3. 2B2B2B main color, background (drk grey)
-4. A9B7C6 light color (ripping off pycharms text)
-*/

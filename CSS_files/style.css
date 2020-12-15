@@ -1,0 +1,85 @@
+:root {
+    --main_bg: #2B2B2B;
+    --darker_bg: #181818;
+    --text_clr:#C1CBD6;
+    --accent_1:#CC7832;
+    --accent_2:#A020F0;
+}
+
+* {font-weight: normal}
+
+body{
+    background-color: var(--main_bg);
+}
+
+#main_title{
+    font-family: 'Baloo Bhai 2', Arial, Helvetica, sans-serif;
+    font-size:30px;
+    letter-spacing: .2em;
+
+    text-align:center;
+    margin-top:20px;
+    padding:0px;  
+    color:#C1CBD6;
+}
+
+#main_title h1 { margin:0; }
+
+
+.text_container {
+    margin:15px;
+    width:75%;
+
+    color:var(--text_clr);
+    font-family: Roboto, Helvetica, sans-serif;
+    line-height:1.6;
+    letter-spacing:.5px;
+    font-weight:400;
+    font-size:14px;
+    margin: 40px auto;
+    margin-top: 5px;
+}
+
+::selection {background: #14A35B;}
+a { color:#CC00FF; }
+q {font-style: italic;}
+hr {border-color:#181818;}
+input{
+    background-color: #1a2b34;
+    border: 1px solid var(--darker_bg);
+    color: inherit;
+    font-family:"Ubuntu Mono","Lucida Console", Monaco, monospace;
+    padding: 6px 6px;
+    font-size: 12px;
+    border-bottom: none;
+}
+
+#b-day_message_inp, #valentine_message_inp{
+    width:300px; 
+    border-radius: 0px 3px 0px 0px
+}
+
+#b-day_name_inp, #valentine_name_inp{
+    border-radius: 3px 0px 0px 0px
+}
+
+h2{
+    margin: 30px 0px;
+    font-size: 20px;
+}
+
+
+@media screen and (max-width: 750px) {
+    h1{font-size:1.5em !important}
+}
+
+h1{font-size:6.5vw;}
+
+
+#footer, footer{
+    color: var(--text_clr);
+    font-family: Roboto, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
+}

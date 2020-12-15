@@ -4,6 +4,7 @@
 
 body{
     background-color:#2B2B2B;
+    margin-top: 1px;
 }
 
 /*  CLASSES AND MAIN ELEMENTSSS */
@@ -149,6 +150,13 @@ h2 {
 .hidden:hover{
     opacity: 1;
 }
+
+#invis{
+    font-size: 5px;
+    color: black;
+}
+
+
 
 /* 
 background = #2B2B2B

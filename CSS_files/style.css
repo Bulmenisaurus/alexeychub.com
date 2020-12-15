@@ -141,6 +141,15 @@ h2 {
     background-color: #347736;
 }
 
+.hidden{
+    transition: all 1.5s;
+    opacity: 0;
+}
+
+.hidden:hover{
+    opacity: 1;
+}
+
 /* 
 background = #2B2B2B
 color palette: 

@@ -8,4 +8,9 @@ function mainClick() {
     console.log(clicks)
 }
 
-setTimeout(function() {document.querySelector("#results").innerHTML = "Wow, you're patient!"}, 10)
+setTimeout(delay_egg, 10000)
+
+function delay_egg() {
+    document.querySelector("#results").innerHTML = "Wow, you're patient!";
+    console.log("done!");
+}

@@ -39,12 +39,12 @@ document.addEventListener('keyup', function (event) {
 
 
 document.querySelector("#item-7").addEventListener('click', function () {
-    let elmnt = document.querySelector("#item-7")
-    elmnt.style.cursor =  'auto' // random.choice ['alias', 'all-scroll', 'cell', 'context-menu', 'copy']
+    let elmnt = document.querySelector("#item-7");
+    elmnt.style.cursor =  'auto'; // random.choice ['alias', 'all-scroll', 'cell', 'context-menu', 'copy']
 
-    if (elmnt.innerHTML === ''){
-        elmnt.innerHTML = '<p id="clicks-7">0</p>'
-        clicks_7 = 0 
+    if (!elmnt.innerHTML){
+        elmnt.innerHTML = '<p id="clicks-7">0</p>';
+        clicks_7 = 0 ;
         // I keep a variable because otherwise the program would read from dom and be hackable with inspect
     }
 

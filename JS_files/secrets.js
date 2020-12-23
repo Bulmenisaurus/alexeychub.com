@@ -2,7 +2,7 @@
 
 // trying to learn how to use arrow functions and constants
 // also non-js people who look have no idea wtf is going on, which is a plus
-const isNum = (n) => !!(parseFloat(n)+1) // +1 so that 0 doesnt interpet as falsy :facepalm:
+const isNum = (n) => !!(parseFloat(n)+1); // +1 so that 0 doesnt interpet as falsy :facepalm:
 
 var showBorder = true;
 
@@ -30,12 +30,13 @@ document.addEventListener('keyup', function (event) {
         if (counter + 1 == event.key){ // if the key the user pressed is one bigger than the counter:
             counter = parseInt(event.key); // set counter to key pressed
         };
-        document.querySelector("#item-3").innerHTML = '<div id="loading-bar"></div>';
+        if (document.querySelector("#item-3").innerHTML == ''){
+            document.querySelector("#item-3").innerHTML = '<div id="loading-bar"></div>'; // create loading bar if haven't done so already
+        }
         document.querySelector('#loading-bar').style.height = (counter + 1) * 10 + "%";
         
     };
 });
-
 
 
 document.querySelector("#item-7").addEventListener('click', function () {
@@ -44,10 +45,37 @@ document.querySelector("#item-7").addEventListener('click', function () {
 
     if (!elmnt.innerHTML){
         elmnt.innerHTML = '<p id="clicks-7">0</p>';
-        clicks_7 = 0 ;
+        clicks_7 = 0;
         // I keep a variable because otherwise the program would read from dom and be hackable with inspect
     }
 
-    clicks_7++
-    document.querySelector("#clicks-7").innerText = clicks_7.toString().padStart(3, '0')
+    clicks_7++;
+    document.querySelector("#clicks-7").innerText = clicks_7.toString().padStart(3, '0');
 });
+
+class Terminal {
+    constructor(querySelector = "#terminal", prompt = "> ", startingText = "Welcome to the terminal!"){
+        this.prompt = prompt;
+        this.text = startingText;
+        this.selector = querySelector;
+        this.terminalElement = document.querySelector(querySelector);
+    }
+
+    init() {
+        this.terminalElement.innerHTML = '<div id="history"></div><div id="line"><span id="path"></span><input autocomplete="off" type="text" id="input"></div>';
+        document.querySelector("#input").addEventListener('keydown', function (event) {
+            console.log(event.key)
+            if (event.key === 'Enter'){ // submit value
+                console.log(document.querySelector("#input").value + "<br>")
+                document.querySelector("#history").innerHTML += document.querySelector("#input").value + "<br>"
+                document.querySelector("#input").value = ''
+            }
+        })
+    }
+}
+
+terminal = new Terminal(querySelector = "#item-2", prompt = "[User] ", startingText = "Welcome to hints.js!")
+terminal.init()
+
+// height = 7 feet 6 inches = 90 inches
+//width  = 9 ft 9 inches

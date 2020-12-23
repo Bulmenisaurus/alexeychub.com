@@ -20,12 +20,9 @@ document.addEventListener('keyup', function (event) {
 
     if (['`', '~'].includes(event.key)) { // toggle border on
         showBorder ^= true;
-        let gridItems = document.getElementsByClassName('grid-item');
         let border_style = "1px solid " + (showBorder ? "white" : "black");
 
-        for (let x of gridItems){
-            x.style.border = border_style;
-        };
+        [...document.getElementsByClassName('grid-item')].forEach(e => e.style.border = border_style)
 
     } else if (isNum(event.key)) {
         counter = typeof(counter) == 'undefined' ? 0 : counter; // counter is current number. Initializes with 0

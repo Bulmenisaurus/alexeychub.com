@@ -2,7 +2,15 @@
 
 // trying to learn how to use arrow functions and constants
 // also non-js people who look have no idea wtf is going on, which is a plus
+START = Date.now()
+
 const isNum = (n) => !!(parseFloat(n)+1); // +1 so that 0 doesnt interpet as falsy :facepalm:
+const getTime = () => {
+    let totalSecs = (Date.now - START)
+    let seconds = 
+
+}
+
 
 var showBorder = true;
 
@@ -13,7 +21,8 @@ setTimeout(
     }, 60 * 1000
 );
 
-//document.queryCommandValue('#clicks-7').classList.add("no-select");
+document.querySelector("#item-3").innerHTML = '<div id="loading-bar" style="height: 0%"></div>';
+
 
 
 document.addEventListener('keyup', function (event) {
@@ -29,11 +38,8 @@ document.addEventListener('keyup', function (event) {
         counter = typeof(counter) == 'undefined' ? 0 : counter; // counter is current number. Initializes with 0
         
         if (counter + 1 == event.key){ // if the key the user pressed is one bigger than the counter:
-            counter = parseInt(event.key); // set counter to key pressed
+            counter++
         };
-        if (document.querySelector("#item-3").innerHTML == ''){
-            document.querySelector("#item-3").innerHTML = '<div id="loading-bar"></div>'; // create loading bar if haven't done so already
-        }
         document.querySelector('#loading-bar').style.height = (counter + 1) * 10 + "%";
         
     };
@@ -41,10 +47,12 @@ document.addEventListener('keyup', function (event) {
 
 
 document.querySelector("#item-7").addEventListener('click', function () {
-    this.style.cursor =  ['alias', 'all-scroll', 'cell', 'context-menu', 'copy'][Math.floor(Math.random() * 5)];
+    // https://codeburst.io/javascript-map-vs-foreach-f38111822c0f has saved my life <3
+    let cursors = ['n','e','s','w','ne','nw','se','sw','ew','ns','nesw','nwse'].map((i) => i + "-resize")
+    this.style.cursor = cursors[Math.floor(Math.random() * cursors.length)];
 
     if (!this.innerHTML){
-        this.innerHTML = '<p id="clicks-7">0</p>';
+        this.innerHTML = '<p id="clicks-7" class="no-select">0</p>';
         clicks_7 = 0;
         // I keep a variable because otherwise the program would read from dom and be hackable with inspect
     }
@@ -53,6 +61,7 @@ document.querySelector("#item-7").addEventListener('click', function () {
     document.querySelector("#clicks-7").innerText = clicks_7.toString().padStart(3, '0');
 });
 
+// Learning about classes from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 class Terminal {
     constructor(querySelector = "#terminal", prompt = ">", startingText = "Welcome to the terminal!"){
         this.prompt = prompt;

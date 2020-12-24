@@ -13,6 +13,7 @@ setTimeout(
     }, 60 * 1000
 );
 
+//document.queryCommandValue('#clicks-7').classList.add("no-select");
 
 
 document.addEventListener('keyup', function (event) {
@@ -62,7 +63,7 @@ class Terminal {
     }
 
     init() {
-        this.terminalElement.innerHTML = '<div id="history"></div><div id="line"><span id="path"></span><input autocomplete="off" type="text" id="input"></div>';
+        this.terminalElement.innerHTML = '<div id="history"></div><div id="line"><span id="path" class="no-select"></span><input autocomplete="off" type="text" id="input"></div>';
         var prompts = [this.prompt, this.htmlPrompt]
         document.querySelector("#path").innerHTML = this.prompt + '\xa0'
         document.querySelector("#input").addEventListener('keydown', function (event) { 
@@ -79,10 +80,15 @@ class Terminal {
     addMessage(message, withPrompt = false) {
         document.querySelector('#history').innerHTML += (withPrompt ? this.htmlPrompt : '') + message + '<br>'
     }
+
+    formattedMessage(focus, message, info = '') {
+    this.addMessage(`<span id="terminal-focus">${focus}</span> ${message} <span id="terminal-info">${info}</span>`)
+    }
 }
 
 terminal = new Terminal(
     querySelector = "#item-2",
+    prompt = ['>', '$', ']', '⚘', '⁕'][Math.floor(Math.random() * 5)],
     )
 terminal.init()
-terminal.addMessage('Lorem Ipsum')
+terminal.formattedMessage('[Patient!]', 'you just got the patient achievemnt!', '11:03')

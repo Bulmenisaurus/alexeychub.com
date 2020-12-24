@@ -63,16 +63,17 @@ class Terminal {
 
     init() {
         this.terminalElement.innerHTML = '<div id="history"></div><div id="line"><span id="path"></span><input autocomplete="off" type="text" id="input"></div>';
-        prompt = this.prompt
-        document.querySelector("#path").innerHTML = prompt + '\xa0'
-        document.querySelector("#input").addEventListener('keydown', function (event) {
+        var prompts = [this.prompt, this.htmlPrompt]
+        document.querySelector("#path").innerHTML = this.prompt + '\xa0'
+        document.querySelector("#input").addEventListener('keydown', function (event) { 
             if (event.key === 'Enter'){ // submit value
                 // Wow! Much purify! Lots security!
                 this.value = this.value.replace(/\</g,"&lt;").replace(/\>/g,"&gt;")
-                document.querySelector("#history").innerHTML += (this.htmlPrompt + this.value+ '<br>')
+                document.querySelector("#history").innerHTML += (prompts[1] + this.value+ '<br>')
                 this.value = ''
             }
         })
+        this.addMessage(this.text)
     }
 
     addMessage(message, withPrompt = false) {
@@ -80,6 +81,8 @@ class Terminal {
     }
 }
 
-terminal = new Terminal(querySelector = "#item-2")
+terminal = new Terminal(
+    querySelector = "#item-2",
+    )
 terminal.init()
-terminal.addMessage('lmao suckerss')
+terminal.addMessage('Lorem Ipsum')

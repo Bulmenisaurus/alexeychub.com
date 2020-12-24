@@ -40,11 +40,10 @@ document.addEventListener('keyup', function (event) {
 
 
 document.querySelector("#item-7").addEventListener('click', function () {
-    let elmnt = document.querySelector("#item-7");
-    elmnt.style.cursor =  'auto'; // random.choice ['alias', 'all-scroll', 'cell', 'context-menu', 'copy']
+    this.style.cursor =  ['alias', 'all-scroll', 'cell', 'context-menu', 'copy'][Math.floor(Math.random() * 5)];
 
-    if (!elmnt.innerHTML){
-        elmnt.innerHTML = '<p id="clicks-7">0</p>';
+    if (!this.innerHTML){
+        this.innerHTML = '<p id="clicks-7">0</p>';
         clicks_7 = 0;
         // I keep a variable because otherwise the program would read from dom and be hackable with inspect
     }
@@ -54,7 +53,7 @@ document.querySelector("#item-7").addEventListener('click', function () {
 });
 
 class Terminal {
-    constructor(querySelector = "#terminal", prompt = "> ", startingText = "Welcome to the terminal!"){
+    constructor(querySelector = "#terminal", prompt = ">", startingText = "Welcome to the terminal!"){
         this.prompt = prompt;
         this.text = startingText;
         this.selector = querySelector;
@@ -63,19 +62,20 @@ class Terminal {
 
     init() {
         this.terminalElement.innerHTML = '<div id="history"></div><div id="line"><span id="path"></span><input autocomplete="off" type="text" id="input"></div>';
+        prompt = this.prompt
+        document.querySelector("#path").innerHTML = prompt + '\xa0'
+        document.querySelector("#history")
         document.querySelector("#input").addEventListener('keydown', function (event) {
-            console.log(event.key)
             if (event.key === 'Enter'){ // submit value
-                console.log(document.querySelector("#input").value + "<br>")
-                document.querySelector("#history").innerHTML += document.querySelector("#input").value + "<br>"
-                document.querySelector("#input").value = ''
+                document.querySelector("#history").innerHTML += (`<span id="path">${prompt}</span>\xa0${this.value}<br>`)
+                this.value = ''
             }
         })
     }
 }
 
-terminal = new Terminal(querySelector = "#item-2", prompt = "[User] ", startingText = "Welcome to hints.js!")
+terminal = new Terminal(querySelector = "#item-2")
 terminal.init()
 
 // height = 7 feet 6 inches = 90 inches
-//width  = 9 ft 9 inches
+//width  = 9 ft 9 inches = 117 inches

@@ -55,6 +55,7 @@ document.querySelector("#item-7").addEventListener('click', function () {
 class Terminal {
     constructor(querySelector = "#terminal", prompt = ">", startingText = "Welcome to the terminal!"){
         this.prompt = prompt;
+        this.htmlPrompt = '<span id="path">' + prompt + '\xa0</span>'
         this.text = startingText;
         this.selector = querySelector;
         this.terminalElement = document.querySelector(querySelector);
@@ -64,18 +65,21 @@ class Terminal {
         this.terminalElement.innerHTML = '<div id="history"></div><div id="line"><span id="path"></span><input autocomplete="off" type="text" id="input"></div>';
         prompt = this.prompt
         document.querySelector("#path").innerHTML = prompt + '\xa0'
-        document.querySelector("#history")
         document.querySelector("#input").addEventListener('keydown', function (event) {
             if (event.key === 'Enter'){ // submit value
-                document.querySelector("#history").innerHTML += (`<span id="path">${prompt}</span>\xa0${this.value}<br>`)
+                // Wow! Much purify! Lots security!
+                this.value = this.value.replace(/\</g,"&lt;").replace(/\>/g,"&gt;")
+                document.querySelector("#history").innerHTML += (this.htmlPrompt + this.value+ '<br>')
                 this.value = ''
             }
         })
+    }
+
+    addMessage(message, withPrompt = false) {
+        document.querySelector('#history').innerHTML += (withPrompt ? this.htmlPrompt : '') + message + '<br>'
     }
 }
 
 terminal = new Terminal(querySelector = "#item-2")
 terminal.init()
-
-// height = 7 feet 6 inches = 90 inches
-//width  = 9 ft 9 inches = 117 inches
+terminal.addMessage('lmao suckerss')

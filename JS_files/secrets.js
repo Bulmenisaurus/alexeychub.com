@@ -16,11 +16,15 @@ const getTime = () => {
 
 var showBorder = true;
 
+
+
+
 // Learning about classes from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 class Terminal {
     constructor(querySelector = "#terminal", prompt = ">", startingText = "Welcome to the terminal!"){
+        console.log(this)
         this.prompt = prompt;
-        this.htmlPrompt = '<span class="path">' + prompt + '\xa0</span>'
+        this.htmlPrompt = '<span class="path no-select">' + prompt + '\xa0</span>'
         this.text = startingText;
         this.selector = querySelector;
         this.terminalElement = document.querySelector(querySelector);
@@ -28,37 +32,49 @@ class Terminal {
 
     init() {
         this.terminalElement.innerHTML = `<div id="history"></div><div id="line"><span class="path no-select">${this.prompt + '\xa0'}</span><input autocomplete="off" type="text" id="input"></div>`;
-        const prompts = [this.prompt, this.htmlPrompt]
+        const prompts = [this.prompt, this.htmlPrompt];
         document.querySelector("#input").addEventListener('keydown', function (event) { 
             if (event.key === 'Enter'){ // submit value
                 // Wow! Much purify! Lots security!
-                this.value = this.value.replace(/\</g,"&lt;").replace(/\>/g,"&gt;")
-                document.querySelector("#history").innerHTML += (prompts[1] + this.value + '<br>')
-                this.value = ''
-            }
-        })
-        this.addMessage(this.text)
-    }
+                this.value = this.value.replace(/\</g,"&lt;").replace(/\>/g,"&gt;");
+                document.querySelector("#history").innerHTML += (prompts[1] + this.value + '<br>');
+                this.value = '';
+            };
+        });
+        this.addMessage(this.text);
+    };
 
     addMessage(message, withPrompt = false) {
-        document.querySelector('#history').innerHTML += (withPrompt ? this.htmlPrompt : '') + message + '<br>'
-    }
+        document.querySelector('#history').innerHTML += (withPrompt ? this.htmlPrompt : '') + message + '<br>';
+    };
 
     formattedMessage(focus, message, timeStamp = true) {
-    this.addMessage(`<span id="terminal-focus">${focus}</span> ${message} ${timeStamp ? `<span class="terminal-info">${getTime()}</span>` : ''}`)
-    }
-}
+    this.addMessage(`<span class="terminal-focus">${focus}</span> ${message} ${timeStamp ? `<span class="terminal-info">${getTime()}</span>` : ''}`);
+    };
+};
 
 terminal = new Terminal(
     "#item-2",
     '>$]⚘⁕»'[Math.floor(Math.random() * 6)],
     'Welcome to <span class="important"></span>'
-    )
-terminal.init()
+    );
+terminal.init();
+
+class EasterEggs {
+
+    static earn(achievement) {
+        switch(achievement){
+            case 'numbers': terminal.formattedMessage('[Numbers!]', '1-2, skip a few, 10!'); break;
+            case 'wait':    terminal.formattedMessage('[Patient!]', 'Wow, you\'re patient!'); break;
+            case 'click':   terminal.formattedMessage('[Clicks!]', 'Click clack, you\'ve clicked a lot!'); break;
+        }
+    }
+}
+
 
 setTimeout(
     function(){
-       document.querySelector("#item-4").innerHTML='<p>Wow, you\'re patient! id: kinda_lazy</p>'; easterEgg = 1;
+       document.querySelector("#item-4").innerHTML='<p>Wow, you\'re patient! id: kinda_lazy</p>'; EasterEggs.earn('wait');
     }, 60 * 1000
 );
 
@@ -81,9 +97,9 @@ document.addEventListener('keyup', function (event) {
         if (counter + 1 == event.key){ // if the key the user pressed is one bigger than the counter:
             counter++
             if (counter === 9){
-                terminal.formattedMessage('[Numbers!]', 'Congrats for earning the numbers achievement!')
-            }
+                EasterEggs.earn('numbers')
         };
+        }
         document.querySelector('#loading-bar').style.height = (counter + 1) * 10 + "%";
         
     };

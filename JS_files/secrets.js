@@ -20,21 +20,20 @@ var showBorder = true;
 class Terminal {
     constructor(querySelector = "#terminal", prompt = ">", startingText = "Welcome to the terminal!"){
         this.prompt = prompt;
-        this.htmlPrompt = '<span id="path">' + prompt + '\xa0</span>'
+        this.htmlPrompt = '<span class="path">' + prompt + '\xa0</span>'
         this.text = startingText;
         this.selector = querySelector;
         this.terminalElement = document.querySelector(querySelector);
     }
 
     init() {
-        this.terminalElement.innerHTML = '<div id="history"></div><div id="line"><span id="path" class="no-select"></span><input autocomplete="off" type="text" id="input"></div>';
-        var prompts = [this.prompt, this.htmlPrompt]
-        document.querySelector("#path").innerHTML = this.prompt + '\xa0'
+        this.terminalElement.innerHTML = `<div id="history"></div><div id="line"><span class="path no-select">${this.prompt + '\xa0'}</span><input autocomplete="off" type="text" id="input"></div>`;
+        const prompts = [this.prompt, this.htmlPrompt]
         document.querySelector("#input").addEventListener('keydown', function (event) { 
             if (event.key === 'Enter'){ // submit value
                 // Wow! Much purify! Lots security!
                 this.value = this.value.replace(/\</g,"&lt;").replace(/\>/g,"&gt;")
-                document.querySelector("#history").innerHTML += (prompts[1] + this.value+ '<br>')
+                document.querySelector("#history").innerHTML += (prompts[1] + this.value + '<br>')
                 this.value = ''
             }
         })
@@ -46,13 +45,14 @@ class Terminal {
     }
 
     formattedMessage(focus, message, timeStamp = true) {
-    this.addMessage(`<span id="terminal-focus">${focus}</span> ${message} ${timeStamp ? `<span id="terminal-info">${getTime()}</span>` : ''}`)
+    this.addMessage(`<span id="terminal-focus">${focus}</span> ${message} ${timeStamp ? `<span class="terminal-info">${getTime()}</span>` : ''}`)
     }
 }
 
 terminal = new Terminal(
-    querySelector = "#item-2",
-    prompt = ['>', '$', ']', '⚘', '⁕'][Math.floor(Math.random() * 5)],
+    "#item-2",
+    '>$]⚘⁕»'[Math.floor(Math.random() * 6)],
+    'Welcome to <span class="important"></span>'
     )
 terminal.init()
 

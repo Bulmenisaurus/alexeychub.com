@@ -16,28 +16,27 @@ const getTime = () => {
 
 var showBorder = true;
 
+setTimeout(function(){document.querySelector("#item-4").innerHTML="<p>Wow, you're patient! id: kinda_lazy</p>",EasterEggs.earn("wait")},6e4);
+document.querySelector("#item-3").innerHTML = '<div id="loading-bar" style="height: 0%"></div>';
 
 
 
 // Learning about classes from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 class Terminal {
     constructor(querySelector = "#terminal", prompt = ">", startingText = "Welcome to the terminal!"){
-        console.log(this)
         this.prompt = prompt;
-        this.htmlPrompt = '<span class="path no-select">' + prompt + '\xa0</span>'
+        this.htmlPrompt = '<span class="path no-select">' + prompt + '\xa0</span>';
         this.text = startingText;
-        this.selector = querySelector;
         this.terminalElement = document.querySelector(querySelector);
     }
 
     init() {
-        this.terminalElement.innerHTML = `<div id="history"></div><div id="line"><span class="path no-select">${this.prompt + '\xa0'}</span><input autocomplete="off" type="text" id="input"></div>`;
-        const prompts = [this.prompt, this.htmlPrompt];
+        var that = this
+        this.terminalElement.innerHTML = `<div id="history"></div><div id="line">${this.htmlPrompt}<input autocomplete="off" type="text" id="input"></div>`;
         document.querySelector("#input").addEventListener('keydown', function (event) { 
             if (event.key === 'Enter'){ // submit value
-                // Wow! Much purify! Lots security!
-                this.value = this.value.replace(/\</g,"&lt;").replace(/\>/g,"&gt;");
-                document.querySelector("#history").innerHTML += (prompts[1] + this.value + '<br>');
+                this.value = this.value.replace(/\</g,"&lt;").replace(/\>/g,"&gt;"); // Wow! Much purify! Lots security!
+                that.addMessage(this.value, true);
                 this.value = '';
             };
         });
@@ -49,21 +48,18 @@ class Terminal {
     };
 
     formattedMessage(focus, message, timeStamp = true) {
-    this.addMessage(`<span class="terminal-focus">${focus}</span> ${message} ${timeStamp ? `<span class="terminal-info">${getTime()}</span>` : ''}`);
+        this.addMessage(`<span class="terminal-focus">${focus}</span> ${message} ${timeStamp ? `<span class="terminal-info">${getTime()}</span>` : ''}`);
     };
 };
 
-terminal = new Terminal(
-    "#item-2",
-    '>$]⚘⁕»'[Math.floor(Math.random() * 6)],
-    'Welcome to <span class="important"></span>'
-    );
+terminal=new Terminal("#item-2",">$]⚘⁕»"[Math.floor(6*Math.random())],'Welcome to <span class="important">Hints.js!</span>');
 terminal.init();
 
-class EasterEggs {
 
+// Easter eggs
+class EasterEggs {
     static earn(achievement) {
-        switch(achievement){
+        switch(achievement){ // First time using switch and case :D
             case 'numbers': terminal.formattedMessage('[Numbers!]', '1-2, skip a few, 10!'); break;
             case 'wait':    terminal.formattedMessage('[Patient!]', 'Wow, you\'re patient!'); break;
             case 'click':   terminal.formattedMessage('[Clicks!]', 'Click clack, you\'ve clicked a lot!'); break;
@@ -72,23 +68,10 @@ class EasterEggs {
 }
 
 
-setTimeout(
-    function(){
-       document.querySelector("#item-4").innerHTML='<p>Wow, you\'re patient! id: kinda_lazy</p>'; EasterEggs.earn('wait');
-    }, 60 * 1000
-);
-
-document.querySelector("#item-3").innerHTML = '<div id="loading-bar" style="height: 0%"></div>';
-
-
-
 document.addEventListener('keyup', function (event) {
-    // event.key is key pressed
-
     if (['`', '~'].includes(event.key)) { // toggle border on
         showBorder ^= true;
         let border_style = "1px solid " + (showBorder ? "white" : "black");
-
         [...document.getElementsByClassName('grid-item')].forEach(e => e.style.border = border_style)
 
     } else if (isNum(event.key)) {
@@ -97,8 +80,8 @@ document.addEventListener('keyup', function (event) {
         if (counter + 1 == event.key){ // if the key the user pressed is one bigger than the counter:
             counter++
             if (counter === 9){
-                EasterEggs.earn('numbers')
-        };
+                EasterEggs.earn('numbers');
+            };
         }
         document.querySelector('#loading-bar').style.height = (counter + 1) * 10 + "%";
         
@@ -110,7 +93,6 @@ document.querySelector("#item-7").addEventListener('click', function () {
     // https://codeburst.io/javascript-map-vs-foreach-f38111822c0f has saved my life <3
     let cursors = ['n','e','s','w','ne','nw','se','sw','ew','ns','nesw','nwse'].map((i) => i + "-resize")
     this.style.cursor = cursors[Math.floor(Math.random() * cursors.length)];
-
     if (!this.innerHTML){
         this.innerHTML = '<p id="clicks-7" class="no-select">0</p>';
         clicks_7 = 0;

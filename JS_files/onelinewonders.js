@@ -1,20 +1,26 @@
-b_input_name = document.getElementById('b-day_name_inp')
-b_input_message = document.getElementById('b-day_message_inp')
-v_input_name = document.getElementById('valentine_name_inp')
-v_input_message = document.getElementById('valentine_message_inp')
-v_input_from = document.getElementById('valentine_from_inp')
+[bName, bMessage, bPrev, vName, vMessage, vFrom] = ['bday-recipient', 'bday-message', 'bday-preview','valentine-name', 'valentine-message', 'valentine-from'].map((e) => document.getElementById(e))
+/*
+bName = document.getElementById('bday-recipient')
+bMessage = document.getElementById('bday-message')
+vName = document.getElementById('valentine-name')
+vMessage = document.getElementById('valentine-message')
+vFrom = document.getElementById('valentine-from')
+*/
+
+function calcHtml(name, message){
+    n = name.replace(/\\n/g, 'chr(10)')
+    m = message.replace(/\\n/g, 'chr(10)')
+    return {
+        'b': `<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">f&quot;{\'Happy B-day ${n}!\'.capitalize()}\\n{chr(60)+(l_1 := \'------~~~~~~**\') + l_1[::-1]+chr(62)}\\n\\n{\'${m}\'}\\n\\n{chr(60)+l_1+l_1[::-1]+chr(62)}&quot;</span><span class="p">)</span>`,
+        'bp': `Happy b-day ${n}!<br>&lt;------~~~~~~****~~~~~~------&gt;<br><br>${m}<br><br>&lt;------~~~~~~****~~~~~~------&gt;`
+    }
+}
 
 
-b_input_name.onchange = function(){document.getElementById('b-day_name').innerHTML = b_input_name.value ? b_input_name.value.replace(/\\n/g, 'chr(10)') : '{your name here}';}
-b_input_message.onchange = function(){document.getElementById('b-day_message').innerHTML = b_input_message.value ? b_input_message.value.replace(/\\n/g, 'chr(10)')  : '{your message here}';}
-v_input_name.onchange = function(){document.getElementById('valentine_name').innerHTML = v_input_name.value ? v_input_name.value.replace(/\\n/g, 'chr(10)') : '{your name here}';}
-v_input_message.onchange = function(){document.getElementById('valentine_message').innerHTML = v_input_message.value ? v_input_message.value.replace(/\\n/g, 'chr(10)')  : '{your message here}';}
-v_input_from.onchange = function(){document.getElementById('valentine_from').innerHTML = v_input_from.value ? v_input_from.value.replace(/\\n/g, 'chr(10)')  : '{from who is it?}';}
 
+bName.onchange = function(){c=calcHtml(this.value, bMessage.value);document.getElementById('bday-result').innerHTML = c.b;bPrev.innerHTML = c.bp};
+bMessage.onchange = function(){c=calcHtml(bName.value, this.value);document.getElementById('bday-result').innerHTML = c.b;bPrev.innerHTML = c.bp};
 
-
-b_input_name.onclick = function() {b_input_name.onchange();}
-b_input_message.onclick = function() {b_input_message.onchange();}
-v_input_name.onclick = function() {v_input_name.onchange();}
-v_input_message.onclick = function() {v_input_message.onchange();}
-v_input_from.onclick = function() {v_input_from.onchange();}
+vName.onchange = function(){document.getElementById('valentine_name').innerHTML = vName.value ? vName.value.replace(/\\n/g, 'chr(10)') : '{your name here}';}
+vMessage.onchange = function(){document.getElementById('valentine_message').innerHTML = vMessage.value ? vMessage.value.replace(/\\n/g, 'chr(10)')  : '{your message here}';}
+vFrom.onchange = function(){document.getElementById('valentine_from').innerHTML = vFrom.value ? vFrom.value.replace(/\\n/g, 'chr(10)')  : '{from who is it?}';}

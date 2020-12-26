@@ -4,8 +4,9 @@
     <title>One line wonders</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@800&display=swap?family=Ubuntu+Mono&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Inconsolata&family=Roboto&display=swap" rel="stylesheet">
+    
     <!-- My assets: -->
     <link rel="icon" type="image/png" href="https://alexeychub.com/images/c-pixilart.png">
     <link rel="stylesheet" type="text/css" href="CSS_files/code.css">
@@ -23,48 +24,68 @@
     </script>
 </head>
 <body>
-    <header>
-        <div id="main_title">
-                <h1>One line wonders</h1>
+    <header><h1 id="main-title">One line wonders</h1></header>
+    
+    <div class='text-container'>
+        <p>
+            This, in my opinion, is a pretty useful website. 
+            You can generate birthday, valentine, and other types of wonderful cards and messages, all in
+            one line of JavaScript! code!
+        </p>
+        <div class="highlight"><pre class="oneline"><span></span><span class="nb">console.log</span><span class="p">(</span><span class="s2">&quot;Let&#39;s get started!&quot;</span><span class="p">)</span></pre></div>    
+    
+        <h2>A basic birthday card:</h2>
+        <p>
+        A classic b-day card! You can't go wrong with this, so give it a try! Remember - \n will create a new line, but dont type any other back-slashes, as that could break the code!
+        </p>
+        
+        <table>
+            <tbody>
+                <tr>
+                    <td><label for="bday-recipient">Recipient: </label></td>
+                    <td><input name="bday-recepient" type="text" id="bday-recipient"></td>
+                </tr>
+                <tr>
+                    <td><label for="bday-message">Message: </label></td>
+                    <td><input name="bday-message" type="text" id="bday-message"></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- <label for="bday-recipient">Recipient: </label><input name="bday-recepient" type="text" id="bday-recipient"><br> -->   
+        <!-- <label for="bday-message">Message: </label><input name="bday-message" type="text" id="bday-message"><br> -->
+        <div class="highlight">
+            <input type="button" value="Copy!" class="copy" id="copy-b">
+            <pre class="oneline" id="bday-result"><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">f&quot;{'Happy B-day {your name here}!'.capitalize()}\n{chr(60)+(l_1 := '------~~~~~~**') + l_1[::-1]+chr(62)}\n\n{'{your message here}'}\n\n{chr(60)+l_1+l_1[::-1]+chr(62)}&quot;</span><span class="p">)</span></pre>
         </div>
-    </header>
-    <div class='text_container'><p>This, in my opinion, is a pretty useful website. 
-        You can generate birthday, valentine, and other types of wonderful cards, all in
-        one line of python!
-    </p>
-    <div class="highlight"><pre class="oneline"><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Let&#39;s get started!&quot;</span><span class="p">)</span></pre></div>    
-    <h2>A basic b-day card:</h2>
-    <p>A classic b-day card! You can't go wrong with this, so give it a try! Remember - type \n to get a line break, but dont type any other back-slashes, as that could break the code! Because of the f-strings, this only works in python 3.6=&lt;</p>
-    <input type="text" id="b-day_name_inp" placeholder="Recipients name"><input type="text" id="b-day_message_inp" placeholder='A heart-warming message goes here!'>
-    <div class="highlight"><pre class="oneline" id='b-day'><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">f&quot;</span><span class="se">\033</span><span class="s2">[35m{</span><span class="s1">&#39;Happy B-day <span id="b-day_name">{your name here}</span>!&#39;</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>}<span class="se">\033[90m</span><span class="se">\n</span><span class="s2">{chr(60)+(l_1 := &#39;------~~~~~~**&#39;) + l_1[::-1]+chr(62)}</span><span class="se">\033[0m</span><span class="se">\n\n</span><span class="s2">{&#39;<span id="b-day_message">{your message here}</span>&#39;}</span><span class='se'>\n\n\033[90m</span><span class="s2">{chr(60)+l_1+l_1[::-1]+chr(62)}</span><span class="se">\033[0m&quot;</span><span class="p">)</span></pre></div>
-    <br>
-    <h2>The Ultimate valentines card:</h2>
-    <p>This is much like the birthday card, but with more hearts!</p>
-    <input type="text" id="valentine_name_inp" placeholder="Who's getting love?"><input type="text" id="valentine_message_inp" placeholder="A romantic valentine note here!"><input type="text" id="valentine_from_inp" placeholder="Reveal your identity!">
-    <div class="highlight"><pre class="oneline" id="valentine"><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">f&quot;</span><span class="se">\n\n</span><span class="si">{</span><span class="p">(</span><span class="n">message</span> <span class="o">:=</span> <span class="s1">f&#39; Happy Valetine</span><span class="si">{</span><span class="nb">chr</span><span class="p">(</span><span class="mi">39</span><span class="p">)</span><span class="si">}</span><span class="s1">s day, <span id="valentine_name">{your name here}</span>!&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="p">(</span><span class="n">line</span> <span class="o">:=</span> <span class="p">(</span><span class="n">hrt</span> <span class="o">:=</span> <span class="s1">&#39;💕&#39;</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;—&#39;</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="o">+</span><span class="n">hrt</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2"><span id="valentine_message">{your message here}</span></span><span class="se">\n\n</span><span class="si">{line}</span><span class="se">\n</span><span class="s2">— </span><span class="se">\033</span><span class="s2">[1m<span id="valentine_from">{from who is it?}</span></span><span class="se">\033</span><span class="s2">[0m, with love</span><span class="se">&quot;</span><span class="s2">)</span></pre></div>
- <!--  <pre id="p5">              \ /
-            --&gt;*&lt;--
-              /o\
-             /_\_\
-            /_/_0_\
-           /_o_\_\_\
-          /_/_/_/_/o\
-         /@\_\_\@\_\_\
-        /_/_/O/_/_/_/_\
-       /_\_\_\_\_\o\_\_\
-      /_/0/_/_/_0_/_/@/_\
-     /_\_\_\_\_\_\_\_\_\_\
-    /_/o/_/_/@/_/_/o/_/0/_\
-   jgs       [___]
-</pre>
--->
+        <h3>Preview:</h3>
+        <div id="highlight">
+            <pre id="bday-preview">Happy b-day {your name here}!<br><br>&lt;------~~~~~~****~~~~~~------&gt;<br><br>{your message here}<br>&lt;------~~~~~~****~~~~~~------&gt;</pre>
+        </div>
+        <br>
+        <h2>The Ultimate valentines card:</h2>
+        <p>This is much like the birthday card, but with more hearts!</p>
+
+        <table>
+            <tbody>
+                <tr>
+                    <td><label for="valetine-recipient">Recipient: </label></td>
+                    <td><input type="text" id="valentine-recipient"><br></td>
+                </tr>
+                <tr>
+                    <td><label for="valentine-message">Message: </label></td>
+                    <td><input type="text" id="valentine-message"><br></td>
+                </tr>
+                <tr>
+                    <td><label for="valentine-name">Your name: </label></td>
+                    <td><input type="text" id="valentine-name"><br></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="highlight">
+            <input type="button" value="Copy!" class="copy" id="copy-v">
+            <pre class="oneline" id="valentine"><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">f&quot;</span><span class="se">\n\n</span><span class="si">{</span><span class="p">(</span><span class="n">message</span> <span class="o">:=</span> <span class="s1">f&#39; Happy Valetine</span><span class="si">{</span><span class="nb">chr</span><span class="p">(</span><span class="mi">39</span><span class="p">)</span><span class="si">}</span><span class="s1">s day, <span id="valentine_name">{your name here}</span>!&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="p">(</span><span class="n">line</span> <span class="o">:=</span> <span class="p">(</span><span class="n">hrt</span> <span class="o">:=</span> <span class="s1">&#39;💕&#39;</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;—&#39;</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="o">+</span><span class="n">hrt</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2"><span id="valentine_message">{your message here}</span></span><span class="se">\n\n</span><span class="si">{line}</span><span class="se">\n</span><span class="s2">— </span><span class="se">\033</span><span class="s2">[1m<span id="valentine_from">{from who is it?}</span></span><span class="se">\033</span><span class="s2">[0m, with love</span><span class="se">&quot;</span><span class="s2">)</span></pre>
+        </div>
     </div>
-    <footer>
-        <hr>
-        <div id="footer">
-            And thats it for now! Thank you for coming here :)
-        </div>
-    </footer>
 
 </body>
 </html>

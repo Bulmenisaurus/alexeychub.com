@@ -1,17 +1,15 @@
 pre {
     border-radius: 3px;
-    border: 1px solid var(--darker_bg);
+    border: 1px solid black;
     line-height: 125%;
     margin: 0;
     padding: 10px 7px;
-    white-space:nowrap;
     background-color: #1a2b34;
-    white-space: normal; /*For stuff longer than a line*/
-    font-family:"Ubuntu Mono","Lucida Console", Monaco, monospace;
+    font-family: 'Inconsolata',"Lucida Console", Monaco, monospace;
+    color: #C1CBD6;
     
 }
 
-pre#b-day, pre#valentine{border-top-left-radius: 0}
 
 pre.oneline{
     overflow-x: auto;
@@ -28,12 +26,11 @@ span.linenos { color: #000000; background-color: #1a2b34; padding: 0 5px 0 5px; 
 td.linenos pre.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
 span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
 .highlight .hll { background-color: #ffffcc }
-.highlight .p { color: var(--text_clr) }
-.highlight { background:var(--main_bg); }
+.highlight .p { color: #C1CBD6}
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight .o { color: var(--text_clr) } /* Operator */
+.highlight .o { color: #C1CBD6;} /* Operator */
 .highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
 .highlight .cp { color: #BC7A00 } /* Comment.Preproc */
@@ -59,7 +56,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px
 .highlight .m { color: #666666 } /* Literal.Number */
 .highlight .s { color: #BA2121 } /* Literal.String */
 .highlight .na { color: #7D9029 } /* Name.Attribute */
-.highlight .nb { color: var(--text_clr)} /* Name.Builtin */
+.highlight .nb { color: #C1CBD6} /* Name.Builtin */
 .highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
 .highlight .no { color: #880000 } /* Name.Constant */
 .highlight .nd { color: #AA22FF } /* Name.Decorator */

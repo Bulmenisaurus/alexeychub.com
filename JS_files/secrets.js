@@ -45,6 +45,7 @@ class Terminal {
 
     addMessage(message, withPrompt = false) {
         document.querySelector('#history').innerHTML += (withPrompt ? this.htmlPrompt : '') + message + '<br>';
+        document.querySelector('#input').scrollIntoView()
     };
 
     formattedMessage(focus, message, timeStamp = true) {
@@ -98,8 +99,15 @@ document.querySelector("#item-7").addEventListener('click', function () {
         clicks_7 = 0;
         // I keep a variable because otherwise the program would read from dom and be hackable with inspect
     }
-
     clicks_7++;
+    if (clicks_7 == 100){
+        EasterEggs.earn('click')
+    }
     document.querySelector("#clicks-7").innerText = clicks_7.toString().padStart(3, '0');
 });
+
+document.querySelector('#item-8').onmouseenter = function (){this.innerHTML = `<p>${'\xa0'.repeat(20)}pekaboo :)${'\xa0'.repeat(20)}</p`}
+document.querySelector('#item-8').onmouseleave = function (){this.innerHTML = ''}
+
+
 

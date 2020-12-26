@@ -14,7 +14,7 @@ My site
     
     - [ ] Subresourse integrity [`[SRI]`](https://infosec.mozilla.org/guidelines/web_security#subresource-integrity)
 - [ ] At least 90 / 90 / 90 / 90 in Google lighthouse on all pages
-  - [ ]  `/index.html`
+  - [x]  `/index.html`
   - [ ]  `/secrets.html`
   - [ ]  `/cssbudget.html`
   - [ ]  `/onelinewonders.html`

@@ -19,4 +19,4 @@ My site
   - [ ]  `/cssbudget.html`
   - [ ]  `/onelinewonders.html`
   - [ ]  `404 page`
-  - [ ]  `terminal.html`
+  - [x]  `terminal.html`

@@ -45,7 +45,6 @@ class Terminal {
 
     addMessage(message, withPrompt = false) {
         document.querySelector('#history').innerHTML += (withPrompt ? this.htmlPrompt : '') + message + '<br>';
-        document.querySelector('#input').scrollIntoView()
     };
 
     formattedMessage(focus, message, timeStamp = true) {
@@ -53,12 +52,14 @@ class Terminal {
     };
 };
 
-terminal=new Terminal("#item-2",">$]⚘⁕»"[Math.floor(6*Math.random())],'Welcome to <span class="important">Hints.js!</span>');
+terminal = new Terminal("#item-2", ">$]⚘⁕»"[Math.floor(6*Math.random())], 'Welcome to <span class="important">Hints.js!</span>');
 terminal.init();
 
 
 // Easter eggs
 class EasterEggs {
+    static EGGS = {numbers: false, click: false};
+
     static earn(achievement) {
         switch(achievement){ // First time using switch and case :D
             case 'numbers': terminal.formattedMessage('[Numbers!]', '1-2, skip a few, 10!'); break;
@@ -66,7 +67,25 @@ class EasterEggs {
             case 'click':   terminal.formattedMessage('[Clicks!]', 'Click clack, you\'ve clicked a lot!'); break;
         }
     }
-}
+
+    static hint(eggId){
+        console.log({eggId});
+        switch (eggId){
+            case 'numbers': return 'Try to press 0 or 1. Is there a pattern you can continue?';
+            case 'click': return 'click on seomthing idk';
+        }
+    }
+
+    static printHint(){
+        for (let x in EasterEggs.EGGS){
+            if (!EasterEggs.EGGS[x]){
+                terminal.formattedMessage('[Hint]', EasterEggs.hint(x), false);
+                break;
+            };
+        };
+    };
+};
+EasterEggs.printHint('numbers')
 
 
 document.addEventListener('keyup', function (event) {
@@ -106,8 +125,7 @@ document.querySelector("#item-7").addEventListener('click', function () {
     document.querySelector("#clicks-7").innerText = clicks_7.toString().padStart(3, '0');
 });
 
-document.querySelector('#item-8').onmouseenter = function (){this.innerHTML = `<p>${'\xa0'.repeat(20)}pekaboo :)${'\xa0'.repeat(20)}</p`}
+document.querySelector('#item-8').onmouseenter = function (){this.innerHTML = `<p>${'\xa0'.repeat(20)}<span id='is-visible'>pekaboo :)</span>${'\xa0'.repeat(20)}</p`}
 document.querySelector('#item-8').onmouseleave = function (){this.innerHTML = ''}
-
 
 

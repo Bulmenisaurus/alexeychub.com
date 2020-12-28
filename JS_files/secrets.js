@@ -6,19 +6,17 @@
 START = Date.now()
 
 const isNum = (n) => !!(parseFloat(n)+1); // +1 so that 0 doesnt interpet as falsy :facepalm:
+
 const getTime = () => {
-    let time = Math.round((Date.now() - START) / 1000);
-    let seconds = (time % 60).toString().padStart(2, '0');
-    let minutes = Math.floor(time / 60);
-    console.log({time, seconds, minutes})
-    return `[${minutes}:${seconds}]`;
+    let time = Math.round((Date.now() - START) / 1000); return `[${Math.floor(time/60)}:${(time%60).toString().padStart(2,'0')}]`;
 };
 
 var showBorder = true;
 
 setTimeout(function(){document.querySelector("#item-4").innerHTML="<p>Wow, you're patient! id: kinda_lazy</p>",EasterEggs.earn("wait")},6e4);
 document.querySelector("#item-3").innerHTML = '<div id="loading-bar" style="height: 0%"></div>';
-
+document.querySelector('#item-8').onmouseenter = function (){this.innerHTML = `<p class="no-select">${'\xa0'.repeat(20)}<span id="is-touch">\xa0</span><span id="is-visible">pekaboo :)</span>${'\xa0'.repeat(20)}</p`;}
+document.querySelector('#item-8').onmouseleave = function (){this.innerHTML = ''}
 
 
 // Learning about classes from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
@@ -48,7 +46,7 @@ class Terminal {
     };
 
     formattedMessage(focus, message, timeStamp = true) {
-        this.addMessage(`<span class="terminal-focus">${focus}</span> ${message} ${timeStamp ? `<span class="terminal-info">${getTime()}</span>` : ''}`);
+        this.addMessage(`<span class="terminal-focus">${focus}</span> ${message} ${timeStamp ? `<span class="terminal-info">${getTime()}</span><br>` : ''}`);
     };
 };
 
@@ -58,34 +56,41 @@ terminal.init();
 
 // Easter eggs
 class EasterEggs {
-    static EGGS = {numbers: false, click: false};
-
+    static EGGS = {numbers: false, click: false, wait: false};
+    static SENTHINTS = []
+    
     static earn(achievement) {
         switch(achievement){ // First time using switch and case :D
-            case 'numbers': terminal.formattedMessage('[Numbers!]', '1-2, skip a few, 10!'); break;
-            case 'wait':    terminal.formattedMessage('[Patient!]', 'Wow, you\'re patient!'); break;
-            case 'click':   terminal.formattedMessage('[Clicks!]', 'Click clack, you\'ve clicked a lot!'); break;
+            case 'numbers': terminal.formattedMessage('[Numbers!]', '1-2, skip a few, 10!');  EasterEggs.EGGS.numbers=true; break;
+            case 'wait':    terminal.formattedMessage('[Patient!]', 'Wow, you\'re patient!'); EasterEggs.EGGS.wait=true; break;
+            case 'click':   terminal.formattedMessage('[Clicks!]', 'Click clack, you\'ve clicked a lot!'); EasterEggs.EGGS.click=true; break;
         }
+        this.printHint()
     }
 
     static hint(eggId){
-        console.log({eggId});
         switch (eggId){
             case 'numbers': return 'Try to press 0 or 1. Is there a pattern you can continue?';
-            case 'click': return 'click on seomthing idk';
-        }
+            case 'click': return 'Try clicking around.';
+            case 'wait': return 'Wait - any second now....';
+        };
     }
 
     static printHint(){
-        for (let x in EasterEggs.EGGS){
-            if (!EasterEggs.EGGS[x]){
-                terminal.formattedMessage('[Hint]', EasterEggs.hint(x), false);
-                break;
-            };
+        console.log(this.EGGS, this.SENTHINTS)
+        for (let x in this.EGGS){
+            if (!this.EGGS[x] && !this.SENTHINTS.includes(x)){
+                terminal.formattedMessage('[Hint]', this.hint(x), false);
+                this.SENTHINTS.push(x)
+                break
+            }
         };
+        if (Object.values(EasterEggs.EGGS).every(i => !!i==true)){
+            terminal.addMessage('Wow! You\'ve earned all the easter eggs! That\'s pretty impresive...');
+        }
     };
 };
-EasterEggs.printHint('numbers')
+EasterEggs.printHint()
 
 
 document.addEventListener('keyup', function (event) {
@@ -116,16 +121,21 @@ document.querySelector("#item-7").addEventListener('click', function () {
     if (!this.innerHTML){
         this.innerHTML = '<p id="clicks-7" class="no-select">0</p>';
         clicks_7 = 0;
-        // I keep a variable because otherwise the program would read from dom and be hackable with inspect
     }
     clicks_7++;
-    if (clicks_7 == 100){
+    if (clicks_7 == 10){
         EasterEggs.earn('click')
+        this.children[0].classList.add('green')
+        this.style.cursor = 'initial'
+        this.removeEventListener('click', arguments.callee)
+        // above from https://stackoverflow.com/a/13076344 :)
     }
     document.querySelector("#clicks-7").innerText = clicks_7.toString().padStart(3, '0');
 });
 
-document.querySelector('#item-8').onmouseenter = function (){this.innerHTML = `<p>${'\xa0'.repeat(20)}<span id='is-visible'>pekaboo :)</span>${'\xa0'.repeat(20)}</p`}
+document.querySelector('#item-8').onmouseenter = function (){this.innerHTML = `<p class="no-select">${'\xa0'.repeat(20)}<span id="is-touch">\xa0</span><span id="is-visible">pekaboo :)</span>${'\xa0'.repeat(20)}</p`;}
 document.querySelector('#item-8').onmouseleave = function (){this.innerHTML = ''}
 
-
+document.querySelector('#item-8').addEventListener('scrollend', function(e){
+    console.log(e);
+});

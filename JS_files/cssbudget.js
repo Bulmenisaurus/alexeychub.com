@@ -27,19 +27,19 @@ function cssanimation() {
     css_num = parseInt(document.querySelector('input').value);
     // the value of the slider. This is the maximum amount of rules allowed to execute
 
-    for (i=0; i < actions.length; i++) {
+    for (i = 0; i < actions.length; i++) {
         // i is now the index of the command
         action = actions[i];
-        
+
         elements = document.querySelectorAll(action[0])
-        for (x=0; x < elements.length; x++){
+        for (x = 0; x < elements.length; x++) {
             // x is now the index of all the elements affected by the current rule
             element = elements[x];
-            code = `style.${action[1]} = "${i<css_num ? action[2] : ''}"`
-            if (x == 0 && i<css_num) {
+            code = `style.${action[1]} = "${i < css_num ? action[2] : ''}"`
+            if (x == 0 && i < css_num) {
                 document.getElementsByTagName('code')[0].innerHTML = `<strong>document.querySelectorAll('${action[0]}')</strong> ` + code
             }
-            eval("element."+code);
+            eval("element." + code);
         }
     }
 }

@@ -1,16 +1,16 @@
 // Execute a function when the user releases a key on the keyboard
 
 var input = document.getElementById("command");
-input.addEventListener("keyup", function(event) {
+input.addEventListener("keyup", function (event) {
   if (event.keyCode === 13) { // enter key
 
     // All text already shown in terminal
-    var terminal_text = document.getElementById("terminal_alltext").innerHTML 
+    var terminal_text = document.getElementById("terminal_alltext").innerHTML
     // The inputted command
     var terminal_command = document.getElementById("command").value
 
     event.preventDefault(); //idk what this does
-    
+
     //outputs command
     document.getElementById("terminal_alltext").innerHTML += "<br><span class='user_text'>" + "»»» " + terminal_command + '</span>'
     if (terminal_state > 0) {
@@ -19,7 +19,7 @@ input.addEventListener("keyup", function(event) {
         Post('restarting...')
         terminal_state = 1
         setup_script()
-      } else if (terminal_state == 2){
+      } else if (terminal_state == 2) {
         if (document.getElementById('command').value[0] == 'e') {
           action = 'encode'
         } else {
@@ -29,7 +29,7 @@ input.addEventListener("keyup", function(event) {
         terminal_state = 2
       }
       if (terminal_state == 2) {
-        if (action) {Post("What message would you like to " + action + "?")};
+        if (action) { Post("What message would you like to " + action + "?") };
         action = 0
         document.getElementById("command").value = '';
         document.getElementById("command").placeholder = "<your message here>"
@@ -51,14 +51,14 @@ input.addEventListener("keyup", function(event) {
 });
 
 // Post message (no '>>>')
-function Post(message, wait=0) {
+function Post(message, wait = 0) {
   function dostuff() {
     document.getElementById("terminal_alltext").innerHTML += '<br>' + "<span class='bot_text'>" + message + '</span>'
-    var terminal_text = document.getElementById("terminal_alltext").innerHTML 
+    var terminal_text = document.getElementById("terminal_alltext").innerHTML
     var text_array_len = terminal_text.split('<br>').length + 1;
     while (text_array_len > 17) {
       Delete('first')
-      var terminal_text = document.getElementById("terminal_alltext").innerHTML 
+      var terminal_text = document.getElementById("terminal_alltext").innerHTML
       var text_array_len = terminal_text.split('<br>').length + 1;
     }
   }
@@ -69,10 +69,10 @@ function Post(message, wait=0) {
 
 
 
-function Edit(to_edit, wait=0) {
+function Edit(to_edit, wait = 0) {
 
   function dostuff() {
-    var text = document.getElementById("terminal_alltext").innerHTML 
+    var text = document.getElementById("terminal_alltext").innerHTML
     var text_array = text.split('<br>')                                 // list with each line seperated by <br>
     text_array.pop()                                                    // deletes last message
     to_edit = "<span class='bot_text'>" + to_edit + '</span>'           // formatting
@@ -89,21 +89,21 @@ function Edit(to_edit, wait=0) {
 
 
 // Deletes X message (default is 1)
-function Delete(how_many=1, wait=0) {
-  
+function Delete(how_many = 1, wait = 0) {
+
   function dostuff() {
-    var text = document.getElementById("terminal_alltext").innerHTML 
+    var text = document.getElementById("terminal_alltext").innerHTML
     var text_array = text.split('<br>')
-  
+
     if (Number.isInteger(how_many)) { // if inputted an integer, delete that many message
-    var count = 0
-    while (count < how_many) {
-      text_array.pop()
-      count++
-    }
-    } else if (how_many=="max") { // all messages
+      var count = 0
+      while (count < how_many) {
+        text_array.pop()
+        count++
+      }
+    } else if (how_many == "max") { // all messages
       text_array = ['']
-    } else if (how_many=='first') { //first message
+    } else if (how_many == 'first') { //first message
       text_array.shift()
     }
     var edited_text = text_array.join("<br>")
@@ -140,10 +140,10 @@ function terminal_init() {
   Post("⌟ᶆᶲᶱᶪᶵᶤᶷᶶᵤᵣᶜᶲᶸᵣᶩᶲᶸᶱᶧᵣᶤᶱᵣᶨᶤᶶᶷᶨᶵᵣᶨᶪᶪᵤᵣᵫᵴᵲᵴᵳᵬ", 1900)
   Post("Done! You will be able to write shortly!", 3500)
   Delete("max", 3700)
-  
+
   function unlock() {
-  document.getElementById("command").readOnly = false;
-  document.getElementById('terminal_alltext').innerHTML = "Welcome to Decrypt and Encrypt machine, or know more simply as DAE!"
+    document.getElementById("command").readOnly = false;
+    document.getElementById('terminal_alltext').innerHTML = "Welcome to Decrypt and Encrypt machine, or know more simply as DAE!"
   }
 
   setTimeout(unlock, 3800)
@@ -152,7 +152,7 @@ function terminal_init() {
 function setup_script() {
   terminal_state = 2
   Post('Would you like to decode or encode a message?')
-  document.getElementById("command").value = '' 
+  document.getElementById("command").value = ''
   document.getElementById("command").placeholder = "(encode/decode)"
 }
 
@@ -160,8 +160,8 @@ function encode(to_encode) {
   to_encode = to_encode.toString()
   var key = 'abcdefghijklmnopqrstuvwxyz'.split('')
   var newstr = ''
-  for (j = 0; j < to_encode.length; j++){
-    newstr += (key.includes(to_encode[j])) ? key[((key.indexOf(to_encode[j]))+j)%key.length] : to_encode[j]
+  for (j = 0; j < to_encode.length; j++) {
+    newstr += (key.includes(to_encode[j])) ? key[((key.indexOf(to_encode[j])) + j) % key.length] : to_encode[j]
   }
   return newstr
 }
@@ -172,9 +172,9 @@ function decode(to_decode) {
   var newstr = ''
   for (j = 0; j < to_decode.length; j++) {
     if (key.includes(to_decode[j])) {
-      decode_num = key.indexOf(to_decode[j])-j
+      decode_num = key.indexOf(to_decode[j]) - j
       if (decode_num < 0) {
-        decode_num = key.length - Math.abs(decode_num%26)
+        decode_num = key.length - Math.abs(decode_num % 26)
       }
       newstr += key[decode_num]
     } else {

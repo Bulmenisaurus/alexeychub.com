@@ -1,0 +1,9 @@
+#grid-main{
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 50% 50%; 
+}
+
+#image-container{
+    display: inline-block;
+}

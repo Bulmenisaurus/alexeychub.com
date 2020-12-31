@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Store</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="JS_files/store.js" defer></script>
+    <link rel="stylesheet" href="CSS_files/store.css">
+    <link rel="icon" type="image/png" href="images/c-pixilart.png">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178719317-1"></script>
+                <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'UA-178719317-1');
+                </script>
+</head>
+<body>
+    <div id="main">
+        <h1>My site</h1>
+        <div id="grid-main">
+            <div id="left">
+                <ol>
+                    <li>Choose Image</li>
+                    <div id="image-container">
+                            <img src="images/kitty.jpeg" alt="kitty image">
+                            <img src="images/kitty.jpeg" alt="kitty image">
+                            <img src="images/kitty.jpeg" alt="kitty image">
+                    </div>
+                    <li>Write message!</li>
+                    <textarea name="email-message" id="email-message" cols="40" rows="7"></textarea>
+                    <li>Email input #1</li>
+                    <input type="text" name="email-recieve" id="email-recieve">
+                    <li>Email input #2</li>
+                    <input type="text" name="email-recieve2" id="email-recieve2">
+                </ol>
+            </div>
+            <div id="right">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

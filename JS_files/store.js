@@ -1,6 +1,6 @@
-const formDataToQuery = (formData) => {
-    [...formData.entries()]
-        .map(x => `${encodeURIComponent(x[0])}=${encodeURIComponent(x[1])}`)
+const listToQuery = (formData) => {
+    return formData
+        .map(x => `${encodeURIComponent(x[0]) || 0}=${encodeURIComponent(x[1]) || '\'\''}`)
         .join('&');
 }
 
@@ -8,7 +8,14 @@ const formDataToQuery = (formData) => {
 function generateFormLink() {
     const form = document.getElementById('card-form');
     let formData = new FormData(form);
-    formData = formDataToQuery(formData);
+    formData = listToQuery([...formData.entries()]);
 
-    console.log(formData);
+    let url = 'https://alexeychub.com/storeresult?' + formData
+    return url
+
+}
+
+function updateLink() {
+    url = generateFormLink()
+    document.getElementById('link-preview').innerText = url
 }

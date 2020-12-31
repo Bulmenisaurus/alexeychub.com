@@ -29,17 +29,17 @@
 <body>
     <h1>My site</h1>
     <div id="main">
-        <form onchange="generateFormLink()" action="/storeresult" id="card-form">
+        <form onkeydown="updateLink()" onchange="updateLink()" action="/storeresult" id="card-form">
             <ol>
                 <li>
                     Choose Image:
                     <br>
                     <div id="image-container">
-                        <input type="radio" name="image-choose" id="radio-1" value="1">
+                        <input type="radio" name="h" value="1" checked>
                         <img src="https://alexeychub.com/images/kitty.jpeg" alt="kitty image">
-                        <input type="radio" name="image-choose" id="radio-2" value="2">
+                        <input type="radio" name="h" value="2">
                         <img src="https://alexeychub.com/images/kitty.jpeg" alt="kitty image">
-                        <input type="radio" name="image-choose" id="radio-3" value="3">
+                        <input type="radio" name="h" value="3">
                         <img src="https://alexeychub.com/images/kitty.jpeg" alt="kitty image">
                     </div>
                 </li>
@@ -47,10 +47,10 @@
                 <li>
                     Write message!
                     <br>
-                    <textarea name="message" id="message" cols="40" rows="7"></textarea>
+                    <textarea name="t" id="text" cols="40" rows="7"></textarea>
                 </li>
             </ol>
-            <p id="link-preview">{no link generated yet}</p>
+            <p id="link-preview">https://alexeychub.com/storeresult?h=0?t=''</p>
             <input type="submit" value="Preview">
         </form>
     </div>

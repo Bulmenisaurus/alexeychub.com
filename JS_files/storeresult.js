@@ -7,7 +7,7 @@ const text = urlParams.get('t') || '';
 const imageUrl = `https://alexeychub.com/images/store_${hearts}.jpeg`;
 
 let image = document.getElementById('image').appendChild(document.createElement('img')) // = `<img src="${imageUrl}" alt="image_${hearts}">`;
-image.src = imageUrl
+image.src = 'images/kitten' // imageUrl
 image.alt = 'A fox and a bear sitting together.'
 
 document.getElementById('text').innerHTML = text;

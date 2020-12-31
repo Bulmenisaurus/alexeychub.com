@@ -18,31 +18,37 @@
                 gtag('js', new Date());
 
                 gtag('config', 'UA-178719317-1');
-                </script>
+        </script>
+    <!-- Anti-hack measures -->
+    <!--
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; child-src 'none'; object-src 'none';  font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com/; img-src https://alexeychub.com https://www.google-analytics.com; script-src-elem https:; script-src https://www.google-analytics.com; base-uri 'none'; connect-src https:; form-action 'none'">
+    -->
 </head>
 <body>
+    <h1>My site</h1>
     <div id="main">
-        <h1>My site</h1>
-        <div id="grid-main">
-            <div id="left">
-                <ol>
-                    <li>Choose Image</li>
-                    <div id="image-container">
-                            <img src="images/kitty.jpeg" alt="kitty image">
-                            <img src="images/kitty.jpeg" alt="kitty image">
-                            <img src="images/kitty.jpeg" alt="kitty image">
-                    </div>
-                    <li>Write message!</li>
-                    <textarea name="email-message" id="email-message" cols="40" rows="7"></textarea>
-                    <li>Email input #1</li>
-                    <input type="text" name="email-recieve" id="email-recieve">
-                    <li>Email input #2</li>
-                    <input type="text" name="email-recieve2" id="email-recieve2">
-                </ol>
-            </div>
-            <div id="right">
-            </div>
-        </div>
+        <form action="/storeresult.html">
+        <ol>
+            <li>
+                Choose Image:
+                <br>
+                <div id="image-container">
+                        <input type="radio" name="image-choose" id="">
+                        <img src="https://alexeychub.com/images/kitty.jpeg" alt="kitty image">
+                        <input type="radio" name="image-choose" id="">
+                        <img src="https://alexeychub.com/images/kitty.jpeg" alt="kitty image">
+                        <input type="radio" name="image-choose" id="">
+                        <img src="https://alexeychub.com/images/kitty.jpeg" alt="kitty image">
+                </div>
+            </li>
+
+            <li>
+                Write message!
+                <br>
+                <textarea name="email-message" id="email-message" cols="40" rows="7"></textarea>
+            </li>
+        </ol>
+        </form>
     </div>
 </body>
 </html>

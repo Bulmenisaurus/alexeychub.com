@@ -1,9 +1,22 @@
+*{
+    margin: 0;
+}
+
+#main{
+    margin: 20px auto;
+    width: 90%;
+}
+
 #grid-main{
     display: grid;
     padding: 10px;
     grid-template-columns: 50% 50%; 
 }
 
-#image-container{
-    display: inline-block;
+#image-container input{
+    vertical-align: top;
+}
+
+#image-container img{
+    margin-right: 5px;
 }

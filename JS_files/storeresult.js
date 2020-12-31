@@ -6,6 +6,9 @@ const text = urlParams.get('t') || '';
 
 const imageUrl = `https://alexeychub.com/images/store_${hearts}.jpeg`;
 
-document.getElementById('image').innerHTML = `<img src=""${imageUrl} alt="image_${hearts}">`;
+let image = document.getElementById('image').appendChild(document.createElement('img')) // = `<img src="${imageUrl}" alt="image_${hearts}">`;
+image.src = imageUrl
+image.alt = 'A fox and a bear sitting together.'
+
 document.getElementById('text').innerHTML = text;
 

@@ -15,8 +15,49 @@
 
 #image-container input{
     vertical-align: top;
+    margin-right: 5px;
 }
 
 #image-container img{
-    margin-right: 5px;
+    margin-right: 20px;
+    /*
+    height: calc(1vw * 15);
+    width: calc(1.618vw * 15);
+    */
+}
+
+#image-container{
+    display: inline-block;
+}
+
+.group{
+    display: inline;
+    white-space: nowrap;
+}
+
+li{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.step{
+    margin: 10px 2px;
+}
+
+.step, ::marker{
+    font-size: 18px;
+}
+
+#link-preview{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 7px;
+    word-break: break-all;
+}
+
+#copy-link{
+    display: inline;
+}
+
+#preview{
+    margin: 15px 0;
+    margin-top: 7px;
 }

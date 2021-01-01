@@ -26,32 +26,43 @@
     -->
 </head>
 
-<body>
-    <h1>My site</h1>
+<body onload="updateLink()">
+    <h1></h1>
     <div id="main">
         <form onkeydown="updateLink()" onchange="updateLink()" action="/storeresult" id="card-form">
             <ol>
                 <li>
-                    Choose Image:
-                    <br>
+                    <p class="step">Choose Image:</p>
                     <div id="image-container">
-                        <input type="radio" name="h" value="1" checked>
-                        <img src="https://alexeychub.com/images/kitty.jpeg" alt="kitty image">
-                        <input type="radio" name="h" value="2">
-                        <img src="https://alexeychub.com/images/kitty.jpeg" alt="kitty image">
-                        <input type="radio" name="h" value="3">
-                        <img src="https://alexeychub.com/images/kitty.jpeg" alt="kitty image">
+                        <!-- Using golden ratio for images -->
+                        <!-- 1.618 -->
+                        <div class="group">
+                            <input type="radio" name="h" value="1" checked>
+                            <img src="images/kitty.jpeg" alt="kitty image" height="185" width="300">
+                        </div>
+                        <div class="group">
+                            <input type="radio" name="h" value="2">
+                            <img src="images/kitty.jpeg" alt="kitty image" height="185" width="300">
+                        </div>
+                        <div class="group">
+                            <input type="radio" name="h" value="3">
+                            <img src="images/kitty.jpeg" alt="kitty image" height="185" width="300">
+                        </div>
                     </div>
                 </li>
 
                 <li>
-                    Write message!
-                    <br>
+                    <p class="step">Write message</p>
                     <textarea name="t" id="text" cols="40" rows="7"></textarea>
+                    <p id="preview">Preview the card <a href="" id="preview-hyperlink">here</a>.</p>
+                </li>
+
+                <li>
+                    <p class="step">All finished! Copy the text below and send it to your friends or family!</p>
+                    <p id="link-preview">https://alexeychub.com/storeresult?h=1&t=''</p>
+                    <input type="button" value="Copy" id="copy-link">
                 </li>
             </ol>
-            <p id="link-preview">https://alexeychub.com/storeresult?h=0?t=''</p>
-            <input type="submit" value="Preview">
         </form>
     </div>
 </body>

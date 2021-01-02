@@ -37,6 +37,7 @@ h1 {
 
 #image-container img {
     margin-right: 20px;
+    margin-bottom: 10px;
     /*
     height: calc(1vw * 15);
     width: calc(1.618vw * 15);

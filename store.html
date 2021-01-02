@@ -32,29 +32,30 @@
         <form onkeydown="updateLink()" onchange="updateLink()" action="/storeresult" id="card-form">
             <ol>
                 <li>
-                    <p class="step">Choose Image:</p>
+                    <p class="step">Choose the Image:</p>
                     <div id="image-container">
                         <!-- Using golden ratio for images -->
                         <!-- 1.618 -->
                         <div class="group">
                             <input type="radio" name="h" value="1" checked>
-                            <img src="images/kitty.jpeg" alt="kitty image" height="185" width="300">
+                            <label for="h"><img src="images/placeholder_kitty.jpeg" alt="kitty image" height="185"
+                                    width="300"></label>
                         </div>
                         <div class="group">
                             <input type="radio" name="h" value="2">
-                            <img src="images/kitty.jpeg" alt="kitty image" height="185" width="300">
+                            <img src="images/placeholder_kitty.jpeg" alt="kitty image" height="185" width="300">
                         </div>
                         <div class="group">
                             <input type="radio" name="h" value="3">
-                            <img src="images/kitty.jpeg" alt="kitty image" height="185" width="300">
+                            <img src="images/placeholder_kitty.jpeg" alt="kitty image" height="185" width="300">
                         </div>
                     </div>
                 </li>
 
                 <li>
-                    <p class="step">Write message</p>
-                    <textarea name="t" id="text" cols="40" rows="7"></textarea>
-                    <p id="preview">Preview the card <a href="" id="preview-hyperlink">here</a>.</p>
+                    <p class="step"><label for="t">Write a message to your recipient: </label></p>
+                    <textarea name="t" id="text" cols="40" rows="7" maxlength="150"></textarea>
+                    <p id="preview"><a href="" id="preview-hyperlink">Preview</a> the card here.</p>
                 </li>
 
                 <li>

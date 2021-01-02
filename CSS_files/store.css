@@ -74,3 +74,8 @@ li {
     margin: 15px 0;
     margin-top: 7px;
 }
+
+#copy-link-input {
+    position: absolute;
+    right: 10000px;
+}

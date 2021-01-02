@@ -19,4 +19,15 @@ function updateLink() {
     url = generateFormLink()
     document.getElementById('preview-hyperlink').href = url
     document.getElementById('link-preview').innerText = url
+    document.querySelector("#copy-link-input").value = url
+}
+
+function copyLink() {
+    copyInput = document.querySelector("#copy-link-input")
+
+    /* Select the text field */
+    copyInput.select();
+    copyInput.setSelectionRange(0, 200); /* For mobile devices */
+
+    document.execCommand('copy')
 }

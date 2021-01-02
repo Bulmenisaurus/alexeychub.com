@@ -12,7 +12,7 @@ body {
     /* da envelope / page */
     width: 75%;
     margin: auto;
-    background: white;
+    background: #ececec;
     padding: 5px;
     border-radius: 5px;
     -webkit-box-shadow: 0px 0px 17px 6px rgba(0, 0, 0, 0.30);

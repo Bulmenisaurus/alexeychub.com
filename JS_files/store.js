@@ -4,7 +4,6 @@ const listToQuery = (formData) => {
         .join('&');
 };
 
-
 function generateFormLink() {
     const form = document.getElementById('card-form');
     let formData = new FormData(form);
@@ -17,8 +16,7 @@ function generateFormLink() {
 
 function updateLink() {
     url = generateFormLink()
-    console.log(url)
-    document.getElementById('preview-hyperlink').href = url;
+    if (document.getElementById('modal-preview').style.display != 'block') document.getElementById('preview-iframe').src = url;
     document.getElementById('link-preview').innerText = url;
     document.querySelector("#copy-link-input").value = url;
 };
@@ -33,6 +31,10 @@ function copyLink() {
     document.execCommand('copy');
 };
 
-document.querySelector('#copy-link').addEventListener('click', function () {
-    document.querySelectorAll('.tooltip')[0].style.visibility = 'visi'
-})
+const modal = document.querySelector('#modal-preview')
+const modalClose = document.querySelector('#close-preview')
+const modalTrigger = document.querySelector('#open-preview')
+
+modalTrigger.onclick = function () { modal.style.display = 'block' }
+modalClose.onclick = function () { modal.style.display = 'none'; console.log('click clock the modal\'s done') }
+document.onclick = function (e) { if (e.target == modal) { modal.style.display = 'none' } }

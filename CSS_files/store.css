@@ -69,7 +69,7 @@ li {
 
 #link-preview {
     font-family: 'Inconsolata', 'Courier New', Courier, monospace;
-    background: #eee;
+    background-color: #eee;
     border-radius: 3px;
     padding: 5px;
     margin: 7px 0;
@@ -81,18 +81,13 @@ li {
     word-break: break-word;
 }
 
-#copy-link {
+input[type="button"] {
     display: block;
     padding: 10px;
-    background: #1a73e8;
+    background-color: #1a73e8;
     color: white;
     border-radius: 3px;
     border: none;
-}
-
-#preview {
-    margin: 15px 0;
-    margin-top: 7px;
 }
 
 #copy-link-input {
@@ -100,39 +95,45 @@ li {
     right: 10000px;
 }
 
-/* The following css has been compltely yoinked 8)*/
-
-.tooltip {
-    position: relative;
-    display: inline-block;
-}
-
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
+.modal {
+    display: none;
+    position: fixed;
     z-index: 1;
-    top: 150%;
-    left: 50%;
-    margin-left: -60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-.tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent black transparent;
+/* The Close Button */
+
+.close {
+    color: #cecece;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    z-index: 2;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    right: 20px;
 }
 
-.tooltip:hover .tooltiptext {
-    visibility: visible;
+iframe {
+    height: 200px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+#text {
+    padding: 10px;
+    font-family: 'Inconsolata', 'Courier New', Courier, monospace;
+    padding-top: 5px;
 }

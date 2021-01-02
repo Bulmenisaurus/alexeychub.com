@@ -11,5 +11,5 @@ image.src = imageUrl; // imageUrl
 image.alt = 'A fox and a bear sitting together.';
 image.height = 185 * 2; image.width = 300 * 2;
 
-document.getElementById('text').innerHTML = text.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace('\n', '<br>');
+document.getElementById('text').innerHTML = text.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g, '<br>');
 

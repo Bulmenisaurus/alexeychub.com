@@ -74,8 +74,9 @@
 
                 <li>
                     <p class="step"><label for="t">Write a message to your recipient: </label></p>
-                    <textarea name="t" id="text" cols="40" rows="7" maxlength="150"></textarea>
-                    <p id="preview"><a href="" id="preview-hyperlink">Preview</a> the card here.</p>
+                    <textarea name="t" id="text" cols="40" rows="7"
+                        maxlength="150">yo waddup happy valentine bruv 😎😜</textarea>
+                    <input type="button" value="Preview!" id="open-preview">
                 </li>
 
                 <li>
@@ -85,13 +86,14 @@
                     <!-- because JS can only copy text from inputs, and not span elements. What a terrible mess -->
                     <input type="text" id="copy-link-input">
                     <br>
-                    <div class="tooltip">
-                        <input type="button" value="Copy" id="copy-link" onclick="copyLink()">
-                        <span class="tooltiptext">Copied!</span>
-                    </div>
+                    <input type="button" value="Copy" id="copy-link" onclick="copyLink()">
                 </li>
             </ol>
         </form>
+        <div class="modal" id="modal-preview">
+            <span class="close" id="close-preview">&times;</span>
+            <iframe src="" frameborder="0" id="preview-iframe"></iframe>
+        </div>
     </div>
 </body>
 

@@ -48,13 +48,22 @@ li{
 }
 
 #link-preview{
-    font-family: 'Courier New', Courier, monospace;
-    margin: 7px;
+    font-family: 'Inconsolata', 'Courier New', Courier, monospace;
+    background: #eee;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 7px 0;
+    display: inline-block;
     word-break: break-all;
 }
 
 #copy-link{
-    display: inline;
+    display: block;
+    padding: 10px;
+    background: #1a73e8;
+    color: white;
+    border-radius: 3px;
+    border: none;
 }
 
 #preview{

@@ -4,6 +4,8 @@
 
 body{
     background: rgb(82, 86, 89);
+    padding: 10px;
+    word-break: break-all;
 }
 
 #main{ /* da envelope / page */

@@ -17,6 +17,7 @@ function generateFormLink() {
 
 function updateLink() {
     url = generateFormLink()
+    console.log(url)
     document.getElementById('preview-hyperlink').href = url;
     document.getElementById('link-preview').innerText = url;
     document.querySelector("#copy-link-input").value = url;

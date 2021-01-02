@@ -1,43 +1,40 @@
-*{
+* {
     margin: 0;
 }
 
-body{
+body {
     background: rgb(82, 86, 89);
     padding: 10px;
     word-break: break-all;
 }
 
-#main{ /* da envelope / page */
+#main {
+    /* da envelope / page */
     width: 75%;
     margin: auto;
     background: white;
     padding: 5px;
-
-
-
     border-radius: 5px;
-    -webkit-box-shadow: 0px 0px 17px 6px rgba(0,0,0,0.30);
-    -moz-box-shadow: 0px 0px 17px 6px rgba(0,0,0,0.30);
-    box-shadow: 0px 0px 17px 6px rgba(0,0,0,0.30);
-
+    -webkit-box-shadow: 0px 0px 17px 6px rgba(0, 0, 0, 0.30);
+    -moz-box-shadow: 0px 0px 17px 6px rgba(0, 0, 0, 0.30);
+    box-shadow: 0px 0px 17px 6px rgba(0, 0, 0, 0.30);
 }
 
-img{
+img {
     border-radius: 4px;
 }
 
-#text, #image{
+#text, #image {
     width: 75%;
     margin: 30px auto;
     text-align: center;
     font-family: 'Redressed', cursive;
 }
 
-#text{
+#text {
     font-size: 25px;
 }
 
-#image{
+#image {
     overflow-x: auto
 }

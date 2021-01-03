@@ -35,7 +35,7 @@ h1 {
     margin-right: 5px;
 }
 
-#image-container img {
+#image-container img, #choose-image {
     margin-right: 20px;
     margin-bottom: 10px;
     /*
@@ -44,13 +44,10 @@ h1 {
     */
 }
 
-#image-container {
-    display: inline-block;
-}
-
 .group {
-    display: inline;
+    display: inline-block;
     white-space: nowrap;
+    overflow: auto;
 }
 
 li {
@@ -78,7 +75,6 @@ li {
     overflow-wrap: break-word;
     word-wrap: break-word;
     -ms-word-break: break-all;
-    word-break: break-word;
 }
 
 input[type="button"] {
@@ -152,4 +148,17 @@ iframe {
 #chars-left {
     color: #3a3a3a;
     font-size: 13px;
+}
+
+.image-on-text {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

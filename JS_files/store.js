@@ -50,3 +50,26 @@ updateLen();
 
 document.querySelector("#text").addEventListener('keyup', updateLen);
 document.querySelector("#text").addEventListener('keydown', updateLen);
+
+document.getElementById('choose-image').addEventListener('click', function () {
+    let imageUrl = prompt('Enter your image url here:', 'https://');
+    if (checkImage(imageUrl)) {
+        document.querySelector("#image-container > div:nth-child(2) > div > div").remove() // removes the 
+        document.querySelector("#choose-image img").src = imageUrl
+    }
+
+
+});
+
+function checkImage(url) {
+    var image = new Image();
+    image.onload = function () {
+        if (this.width > 0) {
+            return true;
+        }
+    }
+    image.onerror = function () {
+        return false;
+    }
+    image.src = url;
+}

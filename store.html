@@ -43,13 +43,15 @@
                             <input type="radio" name="h" value="1" checked>
                             <img src="images/store_1.jpg" height="185" width="300">
                         </div>
+                        <!--
                         <div class="group">
-                            <input type="radio" name="h" value="custom">
-                            <div class="image-on-text">
+                            <input type="radio" name="h" disabled value="https://alexeychub.com/images/store_1">
+                            <div class="image-on-text" id="choose-image">
                                 <img src="images/bg.png" alt="background">
                                 <div class="center">Click to upload image!</div>
                             </div>
                         </div>
+                    -->
                         <div class="group">
                             <input type="radio" name="h" value="2">
                             <img src="images/store_2.jpg" height="185" width="300">
@@ -86,7 +88,7 @@
                     <p id="link-preview">https://alexeychub.com/storeresult?h=1&t=</p>
                     <!-- If you're wondering wtf is going on here, I'm creating and invisible <input> -->
                     <!-- because JS can only copy text from inputs, and not span elements. What a terrible mess -->
-                    <input type="text" id="copy-link-input">
+                    <input type="text" id="copy-link-input" aria-hidden="true">
                     <br>
                     <input type="button" value="Copy" id="copy-link" onclick="copyLink()" class="blue">
                 </li>

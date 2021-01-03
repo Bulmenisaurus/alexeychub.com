@@ -73,10 +73,11 @@
                 </li>
 
                 <li>
-                    <p class="step"><label for="t">Write a message to your recipient: </label></p>
+                    <p class="step"><label for="t">Write a message to your recipient: <span
+                                id="chars-left"></span></label></p>
                     <textarea name="t" id="text" cols="40" rows="7"
                         maxlength="150">yo waddup happy valentine bruv 😎😜</textarea>
-                    <input type="button" value="Preview!" id="open-preview">
+                    <input type="button" value="Preview!" id="open-preview" class="grey">
                 </li>
 
                 <li>
@@ -86,7 +87,7 @@
                     <!-- because JS can only copy text from inputs, and not span elements. What a terrible mess -->
                     <input type="text" id="copy-link-input">
                     <br>
-                    <input type="button" value="Copy" id="copy-link" onclick="copyLink()">
+                    <input type="button" value="Copy" id="copy-link" onclick="copyLink()" class="blue">
                 </li>
             </ol>
         </form>

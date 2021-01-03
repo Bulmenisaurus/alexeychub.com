@@ -88,6 +88,17 @@ input[type="button"] {
     color: white;
     border-radius: 3px;
     border: none;
+    width: 71.31415629px;
+}
+
+input.blue {
+    background-color: #1a73e8;
+    color: white;
+}
+
+input.grey {
+    background-color: #d3d3d3;
+    color: black;
 }
 
 #copy-link-input {
@@ -136,4 +147,9 @@ iframe {
     padding: 10px;
     font-family: 'Inconsolata', 'Courier New', Courier, monospace;
     padding-top: 5px;
+}
+
+#chars-left {
+    color: #3a3a3a;
+    font-size: 13px;
 }

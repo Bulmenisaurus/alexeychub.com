@@ -8,13 +8,6 @@
         "ecmaVersion": 2019
     },
     "rules": {
-        "brace-style": [
-            "warning",
-            "1tbs",
-            {
-                "allowSingleLine": true
-            }
-        ],
         "comma-dangle": [
             "error",
             "always-multiline"

@@ -9,7 +9,11 @@
     },
     "rules": {
         "brace-style": [
+<<<<<<< HEAD
             "warning",
+=======
+            "error",
+>>>>>>> 37f669f37512876e793701b9d0cd5da125cf0592
             "1tbs",
             {
                 "allowSingleLine": true

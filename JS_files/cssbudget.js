@@ -12,7 +12,7 @@ const actions = [
     ['h1', 'fontSize', '5vw'],
     ['h1', 'marginBottom', '0'],
     ['code', 'borderRadius', '3px'],
-]
+];
 document.querySelector('input').max = actions.length;
 
 function cssanimation() {
@@ -20,26 +20,27 @@ function cssanimation() {
     document.querySelectorAll('p').style.fontFamily = "arial, sans-serif"
 
     above requires a for-loop anyway :( becomes this ->
-    
+
     ['p', 'fontFamily', 'arial, sans-serif']
     */
 
-    css_num = parseInt(document.querySelector('input').value);
+    const cssActiveRules = parseInt(document.querySelector('input').value);
     // the value of the slider. This is the maximum amount of rules allowed to execute
 
-    for (i = 0; i < actions.length; i++) {
-        // i is now the index of the command
-        action = actions[i];
 
-        elements = document.querySelectorAll(action[0])
-        for (x = 0; x < elements.length; x++) {
-            // x is now the index of all the elements affected by the current rule
-            element = elements[x];
-            code = `style.${action[1]} = "${i < css_num ? action[2] : ''}"`
-            if (x == 0 && i < css_num) {
-                document.getElementsByTagName('code')[0].innerHTML = `<strong>document.querySelectorAll('${action[0]}')</strong> ` + code
+    for (const [styleNum, style] of actions.entries()) {
+
+        // since we only care if the cssrule is active, the for-loop can be ignored once the rule threshold is reached
+        if (styleNum < cssActiveRules) break;
+
+        const elementsAffected = document.querySelectorAll(style[0]);
+        for (const [x, element] of elementsAffected.entries()) {
+
+            if (!x) {
+                document.getElementsByTagName('code')[0].innerHTML = `<strong>document.querySelectorAll('${style[0]}')</strong> style.${style[1]} = ${style[2]}`;
             }
-            eval("element." + code);
+
+            element.style[style[1]] = style[2];
         }
     }
 }

@@ -9,7 +9,7 @@
     },
     "rules": {
         "brace-style": [
-            "error",
+            "warning",
             "1tbs",
             {
                 "allowSingleLine": true

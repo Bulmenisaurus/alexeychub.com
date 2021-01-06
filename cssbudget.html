@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>CSS slider</title>
     <meta charset="UTF-8">
@@ -10,33 +11,38 @@
     <link rel="icon" type="image/png" href="images/c-pixilart.png">
     <link rel="stylesheet" href="https://alexeychub.com/CSS_files/cssbudget.css">
     <!-- Anti-hack measures -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; child-src 'none'; object-src 'none';  font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com/; img-src https://alexeychub.com https://www.google-analytics.com; script-src-elem https:; script-src https://www.google-analytics.com; base-uri 'none'; connect-src https:; form-action 'none'">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; child-src 'none'; object-src 'none';  font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com/; img-src https://alexeychub.com https://www.google-analytics.com; script-src-elem 'unsafe-inline' https:; script-src https://www.google-analytics.com; base-uri 'none'; connect-src https:; form-action 'none'">
 </head>
+
 <body>
     <style>
-    *{
-        transition: all 1.5s;
-    }
-    .text_container{
-    width:75%;
-    margin: 30px auto;
-}
+        * {
+            transition: all 1.5s;
+        }
 
-    #slider_container{
-        text-align: center;
-    }
+        .text_container {
+            width: 75%;
+            margin: 30px auto;
+        }
+
+        #slider_container {
+            text-align: center;
+        }
     </style>
     <h1>CSS slider</h1>
     <article class="text_container">
-    <p>
-        This is an idea I had a bit ago. But since I'm no good at <strong>JavaScript</strong><sup><s>the bane of my existence</s></sup>,
-        this took way too long to code. Anyway, here it is, the magical program:
-    </p>
-    <div id="slider_container"><input type="range" min="0" value="0"></div>
-    <p id="last-rule">Last rule executed: <code>{no rules changed yet! Use the slider ;)}</code></p>
-    <p>
-        Just slide the slider 'round! You will see some things change!
-    </p>
+        <p>
+            This is an idea I had a bit ago. But since I'm no good at <strong>JavaScript</strong><sup><s>the bane of my
+                    existence</s></sup>,
+            this took way too long to code. Anyway, here it is, the magical program:
+        </p>
+        <div id="slider_container"><input type="range" min="0" value="0"></div>
+        <p id="last-rule">Last rule executed: <code>{no rules changed yet! Use the slider ;)}</code></p>
+        <p>
+            Just slide the slider 'round! You will see some things change!
+        </p>
     </article>
 </body>
+
 </html>

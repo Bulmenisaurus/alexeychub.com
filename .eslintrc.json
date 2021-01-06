@@ -33,7 +33,7 @@
         "handle-callback-err": "off",
         "indent": [
             "error",
-            "tab"
+            4
         ],
         "max-nested-callbacks": [
             "error",

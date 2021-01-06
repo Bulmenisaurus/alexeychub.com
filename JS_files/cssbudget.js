@@ -31,7 +31,9 @@ function cssanimation() {
     for (const [styleNum, style] of actions.entries()) {
 
         // since we only care if the cssrule is active, the for-loop can be ignored once the rule threshold is reached
-        if (styleNum < cssActiveRules) break;
+        if (styleNum < cssActiveRules) {
+            break;
+        }
 
         const elementsAffected = document.querySelectorAll(style[0]);
         for (const [x, element] of elementsAffected.entries()) {

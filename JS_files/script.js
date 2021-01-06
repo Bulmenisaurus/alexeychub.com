@@ -38,7 +38,7 @@ secret_button.onclick = function() {
 };
 
 resize_grid();
-window.onresize = (resize_grid);
+window.onresize = resize_grid;
 
 
 console.log('%cHey! Stop peeking down here! Easter eggs are too easy....\nid: peekaboo', `

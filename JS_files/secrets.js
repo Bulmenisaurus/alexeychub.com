@@ -56,6 +56,7 @@ terminal.init();
 
 // Easter eggs
 class EasterEggs {
+
     static EGGS = { numbers: false, click: false, wait: false };
     static SENTHINTS = []
 

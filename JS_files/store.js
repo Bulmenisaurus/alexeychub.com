@@ -15,7 +15,7 @@ function generateFormLink() {
 };
 
 function updateLink() {
-    let url = generateFormLink()
+    let url = generateFormLink();
     if (document.getElementById('modal-preview').style.display != 'block') document.getElementById('preview-iframe').src = url;
     document.getElementById('link-preview').innerText = url;
     document.querySelector("#copy-link-input").value = url;
@@ -51,17 +51,21 @@ updateLen();
 document.querySelector("#text").addEventListener('keyup', updateLen);
 document.querySelector("#text").addEventListener('keydown', updateLen);
 
-document.getElementById('choose-image').addEventListener('click', function () {
+document.getElementById('choose-image').addEventListener('click', function chooseImage() {
     let imageUrl = prompt('Enter your image url here:', 'https://');
     if (checkImage(imageUrl)) {
         document.querySelector("#image-container > div:nth-child(2) > div > div").remove() // removes the 
         document.querySelector("#choose-image img").src = imageUrl
+    } else {
+        alert('')
     }
 
 
 });
 
 function checkImage(url) {
+    return true;
+
     var image = new Image();
     image.onload = function () {
         if (this.width > 0) {

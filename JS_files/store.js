@@ -9,71 +9,77 @@ function generateFormLink() {
     let formData = new FormData(form);
     formData = listToQuery([...formData.entries()]);
 
-    let url = 'https://alexeychub.com/storeresult?' + formData;
+    const url = 'https://alexeychub.com/storeresult?' + formData;
     return url;
 
-};
+}
 
+// eslint-disable-next-line no-unused-vars
 function updateLink() {
-    let url = generateFormLink();
+    const url = generateFormLink();
     if (document.getElementById('modal-preview').style.display != 'block') document.getElementById('preview-iframe').src = url;
     document.getElementById('link-preview').innerText = url;
-    document.querySelector("#copy-link-input").value = url;
-};
+    document.querySelector('#copy-link-input').value = url;
+}
 
+// eslint-disable-next-line no-unused-vars
 function copyLink() {
-    let copyInput = document.querySelector("#copy-link-input")
+    const copyInput = document.querySelector('#copy-link-input');
 
     /* Select the text field */
     copyInput.select();
-    copyInput.setSelectionRange(0, 200); /* For mobile devices */
+    copyInput.setSelectionRange(0, 200);
 
     document.execCommand('copy');
-};
+}
 
 /* Modal section */
 const modal = document.querySelector('#modal-preview');
 const modalClose = document.querySelector('#close-preview');
 const modalTrigger = document.querySelector('#open-preview');
 
-modalTrigger.onclick = function() { modal.style.display = 'block' };
-modalClose.onclick = function() { modal.style.display = 'none'; console.log('click clock the modal\'s done') };
-document.onclick = function(e) { if (e.target == modal) { modal.style.display = 'none' } };
+modalTrigger.onclick = function() { modal.style.display = 'block'; };
+modalClose.onclick = function() {
+    modal.style.display = 'none';
+    console.log('click clock the modal\'s done');
+};
+document.onclick = function(e) {
+    if (e.target == modal) { modal.style.display = 'none'; }
+};
 /* end Modal */
 
 const updateLen = function() {
-    let length = document.querySelector("#text").value.length;
+    const length = document.querySelector('#text').value.length;
     document.querySelector('#chars-left').innerHTML = `(${length}/150)`;
 };
 
 updateLen();
 
-document.querySelector("#text").addEventListener('keyup', updateLen);
-document.querySelector("#text").addEventListener('keydown', updateLen);
+document.querySelector('#text').addEventListener('keyup', updateLen);
+document.querySelector('#text').addEventListener('keydown', updateLen);
 
 document.getElementById('choose-image').addEventListener('click', function chooseImage() {
-    let imageUrl = prompt('Enter your image url here:', 'https://');
+    const imageUrl = prompt('Enter your image url here:', 'https://');
     if (checkImage(imageUrl)) {
-        document.querySelector("#image-container > div:nth-child(2) > div > div").remove() // removes the 
-        document.querySelector("#choose-image img").src = imageUrl
+        document.querySelector('#image-container > div:nth-child(2) > div > div').remove(); // removes the
+        document.querySelector('#choose-image img').src = imageUrl;
     } else {
-        alert('')
+        alert('');
     }
 
 
 });
 
 function checkImage(url) {
-    return true;
-
-    var image = new Image();
+    const image = new Image();
+    if (url) return true;
     image.onload = function() {
         if (this.width > 0) {
             return true;
         }
-    }
+    };
     image.onerror = function() {
         return false;
-    }
+    };
     image.src = url;
 }

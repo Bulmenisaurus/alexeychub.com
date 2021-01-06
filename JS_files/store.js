@@ -36,12 +36,12 @@ const modal = document.querySelector('#modal-preview');
 const modalClose = document.querySelector('#close-preview');
 const modalTrigger = document.querySelector('#open-preview');
 
-modalTrigger.onclick = function () { modal.style.display = 'block' };
-modalClose.onclick = function () { modal.style.display = 'none'; console.log('click clock the modal\'s done') };
-document.onclick = function (e) { if (e.target == modal) { modal.style.display = 'none' } };
+modalTrigger.onclick = function() { modal.style.display = 'block' };
+modalClose.onclick = function() { modal.style.display = 'none'; console.log('click clock the modal\'s done') };
+document.onclick = function(e) { if (e.target == modal) { modal.style.display = 'none' } };
 /* end Modal */
 
-const updateLen = function () {
+const updateLen = function() {
     let length = document.querySelector("#text").value.length;
     document.querySelector('#chars-left').innerHTML = `(${length}/150)`;
 };
@@ -67,12 +67,12 @@ function checkImage(url) {
     return true;
 
     var image = new Image();
-    image.onload = function () {
+    image.onload = function() {
         if (this.width > 0) {
             return true;
         }
     }
-    image.onerror = function () {
+    image.onerror = function() {
         return false;
     }
     image.src = url;

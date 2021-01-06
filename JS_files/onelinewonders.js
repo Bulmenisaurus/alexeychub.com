@@ -11,7 +11,7 @@ function calcHtml(name, message) {
     const n = name.replace(/\\n/g, 'chr(10)');
     const m = message.replace(/\\n/g, 'chr(10)');
     return {
-        'b': `<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">f&quot;{\'Happy B-day ${n}!\'.capitalize()}\\n{chr(60)+(l_1 := \'------~~~~~~**\') + l_1[::-1]+chr(62)}\\n\\n{\'${m}\'}\\n\\n{chr(60)+l_1+l_1[::-1]+chr(62)}&quot;</span><span class="p">)</span>`,
+        'b': `<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">f&quot;{'Happy B-day ${n}!'.capitalize()}\\n{chr(60)+(l_1 := '------~~~~~~**') + l_1[::-1]+chr(62)}\\n\\n{'${m}'}\\n\\n{chr(60)+l_1+l_1[::-1]+chr(62)}&quot;</span><span class="p">)</span>`,
         'bp': `Happy b-day ${n}!<br>&lt;------~~~~~~****~~~~~~------&gt;<br><br>${m}<br><br>&lt;------~~~~~~****~~~~~~------&gt;`,
     };
 }

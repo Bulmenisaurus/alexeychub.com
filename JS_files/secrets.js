@@ -13,10 +13,10 @@ const getTime = () => {
 
 var showBorder = true;
 
-setTimeout(function () { document.querySelector("#item-4").innerHTML = "<p>Wow, you're patient! id: kinda_lazy</p>", EasterEggs.earn("wait") }, 6e4);
+setTimeout(function() { document.querySelector("#item-4").innerHTML = "<p>Wow, you're patient! id: kinda_lazy</p>", EasterEggs.earn("wait") }, 6e4);
 document.querySelector("#item-3").innerHTML = '<div id="loading-bar" style="height: 0%"></div>';
-document.querySelector('#item-8').onmouseenter = function () { this.innerHTML = `<p class="no-select">${'\xa0'.repeat(20)}<span id="is-touch">\xa0</span><span id="is-visible">pekaboo :)</span>${'\xa0'.repeat(20)}</p`; }
-document.querySelector('#item-8').onmouseleave = function () { this.innerHTML = '' }
+document.querySelector('#item-8').onmouseenter = function() { this.innerHTML = `<p class="no-select">${'\xa0'.repeat(20)}<span id="is-touch">\xa0</span><span id="is-visible">pekaboo :)</span>${'\xa0'.repeat(20)}</p`; }
+document.querySelector('#item-8').onmouseleave = function() { this.innerHTML = '' }
 
 
 // Learning about classes from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
@@ -31,7 +31,7 @@ class Terminal {
     init() {
         var that = this
         this.terminalElement.innerHTML = `<div id="history"></div><div id="line">${this.htmlPrompt}<input autocomplete="off" type="text" id="input"></div>`;
-        document.querySelector("#input").addEventListener('keydown', function (event) {
+        document.querySelector("#input").addEventListener('keydown', function(event) {
             if (event.key === 'Enter') { // submit value
                 this.value = this.value.replace(/\</g, "&lt;").replace(/\>/g, "&gt;"); // Wow! Much purify! Lots security!
                 that.addMessage(this.value, true);
@@ -93,7 +93,7 @@ class EasterEggs {
 EasterEggs.printHint()
 
 
-document.addEventListener('keyup', function (event) {
+document.addEventListener('keyup', function(event) {
     if (['`', '~'].includes(event.key)) { // toggle border on
         showBorder ^= true;
         let border_style = "1px solid " + (showBorder ? "white" : "black");
@@ -114,7 +114,7 @@ document.addEventListener('keyup', function (event) {
 });
 
 
-document.querySelector("#item-7").addEventListener('click', function () {
+document.querySelector("#item-7").addEventListener('click', function() {
     // https://codeburst.io/javascript-map-vs-foreach-f38111822c0f has saved my life <3
     let cursors = ['n', 'e', 's', 'w', 'ne', 'nw', 'se', 'sw', 'ew', 'ns', 'nesw', 'nwse'].map((i) => i + "-resize")
     this.style.cursor = cursors[Math.floor(Math.random() * cursors.length)];
@@ -133,9 +133,9 @@ document.querySelector("#item-7").addEventListener('click', function () {
     document.querySelector("#clicks-7").innerText = clicks_7.toString().padStart(3, '0');
 });
 
-document.querySelector('#item-8').onmouseenter = function () { this.innerHTML = `<p class="no-select">${'\xa0'.repeat(20)}<span id="is-touch">\xa0</span><span id="is-visible">pekaboo :)</span>${'\xa0'.repeat(20)}</p`; }
-document.querySelector('#item-8').onmouseleave = function () { this.innerHTML = '' }
+document.querySelector('#item-8').onmouseenter = function() { this.innerHTML = `<p class="no-select">${'\xa0'.repeat(20)}<span id="is-touch">\xa0</span><span id="is-visible">pekaboo :)</span>${'\xa0'.repeat(20)}</p`; }
+document.querySelector('#item-8').onmouseleave = function() { this.innerHTML = '' }
 
-document.querySelector('#item-8').addEventListener('scrollend', function (e) {
+document.querySelector('#item-8').addEventListener('scrollend', function(e) {
     console.log(e);
 });

@@ -30,7 +30,7 @@ var secret_text = document.getElementById('title_info')
 click_amt = -10
 has_consoled = false
 
-secret_button.onclick = function () {
+secret_button.onclick = function() {
   secret_text.innerHTML = (click_amt >= 0) ? 'Why did you click on this even more? id: thats_definetely_a_button' : 'Wow! Why did you even click on this? id: thats_a_button'
   click_amt++
   if (secret_text.innerHTML == 'Why did you click on this even more? id: thats_definetely_a_button' && !has_consoled) {

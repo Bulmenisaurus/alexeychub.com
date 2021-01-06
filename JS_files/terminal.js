@@ -1,7 +1,7 @@
 // Execute a function when the user releases a key on the keyboard
 
 var input = document.getElementById("command");
-input.addEventListener("keyup", function (event) {
+input.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) { // enter key
 
     // All text already shown in terminal

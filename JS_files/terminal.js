@@ -58,6 +58,7 @@ document.getElementById('input').addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
         // sometimes this eventListener is faster than the other one, sometimes slower.
         STATE = handleState(terminal, STATE, this.value || this.messageValue);
+        console.log(STATE);
     }
 });
 
@@ -69,7 +70,7 @@ function handleState(handleTerminal, state, inputValue) {
 
             if (inputValue.startsWith('e') || inputValue.startsWith('d')) {
 
-                handleTerminal.addMessage(`What would you like to ${inputValue.startsWith('e') ? 'encode' : 'decode'}`)
+                handleTerminal.addMessage(`What would you like to ${inputValue.startsWith('e') ? 'encode' : 'decode'}?`)
                     .setPlaceHolder('(message)');
                 return ['action', inputValue];
 
@@ -81,6 +82,12 @@ function handleState(handleTerminal, state, inputValue) {
             }
 
         case 'action':
-            alert(state);
+            handleTerminal.formattedMessage(rot13(inputValue), 'is the result')
+                .addMessage('')
+                .addMessage('Would you like to encode or decode?')
+                .setPlaceHolder('(e/d)');
+
+            return ['encode/decode'];
+
     }
 }

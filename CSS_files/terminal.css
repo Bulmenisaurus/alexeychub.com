@@ -24,6 +24,11 @@ body {
     color: #00dc80;
 }
 
+.terminal-focus {
+    font-weight: bold;
+    color: #00ade1;
+}
+
 #input {
     border: none;
     background: black;

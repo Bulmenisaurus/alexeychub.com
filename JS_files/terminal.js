@@ -1,5 +1,14 @@
 let STATE = ['encode/decode'];
 
+function rot13(str) {
+    const input = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    const output = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+    const index = x => input.indexOf(x);
+    const translate = x => index(x) > -1 ? output[index(x)] : x;
+    return str.split('').map(translate).join('');
+}
+
+
 class Terminal {
     constructor(querySelector = '#terminal', prompt = '>', startingText = 'Welcome to the terminal!') {
         this.prompt = prompt;
@@ -39,7 +48,7 @@ class Terminal {
     }
 }
 
-const terminal = new Terminal('#terminal', '>$]⚘⁕»'[Math.floor(6 * Math.random())], 'Welcome to the terminal, where all h4ck0rz regardless of ethnicity, age, and gender, are allowed.');
+const terminal = new Terminal('#terminal', '>$]⚘⁕»'[Math.floor(6 * Math.random())], 'Welcome to the terminal, where all h4ck0rz regardless of ethnicity, age, and gender, can use this magical machine');
 terminal.init()
     .addMessage('To start off, would you like to encode or decode?')
     .setPlaceHolder('(e/d)');

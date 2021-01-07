@@ -4,7 +4,7 @@ body {
 
 #terminal {
     font-family: Monaco, "Lucida Console", monospace;
-    width: 50%;
+    width: 75%;
     height: 320px;
     border: 1px solid rgb(212, 210, 210);
     border-radius: 5px;
@@ -38,3 +38,5 @@ body {
     color: white;
     font-family: Monaco, "Lucida Console", monospace;
 }
+
+#line

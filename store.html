@@ -41,6 +41,11 @@
 </head>
 
 <body onload="updateLink()">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0&appId=410278500222320&autoLogAppEvents=1"
+        nonce="ANkqPbI5"></script>
+
     <h1>Make cards for your friends and family! (for free)</h1>
     <div id="main">
         <form onkeydown="updateLink()" onchange="updateLink()" action="/storeresult" id="card-form">
@@ -133,6 +138,8 @@
             <iframe src="" frameborder="0" id="preview-iframe"></iframe>
         </div>
     </div>
+    <div class="fb-like" data-href="https://www.facebook.com/Free-love-letters-and-pictures-103414208384146"
+        data-width="400" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
 </body>
 
 </html>

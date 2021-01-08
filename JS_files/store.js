@@ -96,6 +96,7 @@ for (const radioButton of radios) {
             5: 'I fly to you',
             6: 'We are dandelions (if that\'s ok with you)',
             7: 'Meow',
+            8: 'I am not complete without you!',
 
         }[imageValue] + ' ❤️';
     });

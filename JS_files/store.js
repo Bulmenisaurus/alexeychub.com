@@ -20,19 +20,6 @@ function updateLink() {
     if (document.getElementById('modal-preview').style.display != 'block') document.getElementById('preview-iframe').src = url;
     document.getElementById('link-preview').innerText = url;
     document.querySelector('#copy-link-input').value = url;
-
-
-    const imageValue = document.querySelector('input[name="h"]:checked').value;
-    document.querySelector('#text').value = {
-        1: 'You are a fox',
-        2: 'You are as delicate as a butterfly',
-        3: 'You have a tail and I do too <3 <3 <3',
-        4: 'You are my chicken and I am your rooster',
-        5: 'I fly to you',
-        6: 'We are dandelions (if that\'s ok with you)',
-        7: 'Meow',
-
-    }[imageValue] + ' ❤️';
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -70,7 +57,7 @@ updateLen();
 
 document.querySelector('#text').addEventListener('keyup', updateLen);
 document.querySelector('#text').addEventListener('keydown', updateLen);
-
+/*
 document.getElementById('choose-image').addEventListener('click', function chooseImage() {
     const imageUrl = prompt('Enter your image url here:', 'https://');
     if (checkImage(imageUrl)) {
@@ -95,4 +82,21 @@ function checkImage(url) {
         return false;
     };
     image.src = url;
+}
+*/
+const radios = document.querySelectorAll('input[name="h"]');
+for (const radioButton of radios) {
+    radioButton.addEventListener('click', function() {
+        const imageValue = document.querySelector('input[name="h"]:checked').value;
+        document.querySelector('#text').value = {
+            1: 'You are a fox',
+            2: 'You are as delicate as a butterfly',
+            3: 'You have a tail and I do too <3 <3 <3',
+            4: 'You are my chicken and I am your rooster',
+            5: 'I fly to you',
+            6: 'We are dandelions (if that\'s ok with you)',
+            7: 'Meow',
+
+        }[imageValue] + ' ❤️';
+    });
 }

@@ -61,8 +61,11 @@
                             <label>
                                 <!-- Labels mean that people can click the images to trigger the radiobutton! -->
                                 <input type="radio" name="h" value="1" checked>
-                                <img src="https://alexeychub.com/images/store_1.jpg" height="185" width="300"
-                                    alt="A painting of a fox and a bear">
+                                <div id="winner-group" title="Submit your own image @siakina2021 on facebook!">
+                                    <img src="https://alexeychub.com/images/store_1.jpg" height="185" width="300"
+                                        alt="A painting of a fox and a bear">
+                                    <span id="winner">1st place winner!</span>
+                                </div>
                             </label>
                         </div>
                         <!--
@@ -146,7 +149,7 @@
         </form>
     </main>
     <div class="modal" id="modal-preview" aria-modal="true" aria-hidden="true">
-        <span class="close" id="close-preview">&times;</span>
+        <span class="close" id="close-preview" aria-label="close">&times;</span>
         <iframe src="https://alexeychub.com/storeresult?hide=true" frameborder="0" id="preview-iframe"></iframe>
     </div>
 

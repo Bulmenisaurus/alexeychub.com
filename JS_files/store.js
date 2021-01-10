@@ -19,7 +19,8 @@ function updateLink() {
     let url = generateFormLink();
     const hideLinkUrl = new URL(url);
     // Maybe I should just do url + '&hide=true'....
-    url = hideLinkUrl.searchParams.set('hide', 'true');
+    hideLinkUrl.searchParams.set('hide', 'true');
+    url = hideLinkUrl.toString();
 
     if (document.getElementById('modal-preview').style.display != 'block') document.getElementById('preview-iframe').src = url;
     document.getElementById('link-preview').innerText = url;

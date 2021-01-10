@@ -162,3 +162,16 @@ iframe {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+footer {
+    width: 90%;
+    margin: 10px auto;
+}
+
+footer * {
+    display: inline-block;
+}
+
+var {
+    font-style: normal;
+}

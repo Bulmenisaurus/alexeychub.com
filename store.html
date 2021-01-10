@@ -40,13 +40,15 @@
     -->
 </head>
 
-<body onload="updateLink()">
+<body>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0&appId=410278500222320&autoLogAppEvents=1"
         nonce="ANkqPbI5"></script>
 
-    <h1>Make cards for your friends and family! (for free)</h1>
+    <header>
+        <h1>Make cards for your friends and family! (for free)</h1>
+    </header>
     <div id="main">
         <form onkeydown="updateLink()" onchange="updateLink()" action="/storeresult" id="card-form">
             <ol>
@@ -124,7 +126,7 @@
 
                 <li>
                     <p class="step">All finished! Copy the text below and send it to your friends or family!</p>
-                    <p id="link-preview">https://alexeychub.com/storeresult?h=1&t=</p>
+                    <var id="link-preview">https://alexeychub.com/storeresult?h=1&t=</var>
                     <!-- If you're wondering wtf is going on here, I'm creating and invisible <input> -->
                     <!-- because JS can only copy text from inputs, and not span elements. What a terrible mess -->
                     <input type="text" id="copy-link-input" aria-hidden="true">
@@ -138,8 +140,18 @@
             <iframe src="" frameborder="0" id="preview-iframe"></iframe>
         </div>
     </div>
-    <div class="fb-like" data-href="https://www.facebook.com/Free-love-letters-and-pictures-103414208384146"
-        data-width="400" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
+    <footer>
+        <form action="https://www.paypal.com/donate" method="post" target="_top" style="vertical-align: middle">
+            <input type="hidden" name="business" value="JN7G57MHGTW58" />
+            <input type="hidden" name="currency_code" value="USD" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0"
+                name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+        <div class="fb-like" data-href="https://www.facebook.com/Free-love-letters-and-pictures-103414208384146"
+            data-width="400" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
+        <br>
+    </footer>
 </body>
 
 </html>

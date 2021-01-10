@@ -54,6 +54,7 @@ const updateLen = function() {
 };
 
 updateLen();
+updateLink();
 
 document.querySelector('#text').addEventListener('keyup', updateLen);
 document.querySelector('#text').addEventListener('keydown', updateLen);

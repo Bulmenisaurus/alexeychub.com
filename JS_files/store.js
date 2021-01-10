@@ -113,3 +113,8 @@ for (const radioButton of radios) {
         }[imageValue] + ' ❤️';
     });
 }
+
+const form = document.getElementById('card-form');
+form.onkeydown = form.onchange = updateLink;
+
+document.getElementById('copy-link').onclick = copyLink;

@@ -1,46 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>One line wonders</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Inconsolata&family=Roboto&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Inconsolata&family=Roboto&display=swap"
+        rel="stylesheet">
+
     <!-- My assets: -->
     <link rel="icon" type="image/png" href="https://alexeychub.com/images/c-pixilart.png">
     <link rel="stylesheet" type="text/css" href="CSS_files/code.css">
     <link rel="stylesheet" type="text/css" href="CSS_files/onelinewonders.css">
     <script src="JS_files/onelinewonders.js" defer></script>
-    
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178719317-1"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'UA-178719317-1');
+        gtag('config', 'UA-178719317-1');
     </script>
     <!-- Anti-hack measures -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; child-src 'none'; object-src 'none';  font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com/; img-src https://alexeychub.com https://www.google-analytics.com; script-src-elem https:; script-src https://www.google-analytics.com; base-uri 'none'; connect-src https:; form-action 'none'">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; child-src 'none'; object-src 'none';  font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com/; img-src https://alexeychub.com https://www.google-analytics.com; script-src-elem https:; script-src https://www.google-analytics.com; base-uri 'none'; connect-src https:; form-action 'none'">
 </head>
+
 <body>
-    <header><h1 id="main-title">One line wonders</h1></header>
-    
-    <div class='text-container'>
+    <header>
+        <h1 id="main-title">One line wonders</h1>
+    </header>
+
+    <div class="text-container">
         <p>
-            This, in my opinion, is a pretty useful website. 
+            This, in my opinion, is a pretty useful website.
             You can generate birthday, valentine, and other types of wonderful cards and messages, all in
             one line of JavaScript! code!
         </p>
-        <div class="highlight"><pre class="oneline"><span></span><span class="nb">console.log</span><span class="p">(</span><span class="s2">&quot;Let&#39;s get started!&quot;</span><span class="p">)</span></pre></div>    
-    
+        <div class="highlight">
+            <pre
+                class="oneline"><span></span><span class="nb">console.log</span><span class="p">(</span><span class="s2">&quot;Let&#39;s get started!&quot;</span><span class="p">)</span></pre>
+        </div>
+
         <h2>A basic birthday card:</h2>
         <p>
-        A classic b-day card! You can't go wrong with this, so give it a try! Remember - \n will create a new line, but dont type any other back-slashes, as that could break the code!
+            A classic b-day card! You can't go wrong with this, so give it a try! Remember - \n will create a new line,
+            but dont type any other back-slashes, as that could break the code!
         </p>
-        
+
         <table>
             <tbody>
                 <tr>
@@ -53,15 +63,17 @@
                 </tr>
             </tbody>
         </table>
-        <!-- <label for="bday-recipient">Recipient: </label><input name="bday-recepient" type="text" id="bday-recipient"><br> -->   
+        <!-- <label for="bday-recipient">Recipient: </label><input name="bday-recepient" type="text" id="bday-recipient"><br> -->
         <!-- <label for="bday-message">Message: </label><input name="bday-message" type="text" id="bday-message"><br> -->
         <div class="highlight">
             <input type="button" value="Copy!" class="copy" id="copy-b">
-            <pre class="oneline" id="bday-result"><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">f&quot;{'Happy B-day {your name here}!'.capitalize()}\n{chr(60)+(l_1 := '------~~~~~~**') + l_1[::-1]+chr(62)}\n\n{'{your message here}'}\n\n{chr(60)+l_1+l_1[::-1]+chr(62)}&quot;</span><span class="p">)</span></pre>
+            <pre class="oneline"
+                id="bday-result"><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">f&quot;{'Happy B-day {your name here}!'.capitalize()}\n{chr(60)+(l_1 := '------~~~~~~**') + l_1[::-1]+chr(62)}\n\n{'{your message here}'}\n\n{chr(60)+l_1+l_1[::-1]+chr(62)}&quot;</span><span class="p">)</span></pre>
         </div>
         <h3>Preview:</h3>
         <div id="highlight">
-            <pre id="bday-preview">Happy b-day {your name here}!<br><br>&lt;------~~~~~~****~~~~~~------&gt;<br><br>{your message here}<br>&lt;------~~~~~~****~~~~~~------&gt;</pre>
+            <pre
+                id="bday-preview">Happy b-day {your name here}!<br><br>&lt;------~~~~~~****~~~~~~------&gt;<br><br>{your message here}<br>&lt;------~~~~~~****~~~~~~------&gt;</pre>
         </div>
         <br>
         <h2>The Ultimate valentines card:</h2>
@@ -85,9 +97,11 @@
         </table>
         <div class="highlight">
             <input type="button" value="Copy!" class="copy" id="copy-v">
-            <pre class="oneline" id="valentine"><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">f&quot;</span><span class="se">\n\n</span><span class="si">{</span><span class="p">(</span><span class="n">message</span> <span class="o">:=</span> <span class="s1">f&#39; Happy Valetine</span><span class="si">{</span><span class="nb">chr</span><span class="p">(</span><span class="mi">39</span><span class="p">)</span><span class="si">}</span><span class="s1">s day, <span id="valentine_name">{your name here}</span>!&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="p">(</span><span class="n">line</span> <span class="o">:=</span> <span class="p">(</span><span class="n">hrt</span> <span class="o">:=</span> <span class="s1">&#39;💕&#39;</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;—&#39;</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="o">+</span><span class="n">hrt</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2"><span id="valentine_message">{your message here}</span></span><span class="se">\n\n</span><span class="si">{line}</span><span class="se">\n</span><span class="s2">— </span><span class="se">\033</span><span class="s2">[1m<span id="valentine_from">{from who is it?}</span></span><span class="se">\033</span><span class="s2">[0m, with love</span><span class="se">&quot;</span><span class="s2">)</span></pre>
+            <pre class="oneline"
+                id="valentine"><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">f&quot;</span><span class="se">\n\n</span><span class="si">{</span><span class="p">(</span><span class="n">message</span> <span class="o">:=</span> <span class="s1">f&#39; Happy Valetine</span><span class="si">{</span><span class="nb">chr</span><span class="p">(</span><span class="mi">39</span><span class="p">)</span><span class="si">}</span><span class="s1">s day, <span id="valentine_name">{your name here}</span>!&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="p">(</span><span class="n">line</span> <span class="o">:=</span> <span class="p">(</span><span class="n">hrt</span> <span class="o">:=</span> <span class="s1">&#39;💕&#39;</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;—&#39;</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="o">+</span><span class="n">hrt</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2"><span id="valentine_message">{your message here}</span></span><span class="se">\n\n</span><span class="si">{line}</span><span class="se">\n</span><span class="s2">— </span><span class="se">\033</span><span class="s2">[1m<span id="valentine_from">{from who is it?}</span></span><span class="se">\033</span><span class="s2">[0m, with love</span><span class="se">&quot;</span><span class="s2">)</span></pre>
         </div>
     </div>
 
 </body>
+
 </html>

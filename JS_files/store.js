@@ -16,7 +16,11 @@ function generateFormLink() {
 
 // eslint-disable-next-line no-unused-vars
 function updateLink() {
-    const url = generateFormLink();
+    let url = generateFormLink();
+    const hideLinkUrl = new URL(url);
+    // Maybe I should just do url + '&hide=true'....
+    url = hideLinkUrl.searchParams.set('hide', 'true');
+
     if (document.getElementById('modal-preview').style.display != 'block') document.getElementById('preview-iframe').src = url;
     document.getElementById('link-preview').innerText = url;
     document.querySelector('#copy-link-input').value = url;

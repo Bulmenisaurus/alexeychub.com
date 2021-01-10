@@ -175,3 +175,7 @@ footer * {
 var {
     font-style: normal;
 }
+
+.v-align {
+    vertical-align: middle;
+}

@@ -34,10 +34,8 @@
 
         gtag('config', 'UA-178719317-1');
     </script>
-    <!-- Anti-hack measures -->
-    <!--
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; child-src 'none'; object-src 'none';  font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com/; img-src https://alexeychub.com https://www.google-analytics.com; script-src-elem https:; script-src https://www.google-analytics.com; base-uri 'none'; connect-src https:; form-action 'none'">
-    -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; child-src 'none'; object-src 'none';  font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com/; img-src https://alexeychub.com https://www.google-analytics.com https://www.facebook.com https://www.paypalobjects.com https://www.paypal.com; script-src-elem https:; script-src https://www.google-analytics.com; base-uri 'none'; connect-src https:; form-action https://alexeychub.com; frame-src https://alexeychub.com https://www.facebook.com">
 </head>
 
 <body>
@@ -61,7 +59,7 @@
                             <label>
                                 <!-- Labels mean that people can click the images to trigger the radiobutton! -->
                                 <input type="radio" name="h" value="1" checked>
-                                <img src="images/store_1.jpg" height="185" width="300"
+                                <img src="https://alexeychub.com/images/store_1.jpg" height="185" width="300"
                                     alt="A painting of a fox and a bear">
                             </label>
                         </div>
@@ -77,46 +75,50 @@
                         <div class="group">
                             <label>
                                 <input type="radio" name="h" value="2">
-                                <img src="images/store_2.jpg" height="185" width="300"
+                                <img src="https://alexeychub.com/images/store_2.jpg" height="185" width="300"
                                     alt="A butterfly perched on a leaf">
                             </label>
                         </div>
                         <div class="group">
                             <label>
                                 <input type="radio" name="h" value="3">
-                                <img src="images/store_3.jpg" height="185" width="300" alt="Two lemurs hanging out">
+                                <img src="https://alexeychub.com/images/store_3.jpg" height="185" width="300"
+                                    alt="Two lemurs hanging out">
                             </label>
                         </div>
                         <div class="group">
                             <label>
                                 <input type="radio" name="h" value="4">
-                                <img src="images/store_4.jpg" height="185" width="300" alt="A rooster and a white hen">
+                                <img src="https://alexeychub.com/images/store_4.jpg" height="185" width="300"
+                                    alt="A rooster and a white hen">
                             </label>
                         </div>
                         <div class="group">
                             <label>
                                 <input type="radio" name="h" value="5">
-                                <img src="images/store_5.jpg" height="185" width="300" alt="A seagull in midair">
+                                <img src="https://alexeychub.com/images/store_5.jpg" height="185" width="300"
+                                    alt="A seagull in midair">
                             </label>
                         </div>
                         <div class="group">
                             <label>
                                 <input type="radio" name="h" value="6">
-                                <img src="images/store_6.jpg" height="185" width="300"
+                                <img src="https://alexeychub.com/images/store_6.jpg" height="185" width="300"
                                     alt="A silhouette of 2 dandylions">
                             </label>
                         </div>
                         <div class="group">
                             <label>
                                 <input type="radio" name="h" value="7">
-                                <img src="images/store_7.jpg" height="185" width="300"
+                                <img src="https://alexeychub.com/images/store_7.jpg" height="185" width="300"
                                     alt="A painting of a happy cat with flowers">
                             </label>
                         </div>
                         <div class="group">
                             <label>
                                 <input type="radio" name="h" value="8">
-                                <img src="images/store_8.jpg" height="185" width="300" alt="A snowman cut in half">
+                                <img src="https://alexeychub.com/images/store_8.jpg" height="185" width="300"
+                                    alt="A snowman cut in half">
                             </label>
                         </div>
                     </div>
@@ -147,7 +149,7 @@
     </div>
 
     <footer>
-        <form action="https://www.paypal.com/donate" method="post" target="_top" style="vertical-align: middle">
+        <form action="https://www.paypal.com/donate" method="post" target="_top" class="v-align">
             <input type="hidden" name="business" value="JN7G57MHGTW58" />
             <input type="hidden" name="currency_code" value="USD" />
             <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0"

@@ -43,9 +43,14 @@ const modal = document.querySelector('#modal-preview');
 const modalClose = document.querySelector('#close-preview');
 const modalTrigger = document.querySelector('#open-preview');
 
-modalTrigger.onclick = function() { modal.style.display = 'block'; };
+modalTrigger.onclick = function() {
+    modal.style.display = 'block';
+    modal.setAttribute('aria-hidden', 'false');
+};
+
 modalClose.onclick = function() {
     modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
     console.log('click clock the modal\'s done');
 };
 document.onclick = function(e) {

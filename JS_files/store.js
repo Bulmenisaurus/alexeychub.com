@@ -55,6 +55,7 @@ const updateLen = function() {
 
 updateLen();
 updateLink();
+modal.style.display = 'none';
 
 document.querySelector('#text').addEventListener('keyup', updateLen);
 document.querySelector('#text').addEventListener('keydown', updateLen);

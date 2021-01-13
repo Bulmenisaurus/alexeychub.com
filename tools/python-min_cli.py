@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 # from https://cssminifier.com/python
+# quick run:
+# for file in CSS_files/*; do python tools/python-min_cli.py "$file"; done 
 
 import sys
 import requests

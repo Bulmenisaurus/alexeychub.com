@@ -1,8 +1,14 @@
+/* global gtag */
 // &h=3&t=hallo&hide=true
 
 const urlParams = new URLSearchParams(window.location.search);
 const imageId = urlParams.get('h') || '1';
-const text = decodeURIComponent(urlParams.get('t')) || '';
+let text = decodeURIComponent(urlParams.get('t'));
+
+// decodeUriComponent converts null to "null" for some reason
+if (text === 'null') {
+    text = 'Happy valentines day!';
+}
 const hideLink = decodeURIComponent(urlParams.get('hide')) || 'false';
 
 const imageUrl = `https://alexeychub.com/images/store_${imageId}.jpg`;

@@ -33,7 +33,7 @@ class Terminal {
     }
 
     addMessage(message, withPrompt = false) {
-        document.querySelector('#history').innerHTML += (withPrompt ? this.htmlPrompt : '') + message + '<br>';
+        document.querySelector('#history').innerText += (withPrompt ? this.htmlPrompt : '') + message + '<br>';
         return this;
     }
 

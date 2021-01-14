@@ -1,8 +1,16 @@
 # -*- coding: utf-8 -*-
 # from https://cssminifier.com/python
-# quick run:
-# for file in CSS_files/*; do python tools/python-min_cli.py "$file"; done
+"""
+Minify all css files:
+=====================
 
+for file in CSS_files/*; do python tools/python-min_cli.py "$file"; done
+
+Delete all minified files:
+==========================
+
+rm CSS_files/*'.min'*
+"""
 import sys
 import requests
 
@@ -26,7 +34,7 @@ print("Requesting mini-me of {}. . .".format(c.name))
 r = requests.post(url, payload)
 
 # Write out minified version
-minified = (css_file.removesuffix('.css')+'.min.css')
+minified = (css_file.split('.')[0]+'.min.css')
 with open(minified, 'w') as m:
     m.write(r.text)
 

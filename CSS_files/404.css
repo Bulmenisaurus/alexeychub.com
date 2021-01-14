@@ -1,35 +1,29 @@
-*{
-    margin:0px;
-    padding:0px;
+* {
+    margin: 0px;
+    padding: 0px;
 }
 
-body{ 
+body {
     background-color: #2B2B2B;
-
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: #DCDDDE;
     text-align: center;
-
     margin: 7%;
 }
 
 h1 {
-    font-size:100px;
+    font-size: 100px;
     margin: 10px;
 }
 
-#gem {
-    font-size:120%;
+#_1 {
+    color: #EE7832;
 }
 
-#_1 { /* 4 */
-    color:#EE7832;
+#_2 {
+    color: #6897BB;
 }
 
-#_2 { /* 0 */
-    color:#6897BB;
-}
-
-#_3 { /* 4 */
+#_3 {
     color: #9876AA;
 }

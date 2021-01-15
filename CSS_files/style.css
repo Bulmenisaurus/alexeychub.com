@@ -9,33 +9,39 @@ body {
 
 /*  CLASSES AND MAIN ELEMENTSSS */
 
-#main_title {
+#main-title {
     /*text-shadow: 0px 1px 10px #000000;*/
     font-family: "Quicksand", "Lucida Console", Monaco, monospace;
-    font-size: 30px;
-    letter-spacing: .2em;
+    font-size: 60px;
+    letter-spacing: 4px;
     font-weight: 100;
     text-align: center;
     margin-top: 20px;
     padding: 0px;
 }
 
-#main_title h1 {
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 10vw !important;
+    }
+}
+
+#main-title {
     margin: 0;
 }
 
-#title_info p {
+#title-info p {
     margin: 0;
 }
 
-#title_info {
+#title-info {
     color: rgb(15, 177, 50);
     font-family: "Lucida Console", Monaco, monospace;
     text-align: center;
     font-size: 1em;
 }
 
-.text_container {
+.text-container {
     margin: 15px;
     width: 75%;
     color: #C1CBD6;
@@ -59,7 +65,7 @@ footer a {
 .grid-container.columns-2 {
     display: grid;
     padding: 10px;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
 .grid-item {

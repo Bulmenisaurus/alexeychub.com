@@ -11,18 +11,6 @@ setInterval(() => {
     changeColor('t4');
 }, 5000);
 
-
-function resize_grid() {
-    const grid = document.getElementsByClassName('grid-container')[0];
-
-    if (window.innerWidth < window.innerHeight) {
-        grid[0].style.display = 'block';
-
-    } else if (grid[0].style.display) {
-        grid[0].style.display = 'grid';
-    }
-}
-
 const secret_button = document.getElementById('t3');
 const secret_text = document.getElementById('title_info');
 let click_amt = -10;
@@ -36,9 +24,6 @@ secret_button.onclick = function() {
         has_consoled = true;
     }
 };
-
-resize_grid();
-window.onresize = resize_grid;
 
 
 console.log('%cHey! Stop peeking down here! Easter eggs are too easy....\nid: peekaboo', `

@@ -6,3 +6,7 @@
 #slider_container {
     text-align: center;
 }
+
+#main-slider {
+    width: 200px;
+}

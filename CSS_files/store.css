@@ -93,6 +93,7 @@ input[type="button"] {
     border-radius: 3px;
     border: none;
     width: 71.31415629px;
+    font-size: 13.3px;
 }
 
 input.blue {

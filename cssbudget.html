@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://alexeychub.com/JS_files/cssbudget.js" defer></script>
+    <script src="JS_files/cssbudget.js" defer></script>
 
     <link rel="icon" type="image/png" href="https://alexeychub.com/images/c-pixilart.png">
-    <link rel="stylesheet" href="https://alexeychub.com/CSS_files/cssbudget.min.css">
+    <link rel="stylesheet" href="CSS_files/cssbudget.min.css">
     <!-- Anti-hack measures -->
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'none'; child-src 'none'; object-src 'none';  font-src 'self' https://fonts.gstatic.com; style-src 'unsafe-inline' 'self' https://fonts.googleapis.com/; img-src https://alexeychub.com https://www.google-analytics.com; script-src-elem 'unsafe-inline' https:; script-src https://www.google-analytics.com; base-uri 'none'; connect-src https:; form-action 'none'">
@@ -37,8 +37,9 @@
                     existence</s></sup>,
             this took way too long to code. Anyway, here it is, the magical program:
         </p>
-        <div id="slider_container"><input type="range" min="0" value="0"></div>
-        <p id="last-rule">Last rule executed: <code>{no rules changed yet! Use the slider ;)}</code></p>
+        <div id="slider_container"><input type="range" min="0" value="0" id="main-slider"></div>
+        <p id="last-rule"><span id="label">Last rule
+                executed: </span><code>{no rules changed yet! Use the slider ;)}</code></p>
         <p>
             Just slide the slider 'round! You will see some things change!
         </p>

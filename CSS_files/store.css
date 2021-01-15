@@ -27,12 +27,6 @@ main {
     border-radius: 5px;
 }
 
-#grid-main {
-    display: grid;
-    padding: 10px;
-    grid-template-columns: 50% 50%;
-}
-
 #image-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
@@ -159,19 +153,6 @@ iframe {
     font-size: 13px;
 }
 
-.image-on-text {
-    position: relative;
-    text-align: center;
-    display: inline-block;
-}
-
-.center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 footer {
     width: 90%;
     margin: 10px auto;
@@ -179,10 +160,6 @@ footer {
 
 footer * {
     display: inline-block;
-}
-
-var {
-    font-style: normal;
 }
 
 .v-align {

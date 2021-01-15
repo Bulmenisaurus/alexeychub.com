@@ -2,50 +2,47 @@
     margin: 0;
 }
 
-body{
+body {
     background-color: white;
 }
 
-#main-title{
+#main-title {
     font-family: 'Baloo Bhai 2', Arial, Helvetica, sans-serif;
     font-size: max(6vw, 50px);
-
     text-align: center;
     font-weight: bold;
-    margin-top: 20px;  
+    margin-top: 20px;
 }
 
-.text-container{
-    margin:15px;
-    width:75%;
-
+.text-container {
+    margin: 15px;
+    width: 75%;
     font-family: 'Roboto', Helvetica, sans-serif;
     line-height: 1.5;
     margin: 40px auto;
     margin-top: 5px;
 }
 
-.copy{
+.copy {
     float: right;
     height: 42px;
     margin-left: 10px;
 }
 
-input{
+input {
     border: 1px solid black;
     padding: 6px 6px;
 }
 
-
-h2{
+h2 {
     margin: 30px 0px;
     font-size: 20px;
 }
 
-p, h3{
+p, h3 {
     margin: 20px 0;
 }
 
-table{
+table {
     margin: 10px 0;
 }

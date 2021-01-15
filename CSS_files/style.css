@@ -2,51 +2,48 @@
     font-weight: normal;
 }
 
-body{
-    background-color:#2B2B2B;
+body {
+    background-color: #2B2B2B;
     margin-top: 1px;
 }
 
 /*  CLASSES AND MAIN ELEMENTSSS */
-#main_title{
-    /*text-shadow: 0px 1px 10px #000000;*/
-    
-    font-family: "Quicksand", "Lucida Console", Monaco, monospace;
-    font-size:30px;
-    letter-spacing: .2em;
-    font-weight:100;
 
-    text-align:center;
-    margin-top:20px;
-    padding:0px;  
+#main_title {
+    /*text-shadow: 0px 1px 10px #000000;*/
+    font-family: "Quicksand", "Lucida Console", Monaco, monospace;
+    font-size: 30px;
+    letter-spacing: .2em;
+    font-weight: 100;
+    text-align: center;
+    margin-top: 20px;
+    padding: 0px;
 }
 
 #main_title h1 {
-    margin:0;
+    margin: 0;
 }
 
 #title_info p {
-    margin:0;
+    margin: 0;
 }
 
 #title_info {
-    color:rgb(15, 177, 50);
-    font-family:"Lucida Console", Monaco, monospace;
-    
-    text-align:center;
+    color: rgb(15, 177, 50);
+    font-family: "Lucida Console", Monaco, monospace;
+    text-align: center;
     font-size: 1em;
 }
 
 .text_container {
-    margin:15px;
-    width:75%;
-
-    color:#C1CBD6;
+    margin: 15px;
+    width: 75%;
+    color: #C1CBD6;
     font-family: Roboto, Helvetica, sans-serif;
-    line-height:1.6;
-    letter-spacing:.5px;
-    font-weight:400;
-    font-size:14px;
+    line-height: 1.6;
+    letter-spacing: .5px;
+    font-weight: 400;
+    font-size: 14px;
 }
 
 footer a {
@@ -62,26 +59,27 @@ footer a {
 .grid-container.columns-2 {
     display: grid;
     padding: 10px;
-    grid-template-columns: 50% 50%; 
+    grid-template-columns: 50% 50%;
 }
-  
+
 .grid-item {
-    background-color:#2B2B2B;
+    background-color: #2B2B2B;
     border: 3px solid #181818;
-    box-shadow: 0px 0px 41px -13px rgba(255,255,255,0.21);
-    
+    box-shadow: 0px 0px 41px -13px rgba(255, 255, 255, 0.21);
     padding: 20px;
     padding-top: 0;
-    margin:10px;
-    border-radius:24px;
+    margin: 10px;
+    border-radius: 24px;
 }
 
 /* SMALL CHANGES & SINGLE ELEMENTS*/
+
 ::selection {
     background: #14A35B;
 }
+
 a {
-    color:#CC00FF;
+    color: #CC00FF;
 }
 
 q {
@@ -90,7 +88,7 @@ q {
 
 hr {
     /* All those boxes n' stuff are a bit complicated for seperating*/
-    border-color:#181818;
+    border-color: #181818;
 }
 
 footer img {
@@ -103,22 +101,25 @@ h2 {
 }
 
 #t1 {
-    color:#CC7832;
+    color: #CC7832;
     transition: color 5s;
 }
 
-#t2 { /* Chub */
-    color:#EE7832;
+#t2 {
+    /* Chub */
+    color: #EE7832;
     transition: color 5s;
 }
 
-#t3 { /* . */
-    color:#6897BB;
+#t3 {
+    /* . */
+    color: #6897BB;
     transition: color 5s;
     cursor: cell;
 }
 
-#t4{ /* com */
+#t4 {
+    /* com */
     color: #9876AA;
     transition: color 5s;
 }
@@ -130,33 +131,35 @@ h2 {
     padding: 10px;
     border-radius: 4px;
     transition-duration: 0.4s;
-    user-select: none; /* supported by Chrome and Opera */
-   -webkit-user-select: none; /* Safari */
-   -khtml-user-select: none; /* Konqueror HTML */
-   -moz-user-select: none; /* Firefox */
-   -ms-user-select: none; /* Internet Explorer/Edge */
-
+    user-select: none;
+    /* supported by Chrome and Opera */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
 }
 
 #easter-egg:hover {
     background-color: #347736;
 }
 
-.hidden{
+.hidden {
     transition: all 1.5s;
     opacity: 0;
 }
 
-.hidden:hover{
+.hidden:hover {
     opacity: 1;
 }
 
-#invis{
+#invis {
     font-size: 5px;
     color: black;
 }
-
-
 
 /* 
 background = #2B2B2B

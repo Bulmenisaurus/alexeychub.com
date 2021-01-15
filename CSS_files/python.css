@@ -3,35 +3,36 @@ table, th, td {
     border-collapse: collapse;
 }
 
-table{
-    margin:100px auto;
+table {
+    margin: 100px auto;
     width: 75%;
 }
 
-td.link{
+td.link {
     width: 35%;
 }
-td.date{
+
+td.date {
     width: 20%;
 }
-td.name{
+
+td.name {
     width: 15%;
 }
 
-td.challenges{
+td.challenges {
     width: 30%;
 }
 
-thead{
+thead {
     text-align: center;
     font-weight: bold;
 }
 
-thead td{
-    padding-top:10px;
+thead td {
+    padding-top: 10px;
 }
 
-td{
+td {
     padding: 6px 7px;
 }
-

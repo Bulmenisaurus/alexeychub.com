@@ -82,11 +82,9 @@ li {
 input[type="button"] {
     display: block;
     padding: 10px;
-    background-color: #1a73e8;
-    color: white;
     border-radius: 3px;
     border: none;
-    width: 71.31415629px;
+    width: 71px;
     font-size: 13.3px;
 }
 

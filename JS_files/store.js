@@ -14,7 +14,6 @@ function generateFormLink() {
 
 }
 
-// eslint-disable-next-line no-unused-vars
 function updateLink() {
     const url = generateFormLink();
     const hideLinkUrl = new URL(url);
@@ -27,7 +26,6 @@ function updateLink() {
     document.querySelector('#copy-link-input').value = url;
 }
 
-// eslint-disable-next-line no-unused-vars
 function copyLink() {
     const copyInput = document.querySelector('#copy-link-input');
 

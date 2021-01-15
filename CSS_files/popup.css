@@ -66,14 +66,14 @@ body {
 
 /* The Close Button */
 
-.close {
+#close {
   color: white;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
 
-.close:hover, .close:focus {
+#close:hover, #close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -91,9 +91,8 @@ body {
   padding: 7px 16px;
 }
 
-h2 {
-  margin: 0;
-  padding: 0;
+.modal-content h2 {
+  margin: 8px;
 }
 
 .modal-body {
@@ -101,10 +100,10 @@ h2 {
 }
 
 .modal-footer {
-  padding: 2px 16px;
+  padding: 8px 16px;
   background-color: #5cb85c;
   color: white;
-  font-size: 8px;
+  font-size: 15px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }

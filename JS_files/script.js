@@ -31,3 +31,15 @@ console.log('%cHey! Stop peeking down here! Easter eggs are too easy....\nid: pe
   font-size: 14px;
   font-family:"Lucida Console", Monaco, monospace;
 `);
+
+const openModal = document.getElementById('easter-egg');
+const modal = document.getElementById('my-modal');
+const closeModal = document.getElementById('close');
+
+openModal.onclick = function() { modal.style.display = 'block'; };
+closeModal.onclick = function() { modal.style.display = 'none'; };
+window.onclick = function(e) {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
+};

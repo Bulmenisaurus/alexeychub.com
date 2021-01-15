@@ -44,8 +44,10 @@
             one line of JavaScript!
             <br>
             To run these snippets, you have to open the console. On mac, the shortcut is
-            <kbd>Command</kbd> <kbd>Option</kbd> <kbd>J</kbd>, and on windows, It's <kbd>Control</kbd> <kbd>Shift</kbd>
-            <kbd>J</kbd>.
+            <kbd>Command</kbd> <kbd>Option</kbd> <kbd>J</kbd>. (On firefox, right-click, choose <kbd>inspect
+                element</kbd>, and then switch to the <kbd>console</kbd> tab.)
+            <br>
+            On windows, press <kbd>Control</kbd> <kbd>Shift</kbd> <kbd>J</kbd>.
         </p>
         <pre><code class="js">console.log("Lets get started!")</code></pre>
 
@@ -65,7 +67,7 @@
         <!-- <label for="bday-recipient">Recipient: </label><input name="bday-recepient" type="text" id="bday-recipient"><br> -->
         <!-- <label for="bday-message">Message: </label><input name="bday-message" type="text" id="bday-message"><br> -->
         <input type="button" value="Copy!" class="copy" id="copy-b">
-        <pre><code class="js hide-scroll">Array(4).fill(["Happy birthday ","",""]).map((a,y)=&gt;a.map((a,p)=&gt;1==p&&2==y?"dear Alexey":1==p&&2!=y?"to you":2==p?",,!."[y]:a)).map(a=&gt;a.join("")).concat('\n'+'\uD83C\uDF81\uD83C\uDF89'.repeat(5)).join("\n");</code></pre>
+        <pre><code class="js hide-scroll" id="b-day">Array(4).fill(["Happy birthday ","",""]).map((a,p)=&gt;a.map((a,e)=&gt;1==e&&2==p?"dear Alexey":1==e&&2!=p?"to you":2==e?",,!."[p]:a)).map(a=&gt;a.join("")).concat("\n"+"\uD83C\uDF81\uD83C\uDF89".repeat(5)).join("\n");</code></pre>
         <h3>Preview:</h3>
         <pre><code class="plaintext"></code></pre>
         <br>

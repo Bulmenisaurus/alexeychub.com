@@ -115,6 +115,6 @@ for (const radioButton of radios) {
 }
 
 const form = document.getElementById('card-form');
-form.onkeydown = form.onchange = updateLink;
+form.onkeyup = form.onchange = updateLink;
 
 document.getElementById('copy-link').onclick = copyLink;

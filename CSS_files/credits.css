@@ -81,3 +81,8 @@ a:hover {
 ul.table-list li {
     line-height: 175%;
 }
+
+.important {
+    color: yellow;
+    font-weight: bold;
+}

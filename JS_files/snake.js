@@ -90,7 +90,7 @@ class Snake {
     }
 
     lose() {
-        alert('You lost bub');
+        // alert('You lost bub');
     }
 }
 

@@ -55,6 +55,7 @@ class Snake {
     tick() {
         this.clearCanvas();
         this.moveSnake(this.direction);
+        if (this.checkCollisions) this.lose();
         this.drawSnake();
     }
 
@@ -94,5 +95,5 @@ class Snake {
 }
 
 const snakeGame = new Snake();
-snakeGame.main(1000);
+snakeGame.main(100);
 

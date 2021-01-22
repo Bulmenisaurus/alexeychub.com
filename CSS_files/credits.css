@@ -10,7 +10,7 @@ body {
     text-align: center;
 }
 
-credits-scroll {
+credits-scroll, div[is="credits-scroll"] {
     width: 75%;
     margin: auto;
     display: block;

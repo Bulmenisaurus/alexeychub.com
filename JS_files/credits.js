@@ -13,3 +13,4 @@ class CreditsScroll extends HTMLDivElement {
 }
 
 customElements.define('credits-scroll', CreditsScroll, { extends: 'div' });
+

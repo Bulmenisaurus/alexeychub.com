@@ -7,14 +7,14 @@ class CreditsScroll extends HTMLDivElement {
         me.style.transitionDuration = me.dataset.scrollTime;
         console.log(me.dataset);
         me.style.transitionTimingFunction = me.dataset.transitionStyle ? me.dataset.transitionStyle : 'linear';
+
+        setTimeout(function() {
+            // I just love how simple transitions make this <3
+            document.querySelector('body > div:nth-child(1)').style.top = '-1600px';
+        }, 1000);
     }
 
 
 }
 
 customElements.define('credits-scroll', CreditsScroll, { extends: 'div' });
-
-setTimeout(function() {
-    // I just love how simple transitions make this <3
-    document.querySelector('body > div:nth-child(1)').style.top = '-1600px';
-}, 1000);

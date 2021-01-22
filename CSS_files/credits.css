@@ -8,6 +8,7 @@ body {
     color: white;
     background-color: black;
     text-align: center;
+    overflow: hidden;
 }
 
 credits-scroll, div[is="credits-scroll"] {
@@ -15,6 +16,8 @@ credits-scroll, div[is="credits-scroll"] {
     margin: auto;
     display: block;
     padding: 15px;
+    position: relative;
+    top: 0;
 }
 
 /*

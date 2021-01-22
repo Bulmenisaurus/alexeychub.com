@@ -8,6 +8,7 @@ class Snake {
         this.ctx = this.canvas.getContext('2d');
         this.snake = [{ x: 200, y: 200 }, { x: 190, y: 200 }, { x: 180, y: 200 }, { x: 170, y: 200 }, { x: 160, y: 200 }];
         this.direction = 'right';
+        this.movedThisTick = true;
 
         // canvas color variables
         this.board_border = 'black';
@@ -47,7 +48,6 @@ class Snake {
             case 'left': head.x -= 10; break;
             default: head.x += 10; break;
         }
-
         this.snake.unshift(head);
         this.snake.pop();
     }
@@ -57,6 +57,7 @@ class Snake {
         this.moveSnake(this.direction);
         if (this.checkCollisions) this.lose();
         this.drawSnake();
+        this.movedThisTick = false;
     }
 
     main(speed = 100) {
@@ -71,6 +72,8 @@ class Snake {
 
     changeDirection(event) {
         const key = event.key;
+        if (this.movedThisTick) return;
+
         if (['w', 'ArrowUp'].includes(key) && this.direction != 'down') {
             this.direction = 'up';
         } else if (['a', 'ArrowLeft'].includes(key) && this.direction != 'right') {
@@ -80,18 +83,26 @@ class Snake {
         } else if (['d', 'ArrowRight'].includes(key) && this.direction != 'left') {
             this.direction = 'right';
         }
+        this.movedThisTick = true;
+
     }
 
     checkCollisions() {
-        const snakeHead = Object.entries(this.snake[0]);
-        // Check if any piece of the snake (except head) coordinate's are equal to head
-        const snakeColisions = this.snake.slice(4).map(s => Object.entries(s) === snakeHead);
-        if (snakeColisions.some(i => i)) return true;
+        const snakeHead = this.snake[0];
+        for (const coords of this.snake.slice(4)) {
+            const hasCollided = coords.x === snakeHead.x && coords.y === snakeHead.y;
+            console.log({ snakeHead, coords });
+            if (hasCollided) return true;
+        }
+        const hitLeftWall = snakeHead.x < 0;
+        const hitRightWall = snakeHead.x > this.canvas.width - 10;
+        const hitTopWall = snakeHead.y < 0;
+        const hitBottomWall = snakeHead.y > this.canvas.height - 10;
+
+        return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall;
     }
 
-    lose() {
-        // alert('You lost bub');
-    }
+    lose() { }
 }
 
 const snakeGame = new Snake();

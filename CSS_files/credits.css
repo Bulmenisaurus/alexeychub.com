@@ -17,16 +17,8 @@ credits-scroll, div[is="credits-scroll"] {
     display: block;
     padding: 15px;
     position: relative;
-    top: 0;
+    top: 800px;
 }
-
-/*
-! WHYYYYY DID THIS TAKE SO LONG!
-::marker{display: none; visibility: hidden; width: 0px} li::before{display: none;} ::marker, ::before{content: ""}
-all didn't work
-// css sucks
-* for future reference, this is how to hide the markers:
-*/
 
 h1, h2, h3 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

@@ -11,7 +11,7 @@ class CreditsScroll extends HTMLDivElement {
         setTimeout(function() {
             // I just love how simple transitions make this <3
             document.querySelector('body > div:nth-child(1)').style.top = '-1600px';
-        }, 1000);
+        }, 200);
     }
 
 

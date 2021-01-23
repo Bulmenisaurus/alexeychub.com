@@ -17,6 +17,7 @@ class Snake {
         this.direction = 'right';
         this.movedThisTick = true;
         this.safeMoves = 5;
+        this.score = 0;
 
         // canvas color variables
         this.board_border = 'black';
@@ -64,6 +65,7 @@ class Snake {
         this.snake.unshift(head);
         const has_eaten_food = this.snake[0].x === this.food.x && this.snake[0].y === this.food.y;
         if (has_eaten_food) {
+            this.score++;
             // Generate new food location
             this.createFood();
         } else {
@@ -76,6 +78,7 @@ class Snake {
 
     tick() {
         this.clearCanvas();
+        this.updateScore();
         this.moveSnake(this.direction);
         this.drawSnake();
         if (this.checkCollisions()) this.lose();
@@ -142,6 +145,7 @@ class Snake {
     }
 
     reset() {
+        this.score = 0;
         this.direction = 'right';
         this.snake = [{ x: 0, y: 200 }, { x: -1, y: 200 }, { x: -2, y: 200 }, { x: -3, y: 200 }, { x: -5, y: 200 }];
         this.safeMoves = 7;
@@ -180,6 +184,13 @@ class Snake {
         this.ctx.strokestyle = 'darkgreen';
         this.ctx.fillRect(this.food.x, this.food.y, 10, 10);
         this.ctx.strokeRect(this.food.x, this.food.y, 10, 10);
+    }
+
+    updateScore() {
+        // Intentionally using != instead of !==
+        if (document.querySelector('score-counter').innerText != this.score) {
+            document.querySelector('score-counter').innerText = this.score;
+        }
     }
 }
 

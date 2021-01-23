@@ -7,9 +7,15 @@ function random(min, max) {
     return Math.round((Math.random() * (max - min) + min) / 10) * 10;
 }
 
+const Blocks = [
+    { x: 10, y: 230 },
+    { x: 15, y: 45 },
+    { x: 100, y: 100 },
+    { x: 0, y: 0 },
+];
 
 class Snake {
-    constructor() {
+    constructor(blocks) {
         this.canvas = document.getElementsByTagName('canvas')[0];
         this.ctx = this.canvas.getContext('2d');
         this.snake = [{ x: 0, y: 200 }, { x: -1, y: 200 }, { x: -2, y: 200 }, { x: -3, y: 200 }, { x: -4, y: 200 }];
@@ -18,6 +24,7 @@ class Snake {
         this.movedThisTick = true;
         this.safeMoves = 5;
         this.score = 0;
+        this.blocks = blocks;
 
         // canvas color variables
         this.board_border = 'black';
@@ -37,7 +44,7 @@ class Snake {
 
     drawSnakePart(snakePart) {
         this.ctx.fillStyle = 'lightblue';
-        this.ctx.strokestyle = 'darkblue';
+        this.ctx.strokeStyle = 'darkblue';
 
         if (snakePart.x < 0) return;
         this.ctx.fillRect(snakePart.x, snakePart.y, 10, 10);
@@ -46,7 +53,7 @@ class Snake {
 
     clearCanvas() {
         this.ctx.fillStyle = this.board_background;
-        this.ctx.strokestyle = this.board_border;
+        this.ctx.strokeStyle = this.board_border;
         // Draw a "filled" rectangle to cover the entire canvas
         this.ctx.translate(-0.5, -0.5);
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
@@ -181,9 +188,16 @@ class Snake {
 
     drawFood() {
         this.ctx.fillStyle = 'lightgreen';
-        this.ctx.strokestyle = 'darkgreen';
+        this.ctx.strokeStyle = 'darkgreen';
         this.ctx.fillRect(this.food.x, this.food.y, 10, 10);
         this.ctx.strokeRect(this.food.x, this.food.y, 10, 10);
+    }
+
+    drawBlocks() {
+        for (block of blocks) {
+            this.ctx.fillStyle = 'black';
+            this.ctx.strokeStyle
+        }
     }
 
     updateScore() {
@@ -194,6 +208,6 @@ class Snake {
     }
 }
 
-const snakeGame = new Snake();
+const snakeGame = new Snake(Blocks);
 snakeGame.init(100);
 

@@ -2,13 +2,21 @@
 
 // ! TUTORIAL:
 // ! https://www.educative.io/blog/javascript-snake-game-tutorial
+
+function random(min, max) {
+    return Math.round((Math.random() * (max - min) + min) / 10) * 10;
+}
+
+
 class Snake {
     constructor() {
         this.canvas = document.getElementsByTagName('canvas')[0];
         this.ctx = this.canvas.getContext('2d');
-        this.snake = [{ x: 200, y: 200 }, { x: 190, y: 200 }, { x: 180, y: 200 }, { x: 170, y: 200 }, { x: 160, y: 200 }];
+        this.snake = [{ x: 0, y: 200 }, { x: -1, y: 200 }, { x: -2, y: 200 }, { x: -3, y: 200 }, { x: -4, y: 200 }];
+        this.food = { x: 0, y: 0 };
         this.direction = 'right';
         this.movedThisTick = true;
+        this.safeMoves = 5;
 
         // canvas color variables
         this.board_border = 'black';
@@ -28,6 +36,8 @@ class Snake {
     drawSnakePart(snakePart) {
         this.ctx.fillStyle = 'lightblue';
         this.ctx.strokestyle = 'darkblue';
+
+        if (snakePart.x < 0) return;
         this.ctx.fillRect(snakePart.x, snakePart.y, 10, 10);
         this.ctx.strokeRect(snakePart.x, snakePart.y, 10, 10);
     }
@@ -49,18 +59,29 @@ class Snake {
             default: head.x += 10; break;
         }
         this.snake.unshift(head);
-        this.snake.pop();
+        const has_eaten_food = this.snake[0].x === this.food.x && this.snake[0].y === this.food.y;
+        if (has_eaten_food) {
+            // Generate new food location
+            this.createFood();
+        } else {
+            // Remove the last part of snake body
+            this.snake.pop();
+        }
+
+        this.safeMoves--;
     }
 
     tick() {
         this.clearCanvas();
         this.moveSnake(this.direction);
-        if (this.checkCollisions) this.lose();
         this.drawSnake();
+        if (this.checkCollisions()) this.lose();
+        this.drawFood();
         this.movedThisTick = false;
     }
 
-    main(speed = 100) {
+    init(speed = 100) {
+        this.createFood();
         document.addEventListener('keydown', this.changeDirection.bind(this));
         this.game = setInterval(this.tick.bind(this), speed);
     }
@@ -89,11 +110,21 @@ class Snake {
 
     checkCollisions() {
         const snakeHead = this.snake[0];
-        for (const coords of this.snake.slice(4)) {
-            const hasCollided = coords.x === snakeHead.x && coords.y === snakeHead.y;
-            console.log({ snakeHead, coords });
-            if (hasCollided) return true;
+
+        // If you compare objects using ===, the operation will always return false
+        const snakeEntries = this.snake.map(e => JSON.stringify(e));
+        const snakeSet = [...new Set(snakeEntries)];
+
+        // We know that all the coordinates of the snake have to be unique
+        // Otherwise, that means some parts of the snake are stacked = lose
+        if (this.snake.length != snakeSet.length) {
+            return true;
         }
+
+        if (this.safeMoves > 0) {
+            return;
+        }
+
         const hitLeftWall = snakeHead.x < 0;
         const hitRightWall = snakeHead.x > this.canvas.width - 10;
         const hitTopWall = snakeHead.y < 0;
@@ -102,9 +133,53 @@ class Snake {
         return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall;
     }
 
-    lose() { }
+    lose() {
+        alert('You lost!');
+        this.reset();
+    }
+
+    reset() {
+        this.direction = 'right';
+        this.snake = [{ x: 0, y: 200 }, { x: -1, y: 200 }, { x: -2, y: 200 }, { x: -3, y: 200 }, { x: -5, y: 200 }];
+        this.safeMoves = 7;
+    }
+
+    createFood() {
+        this.food = {
+            x: random(0, this.canvas.width - 10),
+            y: random(0, this.canvas.height - 10),
+        };
+
+        let foodPlaceAttempts = 0;
+        while (this.food.x === this.snake[0].x && this.food.y === this.snake[0].y) {
+            foodPlaceAttempts++;
+
+            this.food = {
+                x: random(0, this.canvas.width - 10),
+                y: random(0, this.canvas.height - 10),
+            };
+
+            if (foodPlaceAttempts > 100) {
+                console.warn('Failed to place food in under 100 tries.');
+                return;
+            }
+        }
+
+        const that = this;
+        this.snake.map(function hasSnakeEatenFood(part) {
+            const hasEaten = part.x == that.food.x && part.y == that.food.y;
+            if (hasEaten) this.createFood();
+        });
+    }
+
+    drawFood() {
+        this.ctx.fillStyle = 'lightgreen';
+        this.ctx.strokestyle = 'darkgreen';
+        this.ctx.fillRect(this.food.x, this.food.y, 10, 10);
+        this.ctx.strokeRect(this.food.x, this.food.y, 10, 10);
+    }
 }
 
 const snakeGame = new Snake();
-snakeGame.main(100);
+snakeGame.init(100);
 

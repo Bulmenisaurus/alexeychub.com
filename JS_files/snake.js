@@ -26,6 +26,7 @@ class Snake {
 
         // settings
         this.ctx.imageSmoothingEnabled = false;
+        this.ctx.translate(0.5, 0.5);
     }
 
     drawSnake() {
@@ -46,7 +47,9 @@ class Snake {
         this.ctx.fillStyle = this.board_background;
         this.ctx.strokestyle = this.board_border;
         // Draw a "filled" rectangle to cover the entire canvas
+        this.ctx.translate(-0.5, -0.5);
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.translate(0.5, 0.5);
     }
 
     moveSnake(direction) {

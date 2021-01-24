@@ -9,7 +9,7 @@ function random(min, max) {
 
 const Blocks = [];
 const notTheCanvasInsideSnakeGameDontUsePls = document.getElementsByTagName('canvas')[0];
-for (let x = 0; x < 50; x++) {
+for (let x = 0; x < 20; x++) {
     Blocks.push({
         x: random(10, notTheCanvasInsideSnakeGameDontUsePls.width - 10),
         y: random(0, notTheCanvasInsideSnakeGameDontUsePls.height - 10),
@@ -76,6 +76,7 @@ class Snake {
         const has_eaten_food = this.snake[0].x === this.food.x && this.snake[0].y === this.food.y;
         if (has_eaten_food) {
             this.score++;
+            this.setGameSpeed(Math.max(this.initialSpeed / 2, this.initialSpeed - this.score * 10));
             // Generate new food location
             this.createFood();
         } else {
@@ -98,12 +99,14 @@ class Snake {
     }
 
     init(speed = 100) {
+        this.initialSpeed = speed;
         this.createFood();
         document.addEventListener('keydown', this.changeDirection.bind(this));
         this.game = setInterval(this.tick.bind(this), speed);
     }
 
     setGameSpeed(speed) {
+        console.log(`Setting game speed to ${speed}`);
         clearInterval(this.game);
         this.game = setInterval(this.tick.bind(this), speed);
     }
@@ -164,6 +167,7 @@ class Snake {
 
     reset() {
         this.score = 0;
+        this.setGameSpeed(100);
         this.direction = 'right';
         this.snake = [{ x: 0, y: 200 }, { x: -1, y: 200 }, { x: -2, y: 200 }, { x: -3, y: 200 }, { x: -5, y: 200 }];
         this.safeMoves = 7;

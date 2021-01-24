@@ -88,8 +88,9 @@ class Snake {
         this.updateScore();
         this.moveSnake(this.direction);
         this.drawSnake();
-        if (this.checkCollisions()) this.lose();
+        this.drawBlocks();
         this.drawFood();
+        if (this.checkCollisions()) this.lose();
         this.movedThisTick = false;
     }
 
@@ -130,6 +131,13 @@ class Snake {
 
         // We know that all the coordinates of the snake have to be unique
         // Otherwise, that means some parts of the snake are stacked = lose
+
+        for (const block of this.blocks) {
+            const { x, y } = block;
+            if (snakeEntries.includes(JSON.stringify({ x, y }))) {
+                return true;
+            }
+        }
         if (this.snake.length != snakeSet.length) {
             return true;
         }
@@ -165,7 +173,8 @@ class Snake {
         };
 
         let foodPlaceAttempts = 0;
-        while (this.food.x === this.snake[0].x && this.food.y === this.snake[0].y) {
+        const { x, y } = this.food;
+        while ((x === this.snake[0].x && y === this.snake[0].y) || this.blockAtCoordinates(x, y)) {
             foodPlaceAttempts++;
 
             this.food = {
@@ -194,16 +203,26 @@ class Snake {
     }
 
     drawBlocks() {
-        for (block of blocks) {
-            this.ctx.fillStyle = 'black';
-            this.ctx.strokeStyle
+        this.ctx.fillStyle = 'grey';
+        this.ctx.strokeStyle = 'black';
+        for (const block of this.blocks) {
+            this.ctx.fillRect(block.x, block.y, 10, 10);
+            this.ctx.strokeRect(block.x, block.y, 10, 10);
         }
     }
-
     updateScore() {
         // Intentionally using != instead of !==
         if (document.querySelector('score-counter').innerText != this.score) {
             document.querySelector('score-counter').innerText = this.score;
+        }
+    }
+
+    blockAtCoordinates(coordX, coordY) {
+        for (const block of this.blocks) {
+            const { x, y } = block;
+            if (JSON.stringify([x, y]) === JSON.stringify([coordX, coordY])) {
+                return true;
+            }
         }
     }
 }

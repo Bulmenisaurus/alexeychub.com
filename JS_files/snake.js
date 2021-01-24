@@ -64,15 +64,16 @@ class Snake {
     }
 
     moveSnake(direction) {
-        const head = { x: this.snake[0].x, y: this.snake[0].y };
+        const newHead = { x: this.snake[0].x, y: this.snake[0].y };
         switch (direction) {
-            case 'up': head.y -= 10; break;
-            case 'right': head.x += 10; break;
-            case 'down': head.y += 10; break;
-            case 'left': head.x -= 10; break;
-            default: head.x += 10; break;
+            case 'up': newHead.y -= 10; break;
+            case 'right': newHead.x += 10; break;
+            case 'down': newHead.y += 10; break;
+            case 'left': newHead.x -= 10; break;
         }
-        this.snake.unshift(head);
+
+        this.snake.unshift(newHead);
+
         const has_eaten_food = this.snake[0].x === this.food.x && this.snake[0].y === this.food.y;
         if (has_eaten_food) {
             this.score++;

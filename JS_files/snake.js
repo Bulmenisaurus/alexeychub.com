@@ -7,12 +7,15 @@ function random(min, max) {
     return Math.round((Math.random() * (max - min) + min) / 10) * 10;
 }
 
-const Blocks = [
-    { x: 10, y: 230 },
-    { x: 15, y: 45 },
-    { x: 100, y: 100 },
-    { x: 0, y: 0 },
-];
+const Blocks = [];
+const notTheCanvasInsideSnakeGameDontUsePls = document.getElementsByTagName('canvas')[0];
+for (let x = 0; x < 50; x++) {
+    Blocks.push({
+        x: random(10, notTheCanvasInsideSnakeGameDontUsePls.width - 10),
+        y: random(0, notTheCanvasInsideSnakeGameDontUsePls.height - 10),
+    });
+}
+
 
 class Snake {
     constructor(blocks) {

@@ -1,0 +1,24 @@
+{
+  "name": "alexeychub.com",
+  "version": "1.0.0",
+  "description": "My site",
+  "main": "index.js",
+  "dependencies": {
+    "eslint": "^7.18.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bulmenisaurus/alexeychub.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bulmenisaurus/alexeychub.com/issues"
+  },
+  "homepage": "https://alexeychub.com"
+}

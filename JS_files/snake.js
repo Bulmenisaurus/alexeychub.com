@@ -30,10 +30,14 @@ class Snake {
         this.blocks = blocks;
 
         // canvas color variables
-        this.board_border = 'black';
-        this.board_background = 'white';
-        this.snake_col = 'lightblue';
-        this.snake_border = 'darkblue';
+        this.boardBorder = 'black';
+        this.boardBackground = 'white';
+        this.snakeCol = 'lightblue';
+        this.snakeBorder = 'darkblue';
+        this.foodCol = 'lightgreen';
+        this.foodBorder = 'darkgreen';
+        this.blockCol = 'grey';
+        this.blockBorder = 'black';
 
         // settings
         this.ctx.imageSmoothingEnabled = false;
@@ -46,8 +50,8 @@ class Snake {
     }
 
     drawSnakePart(snakePart) {
-        this.ctx.fillStyle = 'lightblue';
-        this.ctx.strokeStyle = 'darkblue';
+        this.ctx.fillStyle = this.snakeCol;
+        this.ctx.strokeStyle = this.snakeBorder;
 
         if (snakePart.x < 0) return;
         this.ctx.fillRect(snakePart.x, snakePart.y, 10, 10);
@@ -55,8 +59,8 @@ class Snake {
     }
 
     clearCanvas() {
-        this.ctx.fillStyle = this.board_background;
-        this.ctx.strokeStyle = this.board_border;
+        this.ctx.fillStyle = this.boardBackground;
+        this.ctx.strokeStyle = this.boardBorder;
         // Draw a "filled" rectangle to cover the entire canvas
         this.ctx.translate(-0.5, -0.5);
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
@@ -204,15 +208,15 @@ class Snake {
     }
 
     drawFood() {
-        this.ctx.fillStyle = 'lightgreen';
-        this.ctx.strokeStyle = 'darkgreen';
+        this.ctx.fillStyle = this.foodCol;
+        this.ctx.strokeStyle = this.foodBorder;
         this.ctx.fillRect(this.food.x, this.food.y, 10, 10);
         this.ctx.strokeRect(this.food.x, this.food.y, 10, 10);
     }
 
     drawBlocks() {
-        this.ctx.fillStyle = 'grey';
-        this.ctx.strokeStyle = 'black';
+        this.ctx.fillStyle = this.blockCol;
+        this.ctx.strokeStyle = this.blockBorder;
         for (const block of this.blocks) {
             this.ctx.fillRect(block.x, block.y, 10, 10);
             this.ctx.strokeRect(block.x, block.y, 10, 10);
@@ -232,6 +236,17 @@ class Snake {
                 return true;
             }
         }
+    }
+
+    setColorScheme({ boardBorder, boardBackground, snakeCol, snakeBorder, foodCol, foodBorder, blockCol, blockBorder }) {
+        this.boardBorder = boardBorder;
+        this.boardBackground = boardBackground;
+        this.snakeCol = snakeCol;
+        this.snakeBorder = snakeBorder;
+        this.foodCol = foodCol;
+        this.foodBorder = foodBorder;
+        this.blockCol = blockCol;
+        this.blockBorder = blockBorder;
     }
 }
 

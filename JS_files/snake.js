@@ -81,7 +81,7 @@ class Snake {
         const has_eaten_food = this.snake[0].x === this.food.x && this.snake[0].y === this.food.y;
         if (has_eaten_food) {
             this.score++;
-            this.setGameSpeed(Math.max(this.initialSpeed / 2, this.initialSpeed - this.score * 10));
+            this.setGameSpeed(Math.max(this.initialSpeed / 2, this.initialSpeed - this.score * 5));
             // Generate new food location
             this.createFood();
         } else {

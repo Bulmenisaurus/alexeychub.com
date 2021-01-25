@@ -7,6 +7,10 @@ function random(min, max) {
     return Math.round((Math.random() * (max - min) + min) / 10) * 10;
 }
 
+function objectsEqual(obj1, obj2) {
+    return JSON.stringify(obj1) === JSON.stringify(obj2);
+}
+
 const Blocks = [];
 const notTheCanvasInsideSnakeGameDontUsePls = document.getElementsByTagName('canvas')[0];
 for (let x = 0; x < 20; x++) {
@@ -45,17 +49,14 @@ class SnakeGame {
     }
 
     drawSnake() {
-        // Draw each part of the snake one-by-one
-        this.snake.map(e => this.drawSnakePart(e));
-    }
-
-    drawSnakePart(snakePart) {
         this.ctx.fillStyle = this.snakeCol;
         this.ctx.strokeStyle = this.snakeBorder;
 
-        if (snakePart.x < 0) return;
-        this.ctx.fillRect(snakePart.x, snakePart.y, 10, 10);
-        this.ctx.strokeRect(snakePart.x, snakePart.y, 10, 10);
+        this.snake.map(e => {
+            if (e.x < 0) return;
+            this.ctx.fillRect(e.x, e.y, 10, 10);
+            this.ctx.strokeRect(e.x, e.y, 10, 10);
+        });
     }
 
     clearCanvas() {
@@ -78,8 +79,7 @@ class SnakeGame {
 
         this.snake.unshift(newHead);
 
-        const has_eaten_food = this.snake[0].x === this.food.x && this.snake[0].y === this.food.y;
-        if (has_eaten_food) {
+        if (objectsEqual(this.food, this.snake[0])) {
             this.score++;
             this.setGameSpeed(Math.max(this.initialSpeed / 2, this.initialSpeed - this.score * 5));
             // Generate new food location
@@ -186,7 +186,7 @@ class SnakeGame {
 
         let foodPlaceAttempts = 0;
         const { x, y } = this.food;
-        while ((x === this.snake[0].x && y === this.snake[0].y) || this.blockAtCoordinates(x, y)) {
+        while (objectsEqual(this.snake[0], this.food) || this.blockAtCoordinates(x, y)) {
             foodPlaceAttempts++;
 
             this.food = {
@@ -201,9 +201,9 @@ class SnakeGame {
         }
 
         const that = this;
-        this.snake.map(function hasSnakeEatenFood(part) {
+        this.snake.map(part => {
             const hasEaten = part.x == that.food.x && part.y == that.food.y;
-            if (hasEaten) this.createFood();
+            if (objectsEqual(part, that.food)) this.createFood();
         });
     }
 
@@ -236,17 +236,6 @@ class SnakeGame {
                 return true;
             }
         }
-    }
-
-    setColorScheme({ boardBorder, boardBackground, snakeCol, snakeBorder, foodCol, foodBorder, blockCol, blockBorder }) {
-        this.boardBorder = boardBorder;
-        this.boardBackground = boardBackground;
-        this.snakeCol = snakeCol;
-        this.snakeBorder = snakeBorder;
-        this.foodCol = foodCol;
-        this.foodBorder = foodBorder;
-        this.blockCol = blockCol;
-        this.blockBorder = blockBorder;
     }
 }
 

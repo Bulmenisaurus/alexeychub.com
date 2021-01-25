@@ -17,7 +17,7 @@ for (let x = 0; x < 20; x++) {
 }
 
 
-class Snake {
+class SnakeGame {
     constructor(blocks) {
         this.canvas = document.getElementsByTagName('canvas')[0];
         this.ctx = this.canvas.getContext('2d');
@@ -250,6 +250,6 @@ class Snake {
     }
 }
 
-const snakeGame = new Snake(Blocks);
+const snakeGame = new SnakeGame(Blocks);
 snakeGame.init(100);
 

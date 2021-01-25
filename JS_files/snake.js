@@ -6,18 +6,42 @@
 const GameData = [
     {
         name: '1-1',
-        blocks: [{ x: 1, y: 1 }],
-        food: [{ x: 100, y: 100 }],
+        blocks: [...line(0, 0, 390, 0), ...rectangle(350, 350, 390, 390)],
+        food: [{ x: 100, y: 100 }, { x: 110, y: 110 }],
     },
 ];
 
+function line(oldX, oldY, newX, newY) {
+    const changed = oldX != newX ? 'x' : 'y';
+    const result = [];
 
-function random(min, max) {
-    return Math.round((Math.random() * (max - min) + min) / 10) * 10;
+    if (changed === 'x') {
+        const [min, max] = [oldX, newX].sort();
+        for (let x = min; x <= max; x += 10) {
+            result.push({ x: x, y: newY });
+        }
+    } else {
+        const [min, max] = [oldY, newY].sort();
+        for (let y = min; y <= max; y += 10) {
+            result.push({ x: newX, y: y });
+        }
+    }
+
+    return result;
 }
 
-function objectsEqual(obj1, obj2) {
-    return JSON.stringify(obj1) === JSON.stringify(obj2);
+function rectangle(x1, y1, x2, y2) {
+    // x1 and y1 are top-left corner,
+    // x2 and y2 are bottom-right corner.
+
+    const result = [];
+    for (let x = x1; x <= x2; x += 10) {
+        for (let y = y1; y <= y2; y += 10) {
+            result.push({ x, y });
+        }
+    }
+
+    return result;
 }
 
 class SnakeGame {

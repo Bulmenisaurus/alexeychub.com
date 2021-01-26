@@ -45,11 +45,13 @@ const modalTrigger = document.querySelector('#open-preview');
 modalTrigger.onclick = function() {
     modal.style.display = 'block';
     document.getElementById('preview-iframe').src = urlHidden;
+    console.log(document.getElementById('preview-iframe').src, urlHidden);
     modal.setAttribute('aria-hidden', 'false');
 };
 
 modalClose.onclick = function() {
     modal.style.display = 'none';
+    document.getElementById('preview-iframe').src = '';
     modal.setAttribute('aria-hidden', 'true');
     console.log('click clock the modal\'s done');
 };

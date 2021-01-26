@@ -20,7 +20,7 @@ if (hideLink === 'true') {
 }
 
 if (imageId != '9') {
-    const imageUrl = `https://alexeychub.com/images/store_${imageId}.js`;
+    const imageUrl = `https://alexeychub.com/images/store_${imageId}.jpg`;
 
     const image = document.getElementById('image').appendChild(document.createElement('img'));
     // = `<img src="${imageUrl}" alt="image_${hearts}">`;

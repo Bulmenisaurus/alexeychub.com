@@ -1,1 +1,1 @@
-*{margin:0;padding:0;box-sizing:border-box}body{padding:10px;display:flex;align-items:center;flex-direction:column;overflow:hidden}canvas{border:1px solid #000}score-counter{top:10px;font-family:'JetBrains Mono','Courier New',Courier,monospace;position:absolute}
+*{margin:0;padding:0;box-sizing:border-box}body{padding:10px;display:flex;align-items:center;flex-direction:column;overflow:hidden}canvas{border:1px solid #000;width:50vw;min-width:250px;max-width:350px}score-counter{font-family:'JetBrains Mono','Courier New',Courier,monospace}

@@ -14,10 +14,11 @@ body {
 
 canvas {
     border: 1px solid black;
+    width: 50vw;
+    min-width: 250px;
+    max-width: 350px;
 }
 
 score-counter {
-    top: 10px;
     font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
-    position: absolute;
 }

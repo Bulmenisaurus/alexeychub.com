@@ -119,4 +119,3 @@ const form = document.getElementById('card-form');
 form.onkeyup = form.onchange = updateLink;
 
 document.getElementById('copy-link').onclick = copyLink;
-document.querySelector('iframe').contentWindow.console = console;

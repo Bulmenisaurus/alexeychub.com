@@ -107,6 +107,7 @@ for (const radioButton of radios) {
             6: 'We are dandelions (if that\'s ok with you)',
             7: 'Meow',
             8: 'I am not complete without you!',
+            9: 'You are my snake and I am your dot',
 
         }[imageValue] + ' ❤️';
     });

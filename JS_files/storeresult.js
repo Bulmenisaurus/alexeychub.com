@@ -10,15 +10,6 @@ if (text === 'null') {
     text = 'Happy valentines day!';
 }
 const hideLink = decodeURIComponent(urlParams.get('hide')) || 'false';
-
-const imageUrl = `https://alexeychub.com/images/store_${imageId}.jpg`;
-
-const image = document.getElementById('image').appendChild(document.createElement('img'));
-// = `<img src="${imageUrl}" alt="image_${hearts}">`;
-image.src = imageUrl;
-// image.alt = 'A fox and a bear sitting together.';
-image.height = 185 * 2; image.width = 300 * 2;
-
 gtag('event', 'view-card', {
     'event_label': imageId,
 });
@@ -28,3 +19,21 @@ if (hideLink === 'true') {
     document.querySelector('a').remove();
 }
 
+if (imageId != '9') {
+    const imageUrl = `https://alexeychub.com/images/store_${imageId}.js`;
+
+    const image = document.getElementById('image').appendChild(document.createElement('img'));
+    // = `<img src="${imageUrl}" alt="image_${hearts}">`;
+    image.src = imageUrl;
+    // image.alt = 'A fox and a bear sitting together.';
+    image.height = 185 * 2; image.width = 300 * 2;
+
+
+} else {
+    const js = document.createElement('script');
+    js.src = 'JS_files/store.snake.js';
+    document.head.appendChild(js);
+
+    const canvas = document.getElementById('image').appendChild(document.createElement('canvas'));
+    canvas.height = canvas.width = '400';
+}

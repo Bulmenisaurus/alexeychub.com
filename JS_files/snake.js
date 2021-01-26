@@ -6,7 +6,10 @@
 const GameData = [
     {
         name: '1-1',
-        blocks: [...line(0, 0, 390, 0), ...rectangle(350, 350, 390, 390)],
+        height: 130,
+        width: 250,
+        snake: [...line(0, 60, -10, 60)],
+        blocks: [...line(0, 0, 240, 0), ...line(0, 0, 240, 120)],
         food: [{ x: 100, y: 100 }, { x: 110, y: 110 }],
     },
 ];
@@ -48,10 +51,11 @@ class SnakeGame {
     constructor(gameData) {
         this.canvas = document.getElementsByTagName('canvas')[0];
         this.ctx = this.canvas.getContext('2d');
-        this.snake = [{ x: 0, y: 200 }, { x: -1, y: 200 }, { x: -2, y: 200 }, { x: -3, y: 200 }, { x: -4, y: 200 }];
+        this.snake = '';
         this.eatenFoods = [];
         this.gameData = gameData;
-        this.foods = this.gameData[0].food;
+        this.levelData = gameData[0];
+        this.foods = this.levelData.food;
         this.direction = 'right';
         this.movedThisTick = true;
         this.safeMoves = 5;
@@ -142,10 +146,10 @@ class SnakeGame {
         this.initialSpeed = speed;
         document.addEventListener('keydown', this.changeDirection.bind(this));
         this.game = setInterval(this.tick.bind(this), speed);
+        this.setLevel(0);
     }
 
     setGameSpeed(speed) {
-        console.log(`Setting game speed to ${speed}`);
         clearInterval(this.game);
         this.game = setInterval(this.tick.bind(this), speed);
     }
@@ -177,7 +181,7 @@ class SnakeGame {
         // We know that all the coordinates of the snake have to be unique
         // Otherwise, that means some parts of the snake are stacked = lose
 
-        for (const block of this.gameData[this.level].blocks) {
+        for (const block of this.levelData.blocks) {
             const { x, y } = block;
             if (snakeEntries.includes(JSON.stringify({ x, y }))) {
                 return true;
@@ -207,9 +211,8 @@ class SnakeGame {
     reset() {
         this.score = 0;
         this.eatenFoods = [];
-        this.setGameSpeed(100);
+        this.snake = JSON.parse(JSON.stringify(this.levelData.snake));
         this.direction = 'right';
-        this.snake = [{ x: 0, y: 200 }, { x: -1, y: 200 }, { x: -2, y: 200 }, { x: -3, y: 200 }, { x: -5, y: 200 }];
         this.safeMoves = 7;
     }
 
@@ -226,7 +229,7 @@ class SnakeGame {
     drawBlocks() {
         this.ctx.fillStyle = this.blockCol;
         this.ctx.strokeStyle = this.blockBorder;
-        for (const block of this.gameData[this.level].blocks) {
+        for (const block of this.levelData.blocks) {
             this.ctx.fillRect(block.x, block.y, 10, 10);
             this.ctx.strokeRect(block.x, block.y, 10, 10);
         }
@@ -239,15 +242,26 @@ class SnakeGame {
     }
 
     blockAtCoordinates(coordX, coordY) {
-        for (const block of this.gameData[this.level].blocks) {
+        for (const block of this.levelData.blocks) {
             const { x, y } = block;
             if (JSON.stringify([x, y]) === JSON.stringify([coordX, coordY])) {
                 return true;
             }
         }
     }
+
+    setLevel(level) {
+        this.levelData = this.gameData[level];
+
+        this.shallowCopySnake = JSON.parse(JSON.stringify(this.levelData.snake));
+
+        if (this.levelData.snake) this.snake = this.shallowCopySnake;
+        // if (this.levelData.height) this.canvas.height = this.levelData.height;
+        // if (this.levelData.width) this.canvas.width = this.levelData.width;
+        this.level = level;
+        this.reset();
+    }
 }
 
 const snakeGame = new SnakeGame(GameData);
 snakeGame.init(100);
-

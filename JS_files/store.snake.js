@@ -18,7 +18,7 @@ for (let x = 0; x < 20; x++) {
 }
 */
 
-
+console.log('boi');
 class Snake {
     constructor() {
         this.canvas = document.getElementsByTagName('canvas')[0];

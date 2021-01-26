@@ -18,7 +18,6 @@ document.getElementById('text').innerText = text.replace(/\n/g, '<br>');
 if (hideLink === 'true') {
     document.querySelector('a').remove();
 }
-
 if (imageId != '9') {
     const imageUrl = `https://alexeychub.com/images/store_${imageId}.jpg`;
 
@@ -29,11 +28,12 @@ if (imageId != '9') {
     image.height = 185 * 2; image.width = 300 * 2;
 
 
-} else {
+} else if (imageId === '9') {
     const js = document.createElement('script');
     js.src = 'JS_files/store.snake.js';
     document.head.appendChild(js);
 
     const canvas = document.getElementById('image').appendChild(document.createElement('canvas'));
     canvas.height = canvas.width = '400';
+
 }

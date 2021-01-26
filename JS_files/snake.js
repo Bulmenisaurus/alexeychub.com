@@ -47,6 +47,10 @@ function rectangle(x1, y1, x2, y2) {
     return result;
 }
 
+function randomDotInRect(x1, y1, x2, y2) {
+    const allSquares = rectangle(x1, y1, x2, y2);
+    return '';
+}
 class SnakeGame {
     constructor(gameData) {
         this.canvas = document.getElementsByTagName('canvas')[0];
@@ -256,8 +260,9 @@ class SnakeGame {
         this.shallowCopySnake = JSON.parse(JSON.stringify(this.levelData.snake));
 
         if (this.levelData.snake) this.snake = this.shallowCopySnake;
-        // if (this.levelData.height) this.canvas.height = this.levelData.height;
-        // if (this.levelData.width) this.canvas.width = this.levelData.width;
+        if (this.levelData.height) this.canvas.height = this.levelData.height;
+        if (this.levelData.width) this.canvas.width = this.levelData.width;
+        this.ctx.translate(0.5, 0.5);
         this.level = level;
         this.reset();
     }

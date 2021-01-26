@@ -1,3 +1,5 @@
+let urlHidden;
+
 const listToQuery = (formData) => {
     return formData
         .map(x => `${encodeURIComponent(x[0]) || 1}=${encodeURIComponent(x[1]) || ''}`)
@@ -19,9 +21,8 @@ function updateLink() {
     const hideLinkUrl = new URL(url);
     // Maybe I should just do url + '&hide=true'....
     hideLinkUrl.searchParams.set('hide', 'true');
-    const urlHidden = hideLinkUrl.toString();
+    urlHidden = hideLinkUrl.toString();
 
-    if (document.getElementById('modal-preview').style.display != 'block') document.getElementById('preview-iframe').src = urlHidden;
     document.getElementById('link-preview').innerText = url;
     document.querySelector('#copy-link-input').value = url;
 }
@@ -43,6 +44,7 @@ const modalTrigger = document.querySelector('#open-preview');
 
 modalTrigger.onclick = function() {
     modal.style.display = 'block';
+    document.getElementById('preview-iframe').src = urlHidden;
     modal.setAttribute('aria-hidden', 'false');
 };
 

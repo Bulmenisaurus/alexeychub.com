@@ -18,6 +18,12 @@ h1 {
     font-size: 1.8em;
 }
 
+button {
+    border: 0;
+    padding: 0;
+    background: none;
+}
+
 main {
     margin: 20px auto;
     width: 90%;
@@ -120,10 +126,9 @@ input.grey {
 
 .close {
     color: #cecece;
-    float: right;
     font-size: 28px;
     font-weight: bold;
-    z-index: 2;
+    z-index: 1;
     cursor: pointer;
     position: fixed;
     top: 10px;

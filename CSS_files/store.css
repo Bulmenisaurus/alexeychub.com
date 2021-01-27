@@ -34,7 +34,7 @@ main {
 
 #image-container input {
     vertical-align: top;
-    margin-right: 5px;
+    margin: 5px;
 }
 
 #image-container img, #choose-image img {

@@ -10,7 +10,8 @@ const GameData = [
         width: 250,
         snake: [...line(0, 60, -10, 60)],
         blocks: [...line(0, 0, 240, 0), ...line(0, 0, 240, 120)],
-        food: [{ x: 100, y: 100 }, { x: 110, y: 110 }],
+        goal: line(240, 50, 240, 70),
+        food: new Set(randomDotsInRect(3100, 10, 10, 240, 110)),
     },
 ];
 
@@ -47,10 +48,15 @@ function rectangle(x1, y1, x2, y2) {
     return result;
 }
 
-function randomDotInRect(x1, y1, x2, y2) {
-    const allSquares = rectangle(x1, y1, x2, y2);
-    return '';
+function randomDotsInRect(amt, x1, y1, x2, y2) {
+    const dots = [];
+    for (let x = 0; x <= amt; x++) {
+        const allSquares = rectangle(x1, y1, x2, y2);
+        dots.push(allSquares[Math.floor(Math.random() * allSquares.length)]);
+    }
+    return dots;
 }
+
 class SnakeGame {
     constructor(gameData) {
         this.canvas = document.getElementsByTagName('canvas')[0];
@@ -82,14 +88,7 @@ class SnakeGame {
     }
 
     drawSnake() {
-        this.ctx.fillStyle = this.snakeCol;
-        this.ctx.strokeStyle = this.snakeBorder;
-
-        this.snake.map(e => {
-            if (e.x < 0) return;
-            this.ctx.fillRect(e.x, e.y, 10, 10);
-            this.ctx.strokeRect(e.x, e.y, 10, 10);
-        });
+        this.drawTiles(this.snake, this.snakeCol, this.snakeBorder, 'tile.x < 0');
     }
 
     clearCanvas() {
@@ -139,9 +138,9 @@ class SnakeGame {
         this.clearCanvas();
         this.updateScore();
         this.moveSnake(this.direction);
-        this.drawSnake();
         this.drawBlocks();
         this.drawFoods();
+        this.drawSnake();
         if (this.checkCollisions()) this.lose();
         this.movedThisTick = false;
     }
@@ -231,13 +230,20 @@ class SnakeGame {
     }
 
     drawBlocks() {
-        this.ctx.fillStyle = this.blockCol;
-        this.ctx.strokeStyle = this.blockBorder;
-        for (const block of this.levelData.blocks) {
-            this.ctx.fillRect(block.x, block.y, 10, 10);
-            this.ctx.strokeRect(block.x, block.y, 10, 10);
+        this.drawTiles(this.levelData.blocks, this.blockCol, this.blockBorder);
+    }
+
+
+    drawTiles(tiles, fillStyle, strokeStyle, condition) {
+        this.ctx.fillStyle = fillStyle;
+        this.ctx.strokeStyle = strokeStyle;
+        for (const tile of tiles) {
+            if (eval(condition)) continue;
+            this.ctx.fillRect(tile.x, tile.y, 10, 10);
+            this.ctx.strokeRect(tile.x, tile.y, 10, 10);
         }
     }
+
     updateScore() {
         // Intentionally using != instead of !==
         if (document.querySelector('score-counter').innerText != this.score) {

@@ -56,10 +56,8 @@
         <form action="/storeresult" id="card-form">
             <ol>
                 <li>
-                    <fieldset id="image-container">
-                        <legend>
-                            <p class="step">Choose the Image:</p>
-                        </legend>
+                    <p class="step">Choose the Image:</p>
+                    <div id="image-container">
                         <div class="group">
                             <label>
                                 <!-- Labels mean that people can click the images to trigger the radiobutton! -->
@@ -125,16 +123,14 @@
                                     id="snakegif" alt="A gif of a blocky snake">
                             </label>
                         </div>
-                    </fieldset>
+                    </div>
                 </li>
 
                 <li>
-                    <fieldset>
-                        <p class="step"><label for="text">Write a message to your recipient: <span
-                                    id="chars-left"></span></label></p>
-                        <textarea name="t" id="text" cols="40" rows="7" maxlength="150">Happy valentines day!</textarea>
-                        <button id="open-preview" class="grey">Preview!</button>
-                    </fieldset>
+                    <p class="step"><label for="text">Write a message to your recipient: <span
+                                id="chars-left"></span></label></p>
+                    <textarea name="t" id="text" cols="40" rows="7" maxlength="150">Happy valentines day!</textarea>
+                    <input type="button" value="Preview!" id="open-preview" class="grey">
                 </li>
 
                 <li>
@@ -144,7 +140,7 @@
                     <!-- because JS can only copy text from inputs, and not span elements. What a terrible mess -->
                     <input type="text" id="copy-link-input" aria-hidden="true" tabindex="-1">
                     <br>
-                    <button id="copy-link" class="blue">Copy</button>
+                    <input type="button" value="Copy" id="copy-link" class="blue">
                 </li>
             </ol>
         </form>

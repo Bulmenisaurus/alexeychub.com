@@ -56,10 +56,10 @@
         <form action="/storeresult" id="card-form">
             <ol>
                 <li>
-                    <p class="step">Choose the Image:</p>
-                    <div id="image-container">
-                        <!-- Using golden ratio for images -->
-                        <!-- 1.618 -->
+                    <fieldset id="image-container">
+                        <legend>
+                            <p class="step">Choose the Image:</p>
+                        </legend>
                         <div class="group">
                             <label>
                                 <!-- Labels mean that people can click the images to trigger the radiobutton! -->
@@ -125,14 +125,16 @@
                                     id="snakegif" alt="A gif of a blocky snake">
                             </label>
                         </div>
-                    </div>
+                    </fieldset>
                 </li>
 
                 <li>
-                    <p class="step"><label for="text">Write a message to your recipient: <span
-                                id="chars-left"></span></label></p>
-                    <textarea name="t" id="text" cols="40" rows="7" maxlength="150">Happy valentines day!</textarea>
-                    <button id="open-preview" class="grey">Preview!</button>
+                    <fieldset>
+                        <p class="step"><label for="text">Write a message to your recipient: <span
+                                    id="chars-left"></span></label></p>
+                        <textarea name="t" id="text" cols="40" rows="7" maxlength="150">Happy valentines day!</textarea>
+                        <button id="open-preview" class="grey">Preview!</button>
+                    </fieldset>
                 </li>
 
                 <li>

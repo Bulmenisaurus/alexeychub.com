@@ -1,9 +1,9 @@
-# alexeychub.com
+# bulmenisaurus.github.io
 My site
 
 
 ## TODO list:
- - [ ] [Mozilla observatory](https://observatory.mozilla.org/analyze/alexeychub.com) passing score:
+ - [ ] [Mozilla observatory](https://observatory.mozilla.org/analyze/bulmenisaurus.github.io) passing score:
    - [ ] Headers:
      - [x] [`CSP`](https://infosec.mozilla.org/guidelines/web_security#content-security-policy)
      - [ ] [`HPKP`](https://infosec.mozilla.org/guidelines/web_security#http-public-key-pinning)

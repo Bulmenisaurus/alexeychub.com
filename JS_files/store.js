@@ -11,7 +11,7 @@ function generateFormLink() {
     let formData = new FormData(form);
     formData = listToQuery([...formData.entries()]);
 
-    const url = 'https://alexeychub.com/storeresult?' + formData;
+    const url = 'https://bulmenisaurus.github.io/storeresult?' + formData;
     return url;
 
 }

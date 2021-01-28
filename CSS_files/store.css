@@ -34,11 +34,6 @@ main {
     border-radius: 5px;
 }
 
-#image-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-}
-
 #image-container input {
     vertical-align: top;
     margin: 5px;
@@ -47,10 +42,6 @@ main {
 #image-container img, #choose-image img {
     margin-right: 20px;
     margin-bottom: 10px;
-    /*
-    height: calc(1vw * 15);
-    width: calc(1.618vw * 15);
-    */
 }
 
 .group {

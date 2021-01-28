@@ -43,8 +43,8 @@ const modalClose = document.querySelector('#close-preview');
 const modalTrigger = document.querySelector('#open-preview');
 
 modalTrigger.onclick = function() {
-    modal.style.display = 'block';
     document.getElementById('preview-iframe').src = urlHidden;
+    modal.style.display = 'block';
     console.log(document.getElementById('preview-iframe').src, urlHidden);
     modal.setAttribute('aria-hidden', 'false');
 };

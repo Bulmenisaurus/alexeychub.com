@@ -14,6 +14,7 @@ String.prototype.hashCode = function(radix) {
 
 let urlHash = window.location.href.hashCode(7);
 urlHash = parseInt(urlHash[urlHash.length - 1]);
+console.log(urlHash);
 const messages = [
     'Well..... this is akward. A 404. Do you perhaps want some tea?',
     'Oh no! What are these weird numbers? Is it a secret code? Are aliens communicating with me?<br>Nope, It\'s just a 404 page!',

@@ -48,8 +48,8 @@
         nonce="ANkqPbI5"></script>
 
     <header>
-        <noscript>Please enable JavaScript to make this page work!</noscript>
-        <h1>Make cards for your friends and family! (for free)</h1>
+        <noscript class="error">Please enable JavaScript to make this page work!</noscript>
+        <h1>Make cards for friends, family, or youself! (for free)</h1>
         <p id="header-description">Check us out on <a href="https://www.facebook.com/siakina2021">facebook</a>!</p>
     </header>
     <main>
@@ -60,9 +60,16 @@
                     <div id="image-container">
                         <div class="group">
                             <label>
+                                <input type="radio" name="h" value="9">
+                                <span id="winner">1st place winner!</span>
+                                <img src="https://alexeychub.com/images/store_9.gif" height="185" width="300"
+                                    id="snakegif" alt="A gif of a blocky snake">
+                            </label>
+                        </div>
+                        <div class="group">
+                            <label>
                                 <!-- Labels mean that people can click the images to trigger the radiobutton! -->
                                 <input type="radio" name="h" value="1" checked>
-                                <span id="winner">1st place winner!</span>
                                 <img src="https://alexeychub.com/images/store_1.jpg" height="185" width="300"
                                     alt="A painting of a fox and a bear">
                             </label>
@@ -116,13 +123,7 @@
                                     alt="A snowman cut in half">
                             </label>
                         </div>
-                        <div class="group">
-                            <label>
-                                <input type="radio" name="h" value="9">
-                                <img src="https://alexeychub.com/images/store_9.gif" height="185" width="300"
-                                    id="snakegif" alt="A gif of a blocky snake">
-                            </label>
-                        </div>
+                        <!-- TODO: add GIF picker from some place-->
                     </div>
                 </li>
 
@@ -162,6 +163,8 @@
         <div class="fb-like" data-href="https://www.facebook.com/Free-love-letters-and-pictures-103414208384146"
             data-width="400" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
         <br>
+        <footer-copyright>Copyright 2020 - 2021 &copy; <a href="https://alexeychub.com"
+                class="subtle-link">alexeychub.com</a></footer-copyright>
     </footer>
 </body>
 

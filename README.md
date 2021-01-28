@@ -16,7 +16,7 @@ My site
 - [ ] At least 90 / 90 / 90 / 90 in Google lighthouse on all pages
   - [x]  `/index.html`
   - [ ]  `/secrets.html`
-  - [ ]  `/cssbudget.html`
+  - [ ]  `/cssslider.html`
   - [ ]  `/onelinewonders.html`
   - [ ]  `404 page`
   - [x]  `terminal.html`

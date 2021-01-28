@@ -47,7 +47,8 @@ modalTrigger.onclick = function() {
     modal.style.display = 'block';
     console.log(document.getElementById('preview-iframe').src, urlHidden);
     modal.setAttribute('aria-hidden', 'false');
-    setTimeout(function() { document.getElementById('preview-iframe').contentWindow.focus(); }, 100);
+    document.getElementById('preview-iframe').contentWindow.focus();
+
 };
 
 modalClose.onclick = function() {

@@ -8,11 +8,11 @@ String.prototype.hashCode = function(radix) {
         // Convert to 32-bit
         hash = hash & hash;
     }
-    return parseInt(hash, radix);
+    return hash.toString(radix);
 };
 
 
-let urlHash = window.location.href.hashCode(7).toString();
+let urlHash = window.location.href.hashCode(7);
 urlHash = parseInt(urlHash[urlHash.length - 1]);
 const messages = [
     'Well..... this is akward. A 404. Do you perhaps want some tea?',

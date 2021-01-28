@@ -12,7 +12,7 @@ setInterval(() => {
 }, 5000);
 
 const secret_button = document.getElementById('t3');
-const secret_text = document.getElementById('title_info');
+const secret_text = document.getElementById('title-info');
 let click_amt = -10;
 let has_consoled = false;
 

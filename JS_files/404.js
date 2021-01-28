@@ -22,4 +22,4 @@ const messages = [
     'Sadly, a 404 error occured. I wonder if you can collect the next card in the series, a 405, too.',
     'This page doesn\'t exist. Oh well!'];
 
-document.getElementById('404_message').innerHTML = messages[urlHash];
+document.getElementById('404-message').innerHTML = messages[urlHash];

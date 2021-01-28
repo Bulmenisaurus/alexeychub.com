@@ -11,7 +11,7 @@ const GameData = [
         snake: [...line(0, 60, -10, 60)],
         blocks: [...line(0, 0, 240, 0), ...line(0, 0, 240, 120)],
         goal: line(240, 50, 240, 70),
-        food: new Set(randomDotsInRect(3100, 10, 10, 240, 110)),
+        food: Array.from(new Set(randomDotsInRect(5, 10, 10, 240, 110))),
     },
 ];
 
@@ -81,6 +81,8 @@ class SnakeGame {
         this.foodBorder = 'darkgreen';
         this.blockCol = 'grey';
         this.blockBorder = 'black';
+        this.goalCol = 'yellow';
+        this.goalBorder = 'black';
 
         // settings
         this.ctx.imageSmoothingEnabled = false;
@@ -139,6 +141,7 @@ class SnakeGame {
         this.updateScore();
         this.moveSnake(this.direction);
         this.drawBlocks();
+        this.drawGoals();
         this.drawFoods();
         this.drawSnake();
         if (this.checkCollisions()) this.lose();
@@ -229,6 +232,12 @@ class SnakeGame {
         }
     }
 
+    drawGoals() {
+        if (this.levelData.food.length === this.eatenFoods.length) {
+            this.drawTiles(this.levelData.goal, this.goalCol, this.goalBorder);
+        }
+    }
+
     drawBlocks() {
         this.drawTiles(this.levelData.blocks, this.blockCol, this.blockBorder);
     }
@@ -275,4 +284,4 @@ class SnakeGame {
 }
 
 const snakeGame = new SnakeGame(GameData);
-snakeGame.init(100);
+snakeGame.init(200);

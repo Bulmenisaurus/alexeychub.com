@@ -12,30 +12,15 @@
     <link rel="stylesheet" href="CSS_files/cssbudget.min.css">
     <!-- Anti-hack measures -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'none'; child-src 'none'; object-src 'none';  font-src https://bulmenisaurus.github.io https://fonts.gstatic.com; style-src 'unsafe-inline' https://bulmenisaurus.github.io https://fonts.googleapis.com/; https://bulmenisaurus.github.io https://www.google-analytics.com; script-src-elem 'unsafe-inline' https:; script-src https://www.google-analytics.com; base-uri 'none'; connect-src https:; form-action 'none'">
+        content="default-src 'none'; child-src 'none'; object-src 'none';  font-src https://bulmenisaurus.github.io https://fonts.gstatic.com; style-src https://bulmenisaurus.github.io https://fonts.googleapis.com/; img-src https://bulmenisaurus.github.io https://www.google-analytics.com; script-src-elem https:; script-src https://www.google-analytics.com; base-uri 'none'; connect-src https:; form-action 'none'">
 </head>
 
 <body>
-    <style>
-        * {
-            transition: all 1.5s;
-        }
-
-        .text_container {
-            width: 75%;
-            margin: 30px auto;
-        }
-
-        #slider_container {
-            text-align: center;
-        }
-    </style>
     <h1>CSS slider</h1>
-    <article class="text-container">
+    <main class="text-container">
         <p>
             This is an idea I had a bit ago. But since I'm no good at <strong>JavaScript</strong><sup><s>the bane of my
-                    existence</s></sup>,
-            this took way too long to code. Anyway, here it is, the magical program:
+                    existence</s></sup>, this took way too long to code. Anyway, here it is, the magical program:
         </p>
         <div id="slider-container"><input type="range" min="0" value="0" id="main-slider"></div>
         <p id="last-rule"><span id="label">Last rule
@@ -43,7 +28,7 @@
         <p>
             Just slide the slider 'round! You will see some things change!
         </p>
-    </article>
+    </main>
 </body>
 
 </html>

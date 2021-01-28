@@ -1,7 +1,9 @@
 document.querySelector('input').addEventListener('input', cssanimation);
+document.querySelector('input').value = 0;
 console.log('bam');
 
 const actions = [
+    // ['target, 'style', 'value']
     ['p', 'margin', '20px'],
     ['code', 'padding', '3px 5px'],
     ['h1', 'textAlign', 'center'],

@@ -2,14 +2,17 @@ document.querySelector('input').addEventListener('input', cssanimation);
 document.querySelector('input').value = 0;
 console.log('bam');
 
+// ! YOINKED: https://gist.github.com/nblackburn/875e6ff75bc8ce171c758bf75f304707
+const camelCaseToKebabCase = (camelCase) => { return camelCase.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase(); };
+
 const actions = [
     // ['target, 'style', 'value']
+    ['.text-container', 'margin', '30px auto'],
     ['main', 'padding', '20px'],
     ['code', 'padding', '3px 5px'],
     ['h1', 'textAlign', 'center'],
-    ['p', 'fontFamily', 'arial, sans-serif'],
+    ['body', 'fontFamily', 'arial, sans-serif'],
     ['#last-rule', 'textAlign', 'center'],
-    ['h1', 'fontFamily', 'arial, sans-serif'],
     ['code', 'fontFamily', 'courier, monospace;'],
     ['pre code', 'display', 'block'],
     ['code', 'backgroundColor', '#eee'],
@@ -27,8 +30,8 @@ const actions = [
     ['kbd', 'fontSize', '11px'],
     ['kbd', 'lineHeight', '16.5px'],
     ['kbd', 'color', 'rgb(36, 39, 41)'],
-    ['kbd', 'textShadow', '0 1px 0 white'],
     ['kbd', 'backgroundColor', 'rgb(228, 230, 232)'],
+    ['kbd', 'textShadow', '0 1px 0 white'],
     ['kbd', 'border', '1px solid rgb(159, 166, 173)'],
     ['kbd', 'borderRadius', '3px'],
     ['kbd', 'boxShadow', '0 1px 1px rgba(12, 13, 14, 0.15), inset 0 1px 0 0 #fff'],
@@ -68,7 +71,7 @@ function cssanimation() {
         for (const [x, element] of elementsAffected.entries()) {
 
             if (!x) {
-                document.getElementsByTagName('code')[0].innerHTML = `<b>'${style[0]}'</b>: style.${style[1]} = ${style[2]}`;
+                document.getElementsByTagName('code')[0].innerHTML = `<strong>${camelCaseToKebabCase(style[0])}</strong> {${style[1]}: ${style[2]}}`;
             }
 
             element.style[style[1]] = style[2];

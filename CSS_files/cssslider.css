@@ -3,7 +3,7 @@
     margin: 30px auto;
 }
 
-#slider-container {
+#slider-container, h1 {
     text-align: center;
 }
 

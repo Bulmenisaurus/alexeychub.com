@@ -4,13 +4,14 @@ console.log('bam');
 
 const actions = [
     // ['target, 'style', 'value']
-    ['p', 'margin', '20px'],
+    ['main', 'padding', '20px'],
     ['code', 'padding', '3px 5px'],
     ['h1', 'textAlign', 'center'],
     ['p', 'fontFamily', 'arial, sans-serif'],
     ['#last-rule', 'textAlign', 'center'],
     ['h1', 'fontFamily', 'arial, sans-serif'],
     ['code', 'fontFamily', 'courier, monospace;'],
+    ['pre code', 'display', 'block'],
     ['code', 'backgroundColor', '#eee'],
     ['h1', 'fontSize', '5vw'],
     ['h1', 'marginBottom', '0'],

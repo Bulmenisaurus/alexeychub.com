@@ -1,3 +1,6 @@
+/* global hljs */
+'use strict';
+
 document.querySelector('input').addEventListener('input', cssanimation);
 document.querySelector('input').value = 0;
 console.log('bam');
@@ -71,7 +74,8 @@ function cssanimation() {
         for (const [x, element] of elementsAffected.entries()) {
 
             if (!x) {
-                document.getElementsByTagName('code')[0].innerHTML = `<strong>${camelCaseToKebabCase(style[0])}</strong> {${style[1]}: ${style[2]}}`;
+                document.getElementsByTagName('code')[0].innerText = `${camelCaseToKebabCase(style[0])} {${style[1]}: ${style[2]}}`;
+                hljs.highlightBlock(document.getElementsByTagName('code')[0]);
             }
 
             element.style[style[1]] = style[2];

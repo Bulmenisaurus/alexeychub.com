@@ -1,5 +1,5 @@
 .text-container {
-    width: 75%;
+    width: 85%;
     margin: 30px auto;
 }
 
@@ -21,4 +21,8 @@
 
 kbd {
     font-size: 20px;
+}
+
+.inline-highlight {
+    display: inline-block;
 }

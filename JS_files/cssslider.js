@@ -16,7 +16,7 @@ const actions = [
     ['code', 'fontFamily', 'courier, monospace;'],
     ['pre code', 'display', 'block'],
     ['code', 'backgroundColor', '#eee'],
-    ['h1', 'fontSize', '5vw'],
+    ['h1', 'fontSize', 'max(30px, 5vw)'],
     ['h1', 'marginBottom', '0'],
     ['code', 'borderRadius', '3px'],
     ['p', 'lineHeight', '150%'],

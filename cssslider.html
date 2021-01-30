@@ -9,7 +9,7 @@
     <script src="JS_files/cssslider.js" defer></script>
 
     <link rel="icon" type="image/png" href="images/c-pixilart.png">
-    <link rel="stylesheet" href="CSS_files/cssslider.min.css">
+    <link rel="stylesheet" href="CSS_files/cssslider.css">
     <!-- Anti-hack measures -->
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'none'; child-src 'none'; object-src 'none';  font-src https://bulmenisaurus.github.io https://fonts.gstatic.com; style-src https://bulmenisaurus.github.io https://fonts.googleapis.com/; img-src https://bulmenisaurus.github.io https://www.google-analytics.com; script-src-elem https:; script-src https://www.google-analytics.com; base-uri 'none'; connect-src https:; form-action 'none'">
@@ -25,12 +25,18 @@
                     existence</s></sup>, this took way too long to code. Anyway, here it is, the magical program:
         </p>
         <div id="slider-container"><input type="range" min="0" value="0" id="main-slider"></div>
-        <p id="last-rule"><span id="label">Last rule
-                executed: </span><code>{no rules changed yet! Use the slider ;)}</code></p>
+        <div class="left-right-container">
+            <div class="left" id="label">Last rule executed:</div>
+            <div class="right"><code>{no rules changed yet! Use the slider ;)}</code></div>
+        </div>
         <p>
+            Basically, this one slider lets you control the amount of <abbr title="Cascading Style Sheets">CSS</abbr> on
+            the page, which means you can either make the site really ugly , or really pretty!
+        </p>
+        <small>
             Top tip: instead of having to slide the slider with your mouse, you can just select it and then press
             <kbd>←</kbd> or <kbd>→</kbd> to control it with just your keyboard!
-        </p>
+        </small>
         <h2>Explanation:</h2>
         <h3>What is CSS?</h3>
         <p>
@@ -62,6 +68,9 @@
             class of <code>text-container</code> be <i>italic</i>.
         </p>
     </main>
+    <footer>
+        &copy; 2020 - 2021.
+    </footer>
 </body>
 
 </html>

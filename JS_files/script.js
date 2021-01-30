@@ -5,7 +5,7 @@ const themes = new ThemeChanger(
 themes.init();
 
 // Smoothly transitions the title colors
-const randomColor = () => '#' + Math.floor(Math.random() * 16777215).toString(16);
+const randomColor = () => '#' + Math.floor(Math.random() * 16777215).toString(16).padEnd(6, 'E');
 
 const changeColor = (id_type) => document.getElementById(id_type).style.color = randomColor();
 

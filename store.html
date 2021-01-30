@@ -21,7 +21,7 @@
         content="A beautiful painting with a fox and a bear sitting together, with text underneath.">
 
     <script src="JS_files/store.js" defer></script>
-    <link rel="stylesheet" href="CSS_files/store.min.css">
+    <link rel="stylesheet" href="CSS_files/store.css">
     <link rel="icon" type="image/png" href="https://bulmenisaurus.github.io/images/c-pixilart.png">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -36,9 +36,10 @@
 
         gtag('config', 'UA-178719317-1');
     </script>
+    <!----
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'none'; child-src 'none'; object-src 'none';  font-src https://bulmenisaurus.github.io https://fonts.gstatic.com; style-src https://bulmenisaurus.github.io 'sha256-2aahydUs+he2AO0g7YZuG67RGvfE9VXGbycVgIwMnBI=' https://fonts.googleapis.com/; img-src https://bulmenisaurus.github.io https://www.google-analytics.com https://www.facebook.com https://www.paypalobjects.com https://www.paypal.com; script-src-elem https:; script-src https:; base-uri 'none'; connect-src https:; form-action https:; frame-src https://bulmenisaurus.github.io https://www.facebook.com">
-
+    -->
 </head>
 
 <body>
@@ -57,11 +58,11 @@
             <ol>
                 <li>
                     <p class="step">Choose the Image:</p>
-                    <div id="image-container">
+                    <section id="image-container">
                         <div class="group">
                             <label>
-                                <input type="radio" name="h" value="9">
-                                <span id="winner">1st place winner!</span>
+                                <!--<span id="winner">1st place winner!</span>-->
+                                <input type="radio" name="h" value="9" checked autofocus>
                                 <img src="https://bulmenisaurus.github.io/images/store_9.gif" height="185" width="300"
                                     id="snakegif" alt="A gif of a blocky snake">
                             </label>
@@ -69,7 +70,7 @@
                         <div class="group">
                             <label>
                                 <!-- Labels mean that people can click the images to trigger the radiobutton! -->
-                                <input type="radio" name="h" value="1" checked>
+                                <input type="radio" name="h" value="1">
                                 <img src="https://bulmenisaurus.github.io/images/store_1.jpg" height="185" width="300"
                                     alt="A painting of a fox and a bear">
                             </label>
@@ -124,7 +125,7 @@
                             </label>
                         </div>
                         <!-- TODO: add GIF picker from some place-->
-                    </div>
+                    </section>
                 </li>
 
                 <li>

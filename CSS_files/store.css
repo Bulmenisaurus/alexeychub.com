@@ -6,13 +6,13 @@
 
 body {
     background-color: #e4e4e4;
+    font-family: Arial, Helvetica, sans-serif;
     padding-top: 10px;
 }
 
 header {
     margin: 10px;
     margin-left: 5%;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
@@ -41,8 +41,9 @@ main {
 }
 
 #image-container img, #choose-image img {
-    margin-right: 20px;
-    margin-bottom: 10px;
+    margin: 5px;
+    border: 0px solid orange;
+    transition: border 0.2s;
 }
 
 .group {
@@ -51,8 +52,18 @@ main {
     overflow-x: hidden;
 }
 
+/* NGL this is very hacky and not supported in like akjhdkshj*/
+
+input[type="radio"]:checked+img {
+    border: 8px solid orange !important;
+}
+
+input[type="radio"] {
+    z-index: -1;
+    position: absolute;
+}
+
 li {
-    font-family: Arial, Helvetica, sans-serif;
     margin: 10px;
     margin-top: 30px;
 }
@@ -63,6 +74,7 @@ li {
 
 .step, ::marker {
     font-size: 18px;
+    display: inline-block;
 }
 
 #link-preview {
@@ -164,23 +176,11 @@ footer * {
     vertical-align: middle;
 }
 
-#winner {
-    position: absolute;
-    background-color: rgba(255, 255, 255, .8);
-    padding: 2px 5px;
-    font-size: 12px;
-    color: #585858;
-}
-
-#winner-group {
-    display: inline-grid;
-}
-
 #header-description {
     margin-top: 7px;
 }
 
-#snakegif {
+img#snakegif {
     border: 1px solid #a4a4a4;
 }
 
@@ -204,8 +204,19 @@ a.subtle-link:hover {
 }
 
 footer-copyright {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
 }
 
-ol {}
+ol {
+    list-style-position: inside;
+}
+
+textarea {
+    display: block;
+}
+
+@media only screen and (max-width: 400px) {
+    ol {
+        padding: 0;
+    }
+}

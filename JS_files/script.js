@@ -1,5 +1,10 @@
-// Smoothly transitions the title colors
+/* global ThemeChanger:readonly */
+const themes = new ThemeChanger(
+    document.getElementById('theme'),
+);
+themes.init();
 
+// Smoothly transitions the title colors
 const randomColor = () => '#' + Math.floor(Math.random() * 16777215).toString(16);
 
 const changeColor = (id_type) => document.getElementById(id_type).style.color = randomColor();

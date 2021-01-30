@@ -4,12 +4,17 @@
     padding: 0;
 }
 
+:root {
+    color-scheme: light dark;
+}
+
 body[data-theme="dark"] {
     --main-bg: #2B2B2B;
     --secondary-bg: #363636;
     --font-color: #F0F0F0;
     --border-color: #181818;
     --border-width: 3px;
+    font-weight: 350;
 }
 
 body[data-theme="light"] {
@@ -18,6 +23,10 @@ body[data-theme="light"] {
     --font-color: rgba(0, 0, 0, 0.8);
     --border-color: rgba(0, 0, 0, 0.3);
     --border-width: 1px;
+}
+
+body[data-theme="dark"] img {
+    filter: brightness(.8) contrast(1.2);
 }
 
 body {

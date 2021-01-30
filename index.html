@@ -9,10 +9,10 @@
 
         <!-- My assets: -->
         <link rel="icon" type="image/png" href="images/c-pixilart.png">
+        <script src="JS_files/themechanger.js"></script>
         <script src="JS_files/script.js" defer></script>
-        <script src="JS_files/popup.js" defer></script>
         <link rel="stylesheet" type="text/css" href="CSS_files/popup.min.css">
-        <link rel="stylesheet" type="text/css" href="CSS_files/style.min.css">
+        <link rel="stylesheet" type="text/css" href="CSS_files/style.css">
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178719317-1"></script>
@@ -31,87 +31,93 @@
                 content="default-src 'none'; child-src 'none'; object-src 'none';  font-src https://bulmenisaurus.github.io https://fonts.gstatic.com; style-src https://bulmenisaurus.github.io https://fonts.googleapis.com/; img-src https://bulmenisaurus.github.io https://www.google-analytics.com; script-src-elem https:; script-src https://www.google-analytics.com; base-uri 'none'; connect-src https:; form-action 'none'">
 </head>
 
-<body>
-        <h1 id="main-title">
-                <span id="t1">Bulmenisaurus</span><span id="t2">.github</span><span id="t3">.</span><span
-                        id="t4">io</span>
-        </h1>
-        <div id="title-info">
-                <p>Affiliated with Bulmenisaurus co</p>
-        </div>
-
+<body data-theme="dark">
+        <header>
+                <h1>
+                        <span id="t1">Bulmenisaurus</span><span id="t2">.github</span><span id="t3">.</span><span
+                                id="t4">io</span>
+                </h1>
+        </header>
         <hr>
-        <div class="grid-container columns-2">
-                <div class="grid-item">
-                        <div class="text-container">
-                                <h2>Welcome!</h2>
-                                <p>
-                                        Welcome to my site! If you're lucky, about now I'm planning what cool things to
-                                        put on my site! ;) Also, if you have any suggestions on how to improve
-                                        bulmenisaurus.github.io,
-                                        just keep them to yourself for now. :D I need to learn how to use Javascript
-                                        too,
-                                        so for a good while this will just be something to look at.
-                                        <br><br>
-                                        Here are some things I hope to accomplish with this site:
-                                </p>
-                                <ul>
-                                        <li>Create new sub-pages</li>
-                                        <li>Apply my color palette</li>
-                                        <li>Usable buttons using JavaScript</li>
-                                        <li>Animations</li>
-                                </ul>
-                        </div>
+        <main>
+                <div class="grid-container">
+                        <card>
+                                <article>
+                                        <header>
+                                                <h2>Welcome!</h2>
+                                        </header>
+                                        <p>
+                                                Welcome to my site! If you're lucky, about now I'm planning what cool
+                                                things to put on my site! ;) Also, if you have any suggestions on how to
+                                                improve bulmenisaurus.github.io, just keep them to yourself for now. :D
+                                                I need to learn how to use Javascript too, so for a good while this will
+                                                just be something to look at.
+                                                <br><br>
+                                                Here are some things I hope to accomplish with this site:
+                                        </p>
+                                        <ul>
+                                                <li>Create new sub-pages</li>
+                                                <li>Apply my color palette</li>
+                                                <li>Usable buttons using JavaScript</li>
+                                                <li>Animations</li>
+                                        </ul>
+                                </article>
+                        </card>
+                        <card>
+                                <article>
+                                        <h2>About me!</h2>
+                                        <p>
+                                                The creator of this site, Mr. Bulmeni, is cool. Here's why FAANG
+                                                should hire me:
+                                                <br><br>
+                                                I have experience with:
+                                        </p>
+                                        <ul>
+                                                <li>Python, for 2+ weeks</li>
+                                                <li>113 lines of css</li>
+                                                <li>Lots of experience with Html (over 5 minutes)</li>
+                                                <li>Scratch (like 1 year)</li>
+                                                <li>Over 2 seconds of JavaScript (gotta be honest)</li>
+                                                <li>A magnificent keyboard <small><del>not really</del></small></li>
+                                                <li class="hidden">I'm also experienced with trickery :D<br>i&#8203;d:
+                                                        html_coding</li>
+                                        </ul>
+                                </article>
+                        </card>
                 </div>
-                <div class="grid-item">
-                        <div class="text-container">
-                                <h2>About me!</h2>
-                                <p>
-                                        The creator of this site, Mr. Bulmeni, is cool. Here's why FAANG
-                                        should hire me:
-                                        <br><br>
-                                        I have experience with:
-                                </p>
-                                <ul>
-                                        <li>Python, for 2 weeks</li>
-                                        <li>113 lines of css</li>
-                                        <li>Lots of experience with Html (over 5 minutes)</li>
-                                        <li>Scratch (like 1 year)</li>
-                                        <li>Over 2 seconds of JavaScript (gotta be honest)</li>
-                                        <li>A magnificent keyboard</li>
-                                        <div class="hidden">
-                                                <li>I'm also experienced with trickery :D<br>i&#8203;d: html_coding</li>
-                                        </div>
-                                </ul>
-                        </div>
+                <div class="grid-container">
+                        <card>
+                                <article>
+                                        <h2 title="Wow! That was an easy one! i&#8203;d: easy-peasy">Easter Eggs:</h2>
+                                        <p>
+                                                <!-- TODO: cite param for blockquote v -->
+                                                <blockquote cite="https://www.lexico.com/en/definition/easter_egg">
+                                                        An unexpected or undocumented feature in a piece of computer
+                                                        software or on a DVD, included as a joke or a bonus.
+                                                        <cite>- Oxford languages, 2020</cite>
+                                                </blockquote>
+                                                There are a couple of these Easter eggs scattered all across this site.
+                                                Can you
+                                                find them all?
+                                                Easter eggs might be pretty difficult to spot, but if you have some
+                                                initial
+                                                knowledge, it might be a piece of cake!
+                                                Some times you might need to open up the console, or hover over some
+                                                text
+                                                (sorry, mobile users),
+                                                or click on something you wouldn't otherwise. You might have to select
+                                                some
+                                                text, press a button, or go to
+                                                a secret page.
+                                                To help you a bit, here's an easy one, although the other ones will be a
+                                                bit
+                                                more challenging:
+                                        </p>
+                                        <button id="easter-egg">An easter egg!</button>
+                                </article>
+                        </card>
                 </div>
-        </div>
-        <div class="grid-container columns-1">
-                <div class="grid-item">
-                        <div class="text-container">
-                                <h2 title="Wow! That was an easy one! i&#8203;d: easy-peasy">Easter Eggs:</h2>
-                                <p>
-                                        <q>An unexpected or undocumented feature in a piece of computer software or on a
-                                                DVD, included as a joke or a bonus.</q>
-                                        <br>
-                                        - Oxford languages, 2020
-                                        <br><br>
-                                        There are a couple of these Easter eggs scattered all across this site. Can you
-                                        find them all?
-                                        Easter eggs might be pretty difficult to spot, but if you have some initial
-                                        knowledge, it might be a piece of cake!
-                                        Some times you might need to open up the console, or hover over some text
-                                        (sorry, mobile users),
-                                        or click on something you wouldn't otherwise. You might have to select some
-                                        text, press a button, or go to
-                                        a secret page.
-                                        To help you a bit, here's an easy one, although the other ones will be a bit
-                                        more challenging:
-                                </p>
-                                <button id="easter-egg">An easter egg!</button>
-                        </div>
-                </div>
-        </div>
+        </main>
         <div id="my-modal" class="modal">
                 <!-- Modal content -->
                 <div class="modal-content">
@@ -133,9 +139,11 @@
         <br>
         <footer>
                 <hr>
-                <span id="ratio"></span>
+                <div class="theme-container"><label for="theme">Light theme?</label><input type="checkbox" name="theme"
+                                id="theme"></div>
                 <a href="https://github.com/Bulmenisaurus/bulmenisaurus.github.io" target="_blank" rel="noopener">
-                        <img src="images/GitHub-Mark/PNG/GitHub-Mark-Light-64px.png" alt="github">
+                        <img src="images/GitHub-Mark/PNG/GitHub-Mark-120px-plus.png" alt="github" height="80"
+                                width="80">
                 </a>
         </footer>
 </body>

@@ -1,54 +1,53 @@
 * {
     font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+body[data-theme="dark"] {
+    --main-bg: #2B2B2B;
+    --secondary-bg: #363636;
+    --font-color: #F0F0F0;
+    --border-color: #181818;
+    --border-width: 3px;
+}
+
+body[data-theme="light"] {
+    --main-bg: white;
+    --secondary-bg: #eee;
+    --font-color: rgba(0, 0, 0, 0.8);
+    --border-color: rgba(0, 0, 0, 0.3);
+    --border-width: 1px;
 }
 
 body {
-    background-color: #2B2B2B;
+    background-color: var(--main-bg);
     margin-top: 1px;
 }
 
 /*  CLASSES AND MAIN ELEMENTSSS */
 
-#main-title {
+h1 {
     /*text-shadow: 0px 1px 10px #000000;*/
     font-family: "Quicksand", "Lucida Console", Monaco, monospace;
-    font-size: 60px;
-    letter-spacing: 4px;
+    font-size: 50px;
     font-weight: 100;
     text-align: center;
-    margin-top: 20px;
-    padding: 0px;
+    margin: 10px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 750px) {
     h1 {
-        font-size: 10vw !important;
+        font-size: 6.7vw !important;
     }
 }
 
-#main-title {
-    margin: 0;
-}
-
-#title-info p {
-    margin: 0;
-}
-
-#title-info {
-    color: rgb(15, 177, 50);
-    font-family: "Lucida Console", Monaco, monospace;
-    text-align: center;
-    font-size: 1em;
-}
-
-.text-container {
+article {
     margin: 15px;
-    width: 75%;
-    color: #F0F0F0;
+    color: var(--font-color);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.6;
     letter-spacing: .5px;
-    font-weight: 400;
     font-size: 14px;
 }
 
@@ -56,26 +55,20 @@ footer a {
     text-decoration: none;
 }
 
-.grid-container.columns-1 {
-    display: grid;
-    padding: 10px;
-    grid-template-columns: 100%;
-}
-
-.grid-container.columns-2 {
+.grid-container {
     display: grid;
     padding: 10px;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
-.grid-item {
-    background-color: #2B2B2B;
-    border: 3px solid #181818;
+card {
+    background-color: var(--main-bg);
+    border: var(--border-width) solid var(--border-color);
     box-shadow: 0px 0px 41px -13px rgba(255, 255, 255, 0.21);
     padding: 20px;
     padding-top: 0;
     margin: 10px;
-    border-radius: 24px;
+    border-radius: 12px;
 }
 
 /* SMALL CHANGES & SINGLE ELEMENTS*/
@@ -84,17 +77,16 @@ footer a {
     background: #14A35B;
 }
 
-a {
-    color: #CC00FF;
-}
-
-q {
-    font-style: italic;
+blockquote {
+    background-color: var(--secondary-bg);
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-left: 3px solid #aeacacde;
 }
 
 hr {
     /* All those boxes n' stuff are a bit complicated for seperating*/
-    border-color: #181818;
+    border-color: var(--border-color);
 }
 
 footer img {
@@ -165,6 +157,10 @@ h2 {
 #invis {
     font-size: 5px;
     color: black;
+}
+
+.theme-container {
+    color: var(--font-color);
 }
 
 /* 

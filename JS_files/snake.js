@@ -30,12 +30,12 @@ function line(oldX, oldY, newX, newY) {
     if (changed === 'x') {
         const [min, max] = [oldX, newX].sort();
         for (let x = min; x <= max; x += 10) {
-            result.push({ x: x, y: newY });
+            result.push([x, newY]);
         }
     } else {
         const [min, max] = [oldY, newY].sort();
         for (let y = min; y <= max; y += 10) {
-            result.push({ x: newX, y: y });
+            result.push([newX, y]);
         }
     }
 
@@ -49,7 +49,7 @@ function rectangle(x1, y1, x2, y2) {
     const result = [];
     for (let x = x1; x <= x2; x += 10) {
         for (let y = y1; y <= y2; y += 10) {
-            result.push({ x, y });
+            result.push([x, y]);
         }
     }
 
@@ -57,9 +57,9 @@ function rectangle(x1, y1, x2, y2) {
 }
 
 function randomDotsInRect(amt, x1, y1, x2, y2, ...avoid) {
+    const JSONavoid = avoid.map(e => JSON.stringify(e));
     const dots = [];
     const allSquares = rectangle(x1, y1, x2, y2);
-    const JSONavoid = avoid.map(e => JSON.stringify(e));
     while (dots.length <= amt) {
         const dot = allSquares[Math.floor(Math.random() * allSquares.length)];
         if (!JSONavoid.includes(JSON.stringify(dot))) {
@@ -69,11 +69,15 @@ function randomDotsInRect(amt, x1, y1, x2, y2, ...avoid) {
     return dots;
 }
 
+function shallowCompareCoords(coord1, coord2) {
+    return coord1[0] === coord2[0] && coord1[1] === coord2[1];
+}
+
 class SnakeGame {
     constructor(gameData) {
         this.canvas = document.getElementsByTagName('canvas')[0];
         this.ctx = this.canvas.getContext('2d');
-        this.snake = '';
+        this.snake = [];
         this.eatenFoods = [];
         this.gameData = gameData;
         this.levelData = gameData[0];
@@ -103,7 +107,7 @@ class SnakeGame {
     }
 
     drawSnake() {
-        this.drawTiles(this.snake, this.snakeCol, this.snakeBorder, 'tile.x < 0');
+        this.drawTiles(this.snake, this.snakeCol, this.snakeBorder, 'tile[0] < 0');
     }
 
     clearCanvas() {
@@ -116,7 +120,7 @@ class SnakeGame {
     }
 
     moveSnake(direction) {
-        const newHead = { x: this.snake[0].x, y: this.snake[0].y };
+        const newHead = { x: this.snake[0][0], y: this.snake[0][1] };
         switch (direction) {
             case 'up': newHead.y -= 10; break;
             case 'right': newHead.x += 10; break;
@@ -124,17 +128,13 @@ class SnakeGame {
             case 'left': newHead.x -= 10; break;
         }
 
-        this.snake.unshift(newHead);
-        const snakeHead = JSON.stringify(this.snake[0]);
+        this.snake.unshift([newHead.x, newHead.y]);
         let ateSomething = false;
         for (const [i, food] of this.foods.entries()) {
-            const jsonFood = JSON.stringify(food);
-
             if (this.eatenFoods.includes(i)) {
                 continue;
             }
-
-            if (snakeHead === jsonFood) {
+            if (shallowCompareCoords(food, this.snake[0])) {
                 ateSomething = true;
                 this.eatenFoods.push(i);
                 this.score++;
@@ -202,8 +202,8 @@ class SnakeGame {
         // Otherwise, that means some parts of the snake are stacked = lose
 
         for (const block of this.levelData.blocks) {
-            const { x, y } = block;
-            if (snakeEntries.includes(JSON.stringify({ x, y }))) {
+            const [x, y] = block;
+            if (snakeEntries.includes(JSON.stringify([x, y]))) {
                 return true;
             }
         }
@@ -215,10 +215,10 @@ class SnakeGame {
             return;
         }
 
-        const hitLeftWall = snakeHead.x < 0;
-        const hitRightWall = snakeHead.x > this.canvas.width - 10;
-        const hitTopWall = snakeHead.y < 0;
-        const hitBottomWall = snakeHead.y > this.canvas.height - 10;
+        const hitLeftWall = snakeHead[0] < 0;
+        const hitRightWall = snakeHead[0] > this.canvas.width - 10;
+        const hitTopWall = snakeHead[1] < 0;
+        const hitBottomWall = snakeHead[1] > this.canvas.height - 10;
 
         return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall;
     }
@@ -242,8 +242,8 @@ class SnakeGame {
         this.ctx.strokeStyle = this.foodBorder;
         for (const [i, food] of this.foods.entries()) {
             if (this.eatenFoods.includes(i)) continue;
-            this.ctx.fillRect(food.x, food.y, 10, 10);
-            this.ctx.strokeRect(food.x, food.y, 10, 10);
+            this.ctx.fillRect(...food, 10, 10);
+            this.ctx.strokeRect(...food, 10, 10);
         }
     }
 
@@ -264,8 +264,8 @@ class SnakeGame {
         this.ctx.strokeStyle = strokeStyle;
         for (const tile of tiles) {
             if (eval(condition)) continue;
-            this.ctx.fillRect(tile.x, tile.y, 10, 10);
-            this.ctx.strokeRect(tile.x, tile.y, 10, 10);
+            this.ctx.fillRect(...tile, 10, 10);
+            this.ctx.strokeRect(...tile, 10, 10);
         }
     }
 
@@ -278,7 +278,7 @@ class SnakeGame {
 
     blockAtCoordinates(coordX, coordY) {
         for (const block of this.levelData.blocks) {
-            const { x, y } = block;
+            const [x, y] = block;
             if (JSON.stringify([x, y]) === JSON.stringify([coordX, coordY])) {
                 return true;
             }

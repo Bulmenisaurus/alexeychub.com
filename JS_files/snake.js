@@ -16,9 +16,10 @@ const GameData = [
     {
         name: '1-2',
         snake: [...line(0, 60, -10, 60)],
-        blocks: [...line(0, 0, 240, 0), ...line(0, 0, 240, 120)],
+        blocks: [...line(0, 0, 240, 0), ...line(0, 0, 240, 120), ...rectangle(50, 40, 190, 80)],
         goal: line(240, 50, 240, 70),
-        food: Array.from(new Set(randomDotsInRect(10, 20, 20, 230, 100))),
+        food: Array.from(new Set(randomDotsInRect(10, 20, 20, 230, 100, ...rectangle(50, 40, 190, 80)))),
+        speed: 150,
     },
 ];
 
@@ -55,11 +56,15 @@ function rectangle(x1, y1, x2, y2) {
     return result;
 }
 
-function randomDotsInRect(amt, x1, y1, x2, y2) {
+function randomDotsInRect(amt, x1, y1, x2, y2, ...avoid) {
     const dots = [];
-    for (let x = 0; x <= amt; x++) {
-        const allSquares = rectangle(x1, y1, x2, y2);
-        dots.push(allSquares[Math.floor(Math.random() * allSquares.length)]);
+    const allSquares = rectangle(x1, y1, x2, y2);
+    const JSONavoid = avoid.map(e => JSON.stringify(e));
+    while (dots.length <= amt) {
+        const dot = allSquares[Math.floor(Math.random() * allSquares.length)];
+        if (!JSONavoid.includes(JSON.stringify(dot))) {
+            dots.push(dot);
+        }
     }
     return dots;
 }
@@ -293,6 +298,7 @@ class SnakeGame {
         if (this.levelData.snake) this.snake = shallowCopySnake;
         // //if (this.levelData.height) this.canvas.height = this.levelData.height;
         // //if (this.levelData.width) this.canvas.width = this.levelData.width;
+        if (this.levelData.speed) { this.setGameSpeed(this.levelData.speed); }
         this.level = level;
         this.reset();
     }

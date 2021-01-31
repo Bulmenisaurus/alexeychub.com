@@ -213,8 +213,7 @@ ol {
 
 textarea {
     display: block;
-    width: 100%;
-    max-width: initial;
+    width: min(100%, 500px);
 }
 
 @media only screen and (max-width: 400px) {

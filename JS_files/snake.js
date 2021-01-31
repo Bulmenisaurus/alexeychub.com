@@ -11,7 +11,14 @@ const GameData = [
         snake: [...line(0, 60, -10, 60)],
         blocks: [...line(0, 0, 240, 0), ...line(0, 0, 240, 120)],
         goal: line(240, 50, 240, 70),
-        food: Array.from(new Set(randomDotsInRect(5, 10, 10, 240, 110))),
+        food: Array.from(new Set(randomDotsInRect(1, 20, 20, 230, 100))),
+    },
+    {
+        name: '1-2',
+        snake: [...line(0, 60, -10, 60)],
+        blocks: [...line(0, 0, 240, 0), ...line(0, 0, 240, 120)],
+        goal: line(240, 50, 240, 70),
+        food: Array.from(new Set(randomDotsInRect(10, 20, 20, 230, 100))),
     },
 ];
 
@@ -71,6 +78,7 @@ class SnakeGame {
         this.safeMoves = 5;
         this.score = 0;
         this.level = 0;
+        this.hasWon = false;
 
         // canvas color variables
         this.boardBorder = 'black';
@@ -140,6 +148,7 @@ class SnakeGame {
         this.clearCanvas();
         this.updateScore();
         this.moveSnake(this.direction);
+        if (this.checkGoal()) this.nextLevel();
         this.drawBlocks();
         this.drawGoals();
         this.drawFoods();
@@ -220,6 +229,7 @@ class SnakeGame {
         this.snake = JSON.parse(JSON.stringify(this.levelData.snake));
         this.direction = 'right';
         this.safeMoves = 7;
+        this.hasWon = false;
     }
 
     drawFoods() {
@@ -234,6 +244,7 @@ class SnakeGame {
 
     drawGoals() {
         if (this.levelData.food.length === this.eatenFoods.length) {
+            this.hasWon = true;
             this.drawTiles(this.levelData.goal, this.goalCol, this.goalBorder);
         }
     }
@@ -270,16 +281,33 @@ class SnakeGame {
     }
 
     setLevel(level) {
-        this.levelData = this.gameData[level];
+        if (level > this.gameData.length - 1) {
+            alert('You win!');
+        }
+        this.levelData = GameData[level];
+        this.foods = this.levelData.food;
+        console.log(this.levelData);
 
-        this.shallowCopySnake = JSON.parse(JSON.stringify(this.levelData.snake));
+        const shallowCopySnake = JSON.parse(JSON.stringify(this.levelData.snake));
 
-        if (this.levelData.snake) this.snake = this.shallowCopySnake;
-        if (this.levelData.height) this.canvas.height = this.levelData.height;
-        if (this.levelData.width) this.canvas.width = this.levelData.width;
-        this.ctx.translate(0.5, 0.5);
+        if (this.levelData.snake) this.snake = shallowCopySnake;
+        // //if (this.levelData.height) this.canvas.height = this.levelData.height;
+        // //if (this.levelData.width) this.canvas.width = this.levelData.width;
         this.level = level;
         this.reset();
+    }
+
+    checkGoal() {
+        const JSONGoals = this.levelData.goal.map(e => JSON.stringify(e));
+        if (this.hasWon) {
+            if (JSONGoals.includes(JSON.stringify(this.snake[0]))) {
+                return true;
+            }
+        }
+    }
+
+    nextLevel() {
+        this.setLevel(this.level + 1);
     }
 }
 

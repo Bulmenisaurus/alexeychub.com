@@ -231,6 +231,7 @@ class SnakeGame {
     reset() {
         this.score = 0;
         this.eatenFoods = [];
+        this.setGameSpeed(this.initialSpeed);
         this.snake = JSON.parse(JSON.stringify(this.levelData.snake));
         this.direction = 'right';
         this.safeMoves = 7;
@@ -298,7 +299,10 @@ class SnakeGame {
         if (this.levelData.snake) this.snake = shallowCopySnake;
         // //if (this.levelData.height) this.canvas.height = this.levelData.height;
         // //if (this.levelData.width) this.canvas.width = this.levelData.width;
-        if (this.levelData.speed) { this.setGameSpeed(this.levelData.speed); }
+        if (this.levelData.speed) {
+            this.setGameSpeed(this.levelData.speed);
+            this.initialSpeed = this.levelData.speed;
+        }
         this.level = level;
         this.reset();
     }

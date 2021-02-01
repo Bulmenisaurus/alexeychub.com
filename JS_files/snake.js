@@ -6,8 +6,6 @@
 const GameData = [
     {
         name: '1-1',
-        height: 130,
-        width: 250,
         snake: [...line(0, 60, -10, 60)],
         blocks: [...line(0, 0, 240, 0), ...line(0, 0, 240, 120)],
         goal: line(240, 50, 240, 70),
@@ -20,6 +18,16 @@ const GameData = [
         goal: line(240, 50, 240, 70),
         food: Array.from(new Set(randomDotsInRect(10, 20, 20, 230, 100, ...rectangle(50, 40, 190, 80)))),
         speed: 150,
+    },
+    {
+        name: '1-3',
+        snake: [[0, 10]],
+        blocks: [...rectangle(0, 0, 100, 100, ...rectangle(10, 10, 90, 90)), ...rectangle(60, 60, 70, 70), ...rectangle(30, 30, 40, 40), ...rectangle(30, 60, 40, 70), ...rectangle(60, 30, 70, 40)],
+        goal: [[50, 50]],
+        food: [[50, 50], [50, 70], [50, 30], [30, 50], [70, 50]],
+        speed: 250,
+        height: 110,
+        width: 110,
     },
 ];
 
@@ -42,14 +50,17 @@ function line(oldX, oldY, newX, newY) {
     return result;
 }
 
-function rectangle(x1, y1, x2, y2) {
+function rectangle(x1, y1, x2, y2, ...avoid) {
+    const JSONavoid = avoid.map(e => JSON.stringify(e));
     // x1 and y1 are top-left corner,
     // x2 and y2 are bottom-right corner.
 
     const result = [];
     for (let x = x1; x <= x2; x += 10) {
         for (let y = y1; y <= y2; y += 10) {
-            result.push([x, y]);
+            if (!JSONavoid.includes(JSON.stringify([x, y]))) {
+                result.push([x, y]);
+            }
         }
     }
 
@@ -288,7 +299,7 @@ class SnakeGame {
 
     setLevel(level) {
         if (level > this.gameData.length - 1) {
-            alert('You win!');
+            alert('You win!'); return;
         }
         this.levelData = GameData[level];
         this.foods = this.levelData.food;
@@ -297,8 +308,12 @@ class SnakeGame {
         const shallowCopySnake = JSON.parse(JSON.stringify(this.levelData.snake));
 
         if (this.levelData.snake) this.snake = shallowCopySnake;
-        // //if (this.levelData.height) this.canvas.height = this.levelData.height;
-        // //if (this.levelData.width) this.canvas.width = this.levelData.width;
+
+        if (this.levelData.height || this.levelData.width) {
+            this.canvas.height = this.levelData.height;
+            this.canvas.width = this.levelData.width;
+            this.ctx.translate(0.5, 0.5);
+        }
         if (this.levelData.speed) {
             this.setGameSpeed(this.levelData.speed);
             this.initialSpeed = this.levelData.speed;
@@ -323,3 +338,5 @@ class SnakeGame {
 
 const snakeGame = new SnakeGame(GameData);
 snakeGame.init(200);
+snakeGame.nextLevel();
+snakeGame.nextLevel();

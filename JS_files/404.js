@@ -12,7 +12,7 @@ String.prototype.hashCode = function(radix) {
 };
 
 
-let urlHash = window.location.href.hashCode(7);
+let urlHash = window.location.href.hashCode(6);
 urlHash = parseInt(urlHash[urlHash.length - 1]);
 console.log(urlHash);
 const messages = [

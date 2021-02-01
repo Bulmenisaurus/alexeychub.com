@@ -22,12 +22,12 @@ const GameData = [
     {
         name: '1-3',
         snake: [[0, 10]],
-        blocks: [...rectangle(0, 0, 100, 100, ...rectangle(10, 10, 90, 90)), ...rectangle(60, 60, 70, 70), ...rectangle(30, 30, 40, 40), ...rectangle(30, 60, 40, 70), ...rectangle(60, 30, 70, 40)],
-        goal: [[50, 50]],
-        food: [[50, 50], [50, 70], [50, 30], [30, 50], [70, 50]],
+        blocks: [...rectangle(0, 0, 80, 80, ...rectangle(10, 10, 70, 70)), ...rectangle(50, 50, 60, 60), ...rectangle(20, 20, 30, 30), ...rectangle(20, 50, 30, 60), ...rectangle(50, 20, 60, 30)],
+        goal: [[30, 30]],
+        food: [[40, 40], [40, 60], [40, 20], [20, 40], [60, 40]],
         speed: 250,
-        height: 110,
-        width: 110,
+        height: 90,
+        width: 90,
     },
 ];
 

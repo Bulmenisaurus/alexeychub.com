@@ -338,5 +338,3 @@ class SnakeGame {
 
 const snakeGame = new SnakeGame(GameData);
 snakeGame.init(200);
-snakeGame.nextLevel();
-snakeGame.nextLevel();

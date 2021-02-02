@@ -44,12 +44,11 @@ const modalTrigger = document.querySelector('#open-preview');
 
 modalTrigger.onclick = function() {
     document.getElementById('preview-iframe').src = urlHidden;
-    document.getElementById('preview-iframe').onload = () => {
-        modal.style.display = 'block';
-        console.log(document.getElementById('preview-iframe').src, urlHidden);
-        modal.setAttribute('aria-hidden', 'false');
-        document.getElementById('preview-iframe').contentWindow.focus();
-    };
+    modal.style.display = 'block';
+    console.log(document.getElementById('preview-iframe').src, urlHidden);
+    modal.setAttribute('aria-hidden', 'false');
+    document.getElementById('preview-iframe').contentWindow.focus();
+
 };
 
 modalClose.onclick = function() {

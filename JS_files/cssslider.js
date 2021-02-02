@@ -1,3 +1,5 @@
+'use strict';
+
 document.querySelector('input').addEventListener('input', cssanimation);
 document.querySelector('input').value = 0;
 console.log('bam');
@@ -9,8 +11,10 @@ const actions = [
     // ['target, 'style', 'value']
     ['body', 'padding', '0'],
     ['body', 'margin', '0'],
+    ['h2', 'display', 'inline-block'],
     ['header, footer', 'height', '80px'],
     ['main', 'padding', '20px'],
+    ['main', 'minHeight', '100vh'],
     ['footer', 'backgroundColor', '#212121'],
     ['footer', 'color', 'white'],
     ['code', 'padding', '3px 5px'],
@@ -45,6 +49,9 @@ const actions = [
     ['kbd', 'borderRadius', '3px'],
     ['kbd', 'boxShadow', '0 1px 1px rgba(12, 13, 14, 0.15), inset 0 1px 0 0 #fff'],
     ['kbd', 'overflow-wrap', 'break-word'],
+    ['summary', 'outline', 'none'],
+    ['summary', 'userSelect', 'none'],
+    ['summary', 'outline', 'none'],
 ];
 document.querySelector('input').max = actions.length;
 

@@ -24,11 +24,13 @@
             This is an idea I had a bit ago. But since I'm no good at <strong>JavaScript</strong><sup><s>the bane of my
                     existence</s></sup>, this took way too long to code. Anyway, here it is, the magical program:
         </p>
-        <div id="slider-container"><input type="range" min="0" value="0" id="main-slider"></div>
-        <div class="left-right-container">
-            <div class="left" id="label">Last rule executed:</div>
-            <div class="right"><code>{no rules changed yet! Use the slider ;)}</code></div>
-        </div>
+        <section>
+            <div id="slider-container"><input type="range" min="0" value="0" id="main-slider"></div>
+            <div class="left-right-container">
+                <div class="left" id="label">Last rule executed:</div>
+                <div class="right"><code>{no rules changed yet! Use the slider ;)}</code></div>
+            </div>
+        </section>
         <p>
             Basically, this one slider lets you control the amount of <abbr title="Cascading Style Sheets">CSS</abbr> on
             the page, which means you can either make the site really ugly , or really pretty!
@@ -37,39 +39,49 @@
             Top tip: instead of having to slide the slider with your mouse, you can just select it and then press
             <kbd>←</kbd> or <kbd>→</kbd> to control it with just your keyboard!
         </small>
-        <h2>Explanation:</h2>
-        <h3>What is CSS?</h3>
-        <p>
-            How everything looks like in the web, whether you want it or not, is controlled by <abbr
-                title="Cascading Style Sheets">CSS</abbr>. CSS lets you do pretty awesome stuff, like change the color
-            of text, make borders, or even rotate content!<br>For example, the following CSS:
-        </p>
-        <pre><code>p {<br>&emsp;color: red;<br>&emsp;font-family: Arial, Helvetica, sans-serif;<br>}</code></pre>
-        <p>
-            Would tell the browser to set the color of all paragraphs (p for short) to red, and make the font of all
-            paragraphs Arial. In reality, there are over <a
-                href="https://css-tricks.com/how-many-css-properties-are-there/">500</a> css properties, and there are
-            elements other than <code>&lt;p&gt;</code> present on a page.
-        </p>
-        <h3>What do these weird symbols mean?</h3>
-        <p>
-            Sometimes you might see some strange symbols appear near the sliders.
-        </p>
-        <h4>Id:</h4>
-        <p>
-            The hash (#) represents the ID of one singular element on the page. For example,
-            <code><strong>#link</strong> {color: red}</code> means that a single element on the page with the id of
-            <code>link</code> will become red.
-        </p>
-        <h4>Class:</h4>
-        <p>
-            A dot (.) represents a CLASS of one or multiple elements on a page. For example,
-            <code><strong>.text-container</strong> {font-style: italic}</code> will make every single element with the
-            class of <code>text-container</code> be <i>italic</i>.
-        </p>
+        <details>
+            <summary>
+                <h2>Explanation:</h2>
+            </summary>
+            <h3>What is CSS?</h3>
+            <p>
+                How everything looks like in the web, whether you want it or not, is controlled by <abbr
+                    title="Cascading Style Sheets">CSS</abbr>. CSS lets you do pretty awesome stuff, like change the
+                color
+                of text, make borders, or even rotate content!<br>For example, the following CSS:
+            </p>
+            <pre><code>p {<br>&emsp;color: red;<br>&emsp;font-family: Arial, Helvetica, sans-serif;<br>}</code></pre>
+            <p>
+                Would tell the browser to set the color of all paragraphs (p for short) to red, and make the font of all
+                paragraphs Arial. In reality, there are over <a
+                    href="https://css-tricks.com/how-many-css-properties-are-there/">500</a> css properties, and there
+                are
+                elements other than <code>&lt;p&gt;</code> present on a page.
+            </p>
+            <h3>What do these weird symbols mean?</h3>
+            <p>
+                Sometimes you might see some strange symbols appear near the sliders.
+            </p>
+            <h4>Id:</h4>
+            <p>
+                The hash (#) represents the ID of one singular element on the page. For example,
+                <code><strong>#link</strong> {color: red}</code> means that a single element on the page with the id of
+                <code>link</code> will become red.
+            </p>
+            <h4>Class:</h4>
+            <p>
+                A dot (.) represents a CLASS of one or multiple elements on a page. For example,
+                <code><strong>.text-container</strong> {font-style: italic}</code> will make every single element with
+                the
+                class of <code>text-container</code> be <i>italic</i>.
+            </p>
+        </details>
     </main>
     <footer>
         &copy; 2020 - 2021.
+        <br>
+        <div>Icons made by <a href="https://www.flaticon.com/authors/dmitri13" title="dmitri13">dmitri13</a> from <a
+                href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </footer>
 </body>
 

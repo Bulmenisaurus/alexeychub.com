@@ -56,11 +56,8 @@ const actions = [
 document.querySelector('input').max = actions.length;
 
 function clearStyles() {
-    for (const styleRule of actions) {
-        for (const element of document.querySelectorAll(styleRule[0])) {
-            element.style[styleRule[1]] = '';
-        }
-    }
+    document.querySelectorAll('[style]')
+        .forEach(el => el.removeAttribute('style'));
 }
 
 
@@ -83,14 +80,8 @@ function cssanimation() {
             continue;
         }
 
+        document.getElementsByTagName('code')[0].innerHTML = `<strong>${camelCaseToKebabCase(style[0])}</strong> {${style[1]}: ${style[2]}}`;
         const elementsAffected = document.querySelectorAll(style[0]);
-        for (const [x, element] of elementsAffected.entries()) {
-
-            if (!x) {
-                document.getElementsByTagName('code')[0].innerHTML = `<strong>${camelCaseToKebabCase(style[0])}</strong> {${style[1]}: ${style[2]}}`;
-            }
-
-            element.style[style[1]] = style[2];
-        }
+        elementsAffected.forEach(el => el.style[style[1]] = style[2]);
     }
 }

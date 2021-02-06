@@ -30,7 +30,9 @@ details {
     display: inline-block;
 }
 
-li::before {
+/* This sets up a place for the icon to reside */
+
+li[data-file]::before {
     background-size: contain;
     content: "";
     width: 20px;
@@ -45,6 +47,17 @@ details>summary {
 
 details>summary::-webkit-details-marker {
     display: none;
+}
+
+details>ul>li {
+    height: 0;
+    opacity: 0;
+    transition: all .2s linear;
+}
+
+details[open]>ul>li {
+    opacity: 1;
+    height: 20px;
 }
 
 /* * Icons from https://github.com/jesseweed/seti-ui/blob/master/icons/ */

@@ -53,8 +53,9 @@ li[data-file="eslint"]::before {
     background-image: url("../images/icons/eslint.svg");
 }
 
-li[data-file="directory"]::before, li[data-file="folder"]::before {
-    background-image: url("")
+li[data-file="folder"]::before {
+    background-image: url("../images/icons/folder.svg");
+    vertical-align: top;
 }
 
 /*

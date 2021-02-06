@@ -8,6 +8,16 @@
     font-size: 14px;
 }
 
+body {
+    padding: 5px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 ul {
     list-style: none;
 }
@@ -29,7 +39,37 @@ li::before {
     vertical-align: middle;
 }
 
-li[data-extension="eslint"]::before {
-    filter: invert(44%) sepia(13%) saturate(2045%) hue-rotate(230deg) brightness(93%) contrast(101%);
-    background-image: url(https://raw.githubusercontent.com/jesseweed/seti-ui/e3f16e44a6c1c6c8b99e06dbb403f722dd2934a6/icons/eslint.svg);
+details>summary {
+    list-style: none;
 }
+
+details>summary::-webkit-details-marker {
+    display: none;
+}
+
+/* * Icons from https://github.com/jesseweed/seti-ui/blob/master/icons/javascript.svg */
+
+li[data-file="eslint"]::before {
+    background-image: url("../images/icons/eslint.svg");
+}
+
+li[data-file="directory"]::before, li[data-file="folder"]::before {
+    background-image: url("")
+}
+
+/*
+li[data-file="js"]::before {
+    background-image: ''
+}
+
+li[data-file="js"]::before {
+    background-image: ''
+}
+
+li[data-file="js"]::before {
+    background-image: ''
+}
+
+li[data-file="js"]::before {
+    background-image: ''
+}*/

@@ -8,6 +8,7 @@ const GameData = [
         name: '1-1',
         snake: [...line(0, 60, -10, 60)],
         blocks: [...line(0, 0, 240, 0), ...line(0, 0, 240, 120)],
+
         goal: line(240, 50, 240, 70),
         food: Array.from(new Set(randomDotsInRect(1, 20, 20, 230, 100))),
     },
@@ -271,7 +272,7 @@ class SnakeGame {
     }
 
 
-    drawTiles(tiles, fillStyle, strokeStyle, condition) {
+    drawTiles(tiles, fillStyle, strokeStyle, condition = '0==0') {
         this.ctx.fillStyle = fillStyle;
         this.ctx.strokeStyle = strokeStyle;
         for (const tile of tiles) {

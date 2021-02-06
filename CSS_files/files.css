@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
@@ -23,7 +24,7 @@ ul {
 }
 
 li {
-    margin-left: 1rem;
+    margin-left: .5rem;
 }
 
 details {
@@ -43,6 +44,8 @@ li[data-file]::before {
 
 details>summary {
     list-style: none;
+    border: none;
+    outline: none;
 }
 
 details>summary::-webkit-details-marker {
@@ -60,6 +63,23 @@ details>ul>li {
 details[open]>ul>li {
     opacity: 1;
     height: 20px;
+}
+
+li[data-file="folder"]>details>ul {
+    margin-top: 3px;
+}
+
+li[data-file="folder"]:hover {
+    /* Workaround for folder li element containing the children so background-color doesnt work*/
+    background: linear-gradient(0deg, white calc(100% - 20px), #eee 1%);
+}
+
+li[data-file="folder"]:hover>details>ul>li {
+    border-left: 1px solid #efefef;
+}
+
+li:hover {
+    background-color: #eee;
 }
 
 /* * Icons from https://github.com/jesseweed/seti-ui/blob/master/icons/ */

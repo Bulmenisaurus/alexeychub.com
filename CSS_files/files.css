@@ -13,20 +13,23 @@ ul {
 }
 
 li {
-    list-style: var(--file-indent);
-    vertical-align: top;
     margin-left: 1rem;
-}
-
-li::marker {
-    display: inline;
-    vertical-align: top;
 }
 
 details {
     display: inline-block;
 }
 
+li::before {
+    background-size: contain;
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 li[data-extension="eslint"]::before {
-    content: url(https://raw.githubusercontent.com/jesseweed/seti-ui/e3f16e44a6c1c6c8b99e06dbb403f722dd2934a6/icons/eslint.svg);
+    filter: invert(44%) sepia(13%) saturate(2045%) hue-rotate(230deg) brightness(93%) contrast(101%);
+    background-image: url(https://raw.githubusercontent.com/jesseweed/seti-ui/e3f16e44a6c1c6c8b99e06dbb403f722dd2934a6/icons/eslint.svg);
 }

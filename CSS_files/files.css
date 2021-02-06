@@ -19,6 +19,19 @@ body {
     user-select: none;
 }
 
+ul.folder-container {
+    width: 200px;
+    text-overflow: ellipsis;
+    border: 1px solid black;
+}
+
+li {
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-color: #eee;
+}
+
 ul {
     list-style: none;
 }
@@ -75,7 +88,7 @@ li[data-file="folder"]:hover {
 }
 
 li[data-file="folder"]:hover>details>ul>li {
-    border-left: 1px solid #efefef;
+    border-left: 1px solid #eee;
 }
 
 li:hover {

@@ -47,7 +47,7 @@ details>summary::-webkit-details-marker {
     display: none;
 }
 
-/* * Icons from https://github.com/jesseweed/seti-ui/blob/master/icons/javascript.svg */
+/* * Icons from https://github.com/jesseweed/seti-ui/blob/master/icons/ */
 
 li[data-file="eslint"]::before {
     background-image: url("../images/icons/eslint.svg");
@@ -58,11 +58,11 @@ li[data-file="folder"]::before {
     vertical-align: top;
 }
 
-/*
 li[data-file="js"]::before {
-    background-image: ''
+    background-image: url("../images/icons/js.svg");
 }
 
+/*
 li[data-file="js"]::before {
     background-image: ''
 }

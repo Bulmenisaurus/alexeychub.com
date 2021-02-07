@@ -32,6 +32,22 @@ const GameData = [
     },
 ];
 
+/* General Helper functions */
+
+function containsCoordinates(arr, coords) {
+    return arr.map(i => JSON.stringify(i)).includes(JSON.stringify(coords));
+}
+
+function shallowCompareCoords(coord1, coord2) {
+    return coord1[0] === coord2[0] && coord1[1] === coord2[1];
+}
+
+function coordinatesInCommon(arr1, arr2) {
+    return
+}
+
+/* Helper functions for defining coordinates: */
+
 function line(oldX, oldY, newX, newY) {
     const changed = oldX != newX ? 'x' : 'y';
     const result = [];
@@ -59,7 +75,7 @@ function rectangle(x1, y1, x2, y2, ...avoid) {
     const result = [];
     for (let x = x1; x <= x2; x += 10) {
         for (let y = y1; y <= y2; y += 10) {
-            if (!JSONavoid.includes(JSON.stringify([x, y]))) {
+            if (!containsCoordinates(avoid, [x, y])) {
                 result.push([x, y]);
             }
         }
@@ -79,10 +95,6 @@ function randomDotsInRect(amt, x1, y1, x2, y2, ...avoid) {
         }
     }
     return dots;
-}
-
-function shallowCompareCoords(coord1, coord2) {
-    return coord1[0] === coord2[0] && coord1[1] === coord2[1];
 }
 
 class SnakeGame {
@@ -215,7 +227,7 @@ class SnakeGame {
 
         for (const block of this.levelData.blocks) {
             const [x, y] = block;
-            if (snakeEntries.includes(JSON.stringify([x, y]))) {
+            if (containsCoordinates(this.snake, [x, y])) {
                 return true;
             }
         }
@@ -324,9 +336,8 @@ class SnakeGame {
     }
 
     checkGoal() {
-        const JSONGoals = this.levelData.goal.map(e => JSON.stringify(e));
         if (this.hasWon) {
-            if (JSONGoals.includes(JSON.stringify(this.snake[0]))) {
+            if (containsCoordinates(this.levelData.goal, this.snake[0])) {
                 return true;
             }
         }

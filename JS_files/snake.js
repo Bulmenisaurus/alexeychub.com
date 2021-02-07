@@ -270,14 +270,6 @@ class SnakeGame {
             scoreSpan.innerText = this.score.toString();
         }
     }
-    blockAtCoordinates(coordX, coordY) {
-        for (const block of this.levelData.blocks) {
-            const [x, y] = block;
-            if (JSON.stringify([x, y]) === JSON.stringify([coordX, coordY])) {
-                return true;
-            }
-        }
-    }
     setLevel(level) {
         if (level > this.gameData.length - 1) {
             alert('You win!');
@@ -285,10 +277,8 @@ class SnakeGame {
         }
         this.levelData = GameData[level];
         this.foods = this.levelData.food;
-        console.log(this.levelData);
-        const shallowCopySnake = JSON.parse(JSON.stringify(this.levelData.snake));
         if (this.levelData.snake) {
-            this.snake = shallowCopySnake;
+            this.snake = this.levelData.snake;
         }
         if (this.levelData.height || this.levelData.width) {
             this.canvas.height = this.levelData.height;

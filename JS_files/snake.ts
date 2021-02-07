@@ -259,8 +259,7 @@ class SnakeGame {
         // Otherwise, that means some parts of the snake are stacked = lose
 
         for (const block of this.levelData.blocks) {
-            const [x, y] = block;
-            if (containsCoordinates(this.snake, [x, y])) {
+            if (containsCoordinates(this.snake, block)) {
                 return true;
             }
         }
@@ -296,13 +295,7 @@ class SnakeGame {
     }
 
     drawFoods() {
-        this.ctx.fillStyle = this.foodCol;
-        this.ctx.strokeStyle = this.foodBorder;
-        for (const [i, food] of this.foods.entries()) {
-            if (this.eatenFoods.includes(i)) { continue; }
-            this.ctx.fillRect(...food, 10, 10);
-            this.ctx.strokeRect(...food, 10, 10);
-        }
+        this.drawTiles(this.foods, this.foodCol, this.foodBorder, (food: Coordinate, i: number) => { return this.eatenFoods.includes(i) })
     }
 
     drawGoals() {
@@ -320,8 +313,8 @@ class SnakeGame {
     drawTiles(tiles: CoordList, fillStyle: string, strokeStyle: string, skipDraw: Function = () => true) {
         this.ctx.fillStyle = fillStyle;
         this.ctx.strokeStyle = strokeStyle;
-        for (const tile of tiles) {
-            if (!skipDraw(tile)) { continue; }
+        for (const [i, tile] of tiles) {
+            if (!skipDraw(tile, i)) { continue; }
             this.ctx.fillRect(...tile, 10, 10);
             this.ctx.strokeRect(...tile, 10, 10);
         }
@@ -334,26 +327,14 @@ class SnakeGame {
         }
     }
 
-    blockAtCoordinates(coordX: number, coordY: number): true | void {
-        for (const block of this.levelData.blocks) {
-            const [x, y] = block;
-            if (JSON.stringify([x, y]) === JSON.stringify([coordX, coordY])) {
-                return true;
-            }
-        }
-    }
-
     setLevel(level: number) {
         if (level > this.gameData.length - 1) {
             alert('You win!'); return;
         }
         this.levelData = GameData[level];
         this.foods = this.levelData.food;
-        console.log(this.levelData);
 
-        const shallowCopySnake = JSON.parse(JSON.stringify(this.levelData.snake));
-
-        if (this.levelData.snake) { this.snake = shallowCopySnake; }
+        if (this.levelData.snake) { this.snake = this.levelData.snake; }
 
         if (this.levelData.height || this.levelData.width) {
             this.canvas.height = this.levelData.height;

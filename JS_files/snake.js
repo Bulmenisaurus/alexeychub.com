@@ -164,8 +164,8 @@ class SnakeGame {
     tick() {
         this.clearCanvas();
         this.updateScore();
-        this.moveSnake(this.direction);
         if (this.checkGoal()) this.nextLevel();
+        this.moveSnake(this.direction);
         this.drawBlocks();
         this.drawGoals();
         this.drawFoods();
@@ -272,11 +272,11 @@ class SnakeGame {
     }
 
 
-    drawTiles(tiles, fillStyle, strokeStyle, condition = '0==0') {
+    drawTiles(tiles, fillStyle, strokeStyle, skipCondition = 'false') {
         this.ctx.fillStyle = fillStyle;
         this.ctx.strokeStyle = strokeStyle;
         for (const tile of tiles) {
-            if (eval(condition)) continue;
+            if (eval(skipCondition)) continue;
             this.ctx.fillRect(...tile, 10, 10);
             this.ctx.strokeRect(...tile, 10, 10);
         }

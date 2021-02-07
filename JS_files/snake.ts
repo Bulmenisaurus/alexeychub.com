@@ -5,6 +5,7 @@
 
 type Coordinate = [number, number];
 type CoordList = Coordinate[];
+type Direction = 'up' | 'down' | 'left' | 'right'
 
 interface Level {
     name: string,
@@ -109,8 +110,8 @@ class SnakeGame {
     ctx: CanvasRenderingContext2D;
     snake: CoordList;
     eatenFoods: number[];
-    gameData: object[];
-    levelData: any;
+    gameData: Level[];
+    levelData: Level;
     foods: CoordList;
     direction: string;
     movedThisTick: boolean;
@@ -130,7 +131,7 @@ class SnakeGame {
     goalBorder: string;
     initialSpeed: number;
     game: number;
-    constructor(gameData: object[]) {
+    constructor(gameData: Level[]) {
         this.canvas = document.getElementsByTagName('canvas')[0];
         this.ctx = this.canvas.getContext('2d');
         this.snake = [];

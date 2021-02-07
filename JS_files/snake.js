@@ -58,7 +58,6 @@ function line(oldX, oldY, newX, newY) {
     return result;
 }
 function rectangle(x1, y1, x2, y2, ...avoid) {
-    const JSONavoid = avoid.map(e => JSON.stringify(e));
     // x1 and y1 are top-left corner,
     // x2 and y2 are bottom-right corner.
     const result = [];

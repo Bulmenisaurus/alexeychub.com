@@ -34,21 +34,21 @@ const GameData = [
 
 /* General Helper functions */
 
-function containsCoordinates(arr, coords) {
+function containsCoordinates(arr: number[][], coords: number[]) {
     return arr.map(i => JSON.stringify(i)).includes(JSON.stringify(coords));
 }
 
-function shallowCompareCoords(coord1, coord2) {
+function shallowCompareCoords(coord1: number[], coord2: number[]) {
     return coord1[0] === coord2[0] && coord1[1] === coord2[1];
 }
 
-function coordinatesInCommon(arr1, arr2) {
+function coordinatesInCommon(arr1: number[][], arr2: number[][]) {
     return
 }
 
 /* Helper functions for defining coordinates: */
 
-function line(oldX, oldY, newX, newY) {
+function line(oldX: number, oldY: number, newX: number, newY: number) {
     const changed = oldX != newX ? 'x' : 'y';
     const result = [];
 
@@ -67,8 +67,7 @@ function line(oldX, oldY, newX, newY) {
     return result;
 }
 
-function rectangle(x1, y1, x2, y2, ...avoid) {
-    const JSONavoid = avoid.map(e => JSON.stringify(e));
+function rectangle(x1: number, y1: number, x2: number, y2: number, ...avoid: number[][]) {
     // x1 and y1 are top-left corner,
     // x2 and y2 are bottom-right corner.
 
@@ -84,7 +83,7 @@ function rectangle(x1, y1, x2, y2, ...avoid) {
     return result;
 }
 
-function randomDotsInRect(amt, x1, y1, x2, y2, ...avoid) {
+function randomDotsInRect(amt: number, x1: number, y1: number, x2: number, y2: number, ...avoid: number[]) {
     const JSONavoid = avoid.map(e => JSON.stringify(e));
     const dots = [];
     const allSquares = rectangle(x1, y1, x2, y2);
@@ -99,12 +98,12 @@ function randomDotsInRect(amt, x1, y1, x2, y2, ...avoid) {
 
 class SnakeGame {
     canvas: HTMLCanvasElement;
-    ctx: any;
-    snake: any[];
-    eatenFoods: any[];
-    gameData: any;
+    ctx: CanvasRenderingContext2D;
+    snake: number[][];
+    eatenFoods: number[];
+    gameData: object[];
     levelData: any;
-    foods: any;
+    foods: number[][];
     direction: string;
     movedThisTick: boolean;
     safeMoves: number;
@@ -123,7 +122,7 @@ class SnakeGame {
     goalBorder: string;
     initialSpeed: number;
     game: number;
-    constructor(gameData) {
+    constructor(gameData: object[]) {
         this.canvas = document.getElementsByTagName('canvas')[0];
         this.ctx = this.canvas.getContext('2d');
         this.snake = [];
@@ -168,7 +167,7 @@ class SnakeGame {
         this.ctx.translate(0.5, 0.5);
     }
 
-    moveSnake(direction) {
+    moveSnake(direction: string) {
         const newHead = { x: this.snake[0][0], y: this.snake[0][1] };
         switch (direction) {
             case 'up': newHead.y -= 10; break;
@@ -218,12 +217,12 @@ class SnakeGame {
         this.setLevel(0);
     }
 
-    setGameSpeed(speed) {
+    setGameSpeed(speed: number) {
         clearInterval(this.game);
         this.game = setInterval(this.tick.bind(this), speed);
     }
 
-    changeDirection(event) {
+    changeDirection(event: KeyboardEvent) {
         const key = event.key;
         if (this.movedThisTick) return;
 
@@ -309,7 +308,7 @@ class SnakeGame {
     }
 
 
-    drawTiles(tiles, fillStyle, strokeStyle, skipCondition = 'true') {
+    drawTiles(tiles: number[][], fillStyle: string, strokeStyle: string, skipCondition: string = 'true') {
         this.ctx.fillStyle = fillStyle;
         this.ctx.strokeStyle = strokeStyle;
         for (const tile of tiles) {
@@ -326,7 +325,7 @@ class SnakeGame {
         }
     }
 
-    blockAtCoordinates(coordX, coordY) {
+    blockAtCoordinates(coordX: number, coordY: number) {
         for (const block of this.levelData.blocks) {
             const [x, y] = block;
             if (JSON.stringify([x, y]) === JSON.stringify([coordX, coordY])) {
@@ -335,7 +334,7 @@ class SnakeGame {
         }
     }
 
-    setLevel(level) {
+    setLevel(level: number) {
         if (level > this.gameData.length - 1) {
             alert('You win!'); return;
         }

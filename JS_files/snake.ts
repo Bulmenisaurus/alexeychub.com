@@ -113,7 +113,7 @@ class SnakeGame {
     gameData: Level[];
     levelData: Level;
     foods: CoordList;
-    direction: string;
+    direction: Direction;
     movedThisTick: boolean;
     safeMoves: number;
     score: number;
@@ -164,7 +164,7 @@ class SnakeGame {
     }
 
     drawSnake() {
-        this.drawTiles(this.snake, this.snakeCol, this.snakeBorder, 'tile[0] >= 0');
+        this.drawTiles(this.snake, this.snakeCol, this.snakeBorder, (t: Coordinate) => { return t[0] >= 0 });
     }
 
     clearCanvas() {
@@ -317,24 +317,24 @@ class SnakeGame {
     }
 
 
-    drawTiles(tiles: number[][], fillStyle: string, strokeStyle: string, skipCondition: string = 'true') {
+    drawTiles(tiles: CoordList, fillStyle: string, strokeStyle: string, skipDraw: Function = () => true) {
         this.ctx.fillStyle = fillStyle;
         this.ctx.strokeStyle = strokeStyle;
         for (const tile of tiles) {
-            if (!eval(skipCondition)) { continue; }
+            if (!skipDraw(tile)) { continue; }
             this.ctx.fillRect(...tile, 10, 10);
             this.ctx.strokeRect(...tile, 10, 10);
         }
     }
 
-    updateScore() {
+    updateScore(): void {
         const scoreSpan: HTMLElement = document.querySelector('score-counter');
         if (scoreSpan.innerText !== this.score.toString()) {
             scoreSpan.innerText = this.score.toString();
         }
     }
 
-    blockAtCoordinates(coordX: number, coordY: number) {
+    blockAtCoordinates(coordX: number, coordY: number): true | void {
         for (const block of this.levelData.blocks) {
             const [x, y] = block;
             if (JSON.stringify([x, y]) === JSON.stringify([coordX, coordY])) {

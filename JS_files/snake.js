@@ -1,7 +1,4 @@
-/* eslint-disable */
 'use strict';
-// ! TUTORIAL:
-// ! https://www.educative.io/blog/javascript-snake-game-tutorial
 const GameData = [
     {
         name: '1-1',
@@ -36,9 +33,6 @@ function containsCoordinates(arr, coords) {
 function shallowCompareCoords(coord1, coord2) {
     return coord1[0] === coord2[0] && coord1[1] === coord2[1];
 }
-function coordinatesInCommon(arr1, arr2) {
-    return;
-}
 /* Helper functions for defining coordinates: */
 function line(oldX, oldY, newX, newY) {
     const changed = oldX != newX ? 'x' : 'y';
@@ -71,12 +65,11 @@ function rectangle(x1, y1, x2, y2, ...avoid) {
     return result;
 }
 function randomDotsInRect(amt, x1, y1, x2, y2, ...avoid) {
-    const JSONavoid = avoid.map(e => JSON.stringify(e));
     const dots = [];
     const allSquares = rectangle(x1, y1, x2, y2);
     while (dots.length <= amt) {
         const dot = allSquares[Math.floor(Math.random() * allSquares.length)];
-        if (!JSONavoid.includes(JSON.stringify(dot))) {
+        if (!containsCoordinates(avoid, dot)) {
             dots.push(dot);
         }
     }
@@ -160,15 +153,17 @@ class SnakeGame {
     tick() {
         this.clearCanvas();
         this.updateScore();
-        if (this.checkGoal())
+        if (this.checkGoal()) {
             this.nextLevel();
+        }
         this.moveSnake(this.direction);
         this.drawBlocks();
         this.drawGoals();
         this.drawFoods();
         this.drawSnake();
-        if (this.checkCollisions())
+        if (this.checkCollisions()) {
             this.lose();
+        }
         this.movedThisTick = false;
     }
     init(speed = 100) {
@@ -183,8 +178,9 @@ class SnakeGame {
     }
     changeDirection(event) {
         const key = event.key;
-        if (this.movedThisTick)
+        if (this.movedThisTick) {
             return;
+        }
         if (['w', 'ArrowUp'].includes(key) && this.direction != 'down') {
             this.direction = 'up';
         }
@@ -241,8 +237,9 @@ class SnakeGame {
         this.ctx.fillStyle = this.foodCol;
         this.ctx.strokeStyle = this.foodBorder;
         for (const [i, food] of this.foods.entries()) {
-            if (this.eatenFoods.includes(i))
+            if (this.eatenFoods.includes(i)) {
                 continue;
+            }
             this.ctx.fillRect(...food, 10, 10);
             this.ctx.strokeRect(...food, 10, 10);
         }
@@ -260,16 +257,17 @@ class SnakeGame {
         this.ctx.fillStyle = fillStyle;
         this.ctx.strokeStyle = strokeStyle;
         for (const tile of tiles) {
-            if (!eval(skipCondition))
+            if (!eval(skipCondition)) {
                 continue;
+            }
             this.ctx.fillRect(...tile, 10, 10);
             this.ctx.strokeRect(...tile, 10, 10);
         }
     }
     updateScore() {
-        // Intentionally using != instead of !==
-        if (document.querySelector('score-counter').innerText != this.score) {
-            document.querySelector('score-counter').innerText = this.score;
+        const scoreSpan = document.querySelector('score-counter');
+        if (scoreSpan.innerText !== this.score.toString()) {
+            scoreSpan.innerText = this.score.toString();
         }
     }
     blockAtCoordinates(coordX, coordY) {
@@ -289,8 +287,9 @@ class SnakeGame {
         this.foods = this.levelData.food;
         console.log(this.levelData);
         const shallowCopySnake = JSON.parse(JSON.stringify(this.levelData.snake));
-        if (this.levelData.snake)
+        if (this.levelData.snake) {
             this.snake = shallowCopySnake;
+        }
         if (this.levelData.height || this.levelData.width) {
             this.canvas.height = this.levelData.height;
             this.canvas.width = this.levelData.width;

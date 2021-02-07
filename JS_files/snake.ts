@@ -1,7 +1,9 @@
 /* eslint-disable */
 'use strict';
+
 // ! TUTORIAL:
 // ! https://www.educative.io/blog/javascript-snake-game-tutorial
+
 const GameData = [
     {
         name: '1-1',
@@ -29,38 +31,47 @@ const GameData = [
         width: 90,
     },
 ];
+
 /* General Helper functions */
+
 function containsCoordinates(arr, coords) {
     return arr.map(i => JSON.stringify(i)).includes(JSON.stringify(coords));
 }
+
 function shallowCompareCoords(coord1, coord2) {
     return coord1[0] === coord2[0] && coord1[1] === coord2[1];
 }
+
 function coordinatesInCommon(arr1, arr2) {
-    return;
+    return
 }
+
 /* Helper functions for defining coordinates: */
+
 function line(oldX, oldY, newX, newY) {
     const changed = oldX != newX ? 'x' : 'y';
     const result = [];
+
     if (changed === 'x') {
         const [min, max] = [oldX, newX].sort();
         for (let x = min; x <= max; x += 10) {
             result.push([x, newY]);
         }
-    }
-    else {
+    } else {
         const [min, max] = [oldY, newY].sort();
         for (let y = min; y <= max; y += 10) {
             result.push([newX, y]);
         }
     }
+
     return result;
 }
+
 function rectangle(x1, y1, x2, y2, ...avoid) {
     const JSONavoid = avoid.map(e => JSON.stringify(e));
     // x1 and y1 are top-left corner,
     // x2 and y2 are bottom-right corner.
+
     const result = [];
     for (let x = x1; x <= x2; x += 10) {
         for (let y = y1; y <= y2; y += 10) {
@@ -69,8 +80,10 @@ function rectangle(x1, y1, x2, y2, ...avoid) {
             }
         }
     }
+
     return result;
 }
+
 function randomDotsInRect(amt, x1, y1, x2, y2, ...avoid) {
     const JSONavoid = avoid.map(e => JSON.stringify(e));
     const dots = [];
@@ -83,7 +96,33 @@ function randomDotsInRect(amt, x1, y1, x2, y2, ...avoid) {
     }
     return dots;
 }
+
 class SnakeGame {
+    canvas: HTMLCanvasElement;
+    ctx: any;
+    snake: any[];
+    eatenFoods: any[];
+    gameData: any;
+    levelData: any;
+    foods: any;
+    direction: string;
+    movedThisTick: boolean;
+    safeMoves: number;
+    score: number;
+    level: number;
+    hasWon: boolean;
+    boardBorder: string;
+    boardBackground: string;
+    snakeCol: string;
+    snakeBorder: string;
+    foodCol: string;
+    foodBorder: string;
+    blockCol: string;
+    blockBorder: string;
+    goalCol: string;
+    goalBorder: string;
+    initialSpeed: number;
+    game: number;
     constructor(gameData) {
         this.canvas = document.getElementsByTagName('canvas')[0];
         this.ctx = this.canvas.getContext('2d');
@@ -98,6 +137,7 @@ class SnakeGame {
         this.score = 0;
         this.level = 0;
         this.hasWon = false;
+
         // canvas color variables
         this.boardBorder = 'black';
         this.boardBackground = 'white';
@@ -109,13 +149,16 @@ class SnakeGame {
         this.blockBorder = 'black';
         this.goalCol = 'yellow';
         this.goalBorder = 'black';
+
         // settings
         this.ctx.imageSmoothingEnabled = false;
         this.ctx.translate(0.5, 0.5);
     }
+
     drawSnake() {
         this.drawTiles(this.snake, this.snakeCol, this.snakeBorder, 'tile[0] >= 0');
     }
+
     clearCanvas() {
         this.ctx.fillStyle = this.boardBackground;
         this.ctx.strokeStyle = this.boardBorder;
@@ -124,22 +167,16 @@ class SnakeGame {
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         this.ctx.translate(0.5, 0.5);
     }
+
     moveSnake(direction) {
         const newHead = { x: this.snake[0][0], y: this.snake[0][1] };
         switch (direction) {
-            case 'up':
-                newHead.y -= 10;
-                break;
-            case 'right':
-                newHead.x += 10;
-                break;
-            case 'down':
-                newHead.y += 10;
-                break;
-            case 'left':
-                newHead.x -= 10;
-                break;
+            case 'up': newHead.y -= 10; break;
+            case 'right': newHead.x += 10; break;
+            case 'down': newHead.y += 10; break;
+            case 'left': newHead.x -= 10; break;
         }
+
         this.snake.unshift([newHead.x, newHead.y]);
         let ateSomething = false;
         for (const [i, food] of this.foods.entries()) {
@@ -153,60 +190,66 @@ class SnakeGame {
                 this.setGameSpeed(Math.max(this.initialSpeed / 2, this.initialSpeed - this.score * 5));
             }
         }
+
         if (!ateSomething) {
             this.snake.pop();
         }
+
         this.safeMoves--;
     }
+
     tick() {
         this.clearCanvas();
         this.updateScore();
-        if (this.checkGoal())
-            this.nextLevel();
+        if (this.checkGoal()) this.nextLevel();
         this.moveSnake(this.direction);
         this.drawBlocks();
         this.drawGoals();
         this.drawFoods();
         this.drawSnake();
-        if (this.checkCollisions())
-            this.lose();
+        if (this.checkCollisions()) this.lose();
         this.movedThisTick = false;
     }
+
     init(speed = 100) {
         this.initialSpeed = speed;
         document.addEventListener('keydown', this.changeDirection.bind(this));
         this.game = setInterval(this.tick.bind(this), speed);
         this.setLevel(0);
     }
+
     setGameSpeed(speed) {
         clearInterval(this.game);
         this.game = setInterval(this.tick.bind(this), speed);
     }
+
     changeDirection(event) {
         const key = event.key;
-        if (this.movedThisTick)
-            return;
+        if (this.movedThisTick) return;
+
         if (['w', 'ArrowUp'].includes(key) && this.direction != 'down') {
             this.direction = 'up';
-        }
-        else if (['a', 'ArrowLeft'].includes(key) && this.direction != 'right') {
+        } else if (['a', 'ArrowLeft'].includes(key) && this.direction != 'right') {
             this.direction = 'left';
-        }
-        else if (['s', 'ArrowDown'].includes(key) && this.direction != 'up') {
+        } else if (['s', 'ArrowDown'].includes(key) && this.direction != 'up') {
             this.direction = 'down';
-        }
-        else if (['d', 'ArrowRight'].includes(key) && this.direction != 'left') {
+        } else if (['d', 'ArrowRight'].includes(key) && this.direction != 'left') {
             this.direction = 'right';
         }
         this.movedThisTick = true;
+
     }
+
     checkCollisions() {
         const snakeHead = this.snake[0];
+
         // If you compare objects using ===, the operation will always return false
         const snakeEntries = this.snake.map(e => JSON.stringify(e));
         const snakeSet = Array.from(new Set(snakeEntries));
+
         // We know that all the coordinates of the snake have to be unique
         // Otherwise, that means some parts of the snake are stacked = lose
+
         for (const block of this.levelData.blocks) {
             const [x, y] = block;
             if (containsCoordinates(this.snake, [x, y])) {
@@ -216,19 +259,24 @@ class SnakeGame {
         if (this.snake.length != snakeSet.length) {
             return true;
         }
+
         if (this.safeMoves > 0) {
             return;
         }
+
         const hitLeftWall = snakeHead[0] < 0;
         const hitRightWall = snakeHead[0] > this.canvas.width - 10;
         const hitTopWall = snakeHead[1] < 0;
         const hitBottomWall = snakeHead[1] > this.canvas.height - 10;
+
         return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall;
     }
+
     lose() {
         alert('You lost!');
         this.reset();
     }
+
     reset() {
         this.score = 0;
         this.eatenFoods = [];
@@ -238,41 +286,46 @@ class SnakeGame {
         this.safeMoves = 7;
         this.hasWon = false;
     }
+
     drawFoods() {
         this.ctx.fillStyle = this.foodCol;
         this.ctx.strokeStyle = this.foodBorder;
         for (const [i, food] of this.foods.entries()) {
-            if (this.eatenFoods.includes(i))
-                continue;
+            if (this.eatenFoods.includes(i)) continue;
             this.ctx.fillRect(...food, 10, 10);
             this.ctx.strokeRect(...food, 10, 10);
         }
     }
+
     drawGoals() {
         if (this.levelData.food.length === this.eatenFoods.length) {
             this.hasWon = true;
             this.drawTiles(this.levelData.goal, this.goalCol, this.goalBorder);
         }
     }
+
     drawBlocks() {
         this.drawTiles(this.levelData.blocks, this.blockCol, this.blockBorder);
     }
+
+
     drawTiles(tiles, fillStyle, strokeStyle, skipCondition = 'true') {
         this.ctx.fillStyle = fillStyle;
         this.ctx.strokeStyle = strokeStyle;
         for (const tile of tiles) {
-            if (!eval(skipCondition))
-                continue;
+            if (!eval(skipCondition)) continue;
             this.ctx.fillRect(...tile, 10, 10);
             this.ctx.strokeRect(...tile, 10, 10);
         }
     }
+
     updateScore() {
         // Intentionally using != instead of !==
         if (document.querySelector('score-counter').innerText != this.score) {
             document.querySelector('score-counter').innerText = this.score;
         }
     }
+
     blockAtCoordinates(coordX, coordY) {
         for (const block of this.levelData.blocks) {
             const [x, y] = block;
@@ -281,17 +334,19 @@ class SnakeGame {
             }
         }
     }
+
     setLevel(level) {
         if (level > this.gameData.length - 1) {
-            alert('You win!');
-            return;
+            alert('You win!'); return;
         }
         this.levelData = GameData[level];
         this.foods = this.levelData.food;
         console.log(this.levelData);
+
         const shallowCopySnake = JSON.parse(JSON.stringify(this.levelData.snake));
-        if (this.levelData.snake)
-            this.snake = shallowCopySnake;
+
+        if (this.levelData.snake) this.snake = shallowCopySnake;
+
         if (this.levelData.height || this.levelData.width) {
             this.canvas.height = this.levelData.height;
             this.canvas.width = this.levelData.width;
@@ -304,6 +359,7 @@ class SnakeGame {
         this.level = level;
         this.reset();
     }
+
     checkGoal() {
         if (this.hasWon) {
             if (containsCoordinates(this.levelData.goal, this.snake[0])) {
@@ -311,10 +367,12 @@ class SnakeGame {
             }
         }
     }
+
     nextLevel() {
         this.setLevel(this.level + 1);
     }
 }
+
 const snakeGame = new SnakeGame(GameData);
 snakeGame.lose = snakeGame.reset;
 snakeGame.init(200);

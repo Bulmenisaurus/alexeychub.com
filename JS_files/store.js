@@ -1,5 +1,9 @@
 let urlHidden;
 
+// reloads iframe because for some reason the iframe contents are kept through reloads
+// even though the src is different. Bug? Probably!
+document.querySelector('#preview-iframe').src = document.querySelector('#preview-iframe').src;
+
 const listToQuery = (formData) => {
     return formData
         .map(x => `${encodeURIComponent(x[0]) || 1}=${encodeURIComponent(x[1]) || ''}`)

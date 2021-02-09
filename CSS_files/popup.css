@@ -67,7 +67,7 @@ body {
 /* The Close Button */
 
 #close {
-  color: white;
+  transition: all .2s;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -77,11 +77,12 @@ body {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+  font-size: 35px;
 }
 
 .modal-header {
   padding: 0px 16px;
-  color: #000;
+  color: rgba(0, 0, 0, 0.8);
   text-align: center;
   background-color: #EE7832;
   border-top-left-radius: 8px;
@@ -96,7 +97,7 @@ body {
 }
 
 .modal-body {
-  padding: 0px 16px;
+  padding: 16px;
 }
 
 .modal-footer {

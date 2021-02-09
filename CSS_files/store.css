@@ -152,12 +152,6 @@ iframe {
     position: absolute;
 }
 
-#text {
-    padding: 10px;
-    font-family: 'Inconsolata', 'Courier New', Courier, monospace;
-    padding-top: 5px;
-}
-
 #chars-left {
     color: #3a3a3a;
     font-size: 13px;
@@ -214,6 +208,10 @@ ol {
 textarea {
     display: block;
     width: min(100%, 500px);
+    padding: 10px;
+    font-family: 'Inconsolata', 'Courier New', Courier, monospace;
+    padding-top: 5px;
+    font-size: 16px;
 }
 
 @media only screen and (max-width: 400px) {

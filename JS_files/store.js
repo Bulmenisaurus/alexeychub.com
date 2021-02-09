@@ -48,11 +48,11 @@ const modalTrigger = document.querySelector('#open-preview');
 
 modalTrigger.onclick = function() {
     document.getElementById('preview-iframe').src = urlHidden;
-    modal.style.display = 'block';
-    console.log(document.getElementById('preview-iframe').src, urlHidden);
-    modal.setAttribute('aria-hidden', 'false');
-    document.getElementById('preview-iframe').contentWindow.focus();
-
+    document.getElementById('preview-iframe').addEventListener('load', () => {
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+        document.getElementById('preview-iframe').contentWindow.focus();
+    }, { once: true });
 };
 
 modalClose.onclick = function() {

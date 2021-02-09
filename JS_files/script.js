@@ -1,7 +1,5 @@
 /* global ThemeChanger:readonly */
-const themes = new ThemeChanger(
-    document.getElementById('theme'),
-);
+const themes = new ThemeChanger();
 themes.init();
 
 // Smoothly transitions the title colors

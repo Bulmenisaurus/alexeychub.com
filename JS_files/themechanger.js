@@ -12,6 +12,7 @@ class ThemeChanger {
         localStorage.setItem('theme', theme);
         document.body.dataset.theme = theme;
         this.theme = theme;
+        document.querySelector('.theme-emoji').innerHTML = theme === 'dark' ? '🌙' : '☀️';
     }
 
     init() {

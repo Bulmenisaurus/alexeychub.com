@@ -138,16 +138,6 @@ button {
     padding: 10px;
     border-radius: 4px;
     transition-duration: 0.4s;
-    user-select: none;
-    /* supported by Chrome and Opera */
-    -webkit-user-select: none;
-    /* Safari */
-    -khtml-user-select: none;
-    /* Konqueror HTML */
-    -moz-user-select: none;
-    /* Firefox */
-    -ms-user-select: none;
-    /* Internet Explorer/Edge */
 }
 
 button:hover {
@@ -179,13 +169,18 @@ button:hover {
 .theme-emoji {
     font-size: 20px;
     padding: 5px;
+    cursor: pointer;
 }
 
-/* 
-background = #2B2B2B
-color palette: 
-1. CC7832 (orangeish) # main color
-2. A020F0 complementry -ish (purple)
-3. 2B2B2B main color, background (drk grey)
-4. A9B7C6 light color (ripping off pycharms text)
-*/
+.no-select, img {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+li {
+    margin-left: 2em;
+}

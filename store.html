@@ -142,7 +142,6 @@
                     <!-- If you're wondering wtf is going on here, I'm creating and invisible <input> -->
                     <!-- because JS can only copy text from inputs, and not span elements. What a terrible mess -->
                     <input type="text" id="copy-link-input" aria-hidden="true" tabindex="-1">
-                    <br>
                     <input type="button" value="Copy" id="copy-link" class="blue">
                 </li>
             </ol>
@@ -151,8 +150,8 @@
     <div class="modal" id="modal-preview" aria-modal="true" aria-hidden="true" role="dialog">
         <button class="close" id="close-preview" aria-label="close" tabindex="0">&times;</button>
         <!-- TODO: Make it so when the modal is open the button above is the only selectable element -->
-        <iframe src="https://bulmenisaurus.github.io/storeresult?hide=true&h=1" frameborder="0"
-            id="preview-iframe"></iframe>
+        <iframe src="https://bulmenisaurus.github.io/storeresult?hide=true&h=1" frameborder="0" id="preview-iframe"
+            title="Preview your postcard!"></iframe>
     </div>
 
     <footer>

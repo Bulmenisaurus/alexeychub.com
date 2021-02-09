@@ -172,6 +172,15 @@ button:hover {
     color: var(--font-color);
 }
 
+.theme-toggle {
+    display: none;
+}
+
+.theme-emoji {
+    font-size: 20px;
+    padding: 5px;
+}
+
 /* 
 background = #2B2B2B
 color palette: 

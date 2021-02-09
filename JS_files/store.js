@@ -43,7 +43,7 @@ function copyLink() {
 
 /* Modal section */
 const modal = document.querySelector('#modal-preview');
-const modalClose = document.querySelector('#close');
+const modalClose = document.querySelector('#close-preview');
 const modalTrigger = document.querySelector('#open-preview');
 
 modalTrigger.onclick = function() {

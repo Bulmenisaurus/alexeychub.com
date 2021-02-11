@@ -2,17 +2,21 @@
 const themes = new ThemeChanger();
 themes.init();
 
+const random = (max, min) => Math.round((Math.random() * (max - min) + min) / 10) * 10;
+
 // Smoothly transitions the title colors
-const randomColor = () => '#' + Math.floor(Math.random() * 16777215).toString(16).padEnd(6, 'E');
+const randomColor = () => '#' + ['', '', ''].map(() => random(100, 255).toString(16)).join('');
 
 const changeColor = (id_type) => document.getElementById(id_type).style.color = randomColor();
 
-setInterval(() => {
-    changeColor('t1');
-    changeColor('t2');
-    changeColor('t3');
-    changeColor('t4');
-}, 5000);
+setTimeout(() => {
+    setInterval(() => {
+        changeColor('t1');
+        changeColor('t2');
+        changeColor('t3');
+        changeColor('t4');
+    }, 5000);
+}, 0);
 
 const secret_button = document.getElementById('t3');
 

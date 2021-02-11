@@ -24,6 +24,7 @@ const GameData = [
         speed: 140,
         height: 90,
         width: 90,
+        fadingFruit: 5,
     },
 ];
 /* General Helper functions */
@@ -90,6 +91,7 @@ class SnakeGame {
         this.score = 0;
         this.level = 0;
         this.hasWon = false;
+        this.moves = 0;
         // canvas color variables
         this.boardBorder = 'black';
         this.boardBackground = 'white';
@@ -203,8 +205,7 @@ class SnakeGame {
         // We know that all the coordinates of the snake have to be unique
         // Otherwise, that means some parts of the snake are stacked = lose
         for (const block of this.levelData.blocks) {
-            const [x, y] = block;
-            if (containsCoordinates(this.snake, [x, y])) {
+            if (containsCoordinates(this.snake, block)) {
                 return true;
             }
         }
@@ -225,6 +226,7 @@ class SnakeGame {
         this.reset();
     }
     reset() {
+        this.moves = 0;
         this.score = 0;
         this.eatenFoods = [];
         this.setGameSpeed(this.initialSpeed);
@@ -234,15 +236,7 @@ class SnakeGame {
         this.hasWon = false;
     }
     drawFoods() {
-        this.ctx.fillStyle = this.foodCol;
-        this.ctx.strokeStyle = this.foodBorder;
-        for (const [i, food] of this.foods.entries()) {
-            if (this.eatenFoods.includes(i)) {
-                continue;
-            }
-            this.ctx.fillRect(...food, 10, 10);
-            this.ctx.strokeRect(...food, 10, 10);
-        }
+        this.drawTiles(this.foods, this.foodCol, this.foodBorder, (food, i) => { return this.eatenFoods.includes(i); });
     }
     drawGoals() {
         if (this.levelData.food.length === this.eatenFoods.length) {
@@ -256,12 +250,12 @@ class SnakeGame {
     drawTiles(tiles, fillStyle, strokeStyle, skipDraw = () => true) {
         this.ctx.fillStyle = fillStyle;
         this.ctx.strokeStyle = strokeStyle;
-        for (const tile of tiles) {
-            if (!skipDraw(tile)) {
+        for (const [i, tile] of tiles.entries()) {
+            if (!skipDraw(tile, i)) {
                 continue;
             }
-            this.ctx.fillRect(...tile, 10, 10);
-            this.ctx.strokeRect(...tile, 10, 10);
+            this.ctx.fillRect(tile[0], tile[1], 10, 10);
+            this.ctx.strokeRect(tile[0], tile[1], 10, 10);
         }
     }
     updateScore() {

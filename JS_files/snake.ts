@@ -16,6 +16,7 @@ interface Level {
     speed?: number,
     height?: number,
     width?: number,
+    fadingFruit?: number,
 }
 
 const GameData: Level[] = [
@@ -43,6 +44,7 @@ const GameData: Level[] = [
         speed: 140,
         height: 90,
         width: 90,
+        fadingFruit: 5,
     },
 ];
 
@@ -131,6 +133,7 @@ class SnakeGame {
     goalBorder: string;
     initialSpeed: number;
     game: number;
+    moves: number;
     constructor(gameData: Level[]) {
         this.canvas = document.getElementsByTagName('canvas')[0];
         this.ctx = this.canvas.getContext('2d');
@@ -145,6 +148,7 @@ class SnakeGame {
         this.score = 0;
         this.level = 0;
         this.hasWon = false;
+        this.moves = 0;
 
         // canvas color variables
         this.boardBorder = 'black';
@@ -285,6 +289,7 @@ class SnakeGame {
     }
 
     reset() {
+        this.moves = 0;
         this.score = 0;
         this.eatenFoods = [];
         this.setGameSpeed(this.initialSpeed);
@@ -313,10 +318,10 @@ class SnakeGame {
     drawTiles(tiles: CoordList, fillStyle: string, strokeStyle: string, skipDraw: Function = () => true) {
         this.ctx.fillStyle = fillStyle;
         this.ctx.strokeStyle = strokeStyle;
-        for (const [i, tile] of tiles) {
+        for (const [i, tile] of tiles.entries()) {
             if (!skipDraw(tile, i)) { continue; }
-            this.ctx.fillRect(...tile, 10, 10);
-            this.ctx.strokeRect(...tile, 10, 10);
+            this.ctx.fillRect(tile[0], tile[1], 10, 10);
+            this.ctx.strokeRect(tile[0], tile[1], 10, 10);
         }
     }
 

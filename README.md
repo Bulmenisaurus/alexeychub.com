@@ -6,7 +6,7 @@ My site
 ### De-potato all subpages:
 - [x] [`/404`](https://bulmenisaurus.github.io/404)
 - [x] [`/boilerplate`](https://bulmenisaurus.github.io/boilerplate)
-- [ ] [`/credits`](https://bulmenisaurus.github.io/credits)
+- [x] [`/credits`](https://bulmenisaurus.github.io/credits)
 - [ ] [`/cssslider`](https://bulmenisaurus.github.io/cssslider)
 - [ ] [`/explore`](https://bulmenisaurus.github.io/explore)
 - [ ] [`/files`](https://bulmenisaurus.github.io/files)

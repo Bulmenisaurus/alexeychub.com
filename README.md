@@ -4,7 +4,7 @@ My site
 
 ## TODO list:
 ### De-potato all subpages:
-- [ ] [`/404`](https://bulmenisaurus.github.io/404)
+- [x] [`/404`](https://bulmenisaurus.github.io/404)
 - [ ] [`/boilerplate`](https://bulmenisaurus.github.io/boilerplate)
 - [ ] [`/credits`](https://bulmenisaurus.github.io/credits)
 - [ ] [`/cssslider`](https://bulmenisaurus.github.io/cssslider)

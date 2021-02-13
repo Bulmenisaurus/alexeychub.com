@@ -49,10 +49,10 @@ li::marker {
 a {
     color: #00ade1;
     font-weight: bolder;
-    display: inline-block;
     text-decoration: none;
     transition: 5s all;
     transition-timing-function: ease-in-out;
+    padding: 10px 0;
 }
 
 a:hover {

@@ -12,6 +12,13 @@ class CreditsScroll extends HTMLDivElement {
             // I just love how simple transitions make this <3
             document.querySelector('body > div:nth-child(1)').style.top = '-1600px';
         }, 200);
+
+        setTimeout(function() {
+            // Scrolls back down
+            me.style.transitionDuration = '3s';
+            me.style.top = '0px';
+            document.body.style.overflow = 'auto';
+        }, parseFloat(me.dataset.scrollTime) * 1000 + 200);
     }
 
 

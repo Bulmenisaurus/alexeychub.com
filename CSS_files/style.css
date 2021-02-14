@@ -70,7 +70,7 @@ footer a {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
-card {
+.card {
     background-color: var(--main-bg);
     border: var(--border-width) solid var(--border-color);
     box-shadow: 0px 0px 41px -13px rgba(255, 255, 255, 0.21);

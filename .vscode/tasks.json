@@ -6,7 +6,7 @@
         {
             "label": "Minify css",
             "type": "shell",
-            "command": "for file in CSS_files/*; do python tools/python-min_cli.py \"$file\"; done",
+            "command": "for file in $(grep -L 'min' CSS_files/*); do python tools/python-min_cli.py \"$file\"; done",
         }
     ]
 }

@@ -33,10 +33,25 @@ const openModal = document.getElementById('easter-egg');
 const modal = document.getElementById('my-modal');
 const closeModal = document.getElementById('close');
 
-openModal.onclick = function() { modal.style.display = 'block'; };
-closeModal.onclick = function() { modal.style.display = 'none'; };
+openModal.onclick = function() {
+    modal.style.display = 'block';
+    modal.setAttribute('aria-hidden', 'false');
+};
+
+closeModal.onclick = function() {
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+};
 window.onclick = function(e) {
     if (e.target === modal) {
         modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
     }
 };
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+    }
+});

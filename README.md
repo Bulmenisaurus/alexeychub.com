@@ -8,7 +8,7 @@ My site
 - [x] [`/boilerplate`](https://bulmenisaurus.github.io/boilerplate)
 - [x] [`/credits`](https://bulmenisaurus.github.io/credits)
 - [x] [`/cssslider`](https://bulmenisaurus.github.io/cssslider)
-- [ ] [`/explore`](https://bulmenisaurus.github.io/explore)
+- [x] [`/explore`](https://bulmenisaurus.github.io/explore)
 - [ ] [`/files`](https://bulmenisaurus.github.io/files)
 - [ ] [`/index`](https://bulmenisaurus.github.io/index)
 - [ ] [`/onelinewonders`](https://bulmenisaurus.github.io/onelinewonders)

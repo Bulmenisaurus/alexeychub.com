@@ -16,10 +16,17 @@
     --url-15: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\"><text y=\"32\" font-size=\"32\">15</text></svg>");
 }
 
+body {
+    place-items: center;
+    display: grid;
+    height: 100vh;
+}
+
 label {
-    display: block;
     border: 1px solid black;
     height: 10px;
+    display: block;
+    height: auto;
 }
 
 input {

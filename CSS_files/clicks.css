@@ -1,21 +1,3 @@
-:root {
-    --url-1: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\"><text y=\"32\" font-size=\"32\">1</text></svg>");
-    --url-2: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\"><text y=\"32\" font-size=\"32\">2</text></svg>");
-    --url-3: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\"><text y=\"32\" font-size=\"32\">3</text></svg>");
-    --url-4: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\"><text y=\"32\" font-size=\"32\">4</text></svg>");
-    --url-5: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\"><text y=\"32\" font-size=\"32\">5</text></svg>");
-    --url-6: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\"><text y=\"32\" font-size=\"32\">6</text></svg>");
-    --url-7: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\"><text y=\"32\" font-size=\"32\">7</text></svg>");
-    --url-8: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\"><text y=\"32\" font-size=\"32\">8</text></svg>");
-    --url-9: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\"><text y=\"32\" font-size=\"32\">9</text></svg>");
-    --url-10: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\"><text y=\"32\" font-size=\"32\">10</text></svg>");
-    --url-11: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\"><text y=\"32\" font-size=\"32\">11</text></svg>");
-    --url-12: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\"><text y=\"32\" font-size=\"32\">12</text></svg>");
-    --url-13: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\"><text y=\"32\" font-size=\"32\">13</text></svg>");
-    --url-14: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\"><text y=\"32\" font-size=\"32\">14</text></svg>");
-    --url-15: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\"><text y=\"32\" font-size=\"32\">15</text></svg>");
-}
-
 body {
     place-items: center;
     display: grid;
@@ -44,26 +26,22 @@ input:checked+input {
     top: 30px;
 }
 
-#counter {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\"><text y=\"32\" font-size=\"32\">0</text></svg>")
+input:checked+input[id="1"]~#counter::before {
+    content: "1";
 }
 
-input:checked+input[id="1"]~#counter {
-    background-image: var(--url-1)
+input:checked+input[id="2"]~#counter::before {
+    content: "2";
 }
 
-input:checked+input[id="2"]~#counter {
-    background-image: var(--url-2)
+input:checked+input[id="3"]~#counter::before {
+    content: "3";
 }
 
-input:checked+input[id="3"]~#counter {
-    background-image: var(--url-3)
+input:checked+input[id="4"]~#counter::before {
+    content: "4";
 }
 
-input:checked+input[id="4"]~#counter {
-    background-image: var(--url-4)
-}
-
-input:checked+input[id="5"]~#counter {
-    background-image: var(--url-5)
+input:checked+input[id="5"]~#counter::before {
+    content: "5";
 }

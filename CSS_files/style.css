@@ -21,7 +21,7 @@ body[data-theme="light"] {
     --main-bg: white;
     --secondary-bg: #eee;
     --font-color: rgba(0, 0, 0, 0.8);
-    --border-color: rgba(0, 0, 0, 0.3);
+    --border-color: #eaecef;
     --border-width: 1px;
 }
 

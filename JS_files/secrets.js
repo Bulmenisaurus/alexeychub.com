@@ -1,12 +1,9 @@
-// If you have not found at least 5 easter eggs, please do not continue.
 // TODO: hints system, fully implement all easter eggs, maybe have a solution for hints having to be all over the place
 
-// trying to learn how to use arrow functions and constants
-// also non-js people who look have no idea wtf is going on, which is a plus
 const START = Date.now();
 
-const isNum = (n) => !!(parseFloat(n) + 1);
-// +1 so that 0 doesnt interpet as falsy :facepalm:
+const numbersZeroToNine = ' '.repeat(10).split('').map((a, i) => i.toString());
+const isNum = (n) => numbersZeroToNine.includes(n);
 
 const getTime = () => {
     const time = Math.round((Date.now() - START) / 1000);
@@ -33,7 +30,7 @@ class Terminal {
     init() {
         const that = this;
         this.terminalElement.innerHTML = `<div id="history"></div><div id="line">${this.htmlPrompt}<input autocomplete="off" type="text" id="input"></div>`;
-        document.querySelector('#input').addEventListener('keydown', function(event) {
+        document.querySelector('#input').addEventListener('keydown', (event) => {
             if (event.key === 'Enter') {
                 this.value = this.value.replace(/</g, '&lt;').replace(/>/g, '&gt;');
                 that.addMessage(this.value, true);
@@ -56,24 +53,22 @@ const terminal = new Terminal('#item-2', '>$]⚘⁕»'[Math.floor(6 * Math.rando
 terminal.init();
 
 
-// Easter eggs
-class EasterEggs {
+const easterEggs = { numbers: false, click: false, wait: false };
+const easterSentHints = [];
 
-    // eslint-disable-next-line
-    static EGGS = { numbers: false, click: false, wait: false }; //test
-    static SENTHINTS = []
+class EasterEggs {
 
     static earn(achievement) {
         // First time using switch and case :D
         switch (achievement) {
             case 'numbers':
-                terminal.formattedMessage('[Numbers!]', '1-2, skip a few, 10!'); EasterEggs.EGGS.numbers = true;
+                terminal.formattedMessage('[Numbers!]', '1-2, skip a few, 10!'); easterEggs.numbers = true;
                 break;
             case 'wait':
-                terminal.formattedMessage('[Patient!]', 'Wow, you\'re patient!'); EasterEggs.EGGS.wait = true;
+                terminal.formattedMessage('[Patient!]', 'Wow, you\'re patient!'); easterEggs.wait = true;
                 break;
             case 'click':
-                terminal.formattedMessage('[Clicks!]', 'Click clack, you\'ve clicked a lot!'); EasterEggs.EGGS.click = true;
+                terminal.formattedMessage('[Clicks!]', 'Click clack, you\'ve clicked a lot!'); easterEggs.click = true;
                 break;
         }
         this.printHint();
@@ -88,14 +83,14 @@ class EasterEggs {
     }
 
     static printHint() {
-        for (const x in this.EGGS) {
-            if (!this.EGGS[x] && !this.SENTHINTS.includes(x)) {
+        for (const x in easterEggs) {
+            if (!easterEggs[x] && easterSentHints.includes(x)) {
                 terminal.formattedMessage('[Hint]', this.hint(x), false);
-                this.SENTHINTS.push(x);
+                easterSentHints.push(x);
                 break;
             }
         }
-        if (Object.values(EasterEggs.EGGS).every(i => !!i == true)) {
+        if (Object.values(easterEggs).every(i => !!i)) {
             terminal.addMessage('Wow! You\'ve earned all the easter eggs! That\'s pretty impresive...');
         }
     }

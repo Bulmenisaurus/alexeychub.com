@@ -26,6 +26,15 @@ input:checked+input {
     top: 30px;
 }
 
+#counter::before {
+    display: inline;
+    content: "0";
+}
+
+#counter::after {
+    content: " clicks";
+}
+
 input:checked+input[id="1"]~#counter::before {
     content: "1";
 }

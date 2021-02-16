@@ -14,8 +14,14 @@ const randomChoice = (...arr) => arr[Math.floor(Math.random() * arr.length)];
 
 setTimeout(function() { document.querySelector('#item-4').innerHTML = '<p>Wow, you\'re patient! id: kinda_lazy</p>', EasterEggs.earn('wait'); }, 6e4);
 document.querySelector('#item-3').innerHTML = '<div id="loading-bar" style="height: 0%"></div>';
-document.querySelector('#item-8').onmouseenter = function() { this.innerHTML = `<p class="no-select">${'\xa0'.repeat(20)}<span id="is-touch">\xa0</span><span id="is-visible">pekaboo :)</span>${'\xa0'.repeat(20)}</p`; };
-document.querySelector('#item-8').onmouseleave = function() { this.innerHTML = ''; };
+document.querySelector('#item-8').onmouseenter = function() {
+    this.innerHTML = `<p class="no-select">${'\xa0'.repeat(20)}<span id="is-touch">\xa0</span><span id="is-visible">pekaboo :)</span>${'\xa0'.repeat(20)}</p`;
+    this.classList.add('no-scroll');
+};
+document.querySelector('#item-8').onmouseleave = function() {
+    this.innerHTML = '';
+    this.classList.remove('no-scroll');
+};
 
 
 // Learning about classes from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes

@@ -80,7 +80,7 @@ class EasterEggs {
 
     static printHint() {
         for (const x in easterEggs) {
-            if (!easterEggs[x] && easterSentHints.includes(x)) {
+            if (!easterEggs[x] && !easterSentHints.includes(x)) {
                 terminal.formattedMessage('[Hint]', this.hint(x), false);
                 easterSentHints.push(x);
                 break;

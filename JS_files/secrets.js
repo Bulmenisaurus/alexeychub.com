@@ -153,32 +153,29 @@ document.querySelector('#item-8').addEventListener('scroll', function(e) {
 
 class Snowflake {
     constructor() {
+        this.distanceFromCamera = Math.random();
         this.parentContainer = document.querySelector('#item-5');
         this.snowflakeCharacter = '✻';
         this.snowflake = document.createElement('span');
         this.createNode.bind(this)();
-        this.startMove.bind(this)();
-        this.top = 0;
+        this.move(this);
     }
 
     createNode() {
+        const snowflakeXOffset = Math.random() * this.parentContainer.getBoundingClientRect().width;
+
         this.snowflake.innerText = this.snowflakeCharacter;
+        this.snowflake.style.transitionDuration = 10 * (1 - this.distanceFromCamera) + 's';
+        this.snowflake.style.fontSize = 8 * this.distanceFromCamera + 10 + 'px';
+        this.snowflake.style.left = snowflakeXOffset + 'px';
+        this.snowflake.style.bottom = Math.random() * 50 + 200 + 'px';
         this.snowflake.className = 'snowflake no-select';
-
-        this.snowflake.style.position = 'relative';
-        this.snowflake.style.zIndex = '-1';
-
         this.parentContainer.appendChild(this.snowflake);
     }
 
-    startMove() {
-        setInterval(this.move.bind(this), 1);
-    }
-
-    move() {
-        this.top++;
-        this.snowflake.style.top = this.top + 'px';
-        this.snowflake.style.left = Math.sin(this.top / 75) * 30 + 'px';
+    move(that) {
+        // otherwise the transition doesn't occur
+        setTimeout(function() { that.snowflake.style.bottom = '0px'; });
     }
 }
 

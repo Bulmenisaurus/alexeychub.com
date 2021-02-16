@@ -12,8 +12,6 @@ const getTime = () => {
 
 const randomChoice = (...arr) => arr[Math.floor(Math.random() * arr.length)];
 
-let showBorder = true;
-
 setTimeout(function() { document.querySelector('#item-4').innerHTML = '<p>Wow, you\'re patient! id: kinda_lazy</p>', EasterEggs.earn('wait'); }, 6e4);
 document.querySelector('#item-3').innerHTML = '<div id="loading-bar" style="height: 0%"></div>';
 document.querySelector('#item-8').onmouseenter = function() { this.innerHTML = `<p class="no-select">${'\xa0'.repeat(20)}<span id="is-touch">\xa0</span><span id="is-visible">pekaboo :)</span>${'\xa0'.repeat(20)}</p`; };
@@ -30,6 +28,8 @@ class Terminal {
 
     addMessage(message) {
         document.querySelector('#history').innerHTML += message + '<br>';
+        document.getElementById('history').scrollIntoView({ behavior: 'smooth', block: 'end' });
+        // https://stackoverflow.com/a/55902894/
     }
 
     formattedMessage(focus, message, timeStamp = true) {
@@ -91,9 +91,7 @@ let counter = 0;
 
 document.addEventListener('keyup', function(event) {
     if (['`', '~'].includes(event.key)) {
-        showBorder ^= true;
-        const borderStyle = '1px solid ' + (showBorder ? 'white' : 'black');
-        [...document.getElementsByClassName('grid-item')].forEach(e => e.style.border = borderStyle);
+        document.querySelector('#grid-1').classList.toggle('no-border');
 
     } else if (isNum(event.key)) {
         if (counter + 1 == event.key) {
@@ -108,19 +106,18 @@ document.addEventListener('keyup', function(event) {
 });
 
 let clicks_7 = 0;
-document.querySelector('#item-7').addEventListener('click', function() {
+document.querySelector('#item-7').addEventListener('click', function clicker() {
 
     const cursors = ['n', 'e', 's', 'w', 'ne', 'nw', 'se', 'sw', 'ew', 'ns', 'nesw', 'nwse'];
-    this.style.cursor = cursors[Math.floor(Math.random() * cursors.length)] + '-resize';
+    this.style.cursor = randomChoice(...cursors) + '-resize';
     if (!this.innerHTML) {
         this.innerHTML = '<p id="clicks-7" class="no-select">0</p>';
     }
     clicks_7++;
     if (clicks_7 == 10) {
         EasterEggs.earn('click');
-        this.children[0].classList.add('green');
-        this.style.cursor = 'initial';
-        this.removeEventListener('click', arguments.callee);
+        document.querySelector('#clicks-7').style.color = 'green';
+        this.removeEventListener('click', clicker);
         // above from https://stackoverflow.com/a/13076344 :)
     }
     document.querySelector('#clicks-7').innerText = clicks_7.toString().padStart(3, '0');

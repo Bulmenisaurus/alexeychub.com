@@ -10,6 +10,8 @@ const getTime = () => {
     return `[${Math.floor(time / 60)}:${(time % 60).toString().padStart(2, '0')}]`;
 };
 
+const randomChoice = (...arr) => arr[Math.floor(Math.random() * arr.length)];
+
 let showBorder = true;
 
 setTimeout(function() { document.querySelector('#item-4').innerHTML = '<p>Wow, you\'re patient! id: kinda_lazy</p>', EasterEggs.earn('wait'); }, 6e4);
@@ -152,7 +154,7 @@ document.querySelector('#item-8').addEventListener('scroll', function(e) {
 
 
 class Snowflake {
-    constructor(snowflakeCharacter = '✻') {
+    constructor(snowflakeCharacter = randomChoice('✻', '*', '❋')) {
         this.parentContainer = document.querySelector('#item-5');
         this.snowflakeCharacter = snowflakeCharacter;
         this.snowflake = document.createElement('span');
@@ -177,9 +179,10 @@ class Snowflake {
         this.snowflake.innerText = this.snowflakeCharacter;
 
         this.snowflake.style.fontSize = 10 * this.distanceFromCamera + 10 + 'px';
-        this.snowflake.style.transitionDuration = this.snowflakeAnimationLength + 's';
         this.snowflake.style.bottom = Math.random() * 50 + Math.round(this.parentHeight) + 'px';
         this.snowflake.className = 'snowflake no-select';
+
+        setTimeout(() => { this.snowflake.style.transitionDuration = this.snowflakeAnimationLength + 's'; });
     }
 
     move(that) {
@@ -193,6 +196,7 @@ class Snowflake {
         this.parentWidth = this.parentContainer.getBoundingClientRect().width;
         this.parentHeight = this.parentContainer.getBoundingClientRect().height;
 
+        this.snowflakeCharacter = randomChoice('✻', '*', '❋');
         this.snowflake.style = '';
 
         this.applyStyling();

@@ -169,17 +169,18 @@ class Snowflake {
 
     applyStyling() {
         this.distanceFromCamera = Math.random();
-        this.snowflakeAnimationLength = 5 * (1 - this.distanceFromCamera) + 5;
+        this.snowflakeAnimationLength = Math.round(5 * (1 - this.distanceFromCamera) + 5);
 
 
-        const snowflakeXOffset = Math.random() * this.parentContainer.getBoundingClientRect().width;
+        const snowflakeXOffset = Math.round(Math.random() * this.parentContainer.getBoundingClientRect().width);
         this.snowflake.style.left = snowflakeXOffset + 'px';
 
 
         this.snowflake.innerText = this.snowflakeCharacter;
 
-        this.snowflake.style.fontSize = 10 * this.distanceFromCamera + 10 + 'px';
-        this.snowflake.style.bottom = Math.random() * 50 + Math.round(this.parentHeight) + 'px';
+        this.snowflake.style.fontSize = Math.round(10 * this.distanceFromCamera + 10) + 'px';
+        this.snowflake.style.bottom = Math.round(Math.random() * 50 + Math.round(this.parentHeight)) + 'px';
+        this.snowflake.style.rotate = Math.round(Math.random() * 360) + 'deg';
         this.snowflake.className = 'snowflake no-select';
 
         setTimeout(() => { this.snowflake.style.transitionDuration = this.snowflakeAnimationLength + 's'; });
@@ -204,7 +205,6 @@ class Snowflake {
     }
 }
 
-const createNewSnowflake = () => new Snowflake();
 for (let x = 0; x < 30; x++) {
-    createNewSnowflake();
+    new Snowflake();
 }

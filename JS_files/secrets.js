@@ -22,28 +22,14 @@ document.querySelector('#item-8').onmouseleave = function() { this.innerHTML = '
 
 // Learning about classes from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 class Terminal {
-    constructor(querySelector = '#terminal', prompt = '>', startingText = 'Welcome to the terminal!') {
-        this.prompt = prompt;
-        this.htmlPrompt = '<span class="path no-select">' + prompt + '\xa0</span>';
+    constructor(querySelector = '#terminal', startingText = 'Welcome to the terminal!') {
         this.text = startingText;
         this.terminalElement = document.querySelector(querySelector);
+        this.terminalElement.innerHTML = `<div id="history">${this.text}<br></div>`;
     }
 
-    init() {
-        const that = this;
-        this.terminalElement.innerHTML = `<div id="history"></div><div id="line">${this.htmlPrompt}<input autocomplete="off" type="text" id="input"></div>`;
-        document.querySelector('#input').addEventListener('keydown', (event) => {
-            if (event.key === 'Enter') {
-                this.value = this.value.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-                that.addMessage(this.value, true);
-                this.value = '';
-            }
-        });
-        this.addMessage(this.text);
-    }
-
-    addMessage(message, withPrompt = false) {
-        document.querySelector('#history').innerHTML += (withPrompt ? this.htmlPrompt : '') + message + '<br>';
+    addMessage(message) {
+        document.querySelector('#history').innerHTML += message + '<br>';
     }
 
     formattedMessage(focus, message, timeStamp = true) {
@@ -51,8 +37,7 @@ class Terminal {
     }
 }
 
-const terminal = new Terminal('#item-2', '>$]⚘⁕»'[Math.floor(6 * Math.random())], 'Welcome to <span class="important">Hints.js!</span>');
-terminal.init();
+const terminal = new Terminal('#item-2', 'Welcome to <span class="important">Hints.js!</span>');
 
 
 const easterEggs = { numbers: false, click: false, wait: false, scroll: false };

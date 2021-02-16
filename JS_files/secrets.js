@@ -153,20 +153,19 @@ document.querySelector('#item-8').addEventListener('scroll', function(e) {
 
 class Snowflake {
     constructor(snowflakeCharacter = '✻') {
-        this.distanceFromCamera = Math.random();
         this.parentContainer = document.querySelector('#item-5');
         this.snowflakeCharacter = snowflakeCharacter;
         this.snowflake = document.createElement('span');
-        this.snowflakeAnimationLength = 5 * (1 - this.distanceFromCamera) + 5;
 
         this.parentWidth = this.parentContainer.getBoundingClientRect().width;
         this.parentHeight = this.parentContainer.getBoundingClientRect().height;
 
-        this.createNode();
+        this.applyStyling();
+        this.parentContainer.appendChild(this.snowflake);
         this.move(this);
     }
 
-    createNode(append = true) {
+    applyStyling() {
         this.distanceFromCamera = Math.random();
         this.snowflakeAnimationLength = 5 * (1 - this.distanceFromCamera) + 5;
 
@@ -181,9 +180,6 @@ class Snowflake {
         this.snowflake.style.transitionDuration = this.snowflakeAnimationLength + 's';
         this.snowflake.style.bottom = Math.random() * 50 + Math.round(this.parentHeight) + 'px';
         this.snowflake.className = 'snowflake no-select';
-        if (append) {
-            this.parentContainer.appendChild(this.snowflake);
-        }
     }
 
     move(that) {
@@ -193,12 +189,13 @@ class Snowflake {
     }
 
     reset() {
+        // Just in case page has been resized :)
+        this.parentWidth = this.parentContainer.getBoundingClientRect().width;
+        this.parentHeight = this.parentContainer.getBoundingClientRect().height;
 
         this.snowflake.style = '';
-        this.distanceFromCamera = Math.random();
 
-        this.snowflakeAnimationLength = 10 * (1 - this.distanceFromCamera);
-        this.createNode(false);
+        this.applyStyling();
         this.move(this);
     }
 }

@@ -53,7 +53,7 @@ const terminal = new Terminal('#item-2', '>$]⚘⁕»'[Math.floor(6 * Math.rando
 terminal.init();
 
 
-const easterEggs = { numbers: false, click: false, wait: false };
+const easterEggs = { numbers: false, click: false, wait: false, scroll: false };
 const easterSentHints = [];
 
 class EasterEggs {
@@ -70,6 +70,8 @@ class EasterEggs {
             case 'click':
                 terminal.formattedMessage('[Clicks!]', 'Click clack, you\'ve clicked a lot!'); easterEggs.click = true;
                 break;
+            case 'scroll':
+                terminal.formattedMessage('[Scroll!]', 'How did you ever think to scroll here?'); easterEggs.scroll = true;
         }
         this.printHint();
     }
@@ -79,6 +81,7 @@ class EasterEggs {
             case 'numbers': return 'Try to press 0 or 1. Is there a pattern you can continue?';
             case 'click': return 'Try clicking around.';
             case 'wait': return 'Wait - any second now....';
+            case 'scroll': return 'Try scrolling around';
         }
     }
 
@@ -136,11 +139,15 @@ document.querySelector('#item-7').addEventListener('click', function() {
     document.querySelector('#clicks-7').innerText = clicks_7.toString().padStart(3, '0');
 });
 
-document.querySelector('#item-8').onmouseenter = function() { this.innerHTML = `<p class="no-select">${'\xa0'.repeat(20)}<span id="is-touch">\xa0</span><span id="is-visible">pekaboo :)</span>${'\xa0'.repeat(20)}</p`; }
-document.querySelector('#item-8').onmouseleave = function() { this.innerHTML = ''; };
-
-document.querySelector('#item-8').addEventListener('scrollend', function(e) {
-    console.log(e);
+document.querySelector('#item-8').addEventListener('scroll', function(e) {
+    if (!document.querySelector('#is-visible')) {
+        return;
+        // Prevents errors from happening when mouse leaves
+    }
+    const isScrollableTextVisible = this.getBoundingClientRect().right > document.querySelector('#is-visible').getBoundingClientRect().left;
+    if (isScrollableTextVisible && !easterEggs.scroll) {
+        EasterEggs.earn('scroll');
+    }
 });
 
 

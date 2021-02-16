@@ -152,34 +152,58 @@ document.querySelector('#item-8').addEventListener('scroll', function(e) {
 
 
 class Snowflake {
-    constructor() {
+    constructor(snowflakeCharacter = '✻') {
         this.distanceFromCamera = Math.random();
         this.parentContainer = document.querySelector('#item-5');
-        this.snowflakeCharacter = '✻';
+        this.snowflakeCharacter = snowflakeCharacter;
         this.snowflake = document.createElement('span');
-        this.createNode.bind(this)();
+        this.snowflakeAnimationLength = 5 * (1 - this.distanceFromCamera) + 5;
+
+        this.parentWidth = this.parentContainer.getBoundingClientRect().width;
+        this.parentHeight = this.parentContainer.getBoundingClientRect().height;
+
+        this.createNode();
         this.move(this);
     }
 
-    createNode() {
+    createNode(append = true) {
+        this.distanceFromCamera = Math.random();
+        this.snowflakeAnimationLength = 5 * (1 - this.distanceFromCamera) + 5;
+
+
         const snowflakeXOffset = Math.random() * this.parentContainer.getBoundingClientRect().width;
+        this.snowflake.style.left = snowflakeXOffset + 'px';
+
 
         this.snowflake.innerText = this.snowflakeCharacter;
-        this.snowflake.style.transitionDuration = 10 * (1 - this.distanceFromCamera) + 's';
-        this.snowflake.style.fontSize = 8 * this.distanceFromCamera + 10 + 'px';
-        this.snowflake.style.left = snowflakeXOffset + 'px';
-        this.snowflake.style.bottom = Math.random() * 50 + 200 + 'px';
+
+        this.snowflake.style.fontSize = 10 * this.distanceFromCamera + 10 + 'px';
+        this.snowflake.style.transitionDuration = this.snowflakeAnimationLength + 's';
+        this.snowflake.style.bottom = Math.random() * 50 + Math.round(this.parentHeight) + 'px';
         this.snowflake.className = 'snowflake no-select';
-        this.parentContainer.appendChild(this.snowflake);
+        if (append) {
+            this.parentContainer.appendChild(this.snowflake);
+        }
     }
 
     move(that) {
         // otherwise the transition doesn't occur
-        setTimeout(function() { that.snowflake.style.bottom = '0px'; });
+        setTimeout(function() { that.snowflake.style.bottom = '-25px'; });
+        setTimeout(this.reset.bind(this), this.snowflakeAnimationLength * 1000 + 500);
+    }
+
+    reset() {
+
+        this.snowflake.style = '';
+        this.distanceFromCamera = Math.random();
+
+        this.snowflakeAnimationLength = 10 * (1 - this.distanceFromCamera);
+        this.createNode(false);
+        this.move(this);
     }
 }
 
 const createNewSnowflake = () => new Snowflake();
-for (let x = 0; x < 10; x++) {
+for (let x = 0; x < 30; x++) {
     createNewSnowflake();
 }

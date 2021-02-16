@@ -141,7 +141,7 @@ document.querySelector('#item-7').addEventListener('click', function() {
     document.querySelector('#clicks-7').innerText = clicks_7.toString().padStart(3, '0');
 });
 
-document.querySelector('#item-8').addEventListener('scroll', function(e) {
+document.querySelector('#item-8').addEventListener('scroll', function() {
     if (!document.querySelector('#is-visible')) {
         return;
         // Prevents errors from happening when mouse leaves

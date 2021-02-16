@@ -152,7 +152,37 @@ document.querySelector('#item-8').addEventListener('scroll', function(e) {
 
 
 class Snowflake {
-    constructor(color) {
+    constructor() {
         this.parentContainer = document.querySelector('#item-5');
+        this.snowflakeCharacter = '✻';
+        this.snowflake = document.createElement('span');
+        this.createNode.bind(this)();
+        this.startMove.bind(this)();
+        this.top = 0;
     }
+
+    createNode() {
+        this.snowflake.innerText = this.snowflakeCharacter;
+        this.snowflake.className = 'snowflake no-select';
+
+        this.snowflake.style.position = 'relative';
+        this.snowflake.style.zIndex = '-1';
+
+        this.parentContainer.appendChild(this.snowflake);
+    }
+
+    startMove() {
+        setInterval(this.move.bind(this), 1);
+    }
+
+    move() {
+        this.top++;
+        this.snowflake.style.top = this.top + 'px';
+        this.snowflake.style.left = Math.sin(this.top / 75) * 30 + 'px';
+    }
+}
+
+const createNewSnowflake = () => new Snowflake();
+for (let x = 0; x < 10; x++) {
+    createNewSnowflake();
 }

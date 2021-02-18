@@ -30,7 +30,7 @@ if (imageId != '9') {
 
 } else if (imageId === '9') {
     const js = document.createElement('script');
-    js.src = 'JS_files/store.snake.js';
+    js.src = 'scripts/store.snake.js';
     document.head.appendChild(js);
 
     const canvas = document.getElementById('image').appendChild(document.createElement('canvas'));

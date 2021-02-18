@@ -18,11 +18,11 @@ def difference_between_lists(arr1, arr2) -> set:
 
 
 def used_css_in_html(html_file_contents: str) -> list:
-    return re.findall(r'href=\"(CSS_files/.*\.min\.css)\"', html_file_contents)[0]
+    return re.findall(r'href=\"(stylesheets/.*\.min\.css)\"', html_file_contents)[0]
 
 
 HTML_files = glob.glob('*.html')
-CSS_files = glob.glob('CSS_files/*.min.css')
+CSS_files = glob.glob('stylesheets/*.min.css')
 
 UNUSED_CSS = CSS_files[:]
 

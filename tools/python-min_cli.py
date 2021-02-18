@@ -4,12 +4,12 @@
 Minify all css files:
 =====================
 
-for file in CSS_files/*; do python tools/python-min_cli.py "$file"; done
+for file in stylesheets/*; do python tools/python-min_cli.py "$file"; done
 
 Delete all minified files:
 ==========================
 
-rm CSS_files/*'.min'*
+rm stylesheets/*'.min'*
 """
 import sys
 import requests

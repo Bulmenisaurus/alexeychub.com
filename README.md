@@ -10,7 +10,7 @@ My site
 - [x] [`/cssslider`](https://bulmenisaurus.github.io/cssslider)
 - [x] [`/explore`](https://bulmenisaurus.github.io/explore)
 - [x] [`/files`](https://bulmenisaurus.github.io/files)
-- [ ] [`/index`](https://bulmenisaurus.github.io/index)
+- [x] [`/index`](https://bulmenisaurus.github.io/index)
 - [ ] [`/onelinewonders`](https://bulmenisaurus.github.io/onelinewonders)
 - [ ] [`/python`](https://bulmenisaurus.github.io/python)
 - [ ] [`/secrets`](https://bulmenisaurus.github.io/secrets)

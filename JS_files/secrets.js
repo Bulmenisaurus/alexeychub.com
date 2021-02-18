@@ -46,7 +46,7 @@ class Terminal {
 const terminal = new Terminal('#item-2', 'Welcome to <span class="important">Hints.js!</span>');
 
 
-const easterEggs = { numbers: false, click: false, wait: false, scroll: false };
+const easterEggs = { numbers: false, click: false, wait: false, scroll: false, snowflake: false };
 const easterSentHints = [];
 
 class EasterEggs {
@@ -55,16 +55,25 @@ class EasterEggs {
         // First time using switch and case :D
         switch (achievement) {
             case 'numbers':
-                terminal.formattedMessage('[Numbers!]', '1-2, skip a few, 10!'); easterEggs.numbers = true;
+                terminal.formattedMessage('[Numbers!]', '1-2, skip a few, 10!');
+                easterEggs.numbers = true;
                 break;
             case 'wait':
-                terminal.formattedMessage('[Patient!]', 'Wow, you\'re patient!'); easterEggs.wait = true;
+                terminal.formattedMessage('[Patient!]', 'Wow, you\'re patient!');
+                easterEggs.wait = true;
                 break;
             case 'click':
-                terminal.formattedMessage('[Clicks!]', 'Click clack, you\'ve clicked a lot!'); easterEggs.click = true;
+                terminal.formattedMessage('[Clicks!]', 'Click clack, you\'ve clicked a lot!');
+                easterEggs.click = true;
                 break;
             case 'scroll':
-                terminal.formattedMessage('[Scroll!]', 'How did you ever think to scroll here?'); easterEggs.scroll = true;
+                terminal.formattedMessage('[Scroll!]', 'How did you ever think to scroll here?');
+                easterEggs.scroll = true;
+                break;
+            case 'snowflake':
+                terminal.formattedMessage('[Golden Snowflake]', 'These snowflakes aren\'t snow!');
+                easterEggs.snowflake = true;
+                break;
         }
         this.printHint();
     }
@@ -75,6 +84,7 @@ class EasterEggs {
             case 'click': return 'Try clicking around.';
             case 'wait': return 'Wait - any second now....';
             case 'scroll': return 'Try scrolling around';
+            case 'snowflake': return 'Some of the snow isn\'t the usual color';
         }
     }
 
@@ -143,6 +153,7 @@ document.querySelector('#item-8').addEventListener('scroll', function() {
 
 class Snowflake {
     constructor(snowflakeCharacter = randomChoice('✻', '*', '❋')) {
+        this.isGolden = Math.random() > 0.95;
         this.parentContainer = document.querySelector('#item-5');
         this.snowflakeCharacter = snowflakeCharacter;
         this.snowflake = document.createElement('span');
@@ -156,6 +167,11 @@ class Snowflake {
     }
 
     applyStyling() {
+        if (this.isGolden) {
+            this.snowflake.style.color = 'gold';
+            this.snowflake.onclick = () => alert(1);
+        }
+
         this.distanceFromCamera = Math.random();
         this.snowflakeAnimationLength = Math.round(5 * (1 - this.distanceFromCamera) + 5);
 

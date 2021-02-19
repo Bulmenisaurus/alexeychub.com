@@ -9,6 +9,7 @@ bName.onkeyup = function() {
     hljs.highlightBlock(document.getElementById('b-day'));
 
     // Instead of eval-ing the content, just execut the script!
+    // eslint-disable-next-line
     bPrev.innerText = Array(4).fill(['Happy birthday ', '', '']).map((a, p) => a.map((a, e) => e == 1 && p == 2 ? `dear ${name}` : e == 1 && p != 2 ? 'to you' : e == 2 ? ',,!.'[p] : a)).map(a => a.join('')).concat('\n' + '\uD83C\uDF81\uD83C\uDF89'.repeat(5)).join('\n');
 };
 

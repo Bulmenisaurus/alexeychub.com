@@ -17,10 +17,10 @@ body {
     font-size: max(.9vw, 12px);
     -ms-overflow-style: none;
     scrollbar-width: none;
+    line-height: 150%;
 }
 
 .path {
-    width: 1px;
     color: #00dc80;
 }
 
@@ -29,7 +29,7 @@ body {
     color: #00ade1;
 }
 
-#input {
+input {
     border: none;
     background: black;
     outline: none;
@@ -37,4 +37,23 @@ body {
     padding: 0;
     color: white;
     font-family: Monaco, "Lucida Console", monospace;
+    width: 100%;
+}
+
+#line {
+    /* so path and input are on the same line */
+    display: flex;
+}
+
+.no-select {
+    user-select: none;
+    /* supported by Chrome and Opera */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
 }

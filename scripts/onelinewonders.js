@@ -1,5 +1,5 @@
 /* global hljs */
-const [bName, bPrev, vName, vMessage] = ['bday-recipient', 'bday-preview', 'valentine-name', 'valentine-message',].map((e) => document.getElementById(e));
+const [bName, bPrev, vName, vMessage] = ['bday-recipient', 'bday-preview', 'valentine-name', 'valentine-message'].map((e) => document.getElementById(e));
 
 const cleanStr = (str) => JSON.stringify(str).slice(1, -1).replace(/'/gm, '\\\'');
 
@@ -7,6 +7,9 @@ bName.onkeyup = function() {
     const name = cleanStr((this.value));
     document.getElementById('b-day').innerText = `Array(4).fill(["Happy birthday ","",""]).map((a,p)=>a.map((a,e)=>1==e&&2==p?"dear ${name}":1==e&&2!=p?"to you":2==e?",,!."[p]:a)).map(a=>a.join("")).concat("\\n"+"\\uD83C\\uDF81\\uD83C\\uDF89".repeat(5)).join("\\n");`;
     hljs.highlightBlock(document.getElementById('b-day'));
+
+    // Instead of eval-ing the content, just execut the script!
+    bPrev.innerText = Array(4).fill(['Happy birthday ', '', '']).map((a, p) => a.map((a, e) => e == 1 && p == 2 ? `dear ${name}` : e == 1 && p != 2 ? 'to you' : e == 2 ? ',,!.'[p] : a)).map(a => a.join('')).concat('\n' + '\uD83C\uDF81\uD83C\uDF89'.repeat(5)).join('\n');
 };
 
 vName.onkeyup = vMessage.onkeyup = function() {

@@ -157,6 +157,7 @@ class Snowflake {
         this.parentContainer = document.querySelector('#item-5');
         this.snowflakeCharacter = snowflakeCharacter;
         this.snowflake = document.createElement('span');
+        this.initialRotate = Math.round(Math.random() * 360) + 'deg';
 
         this.parentWidth = this.parentContainer.getBoundingClientRect().width;
         this.parentHeight = this.parentContainer.getBoundingClientRect().height;
@@ -167,11 +168,8 @@ class Snowflake {
     }
 
     applyStyling() {
-        if (this.isGolden) {
-            this.snowflake.style.color = 'gold';
-            this.snowflake.onclick = () => alert(1);
-        }
 
+        this.initialRotate = Math.round(Math.random() * 360);
         this.distanceFromCamera = Math.random();
         this.snowflakeAnimationLength = Math.round(5 * (1 - this.distanceFromCamera) + 5);
 
@@ -184,7 +182,7 @@ class Snowflake {
 
         this.snowflake.style.fontSize = Math.round(10 * this.distanceFromCamera + 10) + 'px';
         this.snowflake.style.bottom = Math.round(Math.random() * 50 + Math.round(this.parentHeight)) + 'px';
-        this.snowflake.style.rotate = Math.round(Math.random() * 360) + 'deg';
+        this.snowflake.style.rotate = this.initialRotate;
         this.snowflake.className = 'snowflake no-select';
 
         setTimeout(() => { this.snowflake.style.transitionDuration = this.snowflakeAnimationLength + 's'; });
@@ -193,6 +191,7 @@ class Snowflake {
     move(that) {
         // otherwise the transition doesn't occur
         setTimeout(function() { that.snowflake.style.bottom = '-25px'; });
+        setTimeout(function() { that.snowflake.style.rotate = that.initialRotate + 300 + 'deg'; });
         setTimeout(this.reset.bind(this), this.snowflakeAnimationLength * 1000 + 500);
     }
 

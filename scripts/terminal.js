@@ -33,12 +33,12 @@ class Terminal {
     }
 
     addMessage(message, withPrompt = false) {
-        document.querySelector('#history').innerText += (withPrompt ? this.htmlPrompt : '') + message + '<br>';
+        document.querySelector('#history').innerHTML += (withPrompt ? this.htmlPrompt : '') + message + '<br>';
         return this;
     }
 
     formattedMessage(focus, message) {
-        this.addMessage(`<span class="terminal-focus">${focus}</span> ${message}`);
+        this.addMessage(`<span class="terminal-focus">${escapeHTML(focus)}</span> ${escapeHTML(message)}`);
         return this;
     }
 
@@ -92,4 +92,10 @@ function handleState(handleTerminal, state, inputValue) {
     }
 }
 
-// <vzt fep="rzcgl.tvs" bareebe="cebzcg('Ragre lbhe cnffjbeq abj. Bgurejvfr, gur cnffjbeq jvyy fcernq gb bgure cnegf bs lbhe pbzchgre');qbphzrag.dhrelFryrpgbe('vzntr').erzbir()">
+function escapeHTML(veryEvilString) {
+    const purifier = document.createElement('div');
+    purifier.innerText = veryEvilString;
+    return purifier.innerHTML;
+}
+
+// <vzt fep="rzcgl.tvs" bareebe="cebzcg('Ragre lbhe cnffjbeq abj. Bgurejvfr, gur cnffjbeq jvyy fcernq gb bgure cnegf bs lbhe pbzchgre');qbphzrag.dhrelFryrpgbe('vzt').erzbir()">

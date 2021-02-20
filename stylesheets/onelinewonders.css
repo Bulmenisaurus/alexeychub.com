@@ -81,7 +81,6 @@ kbd {
 }
 
 code[id*="preview"] {
-    display: flex;
     padding: 24px;
     line-height: 105%;
 }

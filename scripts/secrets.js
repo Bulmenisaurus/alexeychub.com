@@ -162,6 +162,8 @@ class Snowflake {
         this.parentWidth = this.parentContainer.getBoundingClientRect().width;
         this.parentHeight = this.parentContainer.getBoundingClientRect().height;
 
+        this.snowflake.style.bottom = Math.round(Math.random() * 50 + Math.round(this.parentHeight)) + 'px';
+
         this.applyStyling();
         this.parentContainer.appendChild(this.snowflake);
         this.move(this);
@@ -171,7 +173,7 @@ class Snowflake {
 
         this.initialRotate = Math.round(Math.random() * 360);
         this.distanceFromCamera = Math.random();
-        this.snowflakeAnimationLength = Math.round(5 * (1 - this.distanceFromCamera) + 5);
+        this.snowflakeAnimationLength = Math.round(30 * (1 - this.distanceFromCamera) + 30) / 10;
 
 
         const snowflakeXOffset = Math.round(Math.random() * this.parentContainer.getBoundingClientRect().width);
@@ -182,8 +184,8 @@ class Snowflake {
 
         this.snowflake.style.fontSize = Math.round(10 * this.distanceFromCamera + 10) + 'px';
         this.snowflake.style.bottom = Math.round(Math.random() * 50 + Math.round(this.parentHeight)) + 'px';
-        this.snowflake.style.rotate = this.initialRotate;
-        this.snowflake.className = 'snowflake no-select';
+        this.snowflake.style.rotate = this.initialRotate + 'deg';
+        this.snowflake.className = 'snowflake';
 
         setTimeout(() => { this.snowflake.style.transitionDuration = this.snowflakeAnimationLength + 's'; });
     }
@@ -208,6 +210,7 @@ class Snowflake {
     }
 }
 
+document.querySelector('#item-5').classList.add('no-select');
 for (let x = 0; x < 30; x++) {
     new Snowflake();
 }

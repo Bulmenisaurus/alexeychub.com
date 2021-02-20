@@ -17,7 +17,6 @@ My site
 - [ ] [`/store`](https://bulmenisaurus.github.io/store)
 - [ ] [`/storeresult`](https://bulmenisaurus.github.io/storeresult)
 - [x] [`/terminal`](https://bulmenisaurus.github.io/terminal)
-- [ ] [`/texteditor`](https://bulmenisaurus.github.io/texteditor)
 
 #### De-potatoing means:
 

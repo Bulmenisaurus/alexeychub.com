@@ -11,7 +11,7 @@ My site
 - [x] [`/explore`](https://bulmenisaurus.github.io/explore)
 - [x] [`/files`](https://bulmenisaurus.github.io/files)
 - [x] [`/index`](https://bulmenisaurus.github.io/index)
-- [ ] [`/onelinewonders`](https://bulmenisaurus.github.io/onelinewonders)
+- [x] [`/onelinewonders`](https://bulmenisaurus.github.io/onelinewonders)
 - [ ] [`/secrets`](https://bulmenisaurus.github.io/secrets)
 - [ ] [`/snake`](https://bulmenisaurus.github.io/snake)
 - [ ] [`/store`](https://bulmenisaurus.github.io/store)

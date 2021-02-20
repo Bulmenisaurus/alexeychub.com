@@ -53,8 +53,11 @@ p, h3 {
     margin: 20px 0;
 }
 
-table {
+.control-grid {
     margin: 10px 0;
+    display: grid;
+    grid-template-columns: 80px 170px;
+    row-gap: 5px;
 }
 
 code {

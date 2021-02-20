@@ -11,7 +11,7 @@
 
     <!-- My assets: -->
     <link rel="icon" type="image/png" href="images/c-pixilart.png">
-    <link rel="stylesheet" type="text/css" href="stylesheets/onelinewonders.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/onelinewonders.css">
     <script src="scripts/onelinewonders.js" defer></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -53,14 +53,10 @@
             Sing your recipient a a birthday song!
         </p>
 
-        <table>
-            <tbody>
-                <tr>
-                    <td><label for="bday-recipient">Recipient: </label></td>
-                    <td><input name="bday-recepient" type="text" id="bday-recipient"></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="control-grid">
+            <label for="bday-recipient">Recipient: </label>
+            <input name="bday-recepient" type="text" id="bday-recipient">
+        </div>
         <!-- <label for="bday-recipient">Recipient: </label><input name="bday-recepient" type="text" id="bday-recipient"><br> -->
         <!-- <label for="bday-message">Message: </label><input name="bday-message" type="text" id="bday-message"><br> -->
         <input type="button" value="Copy!" class="copy" id="copy-b">
@@ -70,19 +66,12 @@
         <br>
         <h2>The Ultimate valentines card:</h2>
         <p>This is much like the birthday card, but with more hearts!</p>
-
-        <table>
-            <tbody>
-                <tr>
-                    <td><label for="valentine-message">Message: </label></td>
-                    <td><input type="text" id="valentine-message" maxlength="23"><br></td>
-                </tr>
-                <tr>
-                    <td><label for="valentine-name">Your name: </label></td>
-                    <td><input type="text" id="valentine-name" maxlength="19"><br></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="control-grid">
+            <label for="valentine-message">Message: </label>
+            <input type="text" id="valentine-message" maxlength="23">
+            <label for="valentine-name">Your name: </label>
+            <input type="text" id="valentine-name" maxlength="19">
+        </div>
         <pre><code class="js hide-scroll" id="v-day"></code></pre>
         <h3>Valentines card preview:</h3>
         <pre><code class="plaintext" id="valentine-preview"></code></pre>

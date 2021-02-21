@@ -108,7 +108,7 @@ class SnakeGame {
         this.ctx.translate(0.5, 0.5);
     }
     drawSnake() {
-        this.drawTiles(this.snake, this.snakeCol, this.snakeBorder, (t) => { return t[0] >= 0; });
+        this.drawTiles(this.snake, this.snakeCol, this.snakeBorder, (t) => { return t[0] < 0; });
     }
     clearCanvas() {
         this.ctx.fillStyle = this.boardBackground;
@@ -247,11 +247,12 @@ class SnakeGame {
     drawBlocks() {
         this.drawTiles(this.levelData.blocks, this.blockCol, this.blockBorder);
     }
-    drawTiles(tiles, fillStyle, strokeStyle, skipDraw = () => true) {
+    // Skipdraw is a callback that returns true when you want to skip
+    drawTiles(tiles, fillStyle, strokeStyle, skipDraw = () => false) {
         this.ctx.fillStyle = fillStyle;
         this.ctx.strokeStyle = strokeStyle;
         for (const [i, tile] of tiles.entries()) {
-            if (!skipDraw(tile, i)) {
+            if (skipDraw(tile, i)) {
                 continue;
             }
             this.ctx.fillRect(tile[0], tile[1], 10, 10);

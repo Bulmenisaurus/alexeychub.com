@@ -168,7 +168,7 @@ class SnakeGame {
     }
 
     drawSnake() {
-        this.drawTiles(this.snake, this.snakeCol, this.snakeBorder, (t: Coordinate) => { return t[0] >= 0 });
+        this.drawTiles(this.snake, this.snakeCol, this.snakeBorder, (t: Coordinate) => { return t[0] < 0 });
     }
 
     clearCanvas() {
@@ -314,12 +314,12 @@ class SnakeGame {
         this.drawTiles(this.levelData.blocks, this.blockCol, this.blockBorder);
     }
 
-
-    drawTiles(tiles: CoordList, fillStyle: string, strokeStyle: string, skipDraw: Function = () => true) {
+    // Skipdraw is a callback that returns true when you want to skip
+    drawTiles(tiles: CoordList, fillStyle: string, strokeStyle: string, skipDraw: Function = () => false) {
         this.ctx.fillStyle = fillStyle;
         this.ctx.strokeStyle = strokeStyle;
         for (const [i, tile] of tiles.entries()) {
-            if (!skipDraw(tile, i)) { continue; }
+            if (skipDraw(tile, i)) { continue; }
             this.ctx.fillRect(tile[0], tile[1], 10, 10);
             this.ctx.strokeRect(tile[0], tile[1], 10, 10);
         }

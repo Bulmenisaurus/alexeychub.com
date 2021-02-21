@@ -12,7 +12,7 @@ My site
 - [x] [`/files`](https://bulmenisaurus.github.io/files)
 - [x] [`/index`](https://bulmenisaurus.github.io/index)
 - [x] [`/onelinewonders`](https://bulmenisaurus.github.io/onelinewonders)
-- [ ] [`/secrets`](https://bulmenisaurus.github.io/secrets)
+- [x] [`/secrets`](https://bulmenisaurus.github.io/secrets)
 - [x] [`/snake`](https://bulmenisaurus.github.io/snake)
 - [x] [`/store`](https://bulmenisaurus.github.io/store)
 - [x] [`/storeresult`](https://bulmenisaurus.github.io/storeresult)

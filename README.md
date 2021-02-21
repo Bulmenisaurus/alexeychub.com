@@ -14,8 +14,8 @@ My site
 - [x] [`/onelinewonders`](https://bulmenisaurus.github.io/onelinewonders)
 - [ ] [`/secrets`](https://bulmenisaurus.github.io/secrets)
 - [ ] [`/snake`](https://bulmenisaurus.github.io/snake)
-- [ ] [`/store`](https://bulmenisaurus.github.io/store)
-- [ ] [`/storeresult`](https://bulmenisaurus.github.io/storeresult)
+- [x] [`/store`](https://bulmenisaurus.github.io/store)
+- [x] [`/storeresult`](https://bulmenisaurus.github.io/storeresult)
 - [x] [`/terminal`](https://bulmenisaurus.github.io/terminal)
 
 #### De-potatoing means:

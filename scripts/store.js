@@ -36,7 +36,7 @@ function copyLink() {
 
     /* Select the text field */
     copyInput.select();
-    copyInput.setSelectionRange(0, 200);
+    copyInput.setSelectionRange(0, 999);
 
     document.execCommand('copy');
 }

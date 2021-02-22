@@ -1,0 +1,29 @@
+# TODO:
+A list of TODOS for each subpage:
+
+## /404:
+## /boilerplate:
+## /clicks:
+## /credits:
+## /cssslider:
+## /explore:
+## /index:
+## /onelinewonders:
+## /secrets:
+## /snake:
+## /store:
+## /storeresult:
+## /terminal:
+## /404:
+## /boilerplate:
+## /clicks:
+## /credits:
+## /cssslider:
+## /explore:
+## /:
+## /onelinewonders:
+## /secrets:
+## /snake:
+## /store:
+## /storeresult:
+## /terminal:

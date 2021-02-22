@@ -6,18 +6,20 @@ body {
 
 label {
     border: 1px solid black;
-    height: 10px;
+    position: relative;
     display: block;
     height: auto;
 }
 
 input {
-    display: none;
+    display: block;
     padding: 15px;
+    position: absolute;
 }
 
 input:checked+input {
     display: block !important;
+    z-index: 1;
 }
 
 #counter {

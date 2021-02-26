@@ -17,6 +17,21 @@ canvas {
     max-width: 350px;
 }
 
-score-counter {
+#gui {
     font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
+    display: flex;
+    width: 100%;
+    text-align: center;
+}
+
+#deaths, #food {
+    flex: 1;
+}
+
+#deaths::before {
+    content: "☠️ ";
+    color: transparent;
+    text-shadow: 0 0 black;
+    -webkit-text-stroke: 1px red;
+    /* 0% of browsers support non-prefixed... https://caniuse.com/?search=text-stroke */
 }

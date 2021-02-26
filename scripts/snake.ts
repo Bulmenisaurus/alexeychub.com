@@ -338,16 +338,8 @@ class SnakeGame {
     //! Start of GUI sections:
 
     updateGUI() {
-        this.updateScore();
         this.updateDeaths();
         this.updateFood();
-    }
-
-    updateScore() {
-        const score: HTMLElement = document.querySelector('#score');
-        if (score.innerText !== this.score.toString()) {
-            score.innerText = this.score.toString();
-        }
     }
 
     updateDeaths() {

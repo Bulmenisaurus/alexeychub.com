@@ -90,8 +90,9 @@ class SnakeGame {
         this.safeMoves = 5;
         this.score = 0;
         this.level = 0;
-        this.hasWon = false;
         this.moves = 0;
+        this.deaths = 0;
+        this.hasWon = false;
         // canvas color variables
         this.boardBorder = 'black';
         this.boardBackground = 'white';
@@ -107,9 +108,7 @@ class SnakeGame {
         this.ctx.imageSmoothingEnabled = false;
         this.ctx.translate(0.5, 0.5);
     }
-    drawSnake() {
-        this.drawTiles(this.snake, this.snakeCol, this.snakeBorder, (t) => { return t[0] < 0; });
-    }
+    //! Start of helper and important functions
     clearCanvas() {
         this.ctx.fillStyle = this.boardBackground;
         this.ctx.strokeStyle = this.boardBorder;
@@ -118,6 +117,33 @@ class SnakeGame {
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         this.ctx.translate(0.5, 0.5);
     }
+    tick() {
+        this.clearCanvas();
+        this.updateScore();
+        if (this.checkGoal()) {
+            this.nextLevel();
+        }
+        this.moveSnake(this.direction);
+        this.drawBlocks();
+        this.drawGoals();
+        this.drawFoods();
+        this.drawSnake();
+        if (this.checkCollisions()) {
+            this.lose();
+        }
+        this.movedThisTick = false;
+    }
+    init(speed = 100) {
+        this.initialSpeed = speed;
+        document.addEventListener('keydown', this.changeDirection.bind(this));
+        this.game = setInterval(this.tick.bind(this), speed);
+        this.setLevel(0);
+    }
+    setGameSpeed(speed) {
+        clearInterval(this.game);
+        this.game = setInterval(this.tick.bind(this), speed);
+    }
+    //! Start of movement managment/controller
     moveSnake(direction) {
         const newHead = { x: this.snake[0][0], y: this.snake[0][1] };
         switch (direction) {
@@ -151,32 +177,6 @@ class SnakeGame {
             this.snake.pop();
         }
         this.safeMoves--;
-    }
-    tick() {
-        this.clearCanvas();
-        this.updateScore();
-        if (this.checkGoal()) {
-            this.nextLevel();
-        }
-        this.moveSnake(this.direction);
-        this.drawBlocks();
-        this.drawGoals();
-        this.drawFoods();
-        this.drawSnake();
-        if (this.checkCollisions()) {
-            this.lose();
-        }
-        this.movedThisTick = false;
-    }
-    init(speed = 100) {
-        this.initialSpeed = speed;
-        document.addEventListener('keydown', this.changeDirection.bind(this));
-        this.game = setInterval(this.tick.bind(this), speed);
-        this.setLevel(0);
-    }
-    setGameSpeed(speed) {
-        clearInterval(this.game);
-        this.game = setInterval(this.tick.bind(this), speed);
     }
     changeDirection(event) {
         const key = event.key;
@@ -235,6 +235,10 @@ class SnakeGame {
         this.safeMoves = 7;
         this.hasWon = false;
     }
+    //! Start of drawing/rendering section:
+    drawSnake() {
+        this.drawTiles(this.snake, this.snakeCol, this.snakeBorder, (t) => { return t[0] < 0; });
+    }
     drawFoods() {
         this.drawTiles(this.foods, this.foodCol, this.foodBorder, (food, i) => { return this.eatenFoods.includes(i); });
     }
@@ -259,12 +263,14 @@ class SnakeGame {
             this.ctx.strokeRect(tile[0], tile[1], 10, 10);
         }
     }
+    //! Start of GUI sections:
     updateScore() {
-        const scoreSpan = document.querySelector('score-counter');
+        const scoreSpan = document.querySelector('#score');
         if (scoreSpan.innerText !== this.score.toString()) {
             scoreSpan.innerText = this.score.toString();
         }
     }
+    //! Start of level managment:
     setLevel(level) {
         if (level > this.gameData.length - 1) {
             alert('You win!');

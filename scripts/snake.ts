@@ -134,6 +134,7 @@ class SnakeGame {
     initialSpeed: number;
     game: number;
     moves: number;
+    deaths: number;
     constructor(gameData: Level[]) {
         this.canvas = document.getElementsByTagName('canvas')[0];
         this.ctx = this.canvas.getContext('2d');
@@ -147,8 +148,9 @@ class SnakeGame {
         this.safeMoves = 5;
         this.score = 0;
         this.level = 0;
-        this.hasWon = false;
         this.moves = 0;
+        this.deaths = 0;
+        this.hasWon = false;
 
         // canvas color variables
         this.boardBorder = 'black';
@@ -167,9 +169,7 @@ class SnakeGame {
         this.ctx.translate(0.5, 0.5);
     }
 
-    drawSnake() {
-        this.drawTiles(this.snake, this.snakeCol, this.snakeBorder, (t: Coordinate) => { return t[0] < 0 });
-    }
+    //! Start of helper and important functions
 
     clearCanvas() {
         this.ctx.fillStyle = this.boardBackground;
@@ -179,6 +179,34 @@ class SnakeGame {
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         this.ctx.translate(0.5, 0.5);
     }
+
+
+    tick() {
+        this.clearCanvas();
+        this.updateScore();
+        if (this.checkGoal()) { this.nextLevel(); }
+        this.moveSnake(this.direction);
+        this.drawBlocks();
+        this.drawGoals();
+        this.drawFoods();
+        this.drawSnake();
+        if (this.checkCollisions()) { this.lose(); }
+        this.movedThisTick = false;
+    }
+
+    init(speed = 100) {
+        this.initialSpeed = speed;
+        document.addEventListener('keydown', this.changeDirection.bind(this));
+        this.game = setInterval(this.tick.bind(this), speed);
+        this.setLevel(0);
+    }
+
+    setGameSpeed(speed: number) {
+        clearInterval(this.game);
+        this.game = setInterval(this.tick.bind(this), speed);
+    }
+
+    //! Start of movement managment/controller
 
     moveSnake(direction: string) {
         const newHead = { x: this.snake[0][0], y: this.snake[0][1] };
@@ -210,30 +238,6 @@ class SnakeGame {
         this.safeMoves--;
     }
 
-    tick() {
-        this.clearCanvas();
-        this.updateScore();
-        if (this.checkGoal()) { this.nextLevel(); }
-        this.moveSnake(this.direction);
-        this.drawBlocks();
-        this.drawGoals();
-        this.drawFoods();
-        this.drawSnake();
-        if (this.checkCollisions()) { this.lose(); }
-        this.movedThisTick = false;
-    }
-
-    init(speed = 100) {
-        this.initialSpeed = speed;
-        document.addEventListener('keydown', this.changeDirection.bind(this));
-        this.game = setInterval(this.tick.bind(this), speed);
-        this.setLevel(0);
-    }
-
-    setGameSpeed(speed: number) {
-        clearInterval(this.game);
-        this.game = setInterval(this.tick.bind(this), speed);
-    }
 
     changeDirection(event: KeyboardEvent) {
         const key = event.key;
@@ -299,6 +303,12 @@ class SnakeGame {
         this.hasWon = false;
     }
 
+    //! Start of drawing/rendering section:
+
+    drawSnake() {
+        this.drawTiles(this.snake, this.snakeCol, this.snakeBorder, (t: Coordinate) => { return t[0] < 0 });
+    }
+
     drawFoods() {
         this.drawTiles(this.foods, this.foodCol, this.foodBorder, (food: Coordinate, i: number) => { return this.eatenFoods.includes(i) })
     }
@@ -325,13 +335,16 @@ class SnakeGame {
         }
     }
 
+    //! Start of GUI sections:
+
     updateScore(): void {
-        const scoreSpan: HTMLElement = document.querySelector('score-counter');
+        const scoreSpan: HTMLElement = document.querySelector('#score');
         if (scoreSpan.innerText !== this.score.toString()) {
             scoreSpan.innerText = this.score.toString();
         }
     }
 
+    //! Start of level managment:
     setLevel(level: number) {
         if (level > this.gameData.length - 1) {
             alert('You win!'); return;

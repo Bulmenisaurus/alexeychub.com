@@ -124,10 +124,7 @@ class SnakeGame {
             this.nextLevel();
         }
         this.moveSnake(this.direction);
-        this.drawBlocks();
-        this.drawGoals();
-        this.drawFoods();
-        this.drawSnake();
+        this.drawStuff();
         if (this.checkCollisions()) {
             this.lose();
         }
@@ -236,6 +233,12 @@ class SnakeGame {
         this.hasWon = false;
     }
     //! Start of drawing/rendering section:
+    drawStuff() {
+        this.drawBlocks();
+        this.drawGoals();
+        this.drawFoods();
+        this.drawSnake();
+    }
     drawSnake() {
         this.drawTiles(this.snake, this.snakeCol, this.snakeBorder, (t) => { return t[0] < 0; });
     }

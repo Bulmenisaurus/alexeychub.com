@@ -186,10 +186,7 @@ class SnakeGame {
         this.updateGUI();
         if (this.checkGoal()) { this.nextLevel(); }
         this.moveSnake(this.direction);
-        this.drawBlocks();
-        this.drawGoals();
-        this.drawFoods();
-        this.drawSnake();
+        this.drawStuff();
         if (this.checkCollisions()) { this.lose(); }
         this.movedThisTick = false;
     }
@@ -304,6 +301,12 @@ class SnakeGame {
     }
 
     //! Start of drawing/rendering section:
+    drawStuff() {
+        this.drawBlocks();
+        this.drawGoals();
+        this.drawFoods();
+        this.drawSnake();
+    }
 
     drawSnake() {
         this.drawTiles(this.snake, this.snakeCol, this.snakeBorder, (t: Coordinate) => { return t[0] < 0 });

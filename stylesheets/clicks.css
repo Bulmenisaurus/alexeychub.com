@@ -4,28 +4,35 @@ body {
     height: 100vh;
 }
 
-label {
-    border: 1px solid black;
+div {
     position: relative;
-    display: block;
-    height: auto;
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    width: 71px;
+    min-height: 30px;
+    font-size: 13.3px;
+    background-color: #1a73e8;
 }
 
 input {
+    top: 10px;
     display: block;
     padding: 15px;
     position: absolute;
+    pointer-events: none;
 }
 
 input:checked+input {
     display: block !important;
     z-index: 1;
+    pointer-events: all;
 }
 
 #counter {
-    padding: 10px;
-    position: relative;
-    top: 30px;
+    top: 10px;
+    position: absolute;
+    left: 30px;
 }
 
 #counter::before {
@@ -55,4 +62,8 @@ input:checked+input[id="4"]~#counter::before {
 
 input:checked+input[id="5"]~#counter::before {
     content: "5";
+}
+
+input[id="5"]:checked~#counter::before {
+    content: "Maximum"
 }

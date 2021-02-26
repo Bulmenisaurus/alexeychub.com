@@ -2,7 +2,7 @@
 A list of TODOS for each subpage:
 
 ## [/404](https://bulmenisaurus.github.io/404):
- - [ ] Make `<h1>` responsive
+ - [x] Make `<h1>` responsive
  - [ ] Random color scheme?
 ## [/boilerplate](https://bulmenisaurus.github.io/boilerplate):
  - [ ] Explain that it is boilerplate

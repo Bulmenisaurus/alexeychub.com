@@ -183,7 +183,7 @@ class SnakeGame {
 
     tick() {
         this.clearCanvas();
-        this.updateScore();
+        this.updateGUI();
         if (this.checkGoal()) { this.nextLevel(); }
         this.moveSnake(this.direction);
         this.drawBlocks();
@@ -288,7 +288,7 @@ class SnakeGame {
     }
 
     lose() {
-        alert('You lost!');
+        this.deaths++;
         this.reset();
     }
 
@@ -310,7 +310,7 @@ class SnakeGame {
     }
 
     drawFoods() {
-        this.drawTiles(this.foods, this.foodCol, this.foodBorder, (food: Coordinate, i: number) => { return this.eatenFoods.includes(i) })
+        this.drawTiles(this.foods, this.foodCol, this.foodBorder, (food: Coordinate, i: number) => { return this.eatenFoods.includes(i) });
     }
 
     drawGoals() {
@@ -337,11 +337,29 @@ class SnakeGame {
 
     //! Start of GUI sections:
 
-    updateScore(): void {
-        const scoreSpan: HTMLElement = document.querySelector('#score');
-        if (scoreSpan.innerText !== this.score.toString()) {
-            scoreSpan.innerText = this.score.toString();
+    updateGUI() {
+        this.updateScore();
+        this.updateDeaths();
+        this.updateFood();
+    }
+
+    updateScore() {
+        const score: HTMLElement = document.querySelector('#score');
+        if (score.innerText !== this.score.toString()) {
+            score.innerText = this.score.toString();
         }
+    }
+
+    updateDeaths() {
+        const deaths: HTMLElement = document.querySelector('#deaths');
+        if (deaths.innerText !== this.deaths.toString()) {
+            deaths.innerText = this.deaths.toString();
+        }
+    }
+
+    updateFood() {
+        const food: HTMLElement = document.querySelector('#food');
+        food.innerText = this.eatenFoods.length + '/' + this.foods.length;
     }
 
     //! Start of level managment:
@@ -381,5 +399,4 @@ class SnakeGame {
 }
 
 const snakeGame = new SnakeGame(GameData);
-snakeGame.lose = snakeGame.reset;
 snakeGame.init(200);

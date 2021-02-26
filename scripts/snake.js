@@ -119,7 +119,7 @@ class SnakeGame {
     }
     tick() {
         this.clearCanvas();
-        this.updateScore();
+        this.updateGUI();
         if (this.checkGoal()) {
             this.nextLevel();
         }
@@ -222,7 +222,7 @@ class SnakeGame {
         return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall;
     }
     lose() {
-        alert('You lost!');
+        this.deaths++;
         this.reset();
     }
     reset() {
@@ -264,11 +264,26 @@ class SnakeGame {
         }
     }
     //! Start of GUI sections:
+    updateGUI() {
+        this.updateScore();
+        this.updateDeaths();
+        this.updateFood();
+    }
     updateScore() {
-        const scoreSpan = document.querySelector('#score');
-        if (scoreSpan.innerText !== this.score.toString()) {
-            scoreSpan.innerText = this.score.toString();
+        const score = document.querySelector('#score');
+        if (score.innerText !== this.score.toString()) {
+            score.innerText = this.score.toString();
         }
+    }
+    updateDeaths() {
+        const deaths = document.querySelector('#deaths');
+        if (deaths.innerText !== this.deaths.toString()) {
+            deaths.innerText = this.deaths.toString();
+        }
+    }
+    updateFood() {
+        const food = document.querySelector('#food');
+        food.innerText = this.eatenFoods.length + '/' + this.foods.length;
     }
     //! Start of level managment:
     setLevel(level) {
@@ -305,5 +320,4 @@ class SnakeGame {
     }
 }
 const snakeGame = new SnakeGame(GameData);
-snakeGame.lose = snakeGame.reset;
 snakeGame.init(200);

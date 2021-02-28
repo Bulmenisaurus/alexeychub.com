@@ -36,11 +36,10 @@ main {
 }
 
 #image-container input {
-    vertical-align: top;
-    margin: 5px;
+    opacity: 0;
 }
 
-#image-container img, #choose-image img {
+#image-container img {
     margin: 5px;
     border: 0px solid orange;
     transition: border 0.2s;
@@ -56,11 +55,6 @@ main {
 
 input[type="radio"]:checked+img {
     border: 8px solid orange !important;
-}
-
-input[type="radio"] {
-    z-index: -1;
-    position: absolute;
 }
 
 li {
@@ -206,7 +200,6 @@ ol {
 }
 
 textarea {
-    display: block;
     width: min(100%, 500px);
     padding: 10px;
     font-family: 'Inconsolata', 'Courier New', Courier, monospace;

@@ -14,6 +14,7 @@ body[data-theme="dark"] {
     --font-color: #F0F0F0;
     --border-color: #181818;
     --border-width: 3px;
+    --link-color: #58a6ff;
     font-weight: 350;
 }
 
@@ -22,6 +23,7 @@ body[data-theme="light"] {
     --secondary-bg: #eee;
     --font-color: rgba(0, 0, 0, 0.8);
     --border-color: #d0d0d0;
+    --link-color: #0000ee;
     --border-width: 1.5px;
 }
 
@@ -186,4 +188,13 @@ button:hover {
 
 li {
     margin-left: 2em;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }

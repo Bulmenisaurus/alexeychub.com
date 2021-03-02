@@ -1,0 +1,113 @@
+* {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: rgba(0, 0, 0, 0.8);
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+section.card {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 1em 1.5em;
+    background-color: white;
+    border-radius: 4px;
+}
+
+section.card h2 {
+    margin-top: 0;
+    font-weight: normal;
+    font-size: 1.5em;
+}
+
+section.card:not(h2) {
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+    font-size: 0.875em;
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    padding: 1em;
+}
+
+.theme-toggle {
+    display: none;
+}
+
+.theme-emoji {
+    font-size: 20px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.no-select, img {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+footer img {
+    margin: auto;
+    width: 80px;
+    display: block;
+}
+
+hr {
+    border-style: dashed;
+}
+
+code {
+    background-color: #e8e8e8;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 13px;
+    color: #242729;
+}
+
+a {
+    text-decoration: none;
+    border: 0;
+}
+
+a:hover {
+    text-decoration: underline #27272999;
+}
+
+blockquote {
+    margin: 5px 0;
+    padding: 10px 8px;
+    background-color: #e8e8e8;
+    border-left: 8px solid #ccc;
+}
+
+button {
+    color: #fff;
+    background-color: #1976d2;
+    padding: 6px 16px;
+    font-size: 0.875rem;
+    transition: background-color 250ms;
+    border-radius: 4px;
+    line-height: 1.75;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    border: none;
+}
+
+button:hover {
+    background-color: rgb(17, 82, 147);
+}
+
+#easter-egg::before {
+    /* ez pz icon shortcut :)*/
+    font-size: 13px;
+    content: "🥚 ";
+    color: transparent;
+    text-shadow: 0 0 white;
+}

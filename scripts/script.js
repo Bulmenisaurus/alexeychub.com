@@ -55,3 +55,12 @@ document.addEventListener('keydown', function(e) {
         modal.setAttribute('aria-hidden', 'true');
     }
 });
+
+const url = new URL(window.location);
+const urlParams = new URLSearchParams(url.search);
+const theme = urlParams.get('theme');
+
+if (theme) {
+    const themeUrl = `stylesheets/style.${theme}.css`;
+    document.getElementsByClassName('js-dynamic-css')[0].href = themeUrl;
+}

@@ -2,21 +2,32 @@
 const themes = new ThemeChanger();
 themes.init();
 
-const random = (max, min) => Math.round((Math.random() * (max - min) + min) / 10) * 10;
+const url = new URL(window.location);
+const urlParams = new URLSearchParams(url.search);
+const theme = urlParams.get('theme');
 
-// Smoothly transitions the title colors
-const randomColor = () => '#' + ['', '', ''].map(() => random(100, 255).toString(16)).join('');
+if (theme) {
+    const themeUrl = `stylesheets/style.${theme}.css`;
+    document.getElementsByClassName('js-dynamic-css')[0].href = themeUrl;
+}
 
-const changeColor = (id_type) => document.getElementById(id_type).style.color = randomColor();
+if (!theme) {
+    const random = (max, min) => Math.round((Math.random() * (max - min) + min) / 10) * 10;
 
-setTimeout(() => {
-    setInterval(() => {
-        changeColor('t1');
-        changeColor('t2');
-        changeColor('t3');
-        changeColor('t4');
-    }, 5000);
-}, 0);
+    // Smoothly transitions the title colors
+    const randomColor = () => '#' + ['', '', ''].map(() => random(100, 255).toString(16)).join('');
+
+    const changeColor = (id_type) => document.getElementById(id_type).style.color = randomColor();
+
+    setTimeout(() => {
+        setInterval(() => {
+            changeColor('t1');
+            changeColor('t2');
+            changeColor('t3');
+            changeColor('t4');
+        }, 5000);
+    }, 0);
+}
 
 const secret_button = document.getElementById('t3');
 
@@ -55,12 +66,3 @@ document.addEventListener('keydown', function(e) {
         modal.setAttribute('aria-hidden', 'true');
     }
 });
-
-const url = new URL(window.location);
-const urlParams = new URLSearchParams(url.search);
-const theme = urlParams.get('theme');
-
-if (theme) {
-    const themeUrl = `stylesheets/style.${theme}.css`;
-    document.getElementsByClassName('js-dynamic-css')[0].href = themeUrl;
-}

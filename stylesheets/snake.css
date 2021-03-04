@@ -31,7 +31,6 @@ canvas {
 #deaths::before, #food::before {
     color: transparent;
     text-shadow: 0 0 black;
-    -webkit-text-stroke: 1px red;
     margin-right: 3px;
     /* 0% of browsers support non-prefixed... https://caniuse.com/?search=text-stroke */
 }

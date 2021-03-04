@@ -43,3 +43,8 @@ canvas {
 #food::before {
     content: "🍎"
 }
+
+.wrapper {
+    text-align: center;
+    min-width: 100px;
+}

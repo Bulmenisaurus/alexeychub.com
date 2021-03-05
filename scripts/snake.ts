@@ -133,7 +133,6 @@ class SnakeGame {
     goalBorder: string;
     initialSpeed: number;
     game: number;
-    moves: number;
     deaths: number;
     constructor(gameData: Level[]) {
         this.canvas = document.getElementsByTagName('canvas')[0];
@@ -148,7 +147,6 @@ class SnakeGame {
         this.safeMoves = 5;
         this.score = 0;
         this.level = 0;
-        this.moves = 0;
         this.deaths = 0;
         this.hasWon = false;
 
@@ -290,13 +288,12 @@ class SnakeGame {
     }
 
     reset() {
-        this.moves = 0;
+        this.safeMoves = 7;
         this.score = 0;
         this.eatenFoods = [];
         this.setGameSpeed(this.initialSpeed);
         this.snake = JSON.parse(JSON.stringify(this.levelData.snake));
         this.direction = 'right';
-        this.safeMoves = 7;
         this.hasWon = false;
     }
 

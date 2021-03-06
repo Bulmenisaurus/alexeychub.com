@@ -83,15 +83,15 @@ div.icons>span.icon {
 }
 
 div.icons>span.icon:nth-child(1) {
-    background-color: var(--smooth-red);
+    background-color: var(--smooth-red, red);
 }
 
 div.icons>span.icon:nth-child(2) {
-    background-color: var(--smooth-yellow);
+    background-color: var(--smooth-yellow, yellow);
 }
 
 div.icons>span.icon:nth-child(3) {
-    background-color: var(--smooth-green);
+    background-color: var(--smooth-green, green);
 }
 
 pre>code .user-input {

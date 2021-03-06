@@ -26,8 +26,6 @@ h1 {
 
 h2 {
     font-size: clamp(30px, 8vw, 3em);
-    text-align: center;
-    margin-bottom: 1em;
 }
 
 h1::before {
@@ -38,7 +36,7 @@ h1::after {
     content: ">";
 }
 
-header {
+body>header {
     margin: 30px 0 30px;
 }
 
@@ -100,4 +98,12 @@ div.icons>span.icon:nth-child(3) {
 
 .hljs {
     line-height: 130%;
+}
+
+section.page-section {
+    margin-bottom: 5em;
+}
+
+section.page-section header {
+    margin-bottom: 2em;
 }

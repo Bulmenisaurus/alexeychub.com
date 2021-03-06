@@ -97,3 +97,7 @@ div.icons>span.icon:nth-child(3) {
 }
 
 /* end code preview styles (9 rules) */
+
+.hljs {
+    line-height: 130%;
+}

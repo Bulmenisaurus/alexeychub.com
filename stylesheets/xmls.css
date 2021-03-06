@@ -80,6 +80,7 @@ div.icons>span.icon {
     border-radius: 50%;
     display: inline-block;
     position: relative;
+    margin: 0px 2px;
 }
 
 div.icons>span.icon:nth-child(1) {

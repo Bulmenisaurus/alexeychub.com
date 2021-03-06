@@ -35,9 +35,7 @@
             </header>
             <section class="code-preview">
                 <div class="icons">
-                    <span class="icon"></span>
-                    <span class="icon"></span>
-                    <span class="icon"></span>
+                    <span class="icon"></span><span class="icon"></span><span class="icon"></span>
                 </div>
                 <pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br>&lt;code&gt;<br>    &lt;print&gt;Hello, &lt;b&gt;XMLScript&lt;/b&gt;!&lt;/print&gt;<br><br>    &lt;!-- or, you can create a function --&gt;<br><br>    &lt;function name=&quot;greet&quot; who=&quot;&quot;&gt;<br>        &lt;print&gt;Hello, &lt;who /&gt;!&lt;/print&gt;<br>    &lt;/function&gt;<br><br>    &lt;greet who=&quot;functions&quot; /&gt;<br>&lt;/code&gt;</code></pre>
                 <pre><code class="plaintext">Hello, <span class="output-bold">XMLScript</span>!<br>Hello, functions!</code></pre>
@@ -51,9 +49,7 @@
             </header>
             <section class="code-preview">
                 <div class="icons">
-                    <span class="icon"></span>
-                    <span class="icon"></span>
-                    <span class="icon"></span>
+                    <span class="icon"></span><span class="icon"></span><span class="icon"></span>
                 </div>
                 <pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;code&gt;&lt;var name=&quot;number&quot;&gt;&lt;math&gt;int(rand()*3)+1&lt;/math&gt;&lt;/var&gt; &lt;var name=&quot;guess&quot;&gt; &lt;math&gt; int(&lt;input&gt;Can you guess my number? (1 - 3) &lt;br/&gt;&lt;/input&gt;) &lt;/math&gt; &lt;/var&gt;&lt;var name=&quot;result&quot;&gt;no&lt;/var&gt;&lt;if expr=&quot;guess == number&quot;&gt; &lt;print&gt;Congratulations! You got it correct :)&lt;/print&gt; &lt;var name=&quot;result&quot;&gt;yes&lt;/var&gt; &lt;/if&gt;&lt;if expr=&quot;result == 'no'&quot;&gt; &lt;print&gt;Nope! My secret number was &lt;number/&gt;&lt;/print&gt; &lt;/if&gt;&lt;/code&gt;</code></pre>
                 <pre><code class="plaintext">Can you guess my number? (1 - 3)<br><span class="user-input">&gt; 2</span><br>Nope! My secret number was 3.</code></pre>

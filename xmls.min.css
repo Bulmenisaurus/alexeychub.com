@@ -1,29 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>XMLS - an innovative programming language</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link rel="stylesheet" href="stylesheets/xmls.css">
-    <link rel="icon" type="image/png" href="images/c-pixilart.png">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet"
-        type="text/css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/darcula.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
-</head>
-
-<body>
-    <header>
-        <h1>XMLScript</h1>
-        <p>
-            A new, <strong>XML-based</strong> programming language. Embrace the simplicity of python while leveraging
+/* Invalid character(s) '<strong>XML-based</strong> programming language. Embrace the simplicity of python while leveraging
             xml's inuitive and built-in string formatting.
         </p>
     </header>
@@ -71,4 +46,4 @@
     </main>
 </body>
 
-</html>
+</html>' at 26:19. Ignoring. */

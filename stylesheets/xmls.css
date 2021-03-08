@@ -118,3 +118,14 @@ section.page-section header>p {
     color: rgb(107, 114, 128);
     font-weight: 500;
 }
+
+.hide-scroll::-webkit-scrollbar {
+    /* https://stackoverflow.com/a/30680994/13996389 */
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+
+.hide-scroll {
+    scrollbar-width: 0;
+}

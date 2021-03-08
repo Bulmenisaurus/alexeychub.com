@@ -37,7 +37,8 @@
                 <div class="icons">
                     <span class="icon"></span><span class="icon"></span><span class="icon"></span>
                 </div>
-                <pre><code class="xml hide-scroll">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br>&lt;code&gt;<br>    &lt;print&gt;Hello, &lt;b&gt;XMLScript&lt;/b&gt;!&lt;/print&gt;<br><br>    &lt;!-- or, you can create a function --&gt;<br><br>    &lt;function name=&quot;greet&quot; who=&quot;&quot;&gt;<br>        &lt;print&gt;Hello, &lt;who /&gt;!&lt;/print&gt;<br>    &lt;/function&gt;<br><br>    &lt;greet who=&quot;functions&quot; /&gt;<br>&lt;/code&gt;</code></pre>
+                <pre
+                    class="hide-scroll"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br>&lt;code&gt;<br>    &lt;print&gt;Hello, &lt;b&gt;XMLScript&lt;/b&gt;!&lt;/print&gt;<br><br>    &lt;!-- or, you can create a function --&gt;<br><br>    &lt;function name=&quot;greet&quot; who=&quot;&quot;&gt;<br>        &lt;print&gt;Hello, &lt;who /&gt;!&lt;/print&gt;<br>    &lt;/function&gt;<br><br>    &lt;greet who=&quot;functions&quot; /&gt;<br>&lt;/code&gt;</code></pre>
                 <pre><code class="plaintext">Hello, <span class="output-bold">XMLScript</span>!<br>Hello, functions!</code></pre>
             </section>
         </section>
@@ -51,7 +52,8 @@
                 <div class="icons">
                     <span class="icon"></span><span class="icon"></span><span class="icon"></span>
                 </div>
-                <pre><code class="xml hide-scroll">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;code&gt;&lt;var name=&quot;number&quot;&gt;&lt;math&gt;int(rand()*3)+1&lt;/math&gt;&lt;/var&gt; &lt;var name=&quot;guess&quot;&gt; &lt;math&gt; int(&lt;input&gt;Can you guess my number? (1 - 3) &lt;br/&gt;&lt;/input&gt;) &lt;/math&gt; &lt;/var&gt;&lt;var name=&quot;result&quot;&gt;no&lt;/var&gt;&lt;if expr=&quot;guess == number&quot;&gt; &lt;print&gt;Congratulations! You got it correct :)&lt;/print&gt; &lt;var name=&quot;result&quot;&gt;yes&lt;/var&gt; &lt;/if&gt;&lt;if expr=&quot;result == 'no'&quot;&gt; &lt;print&gt;Nope! My secret number was &lt;number/&gt;&lt;/print&gt; &lt;/if&gt;&lt;/code&gt;</code></pre>
+                <pre
+                    class="hide-scroll"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;code&gt;&lt;var name=&quot;number&quot;&gt;&lt;math&gt;int(rand()*3)+1&lt;/math&gt;&lt;/var&gt; &lt;var name=&quot;guess&quot;&gt; &lt;math&gt; int(&lt;input&gt;Can you guess my number? (1 - 3) &lt;br/&gt;&lt;/input&gt;) &lt;/math&gt; &lt;/var&gt;&lt;var name=&quot;result&quot;&gt;no&lt;/var&gt;&lt;if expr=&quot;guess == number&quot;&gt; &lt;print&gt;Congratulations! You got it correct :)&lt;/print&gt; &lt;var name=&quot;result&quot;&gt;yes&lt;/var&gt; &lt;/if&gt;&lt;if expr=&quot;result == 'no'&quot;&gt; &lt;print&gt;Nope! My secret number was &lt;number/&gt;&lt;/print&gt; &lt;/if&gt;&lt;/code&gt;</code></pre>
                 <pre><code class="plaintext">Can you guess my number? (1 - 3)<br><span class="user-input">&gt; 2</span><br>Nope! My secret number was 3.</code></pre>
             </section>
         </section>
@@ -64,7 +66,8 @@
                 <div class="icons">
                     <span class="icon"></span><span class="icon"></span><span class="icon"></span>
                 </div>
-                <pre><code class="xml hide-scroll">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;<br>&lt;code&gt;<br>    &lt;function name=&quot;calculate_mood&quot; feeling=&quot;0&quot;&gt;<br>        &lt;!-- determines if person is happy or not --&gt;<br>        &lt;if expr=&quot;feeling &gt;= 5&quot;&gt;<br>            &lt;return&gt;Happy&lt;/return&gt;<br>        &lt;/if&gt;<br>        &lt;return&gt;Sad&lt;/return&gt;<br><br>    &lt;/function&gt;<br><br>    &lt;var name=&quot;user_input_feeling&quot;&gt;<br>        &lt;input&gt;How are you feeling on a scale 1-10?&lt;br/&gt;&lt;/input&gt;<br>    &lt;/var&gt;<br><br>    &lt;print&gt;<br>        You are feeling: &lt;b&gt;&lt;calculate_mood feeling=&quot;user_input_feeling&quot; /&gt;&lt;/b&gt;<br>    &lt;/print&gt;<br>&lt;/code&gt;</code></pre>
+                <pre
+                    class="hide-scroll"><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;<br>&lt;code&gt;<br>    &lt;function name=&quot;calculate_mood&quot; feeling=&quot;0&quot;&gt;<br>        &lt;!-- determines if person is happy or not --&gt;<br>        &lt;if expr=&quot;feeling &gt;= 5&quot;&gt;<br>            &lt;return&gt;Happy&lt;/return&gt;<br>        &lt;/if&gt;<br>        &lt;return&gt;Sad&lt;/return&gt;<br><br>    &lt;/function&gt;<br><br>    &lt;var name=&quot;user_input_feeling&quot;&gt;<br>        &lt;input&gt;How are you feeling on a scale 1-10?&lt;br/&gt;&lt;/input&gt;<br>    &lt;/var&gt;<br><br>    &lt;print&gt;<br>        You are feeling: &lt;b&gt;&lt;calculate_mood feeling=&quot;user_input_feeling&quot; /&gt;&lt;/b&gt;<br>    &lt;/print&gt;<br>&lt;/code&gt;</code></pre>
                 <pre><code class="plaintext">How are you feeling on a scale 1-10?<br><span class="user-input">&gt; 8</span><br>You are feeling: <span class="output-bold">Happy</span></code></pre>
             </section>
         </section>

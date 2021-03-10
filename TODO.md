@@ -4,8 +4,6 @@ A list of TODOS for each subpage:
 ## [/404](https://bulmenisaurus.github.io/404):
  - [x] Make `<h1>` responsive
  - [ ] Random color scheme?
-## [/boilerplate](https://bulmenisaurus.github.io/boilerplate):
- - [ ] Explain that it is boilerplate
 ## [/clicks](https://bulmenisaurus.github.io/clicks):
  - [ ] Either delete, explain, or improve presentation
 ## [/credits](https://bulmenisaurus.github.io/credits):

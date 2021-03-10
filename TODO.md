@@ -12,7 +12,7 @@ A list of TODOS for each subpage:
 ## [/explore](https://bulmenisaurus.github.io/explore):
  - [ ] Research a way to actually populate this by doing requests and parsing out meta description
 ## [/index](https://bulmenisaurus.github.io/index):
- - [ ] Combine the 2 grid containers into 1
+ - [x] Combine the 2 grid containers into 1
  - [ ] Make theme select more obvious that it's a button
  - [ ] Make border width the same in light / dark mode
  - [ ] Smoothly transition colors for color mode

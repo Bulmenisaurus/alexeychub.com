@@ -21,8 +21,17 @@ class ThemeChanger {
         this.themeTrigger.onclick = this.toggleTheme.bind(this);
     }
 
-    toggleTheme() {
-        console.log('bam');
+    toggleTheme(withTransition = false) {
+        if (withTransition) {
+            // Appends stylesheet which smoothly transitions everything.
+            const styleSheet = document.createElement('style');
+            styleSheet.innerHTML = '* {transition: .5s all}';
+            styleSheet.id = 'js-theme-transition';
+            document.head.appendChild(styleSheet);
+            setTimeout(() => {
+                document.getElementById('js-theme-transition').remove();
+            }, 1000);
+        }
         this.setTheme((this.theme === 'light') ? 'dark' : 'light');
     }
 

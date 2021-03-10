@@ -31,7 +31,24 @@ if (!theme) {
 
 const secret_button = document.getElementById('t3');
 
-secret_button.onclick = function() { alert('You found an easter egg!'); };
+secret_button.onclick = () => {
+    if (document.querySelector('._text-secret')) return;
+    const _text = document.createElement('p');
+    _text.classList.add('_text-secret'); _text.innerText = 'You found this easter egg!';
+    document.getElementsByTagName('h1')[0].insertAdjacentElement('afterend', _text);
+    _text.style.textAlign = 'center';
+    _text.style.color = 'var(--font-color)';
+    _text.style.transitionDuration = '.5s';
+    _text.style.height = '20px';
+    _text.style.fontFamily = '-apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, Oxygen, Ubuntu, Cantarell, \'Open Sans\', \'Helvetica Neue\', sans-serif';
+    setTimeout(() => {
+        _text.style.opacity = '0';
+        _text.style.height = '0';
+        setTimeout(() => {
+            _text.remove();
+        }, 500);
+    }, 400);
+};
 
 
 console.log('%cHey! Stop peeking down here! Easter eggs are too easy....\nid: peekaboo', `

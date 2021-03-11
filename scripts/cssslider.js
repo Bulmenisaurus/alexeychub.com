@@ -2,10 +2,6 @@
 
 document.querySelector('input').addEventListener('input', cssanimation);
 document.querySelector('input').value = 0;
-console.log('bam');
-
-// ! YOINKED: https://gist.github.com/nblackburn/875e6ff75bc8ce171c758bf75f304707
-const camelCaseToKebabCase = (camelCase) => { return camelCase.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase(); };
 
 const actions = [
     // ['target, 'style', 'value']
@@ -58,6 +54,7 @@ const actions = [
     ['footer', 'display', 'flex'],
     ['footer', 'justify-content', 'center'],
     ['footer', 'align-items', 'center'],
+    ['pre > code', 'padding', '1em 1.5em'],
 ];
 document.querySelector('input').max = actions.length;
 
@@ -86,7 +83,7 @@ function cssanimation() {
             continue;
         }
 
-        document.getElementsByTagName('code')[0].innerHTML = `<strong>${camelCaseToKebabCase(style[0])}</strong> {${style[1]}: ${style[2]}}`;
+        document.getElementsByTagName('code')[0].innerHTML = `<strong>${style[0]}</strong> {${style[1]}: ${style[2]}}`;
         const elementsAffected = document.querySelectorAll(style[0]);
         elementsAffected.forEach(el => el.style[style[1]] = style[2]);
     }

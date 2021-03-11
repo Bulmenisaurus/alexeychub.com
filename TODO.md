@@ -15,7 +15,7 @@ A list of TODOS for each subpage:
  - [x] Combine the 2 grid containers into 1
  - [ ] Make theme select more obvious that it's a button
  - [ ] Make border width the same in light / dark mode
- - [ ] Smoothly transition colors for color mode
+ - [x] Smoothly transition colors for color mode
 ## [/onelinewonders](https://bulmenisaurus.github.io/onelinewonders):
  - [ ] Make output ***cooler*** somehow...
 ## [/secrets](https://bulmenisaurus.github.io/secrets):

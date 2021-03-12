@@ -111,3 +111,7 @@ button:hover {
     color: transparent;
     text-shadow: 0 0 white;
 }
+
+h1 {
+    padding: 1rem 0;
+}

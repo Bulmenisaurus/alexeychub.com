@@ -1,6 +1,15 @@
 /* global ThemeChanger:readonly */
 const themes = new ThemeChanger();
+themes.onthemechange = (theme) => {
+    const githubImage = document.querySelector('footer a img');
+    if (theme === 'light') {
+        githubImage.src = 'images/GitHub-Mark/PNG/GitHub-Mark-120px-plus.png';
+    } else {
+        githubImage.src = 'images/GitHub-Mark/PNG/GitHub-Mark-Light-120px-plus.png';
+    }
+};
 themes.init();
+
 
 const url = new URL(window.location);
 const urlParams = new URLSearchParams(url.search);

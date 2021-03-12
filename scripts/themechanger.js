@@ -6,6 +6,8 @@ class ThemeChanger {
     constructor(themeTrigger = document.querySelector('input[type="checkbox"]')) {
         this.theme = this.getTheme();
         this.themeTrigger = themeTrigger;
+        // eslint-disable-next-line no-empty-function
+        this.onthemechange;
     }
 
     setTheme(theme) {
@@ -13,10 +15,16 @@ class ThemeChanger {
         document.body.dataset.theme = theme;
         this.theme = theme;
         document.querySelector('.theme-emoji').innerHTML = theme === 'dark' ? '🌙' : '☀️';
+
+        if (this.onthemechange && typeof this.onthemechange == 'function') {
+            this.onthemechange(theme);
+        }
     }
 
     init() {
-        console.log(this);
+        if (this.onthemechange && typeof this.onthemechange == 'function') {
+            this.onthemechange(this.theme);
+        }
         this.setTheme(this.theme);
         this.themeTrigger.onclick = this.toggleTheme.bind(this);
     }

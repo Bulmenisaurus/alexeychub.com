@@ -2,17 +2,33 @@
     box-sizing: inherit;
 }
 
+body[data-theme="dark"] {
+    --main-bg: #000000;
+    --font-color: #f0f0f0;
+    --card-border-color: white;
+    --card-bg-color: #121212;
+}
+
+body[data-theme="light"] {
+    --main-bg: #f5f5f5;
+    --font-color: rgba(0, 0, 0, 0.8);
+    --card-border-color: rgba(0, 0, 0, 0.12);
+    --card-bg-color: white;
+    --secondary-background: #e8e8e8;
+    --mono-font-color: #242729;
+}
+
 body {
     padding: 1em;
-    background-color: #f5f5f5;
-    color: rgba(0, 0, 0, 0.8);
+    background-color: var(--main-bg);
+    color: var(--font-color);
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
 .card {
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    border: 1px solid var(--card-border-color);
     padding: 1em 1.5em;
-    background-color: white;
+    background-color: var(--card-bg-color);
     border-radius: 4px;
 }
 
@@ -64,11 +80,11 @@ hr {
 }
 
 code {
-    background-color: #e8e8e8;
+    background-color: var(--secondary-background);
     padding: 2px 4px;
     border-radius: 3px;
     font-size: 13px;
-    color: #242729;
+    color: var(--mono-font-color);
 }
 
 a {
@@ -83,7 +99,7 @@ a:hover {
 blockquote {
     margin: 5px 0;
     padding: 10px 8px;
-    background-color: #e8e8e8;
+    background-color: var(--secondary-background);
     border-left: 8px solid #ccc;
 }
 

@@ -22,3 +22,5 @@ My site
  - All JS works
  - HTML is correct semantically and syntactically
  - CSS is ok
+
+>blockquote

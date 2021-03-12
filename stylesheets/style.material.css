@@ -3,6 +3,7 @@
 }
 
 body {
+    padding: 1em;
     background-color: #f5f5f5;
     color: rgba(0, 0, 0, 0.8);
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
@@ -31,7 +32,6 @@ body {
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    padding: 1em;
 }
 
 .theme-toggle {
@@ -113,5 +113,5 @@ button:hover {
 }
 
 h1 {
-    padding: 1rem 0;
+    margin: 0;
 }

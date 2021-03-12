@@ -5,8 +5,10 @@
 body[data-theme="dark"] {
     --main-bg: #000000;
     --font-color: #f0f0f0;
-    --card-border-color: white;
+    --card-border-color: #30363d;
     --card-bg-color: #121212;
+    --blockquote-color: #3b434b;
+    --link-color: #58a6ff;
 }
 
 body[data-theme="light"] {
@@ -16,6 +18,8 @@ body[data-theme="light"] {
     --card-bg-color: white;
     --secondary-background: #e8e8e8;
     --mono-font-color: #242729;
+    --blockquote-color: #cccc;
+    --link-color: blue;
 }
 
 body {
@@ -45,6 +49,7 @@ body {
 }
 
 .grid-container {
+    padding: 1em 0;
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -87,20 +92,21 @@ code {
     color: var(--mono-font-color);
 }
 
-a {
+a, a:visited {
+    color: var(--link-color);
     text-decoration: none;
     border: 0;
 }
 
 a:hover {
-    text-decoration: underline #27272999;
+    text-decoration: underline var(--link-color);
 }
 
 blockquote {
     margin: 5px 0;
     padding: 10px 8px;
     background-color: var(--secondary-background);
-    border-left: 8px solid #ccc;
+    border-left: 8px solid var(--blockquote-color);
 }
 
 button {

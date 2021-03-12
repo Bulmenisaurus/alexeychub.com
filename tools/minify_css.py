@@ -34,7 +34,7 @@ print("Requesting mini-me of {}. . .".format(c.name))
 r = requests.post(url, payload)
 
 # Write out minified version
-minified = (css_file.split('.')[0]+'.min.css')
+minified = '.'.join(css_file.split('.')[:-1])+'.min.css'
 with open(minified, 'w') as m:
     m.write(r.text)
 

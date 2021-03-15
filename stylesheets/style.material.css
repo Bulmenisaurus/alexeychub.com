@@ -137,3 +137,12 @@ button:hover {
 h1 {
     margin: 0;
 }
+
+.hidden {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.hidden:hover {
+    opacity: 1;
+}

@@ -106,3 +106,12 @@ a, :visited {
 a:hover {
     text-decoration: underline;
 }
+
+.hidden {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.hidden:hover {
+    opacity: 1;
+}

@@ -93,3 +93,16 @@ button:hover::after, button:focus::after {
 .no-select {
     user-select: none;
 }
+
+code {
+    font-family: menlo, monospace;
+    font-size: 0.8em;
+}
+
+a, :visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

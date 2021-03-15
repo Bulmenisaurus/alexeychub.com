@@ -1,4 +1,6 @@
-/* DEFAULT VARIABLES */
+/* ===========
+    Variables & default styling
+   =========== */
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -12,7 +14,31 @@ body {
     box-sizing: border-box;
 }
 
-/* BASIC BLOCK STYLES */
+/* ===========
+    Typography
+   =========== */
+
+h1, h2, h3 {
+    margin: 0;
+    font-family: menlo, monospace;
+}
+
+code {
+    font-family: menlo, monospace;
+    font-size: 0.8em;
+}
+
+a, a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===========
+    3d effect
+   =========== */
 
 .card, button {
     border: 3px solid #222;
@@ -24,8 +50,6 @@ body {
     margin: 8px 6px 10px 6px;
     z-index: 1;
 }
-
-/* INTERACTIVE STYLES */
 
 .card::before, .card::after, button::after, button::before {
     content: "";
@@ -51,17 +75,6 @@ body {
     z-index: -2;
 }
 
-.grid-container {
-    padding: 1em 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-}
-
-h1, h2, h3 {
-    margin: 0;
-    font-family: menlo, monospace;
-}
-
 button, button::before {
     background-color: var(--accent-color);
     color: var(--accent-font-color);
@@ -69,6 +82,7 @@ button, button::before {
 }
 
 button::after {
+    /* transition only for button */
     transition: transform .2s;
 }
 
@@ -79,6 +93,18 @@ button:focus, button:hover {
 button:hover::after, button:focus::after {
     transform: translate(-2px, -3px);
 }
+
+/* ===========
+    Layout
+   =========== */
+
+.grid-container {
+    padding: 1em 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+/* theme-changer things */
 
 .theme-emoji {
     font-size: 20px;
@@ -94,18 +120,9 @@ button:hover::after, button:focus::after {
     user-select: none;
 }
 
-code {
-    font-family: menlo, monospace;
-    font-size: 0.8em;
-}
-
-a, :visited {
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
+/* ===========
+    General styling/tweaks
+   =========== */
 
 .hidden {
     opacity: 0;

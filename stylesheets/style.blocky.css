@@ -40,7 +40,7 @@ a:hover {
     3d effect
    =========== */
 
-.card, button {
+.card, button, blockquote {
     border: 3px solid #222;
     border-radius: 3px;
     padding: 1em;
@@ -51,7 +51,7 @@ a:hover {
     z-index: 1;
 }
 
-.card::before, .card::after, button::after, button::before {
+.card::before, .card::after, button::after, button::before, blockquote::before, blockquote::after {
     content: "";
     border: 3px solid #222;
     height: calc(100% + 6px);
@@ -60,14 +60,14 @@ a:hover {
     position: absolute;
 }
 
-.card::before, button::before {
+.card::before, button::before, blockquote::before {
     background: var(--card-background-color);
     top: -3px;
     left: -3px;
     z-index: -1;
 }
 
-.card::after, button::after {
+.card::after, button::after, blockquote::after {
     background: var(--shadow-color);
     top: 3px;
     left: 3px;

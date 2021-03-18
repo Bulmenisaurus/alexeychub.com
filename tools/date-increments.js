@@ -1,12 +1,21 @@
 /* date-increment.js
 
-allows you to use <date-increment> elements
+allows you to use <date-increment> elements so that you can do count-ups
+so <date-increment data-from="3/20/2020" data-in="days"> would display
+the days since 3/20/2020 (uses js builtin Date)
+
+Also, you can do live updates, so
+<date-increment data-from="1/1/2020" data-in="seconds" data-update-every="1000" data-fixed="0">
+would update the seconds every 1000 milliseconds, to 0 decimal places.
 
 */
 
 'use strict';
 
 const convertMillisecondsToUnits = (milliseconds, unit) => {
+    /* converts milliseconds to one of absolute unit.
+    convertMillisecondsToUnits(604800000, 'week') would return `1` (number)
+    */
     const seconds = milliseconds / 1000;
     const minutes = seconds / 60;
     const hours = minutes / 60;
@@ -18,7 +27,7 @@ const convertMillisecondsToUnits = (milliseconds, unit) => {
 
 // https://gist.github.com/vanaf1979/b0d10bbf6a5bb4b4a92958aa25a7b36f#file-vanilla-redued-motion-js
 const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-const doIncrementAnimation = !mediaQuery || mediaQuery.matches;
+const prefersReducedMotion = !mediaQuery || mediaQuery.matches;
 
 class DateIncrement extends HTMLElement {
     constructor() {
@@ -41,8 +50,8 @@ class DateIncrement extends HTMLElement {
             this.result = this.result.toFixed(parseInt(this.dataset.todecimals));
         }
 
-        if (!doIncrementAnimation) {
-            setInterval(this.updateLength.bind(this), 10);
+        if (!prefersReducedMotion && this.dataset.updateEvery) {
+            setInterval(this.updateLength.bind(this), parseInt(this.dataset.updateEvery));
         }
 
         this.resultSpan.innerText = this.result;

@@ -33,6 +33,12 @@ class DateIncrement extends HTMLElement {
         this.result = convertMillisecondsToUnits(this.milliseconds, this.dataset.in);
         this.resultSpan = document.createElement('span');
 
+        if (this.dataset.todecimals) {
+            this.result = this.result.toFixed(parseInt(this.dataset.todecimals));
+        }
+
+        setInterval(this.updateLength.bind(this), 10);
+
         this.resultSpan.innerText = this.result;
         shadow.appendChild(this.resultSpan);
     }
@@ -40,6 +46,15 @@ class DateIncrement extends HTMLElement {
     updateLength() {
         this.shadowRoot.innerHTML = '';
         this.milliseconds = new Date() - this.from;
+        this.result = convertMillisecondsToUnits(this.milliseconds, this.dataset.in);
+        this.resultSpan = document.createElement('span');
+
+        if (this.dataset.todecimals) {
+            this.result = this.result.toFixed(parseInt(this.dataset.todecimals));
+        }
+
+        this.resultSpan.innerText = this.result;
+        this.shadowRoot.appendChild(this.resultSpan);
 
     }
 }

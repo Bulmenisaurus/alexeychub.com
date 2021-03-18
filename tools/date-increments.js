@@ -16,6 +16,10 @@ const convertMillisecondsToUnits = (milliseconds, unit) => {
     return { seconds, minutes, hours, days, weeks }[unit];
 };
 
+// https://gist.github.com/vanaf1979/b0d10bbf6a5bb4b4a92958aa25a7b36f#file-vanilla-redued-motion-js
+const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+const doIncrementAnimation = !mediaQuery || mediaQuery.matches;
+
 class DateIncrement extends HTMLElement {
     constructor() {
         super();
@@ -37,7 +41,9 @@ class DateIncrement extends HTMLElement {
             this.result = this.result.toFixed(parseInt(this.dataset.todecimals));
         }
 
-        setInterval(this.updateLength.bind(this), 10);
+        if (!doIncrementAnimation) {
+            setInterval(this.updateLength.bind(this), 10);
+        }
 
         this.resultSpan.innerText = this.result;
         shadow.appendChild(this.resultSpan);

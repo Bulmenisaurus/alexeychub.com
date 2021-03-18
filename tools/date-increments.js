@@ -19,8 +19,7 @@ const convertMillisecondsToUnits = (milliseconds, unit) => {
 class DateIncrement extends HTMLElement {
     constructor() {
         super();
-
-
+        this.style['font-variant-numeric'] = 'numeric';
     }
 
     // life-saving: https://stackoverflow.com/questions/42251094/cannot-access-attributes-of-a-custom-element-from-its-constructor
@@ -32,6 +31,7 @@ class DateIncrement extends HTMLElement {
         this.milliseconds = new Date() - this.from;
         this.result = convertMillisecondsToUnits(this.milliseconds, this.dataset.in);
         this.resultSpan = document.createElement('span');
+        this.resultSpan.style.fontVariant = 'tabular-nums';
 
         if (this.dataset.todecimals) {
             this.result = this.result.toFixed(parseInt(this.dataset.todecimals));
@@ -44,17 +44,14 @@ class DateIncrement extends HTMLElement {
     }
 
     updateLength() {
-        this.shadowRoot.innerHTML = '';
         this.milliseconds = new Date() - this.from;
         this.result = convertMillisecondsToUnits(this.milliseconds, this.dataset.in);
-        this.resultSpan = document.createElement('span');
 
         if (this.dataset.todecimals) {
             this.result = this.result.toFixed(parseInt(this.dataset.todecimals));
         }
 
-        this.resultSpan.innerText = this.result;
-        this.shadowRoot.appendChild(this.resultSpan);
+        this.shadowRoot.querySelector('span').innerText = this.result;
 
     }
 }

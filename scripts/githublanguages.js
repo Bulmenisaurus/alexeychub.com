@@ -5,6 +5,9 @@ const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 ctx.translate(0.5, 0.5);
 
+const canvasWidth = canvas.width;
+const canvasHeight = canvas.height;
+
 const getLanguageColors = async () => {
     if (localStorage.getItem('colors')) {
         return JSON.parse(localStorage.getItem('colors'));
@@ -41,8 +44,7 @@ const getRepositoryLanguages = async (repository) => {
 const drawPieChartFromObject = (obj, colorsDict = {}) => {
     let arcEnd = 0;
 
-    const canvasHeight = canvas.height;
-    ctx.lineWidth = 2;
+    ctx.lineWidth = canvasHeight * 1 / 150;
     ctx.strokeStyle = 'white';
 
     for (const key in obj) {
@@ -54,7 +56,7 @@ const drawPieChartFromObject = (obj, colorsDict = {}) => {
         }
         ctx.moveTo(canvasHeight / 2, canvasHeight / 2);
 
-        ctx.arc(75, 75, 60, arcEnd * Math.PI * 2, (arcEnd + obj[key]) * Math.PI * 2);
+        ctx.arc(canvasHeight / 2, canvasHeight / 2, canvasHeight * 0.4, arcEnd * Math.PI * 2, (arcEnd + obj[key]) * Math.PI * 2);
         ctx.stroke();
         ctx.fill();
         arcEnd += obj[key];
@@ -70,25 +72,28 @@ const labelPieChart = (labelsObj, colorsObj) => {
     }
 };
 
+const scaleUnit = (unit, to = canvasHeight) => unit / 150 * to;
+
 const drawLabel = (text, color, labelX, labelY) => {
+    console.log({ text, color, labelX, labelY });
     /* text portion */
-    ctx.font = '12px sans-serif';
+    ctx.font = `${Math.round(scaleUnit(12))}px sans-serif`;
     ctx.fillStyle = 'black';
-    ctx.fillText(text, labelX + 10, labelY, 500 - labelX);
+    ctx.fillText(text, labelX + scaleUnit(10), labelY, canvasWidth - labelX);
 
     /* colored square */
 
     ctx.beginPath();
-    ctx.lineWidth = '2.5';
+    ctx.lineWidth = Math.round(scaleUnit(2.5)).toString();
     ctx.strokeStyle = 'black';
     ctx.fillStyle = color;
-    ctx.rect(labelX, labelY - 7, 5, 5);
+    ctx.rect(labelX, labelY - scaleUnit(7), scaleUnit(5), scaleUnit(5));
     ctx.stroke();
     ctx.fill();
 };
 
 const labelAtPosition = (text, color, position) => {
-    drawLabel(text, color, 170, 20 * position + 30);
+    drawLabel(text, color, scaleUnit(170), scaleUnit(20) * position + scaleUnit(30));
 };
 
 /* =====
@@ -99,6 +104,7 @@ const labelAtPosition = (text, color, position) => {
 const objectSum = (obj) => {
     return Object.keys(obj).reduce((sum, key) => sum + parseFloat(obj[key] || 0), 0);
 };
+
 
 /* =====
    Main script

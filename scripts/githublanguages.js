@@ -38,25 +38,25 @@ const getRepositoryLanguages = async (repository) => {
    Canvas helper functions
    ===== */
 
-const drawPieChartFromObject = (context, obj, colorsDict = {}) => {
+const drawPieChartFromObject = (obj, colorsDict = {}) => {
     let arcEnd = 0;
 
     const canvasHeight = canvas.height;
-    context.lineWidth = 2;
-    context.strokeStyle = 'white';
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = 'white';
 
     for (const key in obj) {
-        context.beginPath();
+        ctx.beginPath();
         if (key in colorsDict) {
-            context.fillStyle = colorsDict[key]['color'];
+            ctx.fillStyle = colorsDict[key]['color'];
         } else {
-            context.fillStyle = 'hsl(' + 360 * Math.random() + ', 50%, 50%)';
+            ctx.fillStyle = 'hsl(' + 360 * Math.random() + ', 50%, 50%)';
         }
-        context.moveTo(canvasHeight / 2, canvasHeight / 2);
+        ctx.moveTo(canvasHeight / 2, canvasHeight / 2);
 
-        context.arc(75, 75, 60, arcEnd * Math.PI * 2, (arcEnd + obj[key]) * Math.PI * 2);
-        context.stroke();
-        context.fill();
+        ctx.arc(75, 75, 60, arcEnd * Math.PI * 2, (arcEnd + obj[key]) * Math.PI * 2);
+        ctx.stroke();
+        ctx.fill();
         arcEnd += obj[key];
     }
 };
@@ -113,7 +113,7 @@ getRepositoryLanguages('Bulmenisaurus/bulmenisaurus.github.io').then((languages)
         languages[lang] = parseFloat((languages[lang] / totalBytes).toFixed(3));
     }
     getLanguageColors().then((colors) => {
-        drawPieChartFromObject(ctx, languages, colors);
+        drawPieChartFromObject(languages, colors);
         labelPieChart(languages, colors);
     });
 });

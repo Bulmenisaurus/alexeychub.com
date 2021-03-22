@@ -40,6 +40,8 @@ const getRepositoryLanguages = async (repository) => {
 
 const drawPieChartFromObject = (context, obj, colorsDict = {}) => {
     let arcEnd = 0;
+
+    const canvasHeight = canvas.height;
     context.lineWidth = 2;
     context.strokeStyle = 'white';
 
@@ -50,13 +52,39 @@ const drawPieChartFromObject = (context, obj, colorsDict = {}) => {
         } else {
             context.fillStyle = 'hsl(' + 360 * Math.random() + ', 50%, 50%)';
         }
-        context.moveTo(75, 75);
+        context.moveTo(canvasHeight / 2, canvasHeight / 2);
 
         context.arc(75, 75, 60, arcEnd * Math.PI * 2, (arcEnd + obj[key]) * Math.PI * 2);
         context.stroke();
         context.fill();
         arcEnd += obj[key];
     }
+};
+
+
+const labelPieChart = (context, labelsObj, colorsObj) => {
+
+};
+
+const drawLabel = (text, color, labelX, labelY) => {
+    /* text portion */
+    ctx.font = '12px sans-serif';
+    ctx.fillStyle = 'black';
+    ctx.fillText(text, labelX + 10, labelY, 500 - labelX);
+
+    /* colored square */
+
+    ctx.beginPath();
+    ctx.lineWidth = '2.5';
+    ctx.strokeStyle = 'black';
+    ctx.fillStyle = color;
+    ctx.rect(labelX, labelY - 9, 5, 5);
+    ctx.stroke();
+    ctx.fill();
+};
+
+const labelAtPosition = (text, color, position) => {
+    drawLabel(text, color, 170, 20 * position + 30);
 };
 
 /* =====
@@ -84,3 +112,7 @@ getRepositoryLanguages('Bulmenisaurus/bulmenisaurus.github.io').then((languages)
         drawPieChartFromObject(ctx, languages, colors);
     });
 });
+
+labelAtPosition('Python', '#3572A5', 0);
+labelAtPosition('Javascript', '#3572A5', 1);
+labelAtPosition('Typescript', '#3572A5', 2);

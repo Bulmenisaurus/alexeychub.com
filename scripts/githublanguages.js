@@ -44,8 +44,7 @@ const getRepositoryLanguages = async (repository) => {
 const drawPieChartFromObject = (obj, colorsDict = {}) => {
     let arcEnd = 0;
 
-    ctx.lineWidth = canvasHeight * 1 / 150;
-    ctx.strokeStyle = 'white';
+    ctx.lineWidth = 0;
 
     for (const key in obj) {
         ctx.beginPath();
@@ -93,6 +92,9 @@ const drawLabel = (text, color, labelX, labelY) => {
 };
 
 const labelAtPosition = (text, color, position) => {
+    if (position > 5) {
+        return;
+    }
     drawLabel(text, color, scaleUnit(170), scaleUnit(20) * position + scaleUnit(30));
 };
 
@@ -110,16 +112,21 @@ const objectSum = (obj) => {
    Main script
    ===== */
 
-getRepositoryLanguages('Bulmenisaurus/bulmenisaurus.github.io').then((languages) => {
-    const totalBytes = objectSum(languages);
+document.querySelector('input').onsubmit = () => {
+    getRepositoryLanguages(document.querySelector('input').value).then((languages) => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // https://buzzcoder.gitbooks.io/codecraft-javascript/content/object/iterate-over-a-dictionary.html
-    // convert each number of bytes to % of total bytes
-    for (const lang in languages) {
-        languages[lang] = parseFloat((languages[lang] / totalBytes).toFixed(3));
-    }
-    getLanguageColors().then((colors) => {
-        drawPieChartFromObject(languages, colors);
-        labelPieChart(languages, colors);
+
+        const totalBytes = objectSum(languages);
+
+        // https://buzzcoder.gitbooks.io/codecraft-javascript/content/object/iterate-over-a-dictionary.html
+        // convert each number of bytes to % of total bytes
+        for (const lang in languages) {
+            languages[lang] = parseFloat((languages[lang] / totalBytes).toFixed(3));
+        }
+        getLanguageColors().then((colors) => {
+            drawPieChartFromObject(languages, colors);
+            labelPieChart(languages, colors);
+        });
     });
-});
+};

@@ -13,3 +13,14 @@ canvas {
     -ms-interpolation-mode: nearest-neighbor;
     width: 500px;
 }
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+body>div {
+    display: flex;
+    flex-direction: column;
+}

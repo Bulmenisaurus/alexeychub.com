@@ -1,0 +1,1 @@
+*{margin:0;padding:0;box-sizing:border-box}canvas{border:1px solid #000;image-rendering:optimizeQuality;image-rendering:-moz-crisp-edges;image-rendering:-webkit-optimize-contrast;image-rendering:optimize-contrast;-ms-interpolation-mode:nearest-neighbor;width:500px}body{display:grid;place-items:center;min-height:100vh}body>div{display:flex;flex-direction:column}

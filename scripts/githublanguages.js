@@ -62,8 +62,12 @@ const drawPieChartFromObject = (context, obj, colorsDict = {}) => {
 };
 
 
-const labelPieChart = (context, labelsObj, colorsObj) => {
-
+const labelPieChart = (labelsObj, colorsObj) => {
+    let pos = 0;
+    for (const key in labelsObj) {
+        labelAtPosition(key, colorsObj[key]['color'], pos);
+        pos++;
+    }
 };
 
 const drawLabel = (text, color, labelX, labelY) => {
@@ -78,7 +82,7 @@ const drawLabel = (text, color, labelX, labelY) => {
     ctx.lineWidth = '2.5';
     ctx.strokeStyle = 'black';
     ctx.fillStyle = color;
-    ctx.rect(labelX, labelY - 9, 5, 5);
+    ctx.rect(labelX, labelY - 7, 5, 5);
     ctx.stroke();
     ctx.fill();
 };
@@ -110,9 +114,6 @@ getRepositoryLanguages('Bulmenisaurus/bulmenisaurus.github.io').then((languages)
     }
     getLanguageColors().then((colors) => {
         drawPieChartFromObject(ctx, languages, colors);
+        labelPieChart(languages, colors);
     });
 });
-
-labelAtPosition('Python', '#3572A5', 0);
-labelAtPosition('Javascript', '#3572A5', 1);
-labelAtPosition('Typescript', '#3572A5', 2);

@@ -45,6 +45,7 @@ const drawPieChartFromObject = (obj, colorsDict = {}) => {
     let arcEnd = 0;
 
     ctx.lineWidth = 0;
+    ctx.strokeStyle = 'clear';
 
     for (const key in obj) {
         ctx.beginPath();
@@ -112,8 +113,8 @@ const objectSum = (obj) => {
    Main script
    ===== */
 
-document.querySelector('input').onsubmit = () => {
-    getRepositoryLanguages(document.querySelector('input').value).then((languages) => {
+document.querySelector('input').onchange = () => {
+    getRepositoryLanguages(document.querySelector('input').value.trim()).then((languages) => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 

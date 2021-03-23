@@ -15,12 +15,26 @@ canvas {
 }
 
 body {
-    display: grid;
-    place-items: center;
-    min-height: 100vh;
+    padding: 0 10%;
 }
 
-body>div {
-    display: flex;
-    flex-direction: column;
+.main-input {
+    font-size: 2rem;
+    padding: 15px 45px 15px 30px;
+    font-family: "Source Code Pro", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-weight: 300;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: -0.7px;
+    outline: none;
+    border: none;
+}
+
+.input-container {
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    background: transparent;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    max-width: 600px;
 }

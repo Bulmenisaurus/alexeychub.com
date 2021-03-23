@@ -17,7 +17,17 @@ const updateTabTitle = () => {
 };
 
 
+const updateFooter = () => {
+    document.querySelector('.newspaper-name').innerText = document.querySelector('#page-header').innerText;
+};
+
+updateFooter();
+
+
 const pageTitle = document.querySelector('#page-header');
 const articleTitle = document.querySelector('.article-header');
 
-pageTitle.oninput = articleTitle.oninput = function() { updateTabTitle(); }
+pageTitle.oninput = articleTitle.oninput = function() {
+    updateTabTitle();
+    updateFooter();
+};

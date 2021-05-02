@@ -1,19 +1,20 @@
-String.prototype.hashCode = function(radix) {
+const strHash = (string, max) => {
+
     let hash = 0;
-    if (this.length == 0) {
-        return hash;
-    }
-    for (const char of this) {
+
+    if (string.length == 0) return hash;
+
+    for (let i = 0; i < string.length; i++) {
+        const char = string.charCodeAt(i);
         hash = ((hash << 5) - hash) + char;
-        // Convert to 32-bit
         hash = hash & hash;
     }
-    return hash.toString(radix);
+
+    return Math.abs(hash) % max + 1;
 };
 
 
-let urlHash = window.location.href.hashCode(6);
-urlHash = parseInt(urlHash[urlHash.length - 1]);
+const urlHash = strHash(window.location.href, 5);
 console.log(urlHash);
 const messages = [
     'Well..... this is akward. A 404. Do you perhaps want some tea?',

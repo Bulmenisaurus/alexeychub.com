@@ -26,7 +26,9 @@ const messages = [
 
 document.getElementById('404-message').innerText = messages[urlHash];
 
-interface GithubApiFile {
+/* getting the "did you mean foo" section*/
+
+interface GithubFile {
     path: string,
     mode: string,
     type: string,
@@ -34,25 +36,25 @@ interface GithubApiFile {
     url: string
 }
 
-interface GithubApiTree {
+interface GithubTree {
     sha: string,
     url: string,
-    tree: GithubApiFile[],
+    tree: GithubFile[],
 }
 
-
-const fileExtension = (file: string) => {
-    return file.split('.').pop();
-}
 
 const getAllRepoFiles = async (owner: string, repo: string) => {
     // https://stackoverflow.com/questions/25022016/get-all-file-names-from-a-github-repo-through-the-github-api
     const body = await fetch(`api.github.com/repos/${owner}/${repo}/git/commits/master`);
-    return <GithubApiTree>JSON.parse(body.toString());
+    return <GithubTree>JSON.parse(body.toString());
 }
 
 const repoFiles = async (owner: string, repo: string, fileTypes: string[]) => {
     const files = (await getAllRepoFiles(owner, repo)).tree
+
+    const fileExtension = (file: string) => {
+        return file.split('.').pop();
+    }
 
     return files.filter(i => fileTypes.includes(fileExtension(i.path)));
 }
@@ -67,36 +69,35 @@ const similarity = (s1: string, s2: string): number => {
         return 1.0;
     }
 
-    return (longer.length - editDistance(longer, shorter)) / longer.length;
-}
+    const editDistance = (s1: string, s2: string) => {
+        s1 = s1.toLowerCase();
+        s2 = s2.toLowerCase();
 
-const editDistance = (s1: string, s2: string) => {
-    s1 = s1.toLowerCase();
-    s2 = s2.toLowerCase();
-
-    var costs = new Array();
-    for (var i = 0; i <= s1.length; i++) {
-        var lastValue = i;
-        for (var j = 0; j <= s2.length; j++) {
-            if (i == 0)
-                costs[j] = j;
-            else {
-                if (j > 0) {
-                    var newValue = costs[j - 1];
-                    if (s1.charAt(i - 1) != s2.charAt(j - 1))
-                        newValue = Math.min(Math.min(newValue, lastValue),
-                            costs[j]) + 1;
-                    costs[j - 1] = lastValue;
-                    lastValue = newValue;
+        var costs = new Array();
+        for (var i = 0; i <= s1.length; i++) {
+            var lastValue = i;
+            for (var j = 0; j <= s2.length; j++) {
+                if (i == 0)
+                    costs[j] = j;
+                else {
+                    if (j > 0) {
+                        var newValue = costs[j - 1];
+                        if (s1.charAt(i - 1) != s2.charAt(j - 1))
+                            newValue = Math.min(Math.min(newValue, lastValue),
+                                costs[j]) + 1;
+                        costs[j - 1] = lastValue;
+                        lastValue = newValue;
+                    }
                 }
             }
+            if (i > 0)
+                costs[s2.length] = lastValue;
         }
-        if (i > 0)
-            costs[s2.length] = lastValue;
+        return costs[s2.length];
     }
-    return costs[s2.length];
-}
 
+    return (longer.length - editDistance(longer, shorter)) / longer.length;
+}
 
 const mostSimilarSitePage = async (page: string) => {
     const files = await repoFiles('Bulmenisaurus', 'bulmenisaurus.github.io', ['html']);

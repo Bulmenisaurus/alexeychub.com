@@ -27,3 +27,7 @@ h1 {
 #_3 {
     color: #9876AA;
 }
+
+p {
+    line-height: 150%;
+}

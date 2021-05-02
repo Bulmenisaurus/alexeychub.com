@@ -16,15 +16,15 @@ h1 {
     margin: 10px;
 }
 
-#_1 {
+h1>span:nth-child(1) {
     color: #EE7832;
 }
 
-#_2 {
+h1>span:nth-child(2) {
     color: #6897BB;
 }
 
-#_3 {
+h1>span:nth-child(3) {
     color: #9876AA;
 }
 

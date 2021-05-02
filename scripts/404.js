@@ -20,17 +20,10 @@ const messages = [
     'This page doesn\'t exist. Oh well!'
 ];
 document.getElementById('404-message').innerText = messages[urlHash];
-const getAllRepoFiles = async (owner, repo) => {
+const repositoryFile = async (owner, repo) => {
     // https://stackoverflow.com/questions/25022016/get-all-file-names-from-a-github-repo-through-the-github-api
-    const body = await fetch(`api.github.com/repos/${owner}/${repo}/git/commits/master`);
+    const body = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/commits/master`);
     return JSON.parse(body.toString());
-};
-const repoFiles = async (owner, repo, fileTypes) => {
-    const files = (await getAllRepoFiles(owner, repo)).tree;
-    const fileExtension = (file) => {
-        return file.split('.').pop();
-    };
-    return files.filter(i => fileTypes.includes(fileExtension(i.path)));
 };
 // https://stackoverflow.com/a/36566052/13996389
 const similarity = (s1, s2) => {
@@ -39,8 +32,6 @@ const similarity = (s1, s2) => {
         return 1.0;
     }
     const editDistance = (s1, s2) => {
-        s1 = s1.toLowerCase();
-        s2 = s2.toLowerCase();
         var costs = new Array();
         for (var i = 0; i <= s1.length; i++) {
             var lastValue = i;
@@ -62,8 +53,8 @@ const similarity = (s1, s2) => {
         }
         return costs[s2.length];
     };
-    return (longer.length - editDistance(longer, shorter)) / longer.length;
+    return (longer.length - editDistance(longer.toLowerCase(), shorter.toLowerCase())) / longer.length;
 };
 const mostSimilarSitePage = async (page) => {
-    const files = await repoFiles('Bulmenisaurus', 'bulmenisaurus.github.io', ['html']);
+    const files = await repositoryFile('Bulmenisaurus', 'bulmenisaurus.github.io');
 };

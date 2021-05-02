@@ -43,20 +43,10 @@ interface GithubTree {
 }
 
 
-const getAllRepoFiles = async (owner: string, repo: string) => {
+const repositoryFile = async (owner: string, repo: string) => {
     // https://stackoverflow.com/questions/25022016/get-all-file-names-from-a-github-repo-through-the-github-api
-    const body = await fetch(`api.github.com/repos/${owner}/${repo}/git/commits/master`);
+    const body = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/commits/master`);
     return <GithubTree>JSON.parse(body.toString());
-}
-
-const repoFiles = async (owner: string, repo: string, fileTypes: string[]) => {
-    const files = (await getAllRepoFiles(owner, repo)).tree
-
-    const fileExtension = (file: string) => {
-        return file.split('.').pop();
-    }
-
-    return files.filter(i => fileTypes.includes(fileExtension(i.path)));
 }
 
 // https://stackoverflow.com/a/36566052/13996389
@@ -70,9 +60,6 @@ const similarity = (s1: string, s2: string): number => {
     }
 
     const editDistance = (s1: string, s2: string) => {
-        s1 = s1.toLowerCase();
-        s2 = s2.toLowerCase();
-
         var costs = new Array();
         for (var i = 0; i <= s1.length; i++) {
             var lastValue = i;
@@ -96,10 +83,10 @@ const similarity = (s1: string, s2: string): number => {
         return costs[s2.length];
     }
 
-    return (longer.length - editDistance(longer, shorter)) / longer.length;
+    return (longer.length - editDistance(longer.toLowerCase(), shorter.toLowerCase())) / longer.length;
 }
 
 const mostSimilarSitePage = async (page: string) => {
-    const files = await repoFiles('Bulmenisaurus', 'bulmenisaurus.github.io', ['html']);
+    const files = await repositoryFile('Bulmenisaurus', 'bulmenisaurus.github.io');
 
 }

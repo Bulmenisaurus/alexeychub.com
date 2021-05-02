@@ -14,14 +14,14 @@ rm stylesheets/*'.min'*
 import sys
 import requests
 
-if '.min.' in sys.argv[1]:
-    sys.exit(f'{sys.argv[1]} already minified')
-
 try:
     css_file = sys.argv[1]
 except:
     print("Missing input file")
     sys.exit()
+
+if '.min.' in css_file:
+    sys.exit(f'{css_file} alread a minified file')
 
 # Grab the file contents
 with open(css_file, 'r') as c:

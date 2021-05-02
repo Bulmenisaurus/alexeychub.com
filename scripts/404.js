@@ -18,10 +18,10 @@ const urlHash = strHash(window.location.href, 5);
 console.log(urlHash);
 const messages = [
     'Well..... this is akward. A 404. Do you perhaps want some tea?',
-    'Oh no! What are these weird numbers? Is it a secret code? Are aliens communicating with me?<br>Nope, It\'s just a 404 page!',
-    'Oh no! This page doesn\'t seem to exist!<br>Anyway..',
+    'Oh no! What are these weird numbers? Is it a secret code? Are aliens communicating with me? Nope, It\'s just a 404 page!',
+    'Oh no! This page doesn\'t seem to exist!\nAnyway..',
     'Ouch, it looks like this page doesn\'t exist.',
     'Sadly, a 404 error occured. I wonder if you can collect the next card in the series, a 405, too.',
     'This page doesn\'t exist. Oh well!'];
 
-document.getElementById('404-message').innerHTML = messages[urlHash];
+document.getElementById('404-message').innerText = messages[urlHash];

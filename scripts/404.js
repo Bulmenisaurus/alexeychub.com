@@ -61,7 +61,8 @@ const mostSimilarSitePage = async (pathname) => {
         .map(file => file.path.split('.').slice(0, -1).join('.'))
         .sort((a, b) => similarity(a, pathname) - similarity(b, pathname))
         .reverse();
-    return { pathname: pages[0], similarity: similarity(pages[0], pathname) };
+    //return { pathname: pages[0], similarity: similarity(pages[0], pathname) };
+    return { pathname: 'lol', similarity: 1 };
 };
 const displayReccomenedUrl = async () => {
     const recommendedUrl = await mostSimilarSitePage(window.location.pathname);

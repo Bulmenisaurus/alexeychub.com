@@ -102,7 +102,8 @@ const mostSimilarSitePage = async (pathname: string) => {
         .sort((a, b) => similarity(a, pathname) - similarity(b, pathname))
         .reverse();
 
-    return { pathname: pages[0], similarity: similarity(pages[0], pathname) };
+    //return { pathname: pages[0], similarity: similarity(pages[0], pathname) };
+    return { pathname: 'lol', similarity: 1 };
 }
 
 

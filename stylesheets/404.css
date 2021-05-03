@@ -30,4 +30,20 @@ h1>span:nth-child(3) {
 
 p {
     line-height: 150%;
+    margin-bottom: 1.1em;
+}
+
+code {
+    padding: 2px 4px;
+    color: #e7e8eb;
+    background-color: #404345;
+    border-radius: 3px;
+}
+
+code>a {
+    color: rgb(60, 164, 255);
+}
+
+code>a:hover {
+    color: #0095ff;
 }

@@ -26,7 +26,16 @@ const messages = [
 
 document.getElementById('404-message').innerText = messages[urlHash];
 
-/* getting the "did you mean foo" section*/
+/* getting the "did you mean foo" section
+Steps:
+
+1. get all the github files using github api
+2. filter out all the HTML files
+3. M̶a̶k̶e̶ Copt a str simiarity function that uses levenshtein distance
+4. Sort files by their relevancy by comparing similarity between current path and files
+5. Find most likely of these files, make sure it is above a certain thereshold
+6. Create a <div> or some textbox saying the suggested url
+*/
 
 interface GithubFile {
     path: string,
@@ -95,5 +104,7 @@ const mostSimilarSitePage = async (pathname: string) => {
 
     return { pathname: pages[0], similarity: similarity(pages[0], pathname) };
 }
+
+
 
 mostSimilarSitePage(window.location.pathname);

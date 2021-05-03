@@ -45,8 +45,8 @@ interface GithubTree {
 
 const repositoryFile = async (owner: string, repo: string) => {
     // https://stackoverflow.com/questions/25022016/get-all-file-names-from-a-github-repo-through-the-github-api
-    const body = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/commits/master`);
-    return <GithubTree>JSON.parse(body.toString());
+    const repsonse = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/trees/master?recursive=1`);
+    return <Promise<GithubTree>>repsonse.json();
 }
 
 // https://stackoverflow.com/a/36566052/13996389
@@ -87,6 +87,11 @@ const similarity = (s1: string, s2: string): number => {
 }
 
 const mostSimilarSitePage = async (page: string) => {
-    const files = await repositoryFile('Bulmenisaurus', 'bulmenisaurus.github.io');
+    const files = (await repositoryFile('Bulmenisaurus', 'bulmenisaurus.github.io')).tree
+        .filter(file => file.path.endsWith('.html'))
+        .map(file => file.path);
 
+    console.log(files);
 }
+
+mostSimilarSitePage(window.location.pathname);

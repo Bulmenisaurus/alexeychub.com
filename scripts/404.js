@@ -22,8 +22,8 @@ const messages = [
 document.getElementById('404-message').innerText = messages[urlHash];
 const repositoryFile = async (owner, repo) => {
     // https://stackoverflow.com/questions/25022016/get-all-file-names-from-a-github-repo-through-the-github-api
-    const body = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/commits/master`);
-    return JSON.parse(body.toString());
+    const repsonse = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/trees/master?recursive=1`);
+    return repsonse.json();
 };
 // https://stackoverflow.com/a/36566052/13996389
 const similarity = (s1, s2) => {
@@ -56,5 +56,9 @@ const similarity = (s1, s2) => {
     return (longer.length - editDistance(longer.toLowerCase(), shorter.toLowerCase())) / longer.length;
 };
 const mostSimilarSitePage = async (page) => {
-    const files = await repositoryFile('Bulmenisaurus', 'bulmenisaurus.github.io');
+    const files = (await repositoryFile('Bulmenisaurus', 'bulmenisaurus.github.io')).tree
+        .filter(file => file.path.endsWith('.html'))
+        .map(file => file.path);
+    console.log(files);
 };
+mostSimilarSitePage(window.location.pathname);

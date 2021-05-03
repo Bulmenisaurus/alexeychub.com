@@ -70,3 +70,4 @@ const displayReccomenedUrl = async () => {
         document.body.innerHTML += textbox;
     }
 };
+displayReccomenedUrl();

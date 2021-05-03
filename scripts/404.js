@@ -63,4 +63,10 @@ const mostSimilarSitePage = async (pathname) => {
         .reverse();
     return { pathname: pages[0], similarity: similarity(pages[0], pathname) };
 };
-mostSimilarSitePage(window.location.pathname);
+const displayReccomenedUrl = async () => {
+    const recommendedUrl = await mostSimilarSitePage(window.location.pathname);
+    if (recommendedUrl.similarity > 0.6) {
+        const textbox = `<p id="recommended-url">Did you mean <code><a href="${recommendedUrl.pathname}">${recommendedUrl.pathname}</></code><p>`;
+        document.body.innerHTML += textbox;
+    }
+};

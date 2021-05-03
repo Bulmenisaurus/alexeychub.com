@@ -110,7 +110,7 @@ const displayReccomenedUrl = async () => {
     const recommendedUrl = await mostSimilarSitePage(window.location.pathname);
 
     if (recommendedUrl.similarity > 0.6) {
-        const textbox = `<p id="recommended-url">Did you mean <code><a href="${recommendedUrl.pathname}">${recommendedUrl.pathname}</></code><p>`;
+        const textbox = `<p id="recommended-url">Did you mean <code><a href="${recommendedUrl.pathname}">${recommendedUrl.pathname}</></code>?<p>`;
         document.body.innerHTML += textbox;
     }
 }

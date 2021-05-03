@@ -89,9 +89,10 @@ const similarity = (s1: string, s2: string): number => {
 const mostSimilarSitePage = async (page: string) => {
     const files = (await repositoryFile('Bulmenisaurus', 'bulmenisaurus.github.io')).tree
         .filter(file => file.path.endsWith('.html'))
-        .map(file => file.path);
+        .map(file => file.path.split('.').slice(0, -1).join('.'))
+        .sort((a, b) => similarity(a, location.pathname) - similarity(b, location.pathname))
 
-    console.log(files);
+    console.log({ file: files[0], similarity: similarity(files[0], location.pathname) });
 }
 
 mostSimilarSitePage(window.location.pathname);

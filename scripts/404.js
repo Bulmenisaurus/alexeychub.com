@@ -55,12 +55,12 @@ const similarity = (s1, s2) => {
     };
     return (longer.length - editDistance(longer.toLowerCase(), shorter.toLowerCase())) / longer.length;
 };
-const mostSimilarSitePage = async (page) => {
+const mostSimilarSitePage = async (pathname) => {
     const files = (await repositoryFile('Bulmenisaurus', 'bulmenisaurus.github.io')).tree
         .filter(file => file.path.endsWith('.html'))
         .map(file => file.path.split('.').slice(0, -1).join('.'))
-        .sort((a, b) => similarity(a, location.pathname) - similarity(b, location.pathname))
+        .sort((a, b) => similarity(a, pathname) - similarity(b, pathname))
         .reverse();
-    console.log({ file: files[0], similarity: similarity(files[0], location.pathname) });
+    return { file: files[0], similarity: similarity(files[0], pathname) };
 };
 mostSimilarSitePage(window.location.pathname);

@@ -18,29 +18,30 @@ canvas {
 }
 
 #gui {
-    font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
+    font-family: "JetBrains Mono", "Courier New", Courier, monospace;
     display: flex;
     width: 100%;
     text-align: center;
 }
 
-#deaths, #food {
+%icon {
     flex: 1;
-}
 
-#deaths::before, #food::before {
-    color: transparent;
-    text-shadow: 0 0 black;
-    margin-right: 3px;
-    /* 0% of browsers support non-prefixed... https://caniuse.com/?search=text-stroke */
+    &::before {
+        color: transparent;
+        text-shadow: 0 0 black;
+        margin-right: 3px;
+    }
 }
 
 #deaths::before {
+    @extend %icon;
     content: "☠️";
 }
 
 #food::before {
-    content: "🍎"
+    @extend %icon;
+    content: "🍎";
 }
 
 .wrapper {

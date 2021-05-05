@@ -1,3 +1,5 @@
+@import "_mixins.scss";
+
 * {
     margin: 0;
 }
@@ -31,12 +33,7 @@ body {
 }
 
 .hide-scroll {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.hide-scroll::-webkit-scrollbar {
-    display: none;
+    @include no-scrollbar;
 }
 
 input {
@@ -63,6 +60,11 @@ h3 {
 
 code {
     border-radius: 2px;
+
+    &[id*="preview"] {
+        padding: 24px;
+        line-height: 105%;
+    }
 }
 
 kbd {
@@ -79,9 +81,4 @@ kbd {
     border-radius: 3px;
     box-shadow: 0 1px 1px rgba(12, 13, 14, 0.15), inset 0 1px 0 0 #fff;
     overflow-wrap: break-word;
-}
-
-code[id*="preview"] {
-    padding: 24px;
-    line-height: 105%;
 }

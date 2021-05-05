@@ -1,3 +1,5 @@
+@import "_mixins.scss";
+
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +13,7 @@
 }
 
 html {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     box-sizing: border-box;
 }
 
@@ -37,7 +39,7 @@ h1::after {
     content: ">";
 }
 
-body>header {
+body > header {
     margin: 30px 0 30px;
 }
 
@@ -54,11 +56,11 @@ section.code-preview {
     width: clamp(100px, 80vw, 800px);
 }
 
-section.code-preview>pre:first-of-type {
+section.code-preview > pre:first-of-type {
     border-bottom: 1px solid rgb(57, 58, 60);
 }
 
-pre>code[class~="hljs"] {
+pre > code[class~="hljs"] {
     padding: 1em;
 }
 
@@ -73,7 +75,7 @@ div.icons {
     padding-left: 10px;
 }
 
-div.icons>span.icon {
+div.icons > span.icon {
     top: 2px;
     height: 11px;
     width: 11px;
@@ -83,19 +85,19 @@ div.icons>span.icon {
     margin: 0px 2px;
 }
 
-div.icons>span.icon:nth-child(1) {
+div.icons > span.icon:nth-child(1) {
     background-color: var(--smooth-red, red);
 }
 
-div.icons>span.icon:nth-child(2) {
+div.icons > span.icon:nth-child(2) {
     background-color: var(--smooth-yellow, yellow);
 }
 
-div.icons>span.icon:nth-child(3) {
+div.icons > span.icon:nth-child(3) {
     background-color: var(--smooth-green, green);
 }
 
-pre>code .user-input {
+pre > code .user-input {
     color: rgb(10, 108, 10);
     font-style: italic;
 }
@@ -114,18 +116,11 @@ section.page-section header {
     margin-bottom: 2em;
 }
 
-section.page-section header>p {
+section.page-section header > p {
     color: rgb(107, 114, 128);
     font-weight: 500;
 }
 
-.hide-scroll::-webkit-scrollbar {
-    /* https://stackoverflow.com/a/30680994/13996389 */
-    width: 0;
-    height: 0;
-    background: transparent;
-}
-
 .hide-scroll {
-    scrollbar-width: 0;
+    @include no-scrollbar;
 }

@@ -1,3 +1,5 @@
+@import "_mixins.scss";
+
 /* ===========
     Variables & default styling
    =========== */
@@ -10,7 +12,9 @@ body {
     --shadow-color: #444;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -18,7 +22,9 @@ body {
     Typography
    =========== */
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     margin: 0;
     font-family: menlo, monospace;
 }
@@ -27,7 +33,8 @@ code {
     font-family: menlo, monospace;
 }
 
-a, a:visited {
+a,
+a:visited {
     text-decoration: none;
 }
 
@@ -39,7 +46,9 @@ a:hover {
     3d effect
    =========== */
 
-.card, button, blockquote {
+.card,
+button,
+blockquote {
     border: 3px solid #222;
     border-radius: 3px;
     padding: 1em;
@@ -50,7 +59,12 @@ a:hover {
     z-index: 1;
 }
 
-.card::before, .card::after, button::after, button::before, blockquote::before, blockquote::after {
+.card::before,
+.card::after,
+button::after,
+button::before,
+blockquote::before,
+blockquote::after {
     content: "";
     border: 3px solid #222;
     height: calc(100% + 6px);
@@ -59,14 +73,18 @@ a:hover {
     position: absolute;
 }
 
-.card::before, button::before, blockquote::before {
+.card::before,
+button::before,
+blockquote::before {
     background: var(--card-background-color);
     top: -3px;
     left: -3px;
     z-index: -1;
 }
 
-.card::after, button::after, blockquote::after {
+.card::after,
+button::after,
+blockquote::after {
     background: var(--shadow-color);
     top: 3px;
     left: 3px;
@@ -74,22 +92,25 @@ a:hover {
     z-index: -2;
 }
 
-button, button::before {
+button,
+button::before {
     background-color: var(--accent-color);
     color: var(--accent-font-color);
-    transition: transform .2s;
+    transition: transform 0.2s;
 }
 
 button::after {
     /* transition only for button */
-    transition: transform .2s;
+    transition: transform 0.2s;
 }
 
-button:focus, button:hover {
+button:focus,
+button:hover {
     transform: translate(2px, 2px);
 }
 
-button:hover::after, button:focus::after {
+button:hover::after,
+button:focus::after {
     transform: translate(-2px, -3px);
 }
 
@@ -116,7 +137,7 @@ button:hover::after, button:focus::after {
 }
 
 .no-select {
-    user-select: none;
+    @include no-select;
 }
 
 /* ===========

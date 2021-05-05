@@ -20,9 +20,6 @@ except:
     print("Missing input file")
     sys.exit()
 
-if '.min.' in css_file:
-    sys.exit(f'{css_file} alread a minified file')
-
 # Grab the file contents
 with open(css_file, 'r') as c:
     css = c.read()
@@ -34,8 +31,7 @@ print("Requesting mini-me of {}. . .".format(c.name))
 r = requests.post(url, payload)
 
 # Write out minified version
-minified = '.'.join(css_file.split('.')[:-1])+'.min.css'
-with open(minified, 'w') as m:
+with open(css_file, 'w') as m:
     m.write(r.text)
 
 print("Minification complete. See {}".format(m.name))

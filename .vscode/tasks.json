@@ -4,7 +4,7 @@
         {
             "label": "Minify css",
             "type": "shell",
-            "command": "for file in $(find stylesheets/* ! -name '*min*'); do python tools/minify_css.py \"$file\"; done",
+            "command": "for file in stylesheets/*; do python tools/minify_css.py $file; done",
         },
         {
             "label": "Minify this file",

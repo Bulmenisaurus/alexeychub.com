@@ -12,6 +12,17 @@
     --smooth-green: rgb(53, 206, 75);
 }
 
+@mixin window-icon($color) {
+    top: 2px;
+    height: 11px;
+    width: 11px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    margin: 0px 2px;
+    background-color: $color;
+}
+
 html {
     font-family: "Inter", sans-serif;
     box-sizing: border-box;
@@ -19,28 +30,28 @@ html {
 
 body {
     padding: 25px;
+
+    & > header {
+        margin: 30px 0 30px;
+    }
 }
 
 h1 {
     color: #111827;
     font-size: 80px;
+
+    &::before {
+        content: "<";
+    }
+
+    &::after {
+        content: ">";
+    }
 }
 
 h2 {
     color: #111827;
     font-size: clamp(30px, 8vw, 3em);
-}
-
-h1::before {
-    content: "<";
-}
-
-h1::after {
-    content: ">";
-}
-
-body > header {
-    margin: 30px 0 30px;
 }
 
 header p {
@@ -54,10 +65,10 @@ section.code-preview {
     border-radius: 5px;
     overflow: hidden;
     width: clamp(100px, 80vw, 800px);
-}
 
-section.code-preview > pre:first-of-type {
-    border-bottom: 1px solid rgb(57, 58, 60);
+    & > pre:first-of-type {
+        border-bottom: 1px solid rgb(57, 58, 60);
+    }
 }
 
 pre > code[class~="hljs"] {
@@ -73,31 +84,21 @@ div.icons {
     height: 1.5em;
     background-color: rgb(60, 63, 65);
     padding-left: 10px;
+
+    span.icon:nth-child(1) {
+        background-color: var(--smooth-red, red);
+    }
+
+    span.icon:nth-child(2) {
+        background-color: var(--smooth-yellow, yellow);
+    }
+
+    span.icon:nth-child(3) {
+        background-color: var(--smooth-green, green);
+    }
 }
 
-div.icons > span.icon {
-    top: 2px;
-    height: 11px;
-    width: 11px;
-    border-radius: 50%;
-    display: inline-block;
-    position: relative;
-    margin: 0px 2px;
-}
-
-div.icons > span.icon:nth-child(1) {
-    background-color: var(--smooth-red, red);
-}
-
-div.icons > span.icon:nth-child(2) {
-    background-color: var(--smooth-yellow, yellow);
-}
-
-div.icons > span.icon:nth-child(3) {
-    background-color: var(--smooth-green, green);
-}
-
-pre > code .user-input {
+code .user-input {
     color: rgb(10, 108, 10);
     font-style: italic;
 }
@@ -110,15 +111,15 @@ pre > code .user-input {
 
 section.page-section {
     margin-bottom: 5em;
-}
 
-section.page-section header {
-    margin-bottom: 2em;
-}
+    header {
+        margin-bottom: 2em;
 
-section.page-section header > p {
-    color: rgb(107, 114, 128);
-    font-weight: 500;
+        & > p {
+            color: rgb(107, 114, 128);
+            font-weight: 500;
+        }
+    }
 }
 
 .hide-scroll {

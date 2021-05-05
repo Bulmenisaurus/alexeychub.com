@@ -1,5 +1,8 @@
 {
     "editor.formatOnSave": true,
     "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
-    "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false
+    "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+    "files.exclude": {
+        "**/*.min.css": true
+    }
 }

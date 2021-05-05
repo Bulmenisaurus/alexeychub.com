@@ -6,7 +6,7 @@
 
 body {
     color: rgba(0, 0, 0, 0.8);
-    font-family: 'Source sans pro', Arial, Helvetica, sans-serif;
+    font-family: "Source sans pro", Arial, Helvetica, sans-serif;
     padding: 20px;
     padding-top: 5px;
 }
@@ -22,36 +22,36 @@ body {
     max-width: 450px;
     display: inline-flex;
     flex-direction: column;
-}
 
-.card h2 {
-    font-family: Bitter, Georgia, 'Times New Roman', Times, serif;
-}
+    h2 {
+        font-family: Bitter, Georgia, "Times New Roman", Times, serif;
 
-.card header {
-    flex: 1;
-}
+        a {
+            text-decoration: none;
+            color: black;
+        }
 
-.card h2>a {
-    text-decoration: none;
-    color: black;
-}
+        a:hover {
+            text-decoration: underline;
+        }
+    }
 
-.card h2>a:hover {
-    text-decoration: underline;
-}
+    header {
+        flex: 1;
+    }
 
-.card article {
-    flex: 5;
-    padding: 10px 0px;
-    word-wrap: break-word;
-}
+    article {
+        flex: 5;
+        padding: 10px 0px;
+        word-wrap: break-word;
+    }
 
-.card footer {
-    flex: 1;
-    color: grey;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: .75em;
-    text-align: center;
+    footer {
+        flex: 1;
+        color: grey;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 0.75em;
+        text-align: center;
+    }
 }

@@ -35,6 +35,10 @@
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s;
+
+  h2 {
+    margin: 8px;
+  }
 }
 
 /* Add Animation */
@@ -42,55 +46,52 @@
 @-webkit-keyframes animatetop {
   from {
     top: -300px;
-    opacity: 0
+    opacity: 0;
   }
   to {
     top: 0;
-    opacity: 1
+    opacity: 1;
   }
 }
 
 @keyframes animatetop {
   from {
     top: -300px;
-    opacity: 0
+    opacity: 0;
   }
   to {
     top: 0;
-    opacity: 1
+    opacity: 1;
   }
 }
 
 /* The Close Button */
 
 #close {
-  transition: all .2s;
+  transition: all 0.2s;
   float: right;
   font-size: 28px;
   font-weight: bold;
-}
 
-#close:hover, #close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 35px;
+  :hover,
+  :focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 35px;
+  }
 }
 
 .modal-header {
   padding: 0px 16px;
   color: rgba(0, 0, 0, 0.8);
   text-align: center;
-  background-color: #EE7832;
+  background-color: #ee7832;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   vertical-align: top;
   margin: 0;
   padding: 7px 16px;
-}
-
-.modal-content h2 {
-  margin: 8px;
 }
 
 .modal-body {

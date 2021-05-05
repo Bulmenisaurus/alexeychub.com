@@ -1,1 +1,231 @@
-*{margin:0;font-weight:400;box-sizing:border-box}body{background-color:#e4e4e4;font-family:Arial,Helvetica,sans-serif;padding-top:10px}header{margin:10px;margin-left:5%}h1{font-size:1.8em}button{border:0;padding:0;background:0 0}main{margin:20px auto;width:90%;padding:10px;padding-bottom:20px;background-color:#fff;border-radius:5px;overflow-x:auto}#image-container input{opacity:0}#image-container img{margin:5px;border:0 solid orange;transition:border .2s}.group{display:inline-block;white-space:nowrap;overflow-x:hidden}input[type=radio]:checked+img{border:8px solid orange!important}li{margin:10px;margin-top:30px}.step{margin:10px 2px}.step,::marker{font-size:18px;display:inline-block}#link-preview{font-family:Inconsolata,'Courier New',Courier,monospace;background-color:#eee;border-radius:3px;padding:5px;margin:7px 0;display:inline-block;word-break:break-all;overflow-wrap:break-word;word-wrap:break-word;-ms-word-break:break-all}input[type=button]{display:block;padding:10px;border-radius:3px;border:none;width:71px;font-size:13.3px}input.blue{background-color:#1a73e8;color:#fff}input.grey{background-color:#d3d3d3;color:#000}#copy-link-input{position:absolute;right:10000px}.modal{display:none;position:fixed;z-index:1;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:#000;background-color:rgba(0,0,0,.4)}.close{color:#cecece;font-size:28px;font-weight:700;z-index:1;cursor:pointer;position:fixed;top:10px;right:20px}iframe{height:200px;top:0;bottom:0;left:0;right:0;height:100vh;width:100vw;overflow-x:hidden;position:absolute}#chars-left{color:#3a3a3a;font-size:13px}footer{width:90%;margin:10px auto}footer *{display:inline-block}.v-align{vertical-align:middle}#header-description{margin-top:7px}img#snakegif{border:1px solid #a4a4a4}.error{background-color:#fff;border:2px solid red;margin-bottom:20px;border-radius:1px;padding:10px;width:90vw;display:block}a.subtle-link,a.subtle-link:visited{color:#9c9c9c!important;text-decoration:none}a.subtle-link:hover{text-decoration:underline}footer-copyright{font-size:14px}ol{list-style-position:inside}textarea{width:min(100%,500px);padding:10px;font-family:Inconsolata,'Courier New',Courier,monospace;padding-top:5px;font-size:16px;display:block;margin-bottom:5px}@media only screen and (max-width:400px){main,ol{padding:0}li{margin-top:inherit}::marker{display:inline}}@media only screen and (max-width:360px){main{width:100%}}
+* {
+  margin: 0;
+  font-weight: 400;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #e4e4e4;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 10px;
+}
+
+header {
+  margin: 10px;
+  margin-left: 5%;
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
+button {
+  border: 0;
+  padding: 0;
+  background: none;
+}
+
+main {
+  margin: 20px auto;
+  width: 90%;
+  padding: 10px;
+  padding-bottom: 20px;
+  background-color: white;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+#image-container input {
+  opacity: 0;
+}
+
+#image-container img {
+  margin: 5px;
+  border: 0px solid orange;
+  -webkit-transition: border 0.2s;
+  transition: border 0.2s;
+}
+
+.group {
+  display: inline-block;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+/* NGL this is very hacky and not supported in like akjhdkshj*/
+input[type="radio"]:checked + img {
+  border: 8px solid orange !important;
+}
+
+li {
+  margin: 10px;
+  margin-top: 30px;
+}
+
+.step {
+  margin: 10px 2px;
+}
+
+.step,
+::marker {
+  font-size: 18px;
+  display: inline-block;
+}
+
+#link-preview {
+  font-family: "Inconsolata", "Courier New", Courier, monospace;
+  background-color: #eee;
+  border-radius: 3px;
+  padding: 5px;
+  margin: 7px 0;
+  display: inline-block;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+}
+
+input[type="button"] {
+  display: block;
+  padding: 10px;
+  border-radius: 3px;
+  border: none;
+  width: 71px;
+  font-size: 13.3px;
+}
+
+input.blue {
+  background-color: #1a73e8;
+  color: white;
+}
+
+input.grey {
+  background-color: #d3d3d3;
+  color: black;
+}
+
+#copy-link-input {
+  position: absolute;
+  right: 10000px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* The Close Button */
+.close {
+  color: #cecece;
+  font-size: 28px;
+  font-weight: bold;
+  z-index: 1;
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+}
+
+iframe {
+  height: 200px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  position: absolute;
+}
+
+#chars-left {
+  color: #3a3a3a;
+  font-size: 13px;
+}
+
+footer {
+  width: 90%;
+  margin: 10px auto;
+}
+
+footer * {
+  display: inline-block;
+}
+
+.v-align {
+  vertical-align: middle;
+}
+
+#header-description {
+  margin-top: 7px;
+}
+
+img#snakegif {
+  border: 1px solid #a4a4a4;
+}
+
+.error {
+  background-color: white;
+  border: 2px solid red;
+  margin-bottom: 20px;
+  border-radius: 1px;
+  padding: 10px;
+  width: 90vw;
+  display: block;
+}
+
+a.subtle-link,
+a.subtle-link:visited {
+  color: #9c9c9c !important;
+  text-decoration: none;
+}
+
+a.subtle-link:hover {
+  text-decoration: underline;
+}
+
+footer-copyright {
+  font-size: 14px;
+}
+
+ol {
+  list-style-position: inside;
+}
+
+textarea {
+  width: calc(min(100%, 500px));
+  padding: 10px;
+  font-family: "Inconsolata", "Courier New", Courier, monospace;
+  padding-top: 5px;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 400px) {
+  ol,
+  main {
+    padding: 0;
+  }
+  li {
+    margin-top: inherit;
+  }
+  ::marker {
+    display: inline;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  main {
+    width: 100%;
+  }
+}

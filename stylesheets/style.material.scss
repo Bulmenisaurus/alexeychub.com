@@ -1,3 +1,5 @@
+@import "_mixins.scss";
+
 * {
     box-sizing: inherit;
 }
@@ -42,7 +44,7 @@ body {
     font-size: 1.5em;
 }
 
-.card>*:not(h2) {
+.card > *:not(h2) {
     line-height: 1.4;
     letter-spacing: 0.01em;
     font-size: 0.875em;
@@ -65,13 +67,9 @@ body {
     cursor: pointer;
 }
 
-.no-select, img {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+.no-select,
+img {
+    @include no-select;
 }
 
 footer img {
@@ -92,7 +90,8 @@ code {
     color: var(--mono-font-color);
 }
 
-a, a:visited {
+a,
+a:visited {
     color: var(--link-color);
     text-decoration: none;
     border: 0;

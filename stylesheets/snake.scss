@@ -34,14 +34,18 @@ canvas {
     }
 }
 
-#deaths::before {
+#deaths {
     @extend %icon;
-    content: "☠️";
+    &::before {
+        content: "☠️";
+    }
 }
 
-#food::before {
+#food {
     @extend %icon;
-    content: "🍎";
+    &::before {
+        content: "🍎";
+    }
 }
 
 .wrapper {

@@ -14,7 +14,7 @@ body {
     color: white;
     padding: 10px;
     overflow-y: auto;
-    font-size: max(.9vw, 12px);
+    font-size: calc(max(0.9vw, 12px));
     -ms-overflow-style: none;
     scrollbar-width: none;
     line-height: 150%;

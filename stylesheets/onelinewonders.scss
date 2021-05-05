@@ -7,8 +7,8 @@ body {
 }
 
 #main-title {
-    font-family: 'Baloo Bhai 2', Arial, Helvetica, sans-serif;
-    font-size: max(6vw, 50px);
+    font-family: "Baloo Bhai 2", Arial, Helvetica, sans-serif;
+    font-size: calc(max(6vw, 50px));
     text-align: center;
     font-weight: bold;
     margin-top: 20px;
@@ -17,7 +17,7 @@ body {
 .text-container {
     margin: 15px;
     width: 75%;
-    font-family: 'Roboto', Helvetica, sans-serif;
+    font-family: "Roboto", Helvetica, sans-serif;
     font-size: 15px;
     line-height: 1.5;
     margin: 40px auto;
@@ -49,7 +49,8 @@ h2 {
     font-size: 20px;
 }
 
-p, h3 {
+p,
+h3 {
     margin: 20px 0;
 }
 
@@ -67,8 +68,8 @@ code {
 kbd {
     /* Yoinked from stackoverflow */
     display: inline-block;
-    margin: 0 .1em;
-    padding: .1em .6em;
+    margin: 0 0.1em;
+    padding: 0.1em 0.6em;
     font-size: 11px;
     line-height: 16.5px;
     color: rgb(36, 39, 41);

@@ -8,9 +8,9 @@
 }
 
 body[data-theme="dark"] {
-    --main-bg: #2B2B2B;
+    --main-bg: #2b2b2b;
     --secondary-bg: #363636;
-    --font-color: #F0F0F0;
+    --font-color: #f0f0f0;
     --border-color: #181818;
     --border-width: 3px;
     --link-color: #58a6ff;
@@ -27,7 +27,7 @@ body[data-theme="light"] {
 }
 
 body[data-theme="dark"] img {
-    filter: brightness(.8) contrast(1.2);
+    filter: brightness(0.8) contrast(1.2);
 }
 
 body {
@@ -40,7 +40,7 @@ body {
 h1 {
     /*text-shadow: 0px 1px 10px #000000;*/
     font-family: "Quicksand", "Lucida Console", Monaco, monospace;
-    font-size: min(8vw, 50px);
+    font-size: calc(min(8vw, 50px));
     font-weight: 100;
     text-align: center;
     margin: 10px;
@@ -49,9 +49,10 @@ h1 {
 
 article {
     color: var(--font-color);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
     line-height: 1.6;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
     font-size: 14px;
 }
 
@@ -79,7 +80,7 @@ footer a {
 /* SMALL CHANGES & SINGLE ELEMENTS*/
 
 ::selection {
-    background: #14A35B;
+    background: #14a35b;
 }
 
 blockquote {
@@ -92,7 +93,7 @@ blockquote {
 hr {
     border-color: var(--border-color);
     border-style: dashed;
-    margin: .5em 0;
+    margin: 0.5em 0;
 }
 
 footer img {
@@ -105,31 +106,31 @@ h2 {
 }
 
 #t1 {
-    color: #CC7832;
+    color: #cc7832;
     transition: color 5s;
 }
 
 #t2 {
     /* .github */
-    color: #EE7832;
+    color: #ee7832;
     transition: color 5s;
 }
 
 #t3 {
     /* . */
-    color: #6897BB;
+    color: #6897bb;
     transition: color 5s;
     cursor: cell;
 }
 
 #t4 {
     /* com */
-    color: #9876AA;
+    color: #9876aa;
     transition: color 5s;
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #4caf50;
     color: #000000;
     border: none;
     padding: 10px;
@@ -169,7 +170,8 @@ button:hover {
     cursor: pointer;
 }
 
-.no-select, img {
+.no-select,
+img {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;

@@ -96,11 +96,11 @@ document.addEventListener('keydown', function(e) {
 fetch('https://api.github.com/repos/Bulmenisaurus/bulmenisaurus.github.io/languages')
     .then(response => response.json())
     .then(data => {
-        let cssAmount = data['CSS'];
+        let cssAmount = data['SCSS'];
         // bytes to kb
         cssAmount /= 1000;
         // account for duplicate (minified) code
         cssAmount /= 1.5;
 
-        document.querySelector('#js-css-size').innerText = cssAmount.toFixed(2).toString();
+        document.querySelector('#js-scss-size').innerText = cssAmount.toFixed(2).toString();
     });

@@ -9,7 +9,7 @@
         {
             "label": "Minify this file",
             "type": "shell",
-            "command": "python tools/minify_css.py ${relativeFile}"
+            "command": "python3 tools/minify_css.py ${relativeFile}"
         }
     ]
 }

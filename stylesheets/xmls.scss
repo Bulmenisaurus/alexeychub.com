@@ -107,6 +107,7 @@ code .user-input {
 
 .hljs {
     line-height: 130%;
+    @include no-scrollbar;
 }
 
 section.page-section {
@@ -120,8 +121,4 @@ section.page-section {
             font-weight: 500;
         }
     }
-}
-
-.hide-scroll {
-    @include no-scrollbar;
 }

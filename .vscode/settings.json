@@ -1,5 +1,6 @@
 {
     "editor.formatOnSave": true,
     "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
-    "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false
+    "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+    "python.pythonPath": "/usr/local/bin/python3"
 }

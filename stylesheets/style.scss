@@ -160,6 +160,9 @@ button:hover {
 
 .theme-container {
     color: var(--font-color);
+    position: absolute;
+    top: 2em;
+    right: 2em;
 }
 
 .theme-toggle {
@@ -167,8 +170,7 @@ button:hover {
 }
 
 .theme-emoji {
-    font-size: 20px;
-    padding: 5px;
+    font-size: 1.5em;
     cursor: pointer;
 }
 

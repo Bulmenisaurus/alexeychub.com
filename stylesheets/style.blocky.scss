@@ -1,9 +1,9 @@
 @import "_mixins.scss";
+@import "_blocky.scss";
 
 /* ===========
     Variables & default styling
    =========== */
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     --card-background-color: #fff;
@@ -44,74 +44,16 @@ a:hover {
 
 /* ===========
     3d effect
-   =========== */
+   =========== 
+*/
 
 .card,
-button,
 blockquote {
-    border: 3px solid #222;
-    border-radius: 3px;
-    padding: 1em;
-    position: relative;
-    top: -2px;
-    left: -2px;
-    margin: 8px 6px 10px 6px;
-    z-index: 1;
+    @include blocky;
 }
 
-.card::before,
-.card::after,
-button::after,
-button::before,
-blockquote::before,
-blockquote::after {
-    content: "";
-    border: 3px solid #222;
-    height: calc(100% + 6px);
-    width: calc(100% + 6px);
-    border-radius: 3px;
-    position: absolute;
-}
-
-.card::before,
-button::before,
-blockquote::before {
-    background: var(--card-background-color);
-    top: -3px;
-    left: -3px;
-    z-index: -1;
-}
-
-.card::after,
-button::after,
-blockquote::after {
-    background: var(--shadow-color);
-    top: 3px;
-    left: 3px;
-    right: 0;
-    z-index: -2;
-}
-
-button,
-button::before {
-    background-color: var(--accent-color);
-    color: var(--accent-font-color);
-    transition: transform 0.2s;
-}
-
-button::after {
-    /* transition only for button */
-    transition: transform 0.2s;
-}
-
-button:focus,
-button:hover {
-    transform: translate(2px, 2px);
-}
-
-button:hover::after,
-button:focus::after {
-    transform: translate(-2px, -3px);
+button {
+    @include blocky(true);
 }
 
 /* ===========

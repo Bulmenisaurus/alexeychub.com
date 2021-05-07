@@ -2,5 +2,12 @@
     "editor.formatOnSave": true,
     "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
     "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
-    "python.pythonPath": "/usr/local/bin/python3"
+    "python.pythonPath": "/usr/local/bin/python3",
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": null
+        }
+    ],
 }

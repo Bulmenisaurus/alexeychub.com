@@ -79,6 +79,7 @@ closeModal.onclick = function() {
     modal.style.display = 'none';
     modal.setAttribute('aria-hidden', 'true');
 };
+
 window.onclick = function(e) {
     if (e.target === modal) {
         modal.style.display = 'none';
@@ -93,6 +94,22 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
+const msToTime = (ms) => {
+    const seconds = (ms / 1000).toFixed(1);
+    const minutes = (ms / (1000 * 60)).toFixed(1);
+    const hours = (ms / (1000 * 60 * 60)).toFixed(1);
+    const days = (ms / (1000 * 60 * 60 * 24)).toFixed(1);
+    if (seconds < 60) {
+        return seconds + ' seconds';
+    } else if (minutes < 60) {
+        return minutes + ' minutes';
+    } else if (hours < 24) {
+        return hours + ' hours';
+    } else {
+        return days + ' days';
+    }
+};
+
 fetch('https://api.github.com/repos/Bulmenisaurus/bulmenisaurus.github.io/languages')
     .then(response => response.json())
     .then(data => {
@@ -100,7 +117,20 @@ fetch('https://api.github.com/repos/Bulmenisaurus/bulmenisaurus.github.io/langua
         // bytes to kb
         cssAmount /= 1000;
         // account for duplicate (minified) code
-        cssAmount /= 1.5;
 
         document.querySelector('#js-scss-size').innerText = cssAmount.toFixed(2).toString();
+    });
+
+fetch('https://api.github.com/repos/bulmenisaurus/bulmenisaurus.github.io/commits/master')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        const commitDate = new Date(data['commit']['committer']['date']);
+
+        const lastUpdatedDelta = new Date() - commitDate;
+        const lastUpdatedReadable = msToTime(lastUpdatedDelta);
+
+        Array.from(document.querySelectorAll('.js-last-updated')).forEach((x) => {
+            x.innerText = lastUpdatedReadable;
+        });
     });

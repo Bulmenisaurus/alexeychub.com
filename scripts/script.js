@@ -95,10 +95,10 @@ document.addEventListener('keydown', function(e) {
 });
 
 const msToTime = (ms) => {
-    const seconds = (ms / 1000).toFixed(1);
-    const minutes = (ms / (1000 * 60)).toFixed(1);
-    const hours = (ms / (1000 * 60 * 60)).toFixed(1);
-    const days = (ms / (1000 * 60 * 60 * 24)).toFixed(1);
+    const seconds = (ms / 1000).toFixed(0);
+    const minutes = (ms / (1000 * 60)).toFixed(0);
+    const hours = (ms / (1000 * 60 * 60)).toFixed(0);
+    const days = (ms / (1000 * 60 * 60 * 24)).toFixed(0);
     if (seconds < 60) {
         return seconds + ' seconds';
     } else if (minutes < 60) {

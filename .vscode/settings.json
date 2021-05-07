@@ -10,4 +10,7 @@
             "savePath": null
         }
     ],
+    "files.exclude": {
+        "**/*.min.css": true
+    },
 }

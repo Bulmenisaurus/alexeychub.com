@@ -10,20 +10,7 @@
     --smooth-red: rgb(252, 98, 93);
     --smooth-yellow: rgb(253, 192, 65);
     --smooth-green: rgb(53, 206, 75);
-}
 
-@mixin window-icon($color) {
-    top: 2px;
-    height: 11px;
-    width: 11px;
-    border-radius: 50%;
-    display: inline-block;
-    position: relative;
-    margin: 0px 2px;
-    background-color: $color;
-}
-
-html {
     font-family: "Inter", sans-serif;
     box-sizing: border-box;
 }
@@ -54,15 +41,17 @@ h2 {
     font-size: clamp(30px, 8vw, 3em);
 }
 
-header p {
+p {
     font-size: 1.3rem;
     margin: 10px 0 10px 0;
+    line-height: 150%;
 }
 
 /* code preview styles */
 
 section.code-preview {
     border-radius: 5px;
+    margin-bottom: 5em;
     overflow: hidden;
     width: clamp(100px, 80vw, 800px);
 
@@ -71,30 +60,36 @@ section.code-preview {
     }
 }
 
-pre > code[class~="hljs"] {
-    padding: 1em;
-}
-
-span.output-bold {
+.output-bold {
     font-weight: bold;
 }
 
-div.icons {
+@mixin window-icon($color) {
+    top: 2px;
+    height: 11px;
+    width: 11px;
+    border-radius: 50%;
+    display: inline-block;
     position: relative;
+    margin: 0px 2px;
+    background-color: $color;
+}
+
+div.icons {
     height: 1.5em;
     background-color: rgb(60, 63, 65);
     padding-left: 10px;
 
-    span.icon:nth-child(1) {
-        background-color: var(--smooth-red, red);
+    & > span.icon:nth-child(1) {
+        @include window-icon(var(--smooth-red));
     }
 
-    span.icon:nth-child(2) {
-        background-color: var(--smooth-yellow, yellow);
+    & > span.icon:nth-child(2) {
+        @include window-icon(var(--smooth-yellow));
     }
 
-    span.icon:nth-child(3) {
-        background-color: var(--smooth-green, green);
+    & > span.icon:nth-child(3) {
+        @include window-icon(var(--smooth-green));
     }
 }
 
@@ -105,7 +100,7 @@ code .user-input {
 
 /* end code preview styles (10 rules) */
 
-.hljs {
+pre > code {
     line-height: 130%;
     @include no-scrollbar;
 }

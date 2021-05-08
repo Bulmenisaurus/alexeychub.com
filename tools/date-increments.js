@@ -21,8 +21,10 @@ const convertMillisecondsToUnits = (milliseconds, unit) => {
     const hours = minutes / 60;
     const days = hours / 24;
     const weeks = days / 7;
+    const months = days / 30;
+    const years = days / 365;
 
-    return { seconds, minutes, hours, days, weeks }[unit];
+    return { seconds, minutes, hours, days, weeks, months, years }[unit];
 };
 
 // https://gist.github.com/vanaf1979/b0d10bbf6a5bb4b4a92958aa25a7b36f#file-vanilla-redued-motion-js

@@ -4,8 +4,8 @@
   "description": "My site",
   "main": "index.js",
   "dependencies": {
-    "eslint": "^7.18.0",
-    "typescript": "^4.1.5"
+    "eslint": "^7.26.0",
+    "typescript": "^4.2.4"
   },
   "devDependencies": {},
   "scripts": {

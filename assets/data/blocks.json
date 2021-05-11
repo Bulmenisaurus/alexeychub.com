@@ -1,0 +1,2345 @@
+{
+    "glass_blue.png": {
+        "name": "blue stained glass",
+        "most_similar_names": [
+            "lime stained glass",
+            "black stained glass",
+            "red stained glass",
+            "light blue stained glass",
+            "purple stained glass"
+        ],
+        "least_similar_name": "dropper"
+    },
+    "glass_pink.png": {
+        "name": "pink stained glass",
+        "most_similar_names": [
+            "lime stained glass",
+            "cyan stained glass",
+            "white stained glass",
+            "green stained glass",
+            "brown stained glass"
+        ],
+        "least_similar_name": "blue orchid"
+    },
+    "rail_activator.png": {
+        "name": "rail activator",
+        "most_similar_names": [
+            "rail activator powered",
+            "rail detector",
+            "rail normal",
+            "rail detector powered",
+            "rail golden"
+        ],
+        "least_similar_name": "web"
+    },
+    "flower_oxeye_daisy.png": {
+        "name": "oxeye daisy",
+        "most_similar_names": [
+            "stone granite",
+            "stone diorite",
+            "stone andesite",
+            "green stained glass",
+            "yellow stained glass"
+        ],
+        "least_similar_name": "tnt"
+    },
+    "glass_orange.png": {
+        "name": "orange stained glass",
+        "most_similar_names": [
+            "red stained glass",
+            "gray stained glass",
+            "cyan stained glass",
+            "magenta stained glass",
+            "green stained glass"
+        ],
+        "least_similar_name": "flower pot"
+    },
+    "iron_bars.png": {
+        "name": "iron bars",
+        "most_similar_names": [
+            "iron ore",
+            "iron block",
+            "iron trapdoor",
+            "end bricks",
+            "diamond ore"
+        ],
+        "least_similar_name": "sapling acacia"
+    },
+    "glass_light_blue.png": {
+        "name": "light blue stained glass",
+        "most_similar_names": [
+            "blue stained glass",
+            "light gray stained glass",
+            "lime stained glass",
+            "white stained glass",
+            "green stained glass"
+        ],
+        "least_similar_name": "dropper"
+    },
+    "crafting_table_top.png": {
+        "name": "crafting table",
+        "most_similar_names": [
+            "enchanting table",
+            "orange tulip",
+            "sapling jungle",
+            "sapling oak",
+            "orange stained glass"
+        ],
+        "least_similar_name": "oxeye daisy"
+    },
+    "wheat_stage_7.png": {
+        "name": "wheat",
+        "most_similar_names": [
+            "web",
+            "nether wart",
+            "netherrack",
+            "flower pot",
+            "white tulip"
+        ],
+        "least_similar_name": "brick"
+    },
+    "chorus_flower_dead.png": {
+        "name": "chorus flower",
+        "most_similar_names": [
+            "chorus plant",
+            "flower pot",
+            "rail detector powered",
+            "rail activator powered",
+            "houstonia"
+        ],
+        "least_similar_name": "tnt"
+    },
+    "cake_top.png": {
+        "name": "cake",
+        "most_similar_names": [
+            "ice",
+            "coal ore",
+            "clay",
+            "brick",
+            "packed ice"
+        ],
+        "least_similar_name": "dirt podzol"
+    },
+    "melon_top.png": {
+        "name": "melon",
+        "most_similar_names": [
+            "dandelion",
+            "paeonia",
+            "emerald ore",
+            "mycelium",
+            "farmland"
+        ],
+        "least_similar_name": "brick"
+    },
+    "pumpkin_top.png": {
+        "name": "pumpkin",
+        "most_similar_names": [
+            "piston",
+            "spruce plank",
+            "purpur block",
+            "purpur pillar",
+            "purple stained glass"
+        ],
+        "least_similar_name": "beetroots"
+    },
+    "red_sandstone_top.png": {
+        "name": "red sandstone",
+        "most_similar_names": [
+            "sandstone",
+            "red sandstone smooth",
+            "red sandstone normal",
+            "red sandstone carved",
+            "red sand"
+        ],
+        "least_similar_name": "coal block"
+    },
+    "observer_side.png": {
+        "name": "observer",
+        "most_similar_names": [
+            "lever",
+            "mob spawner",
+            "rose",
+            "beetroots",
+            "gravel"
+        ],
+        "least_similar_name": "acacia plank"
+    },
+    "log_jungle.png": {
+        "name": "jungle log",
+        "most_similar_names": [
+            "jungle plank",
+            "spruce log",
+            "sapling jungle",
+            "gold block",
+            "bone block"
+        ],
+        "least_similar_name": "brick"
+    },
+    "rail_golden_powered.png": {
+        "name": "rail golden powered",
+        "most_similar_names": [
+            "rail detector powered",
+            "rail golden",
+            "rail activator powered",
+            "gold ore",
+            "rail detector"
+        ],
+        "least_similar_name": "pink tulip"
+    },
+    "sapling_roofed_oak.png": {
+        "name": "sapling roofed oak",
+        "most_similar_names": [
+            "sapling oak",
+            "sapling spruce",
+            "sapling birch",
+            "sapling jungle",
+            "sapling acacia"
+        ],
+        "least_similar_name": "dispenser"
+    },
+    "red_sandstone_carved.png": {
+        "name": "red sandstone carved",
+        "most_similar_names": [
+            "sandstone carved",
+            "red sandstone",
+            "red sandstone normal",
+            "red sandstone smooth",
+            "redstone ore"
+        ],
+        "least_similar_name": "pumpkin"
+    },
+    "flower_tulip_white.png": {
+        "name": "white tulip",
+        "most_similar_names": [
+            "red tulip",
+            "pink tulip",
+            "orange tulip",
+            "white stained glass",
+            "wheat"
+        ],
+        "least_similar_name": "sand"
+    },
+    "pumpkin_side.png": {
+        "name": "pumpkin",
+        "most_similar_names": [
+            "piston",
+            "spruce plank",
+            "purpur block",
+            "purpur pillar",
+            "purple stained glass"
+        ],
+        "least_similar_name": "beetroots"
+    },
+    "planks_birch.png": {
+        "name": "birch plank",
+        "most_similar_names": [
+            "birch log",
+            "spruce plank",
+            "big oak plank",
+            "chorus plant",
+            "acacia plank"
+        ],
+        "least_similar_name": "stone diorite smooth"
+    },
+    "glass_brown.png": {
+        "name": "brown stained glass",
+        "most_similar_names": [
+            "green stained glass",
+            "red stained glass",
+            "yellow stained glass",
+            "orange stained glass",
+            "pink stained glass"
+        ],
+        "least_similar_name": "jukebox"
+    },
+    "mycelium_side.png": {
+        "name": "mycelium",
+        "most_similar_names": [
+            "allium",
+            "slime",
+            "melon",
+            "ice",
+            "red tulip"
+        ],
+        "least_similar_name": "grass path"
+    },
+    "dispenser_front_horizontal.png": {
+        "name": "dispenser",
+        "most_similar_names": [
+            "sponge",
+            "mob spawner",
+            "dropper",
+            "sandstone",
+            "end stone"
+        ],
+        "least_similar_name": "clay"
+    },
+    "flower_tulip_orange.png": {
+        "name": "orange tulip",
+        "most_similar_names": [
+            "red tulip",
+            "pink tulip",
+            "white tulip",
+            "orange stained glass",
+            "sponge wet"
+        ],
+        "least_similar_name": "chiseled quartz block"
+    },
+    "glass_silver.png": {
+        "name": "light gray stained glass",
+        "most_similar_names": [
+            "gray stained glass",
+            "light blue stained glass",
+            "lime stained glass",
+            "white stained glass",
+            "green stained glass"
+        ],
+        "least_similar_name": "dropper"
+    },
+    "sapling_birch.png": {
+        "name": "sapling birch",
+        "most_similar_names": [
+            "sapling spruce",
+            "sapling oak",
+            "sapling acacia",
+            "sapling jungle",
+            "sapling roofed oak"
+        ],
+        "least_similar_name": "rail golden powered"
+    },
+    "clay.png": {
+        "name": "clay",
+        "most_similar_names": [
+            "cake",
+            "hardened clay",
+            "glass",
+            "ladder",
+            "cactus"
+        ],
+        "least_similar_name": "beetroots"
+    },
+    "quartz_block_chiseled_top.png": {
+        "name": "chiseled quartz block",
+        "most_similar_names": [
+            "quartz block",
+            "nether wart block",
+            "hay block",
+            "emerald block",
+            "quartz ore"
+        ],
+        "least_similar_name": "orange tulip"
+    },
+    "frosted_ice_0.png": {
+        "name": "frosted ice 0",
+        "most_similar_names": [
+            "packed ice",
+            "rose",
+            "red stained glass",
+            "red tulip",
+            "brown stained glass"
+        ],
+        "least_similar_name": "jukebox"
+    },
+    "stone_diorite.png": {
+        "name": "stone diorite",
+        "most_similar_names": [
+            "stone diorite smooth",
+            "stone granite",
+            "stone andesite",
+            "redstone ore",
+            "stonebrick"
+        ],
+        "least_similar_name": "clay"
+    },
+    "redstone_torch_on.png": {
+        "name": "redstone torch",
+        "most_similar_names": [
+            "redstone ore",
+            "redstone block",
+            "redstone lamp",
+            "red sandstone smooth",
+            "red sandstone normal"
+        ],
+        "least_similar_name": "allium"
+    },
+    "rail_detector_powered.png": {
+        "name": "rail detector powered",
+        "most_similar_names": [
+            "rail activator powered",
+            "rail detector",
+            "rail golden powered",
+            "rail normal turned",
+            "rail activator"
+        ],
+        "least_similar_name": "pink tulip"
+    },
+    "cactus_side.png": {
+        "name": "cactus",
+        "most_similar_names": [
+            "carrots",
+            "deadbush",
+            "clay",
+            "cake",
+            "coal block"
+        ],
+        "least_similar_name": "dropper"
+    },
+    "quartz_block_top.png": {
+        "name": "quartz block",
+        "most_similar_names": [
+            "quartz ore",
+            "chiseled quartz block",
+            "purpur block",
+            "hay block",
+            "quartz pillar"
+        ],
+        "least_similar_name": "light gray stained glass"
+    },
+    "hardened_clay.png": {
+        "name": "hardened clay",
+        "most_similar_names": [
+            "red stained glass",
+            "white stained glass",
+            "green stained glass",
+            "purple stained glass",
+            "orange stained glass"
+        ],
+        "least_similar_name": "blue orchid"
+    },
+    "enchanting_table_side.png": {
+        "name": "enchanting table",
+        "most_similar_names": [
+            "crafting table",
+            "sapling jungle",
+            "sapling oak",
+            "orange tulip",
+            "stone granite"
+        ],
+        "least_similar_name": "dropper"
+    },
+    "emerald_block.png": {
+        "name": "emerald block",
+        "most_similar_names": [
+            "emerald ore",
+            "gold block",
+            "coal block",
+            "nether wart block",
+            "hay block"
+        ],
+        "least_similar_name": "tnt"
+    },
+    "sapling_oak.png": {
+        "name": "sapling oak",
+        "most_similar_names": [
+            "sapling roofed oak",
+            "sapling acacia",
+            "sapling birch",
+            "sapling spruce",
+            "sapling jungle"
+        ],
+        "least_similar_name": "web"
+    },
+    "planks_oak.png": {
+        "name": "oak plank",
+        "most_similar_names": [
+            "big oak plank",
+            "acacia plank",
+            "oak log",
+            "birch plank",
+            "spruce plank"
+        ],
+        "least_similar_name": "ice"
+    },
+    "beetroots_stage_3.png": {
+        "name": "beetroots",
+        "most_similar_names": [
+            "carrots",
+            "trapdoor",
+            "rose",
+            "bookshelf",
+            "lever"
+        ],
+        "least_similar_name": "acacia plank"
+    },
+    "obsidian.png": {
+        "name": "obsidian",
+        "most_similar_names": [
+            "mob spawner",
+            "sand",
+            "houstonia",
+            "diamond ore",
+            "cobblestone"
+        ],
+        "least_similar_name": "lever"
+    },
+    "purpur_pillar_top.png": {
+        "name": "purpur pillar",
+        "most_similar_names": [
+            "quartz pillar",
+            "purpur block",
+            "spruce plank",
+            "chorus plant",
+            "spruce log"
+        ],
+        "least_similar_name": "snow"
+    },
+    "torch_on.png": {
+        "name": "torch",
+        "most_similar_names": [
+            "stonebrick",
+            "redstone torch",
+            "blue orchid",
+            "trapdoor",
+            "birch log"
+        ],
+        "least_similar_name": "allium"
+    },
+    "glass_white.png": {
+        "name": "white stained glass",
+        "most_similar_names": [
+            "lime stained glass",
+            "red stained glass",
+            "pink stained glass",
+            "blue stained glass",
+            "light blue stained glass"
+        ],
+        "least_similar_name": "flower pot"
+    },
+    "glass_red.png": {
+        "name": "red stained glass",
+        "most_similar_names": [
+            "green stained glass",
+            "purple stained glass",
+            "orange stained glass",
+            "lime stained glass",
+            "gray stained glass"
+        ],
+        "least_similar_name": "blue orchid"
+    },
+    "log_birch.png": {
+        "name": "birch log",
+        "most_similar_names": [
+            "birch plank",
+            "spruce log",
+            "big oak log",
+            "iron block",
+            "acacia log"
+        ],
+        "least_similar_name": "sand"
+    },
+    "cobblestone_mossy.png": {
+        "name": "mossy cobblestone",
+        "most_similar_names": [
+            "cobblestone",
+            "sticky piston",
+            "sandstone",
+            "glowstone",
+            "end stone"
+        ],
+        "least_similar_name": "quartz pillar"
+    },
+    "furnace_front_on.png": {
+        "name": "furnace",
+        "most_similar_names": [
+            "gravel",
+            "iron ore",
+            "ice",
+            "frosted ice 0",
+            "iron bars"
+        ],
+        "least_similar_name": "yellow stained glass"
+    },
+    "sapling_spruce.png": {
+        "name": "sapling spruce",
+        "most_similar_names": [
+            "sapling birch",
+            "sapling jungle",
+            "sapling acacia",
+            "sapling oak",
+            "sapling roofed oak"
+        ],
+        "least_similar_name": "mushroom brown"
+    },
+    "tnt_top.png": {
+        "name": "tnt",
+        "most_similar_names": [
+            "stone",
+            "piston",
+            "stone granite",
+            "stone diorite",
+            "potatoes"
+        ],
+        "least_similar_name": "acacia log"
+    },
+    "stonebrick_cracked.png": {
+        "name": "stonebrick cracked",
+        "most_similar_names": [
+            "stonebrick carved",
+            "stonebrick",
+            "stonebrick mossy",
+            "sandstone carved",
+            "stone granite"
+        ],
+        "least_similar_name": "quartz pillar"
+    },
+    "log_oak_top.png": {
+        "name": "oak log",
+        "most_similar_names": [
+            "big oak log",
+            "oak plank",
+            "coal block",
+            "acacia log",
+            "coal ore"
+        ],
+        "least_similar_name": "dispenser"
+    },
+    "quartz_block_chiseled.png": {
+        "name": "chiseled quartz block",
+        "most_similar_names": [
+            "quartz block",
+            "nether wart block",
+            "hay block",
+            "emerald block",
+            "quartz ore"
+        ],
+        "least_similar_name": "orange tulip"
+    },
+    "furnace_side.png": {
+        "name": "furnace",
+        "most_similar_names": [
+            "gravel",
+            "iron ore",
+            "ice",
+            "frosted ice 0",
+            "iron bars"
+        ],
+        "least_similar_name": "yellow stained glass"
+    },
+    "piston_side.png": {
+        "name": "piston",
+        "most_similar_names": [
+            "stone",
+            "sticky piston",
+            "sandstone",
+            "lapis ore",
+            "houstonia"
+        ],
+        "least_similar_name": "cake"
+    },
+    "pumpkin_face_on.png": {
+        "name": "jack o'lantern",
+        "most_similar_names": [
+            "oak plank",
+            "chorus plant",
+            "acacia plank",
+            "mob spawner",
+            "ladder"
+        ],
+        "least_similar_name": "mushroom red"
+    },
+    "redstone_ore.png": {
+        "name": "redstone ore",
+        "most_similar_names": [
+            "redstone torch",
+            "redstone block",
+            "stone diorite",
+            "redstone lamp",
+            "iron ore"
+        ],
+        "least_similar_name": "allium"
+    },
+    "cactus_top.png": {
+        "name": "cactus",
+        "most_similar_names": [
+            "carrots",
+            "deadbush",
+            "clay",
+            "cake",
+            "coal block"
+        ],
+        "least_similar_name": "dropper"
+    },
+    "observer_top.png": {
+        "name": "observer",
+        "most_similar_names": [
+            "lever",
+            "mob spawner",
+            "rose",
+            "beetroots",
+            "gravel"
+        ],
+        "least_similar_name": "acacia plank"
+    },
+    "quartz_block_side.png": {
+        "name": "quartz block",
+        "most_similar_names": [
+            "quartz ore",
+            "chiseled quartz block",
+            "purpur block",
+            "hay block",
+            "quartz pillar"
+        ],
+        "least_similar_name": "light gray stained glass"
+    },
+    "itemframe_background.png": {
+        "name": "itemframe background",
+        "most_similar_names": [
+            "emerald block",
+            "red sand",
+            "iron bars",
+            "end frame",
+            "rail golden"
+        ],
+        "least_similar_name": "purpur pillar"
+    },
+    "planks_spruce.png": {
+        "name": "spruce plank",
+        "most_similar_names": [
+            "spruce log",
+            "birch plank",
+            "jungle plank",
+            "chorus plant",
+            "acacia plank"
+        ],
+        "least_similar_name": "nether wart"
+    },
+    "sandstone_smooth.png": {
+        "name": "sandstone smooth",
+        "most_similar_names": [
+            "red sandstone smooth",
+            "sandstone",
+            "sandstone normal",
+            "stone granite smooth",
+            "stone diorite smooth"
+        ],
+        "least_similar_name": "brick"
+    },
+    "lapis_ore.png": {
+        "name": "lapis ore",
+        "most_similar_names": [
+            "lapis block",
+            "iron ore",
+            "gold ore",
+            "coal ore",
+            "piston"
+        ],
+        "least_similar_name": "tnt"
+    },
+    "farmland_wet.png": {
+        "name": "farmland",
+        "most_similar_names": [
+            "sand",
+            "red sand",
+            "soul sand",
+            "oak plank",
+            "rail normal turned"
+        ],
+        "least_similar_name": "ice"
+    },
+    "log_acacia.png": {
+        "name": "acacia log",
+        "most_similar_names": [
+            "acacia plank",
+            "oak log",
+            "big oak log",
+            "birch log",
+            "spruce log"
+        ],
+        "least_similar_name": "tnt"
+    },
+    "coal_ore.png": {
+        "name": "coal ore",
+        "most_similar_names": [
+            "gold ore",
+            "coal block",
+            "emerald ore",
+            "iron ore",
+            "lapis ore"
+        ],
+        "least_similar_name": "pumpkin"
+    },
+    "grass_path_top.png": {
+        "name": "grass path",
+        "most_similar_names": [
+            "chorus plant",
+            "glass",
+            "big oak plank",
+            "oak plank",
+            "rail activator"
+        ],
+        "least_similar_name": "ice"
+    },
+    "coal_block.png": {
+        "name": "coal block",
+        "most_similar_names": [
+            "gold block",
+            "hay block",
+            "iron block",
+            "bone block",
+            "emerald block"
+        ],
+        "least_similar_name": "dispenser"
+    },
+    "flower_houstonia.png": {
+        "name": "houstonia",
+        "most_similar_names": [
+            "stone",
+            "glowstone",
+            "piston",
+            "stonebrick",
+            "stone slab"
+        ],
+        "least_similar_name": "lever"
+    },
+    "end_bricks.png": {
+        "name": "end bricks",
+        "most_similar_names": [
+            "brick",
+            "nether brick",
+            "red nether brick",
+            "stonebrick",
+            "prismarine bricks"
+        ],
+        "least_similar_name": "stone granite smooth"
+    },
+    "melon_side.png": {
+        "name": "melon",
+        "most_similar_names": [
+            "dandelion",
+            "paeonia",
+            "emerald ore",
+            "mycelium",
+            "farmland"
+        ],
+        "least_similar_name": "brick"
+    },
+    "log_big_oak.png": {
+        "name": "big oak log",
+        "most_similar_names": [
+            "oak log",
+            "big oak plank",
+            "birch log",
+            "sapling oak",
+            "oak plank"
+        ],
+        "least_similar_name": "tnt"
+    },
+    "log_birch_top.png": {
+        "name": "birch log",
+        "most_similar_names": [
+            "birch plank",
+            "spruce log",
+            "big oak log",
+            "iron block",
+            "acacia log"
+        ],
+        "least_similar_name": "sand"
+    },
+    "hay_block_side.png": {
+        "name": "hay block",
+        "most_similar_names": [
+            "coal block",
+            "lapis block",
+            "quartz block",
+            "emerald block",
+            "diamond block"
+        ],
+        "least_similar_name": "dispenser"
+    },
+    "slime.png": {
+        "name": "slime",
+        "most_similar_names": [
+            "allium",
+            "ice",
+            "mycelium",
+            "rose",
+            "lapis ore"
+        ],
+        "least_similar_name": "tnt"
+    },
+    "flower_paeonia.png": {
+        "name": "paeonia",
+        "most_similar_names": [
+            "melon",
+            "houstonia",
+            "dandelion",
+            "packed ice",
+            "sponge"
+        ],
+        "least_similar_name": "trip wire source"
+    },
+    "lever.png": {
+        "name": "lever",
+        "most_similar_names": [
+            "observer",
+            "ladder",
+            "dispenser",
+            "beetroots",
+            "slime"
+        ],
+        "least_similar_name": "cactus"
+    },
+    "tnt_side.png": {
+        "name": "tnt",
+        "most_similar_names": [
+            "stone",
+            "piston",
+            "stone granite",
+            "stone diorite",
+            "potatoes"
+        ],
+        "least_similar_name": "acacia log"
+    },
+    "sponge_wet.png": {
+        "name": "sponge wet",
+        "most_similar_names": [
+            "sponge",
+            "stone andesite",
+            "redstone ore",
+            "orange tulip",
+            "stone"
+        ],
+        "least_similar_name": "allium"
+    },
+    "stone_andesite.png": {
+        "name": "stone andesite",
+        "most_similar_names": [
+            "stone granite",
+            "stone andesite smooth",
+            "stone diorite",
+            "stone granite smooth",
+            "stone diorite smooth"
+        ],
+        "least_similar_name": "purpur block"
+    },
+    "endframe_top.png": {
+        "name": "end frame",
+        "most_similar_names": [
+            "end stone",
+            "end bricks",
+            "furnace",
+            "diamond ore",
+            "red sand"
+        ],
+        "least_similar_name": "mushroom block skin brown"
+    },
+    "sponge.png": {
+        "name": "sponge",
+        "most_similar_names": [
+            "sponge wet",
+            "stone",
+            "sandstone",
+            "glowstone",
+            "end stone"
+        ],
+        "least_similar_name": "allium"
+    },
+    "glass_green.png": {
+        "name": "green stained glass",
+        "most_similar_names": [
+            "red stained glass",
+            "gray stained glass",
+            "magenta stained glass",
+            "brown stained glass",
+            "purple stained glass"
+        ],
+        "least_similar_name": "blue orchid"
+    },
+    "log_jungle_top.png": {
+        "name": "jungle log",
+        "most_similar_names": [
+            "jungle plank",
+            "spruce log",
+            "sapling jungle",
+            "gold block",
+            "bone block"
+        ],
+        "least_similar_name": "brick"
+    },
+    "endframe_side.png": {
+        "name": "end frame",
+        "most_similar_names": [
+            "end stone",
+            "end bricks",
+            "furnace",
+            "diamond ore",
+            "red sand"
+        ],
+        "least_similar_name": "mushroom block skin brown"
+    },
+    "red_sandstone_bottom.png": {
+        "name": "red sandstone",
+        "most_similar_names": [
+            "sandstone",
+            "red sandstone smooth",
+            "red sandstone normal",
+            "red sandstone carved",
+            "red sand"
+        ],
+        "least_similar_name": "coal block"
+    },
+    "redstone_lamp_on.png": {
+        "name": "redstone lamp",
+        "most_similar_names": [
+            "redstone block",
+            "redstone ore",
+            "stone slab",
+            "redstone torch",
+            "red stained glass"
+        ],
+        "least_similar_name": "mushroom block skin brown"
+    },
+    "stonebrick_carved.png": {
+        "name": "stonebrick carved",
+        "most_similar_names": [
+            "stonebrick cracked",
+            "stonebrick",
+            "sandstone carved",
+            "stonebrick mossy",
+            "red sandstone carved"
+        ],
+        "least_similar_name": "dirt podzol"
+    },
+    "tnt_bottom.png": {
+        "name": "tnt",
+        "most_similar_names": [
+            "stone",
+            "piston",
+            "stone granite",
+            "stone diorite",
+            "potatoes"
+        ],
+        "least_similar_name": "acacia log"
+    },
+    "rail_normal.png": {
+        "name": "rail normal",
+        "most_similar_names": [
+            "rail normal turned",
+            "rail golden",
+            "sandstone normal",
+            "rail detector",
+            "red sandstone normal"
+        ],
+        "least_similar_name": "web"
+    },
+    "chorus_plant.png": {
+        "name": "chorus plant",
+        "most_similar_names": [
+            "chorus flower",
+            "birch plank",
+            "spruce plank",
+            "oak plank",
+            "grass path"
+        ],
+        "least_similar_name": "web"
+    },
+    "gold_block.png": {
+        "name": "gold block",
+        "most_similar_names": [
+            "coal block",
+            "iron block",
+            "bone block",
+            "emerald block",
+            "diamond block"
+        ],
+        "least_similar_name": "tnt"
+    },
+    "log_big_oak_top.png": {
+        "name": "big oak log",
+        "most_similar_names": [
+            "oak log",
+            "big oak plank",
+            "birch log",
+            "sapling oak",
+            "oak plank"
+        ],
+        "least_similar_name": "tnt"
+    },
+    "gravel.png": {
+        "name": "gravel",
+        "most_similar_names": [
+            "furnace",
+            "orange tulip",
+            "observer",
+            "stone granite",
+            "gray stained glass"
+        ],
+        "least_similar_name": "piston"
+    },
+    "quartz_ore.png": {
+        "name": "quartz ore",
+        "most_similar_names": [
+            "quartz block",
+            "quartz pillar",
+            "iron ore",
+            "coal ore",
+            "redstone ore"
+        ],
+        "least_similar_name": "yellow stained glass"
+    },
+    "nether_wart_stage_0.png": {
+        "name": "nether wart",
+        "most_similar_names": [
+            "nether wart block",
+            "nether brick",
+            "netherrack",
+            "red nether brick",
+            "wheat"
+        ],
+        "least_similar_name": "sapling acacia"
+    },
+    "stone_granite_smooth.png": {
+        "name": "stone granite smooth",
+        "most_similar_names": [
+            "stone andesite smooth",
+            "stone diorite smooth",
+            "stone granite",
+            "sandstone smooth",
+            "stone andesite"
+        ],
+        "least_similar_name": "chiseled quartz block"
+    },
+    "dropper_front_vertical.png": {
+        "name": "dropper",
+        "most_similar_names": [
+            "rose",
+            "dispenser",
+            "ladder",
+            "mob spawner",
+            "trapdoor"
+        ],
+        "least_similar_name": "allium"
+    },
+    "dispenser_front_vertical.png": {
+        "name": "dispenser",
+        "most_similar_names": [
+            "sponge",
+            "mob spawner",
+            "dropper",
+            "sandstone",
+            "end stone"
+        ],
+        "least_similar_name": "clay"
+    },
+    "nether_wart_stage_1.png": {
+        "name": "nether wart",
+        "most_similar_names": [
+            "nether wart block",
+            "nether brick",
+            "netherrack",
+            "red nether brick",
+            "wheat"
+        ],
+        "least_similar_name": "sapling acacia"
+    },
+    "grass_path_side.png": {
+        "name": "grass path",
+        "most_similar_names": [
+            "chorus plant",
+            "glass",
+            "big oak plank",
+            "oak plank",
+            "rail activator"
+        ],
+        "least_similar_name": "ice"
+    },
+    "mycelium_top.png": {
+        "name": "mycelium",
+        "most_similar_names": [
+            "allium",
+            "slime",
+            "melon",
+            "ice",
+            "red tulip"
+        ],
+        "least_similar_name": "grass path"
+    },
+    "pumpkin_face_off.png": {
+        "name": "jack o'lantern",
+        "most_similar_names": [
+            "oak plank",
+            "chorus plant",
+            "acacia plank",
+            "mob spawner",
+            "ladder"
+        ],
+        "least_similar_name": "mushroom red"
+    },
+    "mushroom_red.png": {
+        "name": "mushroom red",
+        "most_similar_names": [
+            "mushroom brown",
+            "mushroom block skin red",
+            "mushroom block in",
+            "mushroom block skin stem",
+            "mushroom block skin brown"
+        ],
+        "least_similar_name": "clay"
+    },
+    "snow.png": {
+        "name": "snow",
+        "most_similar_names": [
+            "sand",
+            "sandstone",
+            "stone",
+            "sponge wet",
+            "sponge"
+        ],
+        "least_similar_name": "allium"
+    },
+    "enchanting_table_top.png": {
+        "name": "enchanting table",
+        "most_similar_names": [
+            "crafting table",
+            "sapling jungle",
+            "sapling oak",
+            "orange tulip",
+            "stone granite"
+        ],
+        "least_similar_name": "dropper"
+    },
+    "deadbush.png": {
+        "name": "deadbush",
+        "most_similar_names": [
+            "end bricks",
+            "cactus",
+            "emerald block",
+            "diamond block",
+            "red sand"
+        ],
+        "least_similar_name": "tnt"
+    },
+    "cobblestone.png": {
+        "name": "cobblestone",
+        "most_similar_names": [
+            "mossy cobblestone",
+            "stone",
+            "glowstone",
+            "end stone",
+            "coal ore"
+        ],
+        "least_similar_name": "purpur pillar"
+    },
+    "iron_ore.png": {
+        "name": "iron ore",
+        "most_similar_names": [
+            "diamond ore",
+            "iron bars",
+            "redstone ore",
+            "iron trapdoor",
+            "iron block"
+        ],
+        "least_similar_name": "cactus"
+    },
+    "glass_gray.png": {
+        "name": "gray stained glass",
+        "most_similar_names": [
+            "green stained glass",
+            "red stained glass",
+            "light gray stained glass",
+            "orange stained glass",
+            "cyan stained glass"
+        ],
+        "least_similar_name": "blue orchid"
+    },
+    "mushroom_block_inside.png": {
+        "name": "mushroom block in",
+        "most_similar_names": [
+            "mushroom block skin red",
+            "mushroom block skin stem",
+            "mushroom block skin brown",
+            "mushroom brown",
+            "mushroom red"
+        ],
+        "least_similar_name": "dirt podzol"
+    },
+    "flower_dandelion.png": {
+        "name": "dandelion",
+        "most_similar_names": [
+            "melon",
+            "sandstone",
+            "red sandstone",
+            "paeonia",
+            "orange tulip"
+        ],
+        "least_similar_name": "chorus flower"
+    },
+    "nether_wart_stage_2.png": {
+        "name": "nether wart",
+        "most_similar_names": [
+            "nether wart block",
+            "nether brick",
+            "netherrack",
+            "red nether brick",
+            "wheat"
+        ],
+        "least_similar_name": "sapling acacia"
+    },
+    "sandstone_normal.png": {
+        "name": "sandstone normal",
+        "most_similar_names": [
+            "red sandstone normal",
+            "sandstone",
+            "sandstone smooth",
+            "sandstone carved",
+            "redstone ore"
+        ],
+        "least_similar_name": "mushroom brown"
+    },
+    "rail_activator_powered.png": {
+        "name": "rail activator powered",
+        "most_similar_names": [
+            "rail detector powered",
+            "rail activator",
+            "rail golden powered",
+            "rail normal turned",
+            "rail detector"
+        ],
+        "least_similar_name": "diamond block"
+    },
+    "ladder.png": {
+        "name": "ladder",
+        "most_similar_names": [
+            "lever",
+            "dropper",
+            "gold ore",
+            "farmland",
+            "rail detector"
+        ],
+        "least_similar_name": "piston"
+    },
+    "trapdoor.png": {
+        "name": "trapdoor",
+        "most_similar_names": [
+            "iron trapdoor",
+            "emerald ore",
+            "redstone ore",
+            "iron ore",
+            "rail detector"
+        ],
+        "least_similar_name": "ice"
+    },
+    "glass_lime.png": {
+        "name": "lime stained glass",
+        "most_similar_names": [
+            "blue stained glass",
+            "white stained glass",
+            "red stained glass",
+            "purple stained glass",
+            "pink stained glass"
+        ],
+        "least_similar_name": "dropper"
+    },
+    "glass_purple.png": {
+        "name": "purple stained glass",
+        "most_similar_names": [
+            "red stained glass",
+            "lime stained glass",
+            "blue stained glass",
+            "green stained glass",
+            "orange stained glass"
+        ],
+        "least_similar_name": "dropper"
+    },
+    "rail_golden.png": {
+        "name": "rail golden",
+        "most_similar_names": [
+            "rail golden powered",
+            "rail detector",
+            "rail normal",
+            "gold ore",
+            "coal ore"
+        ],
+        "least_similar_name": "nether wart block"
+    },
+    "gold_ore.png": {
+        "name": "gold ore",
+        "most_similar_names": [
+            "coal ore",
+            "gold block",
+            "emerald ore",
+            "diamond ore",
+            "iron ore"
+        ],
+        "least_similar_name": "cactus"
+    },
+    "red_sandstone_smooth.png": {
+        "name": "red sandstone smooth",
+        "most_similar_names": [
+            "sandstone smooth",
+            "red sandstone",
+            "red sandstone normal",
+            "red sandstone carved",
+            "redstone torch"
+        ],
+        "least_similar_name": "chorus flower"
+    },
+    "sapling_jungle.png": {
+        "name": "sapling jungle",
+        "most_similar_names": [
+            "sapling spruce",
+            "sapling oak",
+            "sapling birch",
+            "sapling acacia",
+            "sapling roofed oak"
+        ],
+        "least_similar_name": "torch"
+    },
+    "jukebox_top.png": {
+        "name": "jukebox",
+        "most_similar_names": [
+            "jungle log",
+            "web",
+            "noteblock",
+            "cake",
+            "spruce log"
+        ],
+        "least_similar_name": "clay"
+    },
+    "ice_packed.png": {
+        "name": "packed ice",
+        "most_similar_names": [
+            "frosted ice 0",
+            "end bricks",
+            "paeonia",
+            "ice",
+            "prismarine bricks"
+        ],
+        "least_similar_name": "snow"
+    },
+    "piston_top_normal.png": {
+        "name": "piston",
+        "most_similar_names": [
+            "stone",
+            "sticky piston",
+            "sandstone",
+            "lapis ore",
+            "houstonia"
+        ],
+        "least_similar_name": "cake"
+    },
+    "redstone_lamp_off.png": {
+        "name": "redstone lamp",
+        "most_similar_names": [
+            "redstone block",
+            "redstone ore",
+            "stone slab",
+            "redstone torch",
+            "red stained glass"
+        ],
+        "least_similar_name": "mushroom block skin brown"
+    },
+    "iron_block.png": {
+        "name": "iron block",
+        "most_similar_names": [
+            "bone block",
+            "diamond block",
+            "redstone block",
+            "gold block",
+            "coal block"
+        ],
+        "least_similar_name": "wheat"
+    },
+    "stone.png": {
+        "name": "stone",
+        "most_similar_names": [
+            "sponge",
+            "piston",
+            "sandstone",
+            "glowstone",
+            "end stone"
+        ],
+        "least_similar_name": "allium"
+    },
+    "piston_top_sticky.png": {
+        "name": "sticky piston",
+        "most_similar_names": [
+            "piston",
+            "mossy cobblestone",
+            "sandstone",
+            "end stone",
+            "stone"
+        ],
+        "least_similar_name": "gravel"
+    },
+    "flower_tulip_red.png": {
+        "name": "red tulip",
+        "most_similar_names": [
+            "orange tulip",
+            "white tulip",
+            "pink tulip",
+            "redstone lamp",
+            "red nether brick"
+        ],
+        "least_similar_name": "snow"
+    },
+    "glass_cyan.png": {
+        "name": "cyan stained glass",
+        "most_similar_names": [
+            "orange stained glass",
+            "pink stained glass",
+            "gray stained glass",
+            "magenta stained glass",
+            "green stained glass"
+        ],
+        "least_similar_name": "blue orchid"
+    },
+    "end_stone.png": {
+        "name": "end stone",
+        "most_similar_names": [
+            "sandstone",
+            "red sandstone",
+            "stone",
+            "redstone ore",
+            "redstone lamp"
+        ],
+        "least_similar_name": "allium"
+    },
+    "emerald_ore.png": {
+        "name": "emerald ore",
+        "most_similar_names": [
+            "emerald block",
+            "gold ore",
+            "coal ore",
+            "rail normal",
+            "diamond ore"
+        ],
+        "least_similar_name": "tnt"
+    },
+    "potatoes_stage_3.png": {
+        "name": "potatoes",
+        "most_similar_names": [
+            "coal ore",
+            "sandstone",
+            "glowstone",
+            "stone",
+            "stone slab"
+        ],
+        "least_similar_name": "brick"
+    },
+    "sandstone_bottom.png": {
+        "name": "sandstone",
+        "most_similar_names": [
+            "red sandstone",
+            "end stone",
+            "sandstone smooth",
+            "sandstone normal",
+            "sandstone carved"
+        ],
+        "least_similar_name": "brick"
+    },
+    "flower_allium.png": {
+        "name": "allium",
+        "most_similar_names": [
+            "mycelium",
+            "slime",
+            "sapling spruce",
+            "sapling jungle",
+            "dandelion"
+        ],
+        "least_similar_name": "beetroots"
+    },
+    "ice.png": {
+        "name": "ice",
+        "most_similar_names": [
+            "cake",
+            "slime",
+            "brick",
+            "packed ice",
+            "furnace"
+        ],
+        "least_similar_name": "farmland"
+    },
+    "mushroom_brown.png": {
+        "name": "mushroom brown",
+        "most_similar_names": [
+            "mushroom block in",
+            "mushroom red",
+            "mushroom block skin brown",
+            "mushroom block skin red",
+            "mushroom block skin stem"
+        ],
+        "least_similar_name": "cake"
+    },
+    "glass_magenta.png": {
+        "name": "magenta stained glass",
+        "most_similar_names": [
+            "green stained glass",
+            "orange stained glass",
+            "lime stained glass",
+            "gray stained glass",
+            "cyan stained glass"
+        ],
+        "least_similar_name": "blue orchid"
+    },
+    "log_oak.png": {
+        "name": "oak log",
+        "most_similar_names": [
+            "big oak log",
+            "oak plank",
+            "coal block",
+            "acacia log",
+            "coal ore"
+        ],
+        "least_similar_name": "dispenser"
+    },
+    "noteblock.png": {
+        "name": "noteblock",
+        "most_similar_names": [
+            "bone block",
+            "iron block",
+            "gold block",
+            "coal block",
+            "quartz block"
+        ],
+        "least_similar_name": "light gray stained glass"
+    },
+    "diamond_block.png": {
+        "name": "diamond block",
+        "most_similar_names": [
+            "iron block",
+            "diamond ore",
+            "gold block",
+            "bone block",
+            "redstone block"
+        ],
+        "least_similar_name": "chorus plant"
+    },
+    "dropper_front_horizontal.png": {
+        "name": "dropper",
+        "most_similar_names": [
+            "rose",
+            "dispenser",
+            "ladder",
+            "mob spawner",
+            "trapdoor"
+        ],
+        "least_similar_name": "allium"
+    },
+    "glass_black.png": {
+        "name": "black stained glass",
+        "most_similar_names": [
+            "blue stained glass",
+            "pink stained glass",
+            "lime stained glass",
+            "gray stained glass",
+            "cyan stained glass"
+        ],
+        "least_similar_name": "dropper"
+    },
+    "stone_slab_side.png": {
+        "name": "stone slab",
+        "most_similar_names": [
+            "redstone lamp",
+            "stone",
+            "stone granite",
+            "stonebrick",
+            "stone andesite"
+        ],
+        "least_similar_name": "rail golden powered"
+    },
+    "jukebox_side.png": {
+        "name": "jukebox",
+        "most_similar_names": [
+            "jungle log",
+            "web",
+            "noteblock",
+            "cake",
+            "spruce log"
+        ],
+        "least_similar_name": "clay"
+    },
+    "stone_diorite_smooth.png": {
+        "name": "stone diorite smooth",
+        "most_similar_names": [
+            "stone granite smooth",
+            "stone andesite smooth",
+            "stone diorite",
+            "sandstone smooth",
+            "stone granite"
+        ],
+        "least_similar_name": "clay"
+    },
+    "redstone_block.png": {
+        "name": "redstone block",
+        "most_similar_names": [
+            "redstone torch",
+            "redstone ore",
+            "iron block",
+            "bone block",
+            "redstone lamp"
+        ],
+        "least_similar_name": "chorus plant"
+    },
+    "trip_wire_source.png": {
+        "name": "trip wire source",
+        "most_similar_names": [
+            "nether wart block",
+            "sapling spruce",
+            "prismarine bricks",
+            "trapdoor",
+            "iron ore"
+        ],
+        "least_similar_name": "acacia plank"
+    },
+    "web.png": {
+        "name": "web",
+        "most_similar_names": [
+            "wheat",
+            "jukebox",
+            "deadbush",
+            "noteblock",
+            "ice"
+        ],
+        "least_similar_name": "acacia log"
+    },
+    "observer_back.png": {
+        "name": "observer",
+        "most_similar_names": [
+            "lever",
+            "mob spawner",
+            "rose",
+            "beetroots",
+            "gravel"
+        ],
+        "least_similar_name": "acacia plank"
+    },
+    "log_spruce_top.png": {
+        "name": "spruce log",
+        "most_similar_names": [
+            "spruce plank",
+            "birch log",
+            "jungle log",
+            "sponge",
+            "sapling spruce"
+        ],
+        "least_similar_name": "tnt"
+    },
+    "furnace_front_off.png": {
+        "name": "furnace",
+        "most_similar_names": [
+            "gravel",
+            "iron ore",
+            "ice",
+            "frosted ice 0",
+            "iron bars"
+        ],
+        "least_similar_name": "yellow stained glass"
+    },
+    "planks_acacia.png": {
+        "name": "acacia plank",
+        "most_similar_names": [
+            "acacia log",
+            "oak plank",
+            "big oak plank",
+            "birch plank",
+            "spruce plank"
+        ],
+        "least_similar_name": "beetroots"
+    },
+    "stonebrick_mossy.png": {
+        "name": "stonebrick mossy",
+        "most_similar_names": [
+            "stonebrick",
+            "stonebrick carved",
+            "stonebrick cracked",
+            "stone diorite smooth",
+            "prismarine bricks"
+        ],
+        "least_similar_name": "pumpkin"
+    },
+    "red_sandstone_normal.png": {
+        "name": "red sandstone normal",
+        "most_similar_names": [
+            "sandstone normal",
+            "red sandstone",
+            "red sandstone smooth",
+            "red sandstone carved",
+            "redstone ore"
+        ],
+        "least_similar_name": "mushroom brown"
+    },
+    "stone_slab_top.png": {
+        "name": "stone slab",
+        "most_similar_names": [
+            "redstone lamp",
+            "stone",
+            "stone granite",
+            "stonebrick",
+            "stone andesite"
+        ],
+        "least_similar_name": "rail golden powered"
+    },
+    "log_spruce.png": {
+        "name": "spruce log",
+        "most_similar_names": [
+            "spruce plank",
+            "birch log",
+            "jungle log",
+            "sponge",
+            "sapling spruce"
+        ],
+        "least_similar_name": "tnt"
+    },
+    "soul_sand.png": {
+        "name": "soul sand",
+        "most_similar_names": [
+            "sand",
+            "red sand",
+            "stone slab",
+            "stone andesite",
+            "mob spawner"
+        ],
+        "least_similar_name": "brick"
+    },
+    "glass_yellow.png": {
+        "name": "yellow stained glass",
+        "most_similar_names": [
+            "brown stained glass",
+            "red stained glass",
+            "lime stained glass",
+            "gray stained glass",
+            "cyan stained glass"
+        ],
+        "least_similar_name": "dropper"
+    },
+    "crafting_table_front.png": {
+        "name": "crafting table",
+        "most_similar_names": [
+            "enchanting table",
+            "orange tulip",
+            "sapling jungle",
+            "sapling oak",
+            "orange stained glass"
+        ],
+        "least_similar_name": "oxeye daisy"
+    },
+    "nether_wart_block.png": {
+        "name": "nether wart block",
+        "most_similar_names": [
+            "nether wart",
+            "nether brick",
+            "netherrack",
+            "emerald block",
+            "chiseled quartz block"
+        ],
+        "least_similar_name": "chorus plant"
+    },
+    "mushroom_block_skin_stem.png": {
+        "name": "mushroom block skin stem",
+        "most_similar_names": [
+            "mushroom block skin red",
+            "mushroom block in",
+            "mushroom block skin brown",
+            "mushroom brown",
+            "mushroom red"
+        ],
+        "least_similar_name": "paeonia"
+    },
+    "rail_detector.png": {
+        "name": "rail detector",
+        "most_similar_names": [
+            "rail detector powered",
+            "rail activator",
+            "rail normal",
+            "rail golden",
+            "rail golden powered"
+        ],
+        "least_similar_name": "bone block"
+    },
+    "red_sand.png": {
+        "name": "red sand",
+        "most_similar_names": [
+            "red sandstone",
+            "sand",
+            "red stained glass",
+            "soul sand",
+            "end stone"
+        ],
+        "least_similar_name": "nether wart block"
+    },
+    "quartz_block_lines.png": {
+        "name": "quartz pillar",
+        "most_similar_names": [
+            "quartz ore",
+            "purpur pillar",
+            "quartz block",
+            "chiseled quartz block",
+            "oak plank"
+        ],
+        "least_similar_name": "snow"
+    },
+    "observer_front.png": {
+        "name": "observer",
+        "most_similar_names": [
+            "lever",
+            "mob spawner",
+            "rose",
+            "beetroots",
+            "gravel"
+        ],
+        "least_similar_name": "acacia plank"
+    },
+    "mushroom_block_skin_brown.png": {
+        "name": "mushroom block skin brown",
+        "most_similar_names": [
+            "mushroom block skin red",
+            "mushroom block skin stem",
+            "mushroom block in",
+            "mushroom brown",
+            "mushroom red"
+        ],
+        "least_similar_name": "white tulip"
+    },
+    "glowstone.png": {
+        "name": "glowstone",
+        "most_similar_names": [
+            "stone",
+            "cobblestone",
+            "sandstone",
+            "houstonia",
+            "end stone"
+        ],
+        "least_similar_name": "brick"
+    },
+    "prismarine_bricks.png": {
+        "name": "prismarine bricks",
+        "most_similar_names": [
+            "prismarine dark",
+            "stonebrick",
+            "end bricks",
+            "nether brick",
+            "stonebrick mossy"
+        ],
+        "least_similar_name": "coal ore"
+    },
+    "sapling_acacia.png": {
+        "name": "sapling acacia",
+        "most_similar_names": [
+            "sapling oak",
+            "sapling birch",
+            "sapling spruce",
+            "sapling jungle",
+            "sapling roofed oak"
+        ],
+        "least_similar_name": "jukebox"
+    },
+    "quartz_block_lines_top.png": {
+        "name": "quartz pillar",
+        "most_similar_names": [
+            "quartz ore",
+            "purpur pillar",
+            "quartz block",
+            "chiseled quartz block",
+            "oak plank"
+        ],
+        "least_similar_name": "snow"
+    },
+    "sandstone_carved.png": {
+        "name": "sandstone carved",
+        "most_similar_names": [
+            "red sandstone carved",
+            "stonebrick carved",
+            "sandstone",
+            "sandstone normal",
+            "redstone ore"
+        ],
+        "least_similar_name": "purpur block"
+    },
+    "purpur_block.png": {
+        "name": "purpur block",
+        "most_similar_names": [
+            "quartz block",
+            "purpur pillar",
+            "iron block",
+            "lapis block",
+            "hay block"
+        ],
+        "least_similar_name": "sand"
+    },
+    "prismarine_dark.png": {
+        "name": "prismarine dark",
+        "most_similar_names": [
+            "prismarine bricks",
+            "pink stained glass",
+            "sapling oak",
+            "purple stained glass",
+            "red stained glass"
+        ],
+        "least_similar_name": "bookshelf"
+    },
+    "lapis_block.png": {
+        "name": "lapis block",
+        "most_similar_names": [
+            "lapis ore",
+            "hay block",
+            "iron block",
+            "gold block",
+            "coal block"
+        ],
+        "least_similar_name": "tnt"
+    },
+    "redstone_torch_off.png": {
+        "name": "redstone torch",
+        "most_similar_names": [
+            "redstone ore",
+            "redstone block",
+            "redstone lamp",
+            "red sandstone smooth",
+            "red sandstone normal"
+        ],
+        "least_similar_name": "allium"
+    },
+    "netherrack.png": {
+        "name": "netherrack",
+        "most_similar_names": [
+            "nether brick",
+            "red nether brick",
+            "nether wart block",
+            "nether wart",
+            "noteblock"
+        ],
+        "least_similar_name": "sapling jungle"
+    },
+    "glass.png": {
+        "name": "glass",
+        "most_similar_names": [
+            "grass path",
+            "red stained glass",
+            "clay",
+            "pink stained glass",
+            "lime stained glass"
+        ],
+        "least_similar_name": "brick"
+    },
+    "chorus_flower.png": {
+        "name": "chorus flower",
+        "most_similar_names": [
+            "chorus plant",
+            "flower pot",
+            "rail detector powered",
+            "rail activator powered",
+            "houstonia"
+        ],
+        "least_similar_name": "tnt"
+    },
+    "sand.png": {
+        "name": "sand",
+        "most_similar_names": [
+            "red sand",
+            "soul sand",
+            "sandstone",
+            "snow",
+            "obsidian"
+        ],
+        "least_similar_name": "birch log"
+    },
+    "flower_blue_orchid.png": {
+        "name": "blue orchid",
+        "most_similar_names": [
+            "torch",
+            "blue stained glass",
+            "redstone torch",
+            "bone block",
+            "gold ore"
+        ],
+        "least_similar_name": "tnt"
+    },
+    "dirt_podzol_top.png": {
+        "name": "dirt podzol",
+        "most_similar_names": [
+            "diamond ore",
+            "birch plank",
+            "trapdoor",
+            "iron ore",
+            "quartz pillar"
+        ],
+        "least_similar_name": "cake"
+    },
+    "purpur_pillar.png": {
+        "name": "purpur pillar",
+        "most_similar_names": [
+            "quartz pillar",
+            "purpur block",
+            "spruce plank",
+            "chorus plant",
+            "spruce log"
+        ],
+        "least_similar_name": "snow"
+    },
+    "flower_rose.png": {
+        "name": "rose",
+        "most_similar_names": [
+            "dropper",
+            "carrots",
+            "observer",
+            "iron ore",
+            "frosted ice 0"
+        ],
+        "least_similar_name": "acacia plank"
+    },
+    "planks_big_oak.png": {
+        "name": "big oak plank",
+        "most_similar_names": [
+            "oak plank",
+            "big oak log",
+            "birch plank",
+            "jungle plank",
+            "acacia plank"
+        ],
+        "least_similar_name": "nether wart"
+    },
+    "stonebrick.png": {
+        "name": "stonebrick",
+        "most_similar_names": [
+            "stonebrick mossy",
+            "stonebrick carved",
+            "stonebrick cracked",
+            "stone",
+            "redstone block"
+        ],
+        "least_similar_name": "crafting table"
+    },
+    "sandstone_top.png": {
+        "name": "sandstone",
+        "most_similar_names": [
+            "red sandstone",
+            "end stone",
+            "sandstone smooth",
+            "sandstone normal",
+            "sandstone carved"
+        ],
+        "least_similar_name": "brick"
+    },
+    "hay_block_top.png": {
+        "name": "hay block",
+        "most_similar_names": [
+            "coal block",
+            "lapis block",
+            "quartz block",
+            "emerald block",
+            "diamond block"
+        ],
+        "least_similar_name": "dispenser"
+    },
+    "quartz_block_bottom.png": {
+        "name": "quartz block",
+        "most_similar_names": [
+            "quartz ore",
+            "chiseled quartz block",
+            "purpur block",
+            "hay block",
+            "quartz pillar"
+        ],
+        "least_similar_name": "light gray stained glass"
+    },
+    "mushroom_block_skin_red.png": {
+        "name": "mushroom block skin red",
+        "most_similar_names": [
+            "mushroom block skin stem",
+            "mushroom block skin brown",
+            "mushroom block in",
+            "mushroom red",
+            "mushroom brown"
+        ],
+        "least_similar_name": "dirt podzol"
+    },
+    "stone_granite.png": {
+        "name": "stone granite",
+        "most_similar_names": [
+            "stone andesite",
+            "stone granite smooth",
+            "stone diorite",
+            "stone andesite smooth",
+            "redstone ore"
+        ],
+        "least_similar_name": "purpur block"
+    },
+    "flower_tulip_pink.png": {
+        "name": "pink tulip",
+        "most_similar_names": [
+            "white tulip",
+            "orange tulip",
+            "red tulip",
+            "pink stained glass",
+            "iron trapdoor"
+        ],
+        "least_similar_name": "observer"
+    },
+    "bone_block_top.png": {
+        "name": "bone block",
+        "most_similar_names": [
+            "iron block",
+            "redstone block",
+            "noteblock",
+            "gold block",
+            "coal block"
+        ],
+        "least_similar_name": "sapling jungle"
+    },
+    "nether_brick.png": {
+        "name": "nether brick",
+        "most_similar_names": [
+            "red nether brick",
+            "netherrack",
+            "nether wart",
+            "nether wart block",
+            "stonebrick"
+        ],
+        "least_similar_name": "glass"
+    },
+    "red_nether_brick.png": {
+        "name": "red nether brick",
+        "most_similar_names": [
+            "nether brick",
+            "netherrack",
+            "end bricks",
+            "nether wart block",
+            "redstone block"
+        ],
+        "least_similar_name": "glass"
+    },
+    "carrots_stage_3.png": {
+        "name": "carrots",
+        "most_similar_names": [
+            "cactus",
+            "rose",
+            "beetroots",
+            "potatoes",
+            "iron bars"
+        ],
+        "least_similar_name": "pumpkin"
+    },
+    "flower_pot.png": {
+        "name": "flower pot",
+        "most_similar_names": [
+            "chorus flower",
+            "chorus plant",
+            "glowstone",
+            "beetroots",
+            "wheat"
+        ],
+        "least_similar_name": "sand"
+    },
+    "planks_jungle.png": {
+        "name": "jungle plank",
+        "most_similar_names": [
+            "jungle log",
+            "spruce plank",
+            "oak plank",
+            "big oak plank",
+            "birch plank"
+        ],
+        "least_similar_name": "torch"
+    },
+    "crafting_table_side.png": {
+        "name": "crafting table",
+        "most_similar_names": [
+            "enchanting table",
+            "orange tulip",
+            "sapling jungle",
+            "sapling oak",
+            "orange stained glass"
+        ],
+        "least_similar_name": "oxeye daisy"
+    },
+    "log_acacia_top.png": {
+        "name": "acacia log",
+        "most_similar_names": [
+            "acacia plank",
+            "oak log",
+            "big oak log",
+            "birch log",
+            "spruce log"
+        ],
+        "least_similar_name": "tnt"
+    },
+    "stone_andesite_smooth.png": {
+        "name": "stone andesite smooth",
+        "most_similar_names": [
+            "stone granite smooth",
+            "stone diorite smooth",
+            "stone andesite",
+            "sandstone smooth",
+            "stone granite"
+        ],
+        "least_similar_name": "chiseled quartz block"
+    },
+    "mob_spawner.png": {
+        "name": "mob spawner",
+        "most_similar_names": [
+            "obsidian",
+            "observer",
+            "soul sand",
+            "dispenser",
+            "sponge"
+        ],
+        "least_similar_name": "enchanting table"
+    },
+    "bookshelf.png": {
+        "name": "bookshelf",
+        "most_similar_names": [
+            "rose",
+            "beetroots",
+            "bone block",
+            "big oak log",
+            "oak log"
+        ],
+        "least_similar_name": "tnt"
+    },
+    "brick.png": {
+        "name": "brick",
+        "most_similar_names": [
+            "stonebrick",
+            "end bricks",
+            "nether brick",
+            "ice",
+            "birch plank"
+        ],
+        "least_similar_name": "end stone"
+    },
+    "observer_back_lit.png": {
+        "name": "observer",
+        "most_similar_names": [
+            "lever",
+            "mob spawner",
+            "rose",
+            "beetroots",
+            "gravel"
+        ],
+        "least_similar_name": "acacia plank"
+    },
+    "iron_trapdoor.png": {
+        "name": "iron trapdoor",
+        "most_similar_names": [
+            "trapdoor",
+            "iron ore",
+            "iron bars",
+            "iron block",
+            "redstone torch"
+        ],
+        "least_similar_name": "web"
+    },
+    "rail_normal_turned.png": {
+        "name": "rail normal turned",
+        "most_similar_names": [
+            "rail normal",
+            "rail detector powered",
+            "rail golden",
+            "rail activator powered",
+            "rail golden powered"
+        ],
+        "least_similar_name": "diamond block"
+    },
+    "diamond_ore.png": {
+        "name": "diamond ore",
+        "most_similar_names": [
+            "diamond block",
+            "iron ore",
+            "gold ore",
+            "redstone ore",
+            "emerald ore"
+        ],
+        "least_similar_name": "enchanting table"
+    }
+}

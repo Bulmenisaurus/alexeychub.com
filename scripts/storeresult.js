@@ -19,7 +19,7 @@ if (hideLink === 'true') {
     document.querySelector('a').remove();
 }
 if (imageId != '9') {
-    const imageUrl = `https://bulmenisaurus.github.io/images/store_${imageId}.jpg`;
+    const imageUrl = `https://bulmenisaurus.github.io/assets/images/store_${imageId}.jpg`;
 
     const image = document.getElementById('image').appendChild(document.createElement('img'));
     // = `<img src="${imageUrl}" alt="image_${hearts}">`;

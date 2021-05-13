@@ -1,3 +1,13 @@
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 const strHash = (str, max) => {
     let hash = 0;
     if (str.length == 0)
@@ -20,11 +30,11 @@ const messages = [
     'This page doesn\'t exist. Oh well!'
 ];
 document.getElementById('404-message').innerText = messages[urlHash];
-const repositoryFile = async (owner, repo) => {
+const repositoryFile = (owner, repo) => __awaiter(void 0, void 0, void 0, function* () {
     // https://stackoverflow.com/questions/25022016/get-all-file-names-from-a-github-repo-through-the-github-api
-    const repsonse = await fetch(`https://api.github.com/repos/${owner}/${repo}/git/trees/master?recursive=1`);
+    const repsonse = yield fetch(`https://api.github.com/repos/${owner}/${repo}/git/trees/master?recursive=1`);
     return repsonse.json();
-};
+});
 // https://stackoverflow.com/a/36566052/13996389
 const similarity = (s1, s2) => {
     const [shorter, longer] = [s1, s2].sort((a, b) => a.length - b.length);
@@ -55,19 +65,19 @@ const similarity = (s1, s2) => {
     };
     return (longer.length - editDistance(longer.toLowerCase(), shorter.toLowerCase())) / longer.length;
 };
-const mostSimilarSitePage = async (pathname) => {
-    const pages = (await repositoryFile('Bulmenisaurus', 'bulmenisaurus.github.io')).tree
+const mostSimilarSitePage = (pathname) => __awaiter(void 0, void 0, void 0, function* () {
+    const pages = (yield repositoryFile('Bulmenisaurus', 'bulmenisaurus.github.io')).tree
         .filter(file => file.path.endsWith('.html'))
         .map(file => file.path.split('.').slice(0, -1).join('.'))
         .sort((a, b) => similarity(a, pathname) - similarity(b, pathname))
         .reverse();
     return { pathname: pages[0], similarity: similarity(pages[0], pathname) };
-};
-const displayReccomenedUrl = async () => {
-    const recommendedUrl = await mostSimilarSitePage(window.location.pathname);
+});
+const displayReccomenedUrl = () => __awaiter(void 0, void 0, void 0, function* () {
+    const recommendedUrl = yield mostSimilarSitePage(window.location.pathname);
     if (recommendedUrl.similarity > 0.6) {
         const textbox = `<p id="recommended-url">Did you mean <code><a href="${recommendedUrl.pathname}">${recommendedUrl.pathname}</a></code>?<p>`;
         document.body.innerHTML += textbox;
     }
-};
+});
 displayReccomenedUrl();

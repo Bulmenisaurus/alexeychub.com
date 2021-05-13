@@ -1,7 +1,8 @@
 {
     "compilerOptions": {
-        "target": "ES2017",
+        "target": "ES2016",
         "noImplicitAny": true,
         "watch": true,
+        "alwaysStrict": true,
     }
 }

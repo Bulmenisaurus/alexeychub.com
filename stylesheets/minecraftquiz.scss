@@ -28,9 +28,18 @@ body {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+header {
+    @include super-centered;
+    background-color: white;
+    height: 8vh;
+    min-height: 5rem;
+    font-size: 4vmin;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px 0px;
+}
+
 .image-container {
     @include super-centered(false);
-    height: 70vh;
+    height: 62vh;
 
     .block-image {
         image-rendering: crisp-edges;
@@ -41,7 +50,6 @@ body {
 }
 
 .answers-container {
-    height: 30vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);

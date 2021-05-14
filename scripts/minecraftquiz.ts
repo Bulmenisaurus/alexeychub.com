@@ -16,7 +16,7 @@ interface MinecraftBlock {
 
 const minecraftBlockImage = (blockname: string) => {
     const imageContainer = document.createElement('div');
-    imageContainer.classList.add('image-container')
+    imageContainer.classList.add('image-container', 'js-generated')
 
     const image = document.createElement('img');
     const imageSrc = `https://bulmenisaurus.github.io/assets/images/mc-blocks/${blockname}`;
@@ -31,7 +31,7 @@ const minecraftBlockImage = (blockname: string) => {
 
 const createButtonOptions = (options: string[], correctAnswer: string) => {
     const buttonContainer = document.createElement('div');
-    buttonContainer.classList.add('answers-container');
+    buttonContainer.classList.add('answers-container', 'js-generated');
 
     options.forEach((option) => {
         const button = document.createElement('button');
@@ -61,7 +61,7 @@ const createQuizQuestion = (imageUrl: string, options: string[], answer: string)
     const blockImage = minecraftBlockImage(imageUrl);
     const buttonGroup = createButtonOptions(options, answer);
 
-    document.body.innerHTML = '';
+    document.querySelectorAll('.js-generated').forEach((e) => e.remove());
 
     document.body.appendChild(blockImage);
     document.body.appendChild(buttonGroup);

@@ -16,10 +16,12 @@ const minecraftBlockImage = (blockname) => {
     const image = document.createElement('img');
     const imageSrc = `https://bulmenisaurus.github.io/assets/images/mc-blocks/${blockname}`;
     image.src = imageSrc;
+    image.classList.add('block-image');
     return image;
 };
 const createButtonOptions = (options, correctAnswer) => {
     const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('answers-container');
     options.forEach((option) => {
         const button = document.createElement('button');
         button.innerText = option;

@@ -18,6 +18,7 @@ const minecraftBlockImage = (blockname: string) => {
     const image = document.createElement('img');
     const imageSrc = `https://bulmenisaurus.github.io/assets/images/mc-blocks/${blockname}`;
     image.src = imageSrc;
+    image.classList.add('block-image');
 
     return image;
 };
@@ -25,6 +26,7 @@ const minecraftBlockImage = (blockname: string) => {
 
 const createButtonOptions = (options: string[], correctAnswer: string) => {
     const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('answers-container');
 
     options.forEach((option) => {
         const button = document.createElement('button');

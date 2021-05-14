@@ -12,10 +12,11 @@ const getMinecraftBlocks = () => __awaiter(void 0, void 0, void 0, function* () 
     return yield (yield fetch('https://bulmenisaurus.github.io/assets/data/blocks.json')).json();
 });
 const minecraftBlocks = getMinecraftBlocks();
-const createTitle = (text) => {
-    const heading = document.createElement('h1');
-    heading.innerText = text;
-    return heading;
+const minecraftBlockImage = (blockname) => {
+    const image = document.createElement('img');
+    const imageSrc = `https://bulmenisaurus.github.io/assets/images/mc-blocks/${blockname}`;
+    image.src = imageSrc;
+    return image;
 };
 const createButtonOptions = (options) => {
     const buttonContainer = document.createElement('div');
@@ -26,9 +27,9 @@ const createButtonOptions = (options) => {
     }
     return buttonContainer;
 };
-const createQuizQuestion = (title, options, answer) => {
+const createQuizQuestion = (imageUrl, options, answer) => {
     const container = document.createElement('div');
-    container.appendChild(createTitle(title));
+    container.appendChild(minecraftBlockImage(imageUrl));
     const buttonGroup = createButtonOptions(options);
     container.appendChild(buttonGroup);
     document.body.innerHTML = '';
@@ -45,6 +46,6 @@ const getRandomBlock = () => __awaiter(void 0, void 0, void 0, function* () {
 const randomQuizQuestion = () => __awaiter(void 0, void 0, void 0, function* () {
     const [blockFile, quizBlock] = yield getRandomBlock();
     const options = [quizBlock.name, ...quizBlock.most_similar_names.slice(0, 2), quizBlock.least_similar_name];
-    return createQuizQuestion(quizBlock.name, options, quizBlock.name);
+    return createQuizQuestion(blockFile, options, quizBlock.name);
 });
 randomQuizQuestion();

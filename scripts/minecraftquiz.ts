@@ -69,8 +69,7 @@ const createQuizQuestion = (imageUrl: string, options: string[], answer: string)
 };
 
 const getRandomBlock = async (): Promise<[string, MinecraftBlock]> => {
-    const response = await minecraftBlocks;
-    const blockData = <MinecraftBlockData>await response;
+    const blockData = <MinecraftBlockData>await minecraftBlocks;
     const keys = Object.keys(blockData);
 
     const randomBlockName = keys[Math.floor(keys.length * Math.random())]

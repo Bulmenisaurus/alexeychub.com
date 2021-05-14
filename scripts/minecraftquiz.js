@@ -55,8 +55,7 @@ const createQuizQuestion = (imageUrl, options, answer) => {
     document.body.appendChild(buttonGroup);
 };
 const getRandomBlock = () => __awaiter(void 0, void 0, void 0, function* () {
-    const response = yield minecraftBlocks;
-    const blockData = yield response;
+    const blockData = yield minecraftBlocks;
     const keys = Object.keys(blockData);
     const randomBlockName = keys[Math.floor(keys.length * Math.random())];
     const randomBlock = blockData[randomBlockName];

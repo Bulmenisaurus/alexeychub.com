@@ -1,3 +1,16 @@
+/* Helper funcions: */
+
+const shuffleArray = <T>(array: T[]) => {
+    const arr = array.slice();
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+
+    return arr;
+}
+
+/* Displaying and generating kahoot questions: */
 
 const getMinecraftBlocks = async (): Promise<MinecraftBlockData> => {
     return await (await fetch('https://bulmenisaurus.github.io/assets/data/blocks.json')).json();
@@ -46,8 +59,8 @@ const createButtonOptions = (options: string[], correctAnswer: string) => {
         // check if clicked on a button
         if (target.nodeName.toLowerCase() !== 'button') { return; };
 
-        if (target.innerText == correctAnswer) {
-            console.log('✅ correct!');
+        if (target.innerHTML == correctAnswer) {
+            randomQuizQuestion();
         } else {
             console.log('wrong');
         }
@@ -80,9 +93,9 @@ const getRandomBlock = async (): Promise<[string, MinecraftBlock]> => {
 
 const randomQuizQuestion = async () => {
     const [blockFile, quizBlock] = await getRandomBlock();
-
     const options = [quizBlock.name, ...quizBlock.most_similar_names.slice(0, 2), quizBlock.least_similar_name];
-    return createQuizQuestion(blockFile, options, quizBlock.name);
+
+    return createQuizQuestion(blockFile, shuffleArray(options), quizBlock.name);
 }
 
 

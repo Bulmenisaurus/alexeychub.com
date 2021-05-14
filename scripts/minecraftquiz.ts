@@ -26,12 +26,12 @@ const minecraftBlockImage = (blockname: string) => {
 const createButtonOptions = (options: string[], correctAnswer: string) => {
     const buttonContainer = document.createElement('div');
 
-    for (const option of options) {
+    options.forEach((option) => {
         const button = document.createElement('button');
         button.innerText = option;
-
+        button.classList.add('answer-option');
         buttonContainer.appendChild(button);
-    }
+    })
 
     buttonContainer.addEventListener('click', (e) => {
         const target = <HTMLElement>e.target;
@@ -52,10 +52,10 @@ const createButtonOptions = (options: string[], correctAnswer: string) => {
 const createQuizQuestion = (imageUrl: string, options: string[], answer: string) => {
     const container = document.createElement('div');
 
-    container.appendChild(minecraftBlockImage(imageUrl))
-
+    const blockImage = minecraftBlockImage(imageUrl);
     const buttonGroup = createButtonOptions(options, answer);
 
+    container.appendChild(blockImage);
     container.appendChild(buttonGroup);
 
     document.body.innerHTML = '';

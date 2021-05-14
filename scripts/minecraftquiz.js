@@ -20,11 +20,12 @@ const minecraftBlockImage = (blockname) => {
 };
 const createButtonOptions = (options, correctAnswer) => {
     const buttonContainer = document.createElement('div');
-    for (const option of options) {
+    options.forEach((option) => {
         const button = document.createElement('button');
         button.innerText = option;
+        button.classList.add('answer-option');
         buttonContainer.appendChild(button);
-    }
+    });
     buttonContainer.addEventListener('click', (e) => {
         const target = e.target;
         // check if clicked on a button
@@ -43,8 +44,9 @@ const createButtonOptions = (options, correctAnswer) => {
 };
 const createQuizQuestion = (imageUrl, options, answer) => {
     const container = document.createElement('div');
-    container.appendChild(minecraftBlockImage(imageUrl));
+    const blockImage = minecraftBlockImage(imageUrl);
     const buttonGroup = createButtonOptions(options, answer);
+    container.appendChild(blockImage);
     container.appendChild(buttonGroup);
     document.body.innerHTML = '';
     document.body.appendChild(container);

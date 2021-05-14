@@ -42,10 +42,13 @@ header {
     height: 62vh;
 
     .block-image {
+        /* ↓ is so that the tiny 16x16 images don't get interpolated and blurred */
         image-rendering: crisp-edges;
         text-align: center;
         height: 15vmin;
         width: 15vmin;
+
+        filter: drop-shadow(0px 0px 5px #222);
     }
 }
 

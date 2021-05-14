@@ -1,9 +1,9 @@
 
-const getMinercaftBlocks = async (): Promise<MinecraftBlockData> => {
+const getMinecraftBlocks = async (): Promise<MinecraftBlockData> => {
     return await (await fetch('https://bulmenisaurus.github.io/assets/data/blocks.json')).json();
 }
 
-const minecraftBlocks = getMinercaftBlocks();
+const minecraftBlocks = getMinecraftBlocks();
 interface MinecraftBlockData {
     [key: string]: MinecraftBlock;
 }
@@ -36,7 +36,6 @@ const createButtonOptions = (options: string[]) => {
 };
 
 const createQuizQuestion = (title: string, options: string[], answer: string) => {
-    console.trace({ title, options, answer });
     const container = document.createElement('div');
 
     container.appendChild(createTitle(title))
@@ -45,6 +44,7 @@ const createQuizQuestion = (title: string, options: string[], answer: string) =>
 
     container.appendChild(buttonGroup);
 
+    document.body.innerHTML = '';
     document.body.appendChild(container);
 };
 
@@ -66,4 +66,5 @@ const randomQuizQuestion = async () => {
     return createQuizQuestion(quizBlock.name, options, quizBlock.name);
 }
 
-document.onclick = randomQuizQuestion;
+
+randomQuizQuestion();

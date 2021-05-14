@@ -8,10 +8,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const getMinercaftBlocks = () => __awaiter(void 0, void 0, void 0, function* () {
+const getMinecraftBlocks = () => __awaiter(void 0, void 0, void 0, function* () {
     return yield (yield fetch('https://bulmenisaurus.github.io/assets/data/blocks.json')).json();
 });
-const minecraftBlocks = getMinercaftBlocks();
+const minecraftBlocks = getMinecraftBlocks();
 const createTitle = (text) => {
     const heading = document.createElement('h1');
     heading.innerText = text;

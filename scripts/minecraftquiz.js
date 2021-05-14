@@ -48,13 +48,11 @@ const createButtonOptions = (options, correctAnswer) => {
     return buttonContainer;
 };
 const createQuizQuestion = (imageUrl, options, answer) => {
-    const container = document.createElement('div');
     const blockImage = minecraftBlockImage(imageUrl);
     const buttonGroup = createButtonOptions(options, answer);
-    container.appendChild(blockImage);
-    container.appendChild(buttonGroup);
     document.body.innerHTML = '';
-    document.body.appendChild(container);
+    document.body.appendChild(blockImage);
+    document.body.appendChild(buttonGroup);
 };
 const getRandomBlock = () => __awaiter(void 0, void 0, void 0, function* () {
     const response = yield minecraftBlocks;

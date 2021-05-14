@@ -57,16 +57,15 @@ const createButtonOptions = (options: string[], correctAnswer: string) => {
 };
 
 const createQuizQuestion = (imageUrl: string, options: string[], answer: string) => {
-    const container = document.createElement('div');
 
     const blockImage = minecraftBlockImage(imageUrl);
     const buttonGroup = createButtonOptions(options, answer);
 
-    container.appendChild(blockImage);
-    container.appendChild(buttonGroup);
-
     document.body.innerHTML = '';
-    document.body.appendChild(container);
+
+    document.body.appendChild(blockImage);
+    document.body.appendChild(buttonGroup);
+
 };
 
 const getRandomBlock = async (): Promise<[string, MinecraftBlock]> => {

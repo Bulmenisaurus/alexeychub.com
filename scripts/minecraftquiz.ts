@@ -23,7 +23,7 @@ const minecraftBlockImage = (blockname: string) => {
 };
 
 
-const createButtonOptions = (options: string[]) => {
+const createButtonOptions = (options: string[], correctAnswer: string) => {
     const buttonContainer = document.createElement('div');
 
     for (const option of options) {
@@ -33,6 +33,19 @@ const createButtonOptions = (options: string[]) => {
         buttonContainer.appendChild(button);
     }
 
+    buttonContainer.addEventListener('click', (e) => {
+        const target = <HTMLElement>e.target;
+
+        // check if clicked on a button
+        if (target.nodeName.toLowerCase() !== 'button') { return; };
+
+        if (target.innerText == correctAnswer) {
+            console.log('✅ correct!');
+        } else {
+            console.log('wrong');
+        }
+    });
+
     return buttonContainer;
 };
 
@@ -41,7 +54,7 @@ const createQuizQuestion = (imageUrl: string, options: string[], answer: string)
 
     container.appendChild(minecraftBlockImage(imageUrl))
 
-    const buttonGroup = createButtonOptions(options);
+    const buttonGroup = createButtonOptions(options, answer);
 
     container.appendChild(buttonGroup);
 

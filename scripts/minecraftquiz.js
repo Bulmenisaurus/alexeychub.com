@@ -18,19 +18,33 @@ const minecraftBlockImage = (blockname) => {
     image.src = imageSrc;
     return image;
 };
-const createButtonOptions = (options) => {
+const createButtonOptions = (options, correctAnswer) => {
     const buttonContainer = document.createElement('div');
     for (const option of options) {
         const button = document.createElement('button');
         button.innerText = option;
         buttonContainer.appendChild(button);
     }
+    buttonContainer.addEventListener('click', (e) => {
+        const target = e.target;
+        // check if clicked on a button
+        if (target.nodeName.toLowerCase() !== 'button') {
+            return;
+        }
+        ;
+        if (target.innerText == correctAnswer) {
+            console.log('✅ correct!');
+        }
+        else {
+            console.log('wrong');
+        }
+    });
     return buttonContainer;
 };
 const createQuizQuestion = (imageUrl, options, answer) => {
     const container = document.createElement('div');
     container.appendChild(minecraftBlockImage(imageUrl));
-    const buttonGroup = createButtonOptions(options);
+    const buttonGroup = createButtonOptions(options, answer);
     container.appendChild(buttonGroup);
     document.body.innerHTML = '';
     document.body.appendChild(container);

@@ -13,11 +13,14 @@ const getMinecraftBlocks = () => __awaiter(void 0, void 0, void 0, function* () 
 });
 const minecraftBlocks = getMinecraftBlocks();
 const minecraftBlockImage = (blockname) => {
+    const imageContainer = document.createElement('div');
+    imageContainer.classList.add('image-container');
     const image = document.createElement('img');
     const imageSrc = `https://bulmenisaurus.github.io/assets/images/mc-blocks/${blockname}`;
     image.src = imageSrc;
     image.classList.add('block-image');
-    return image;
+    imageContainer.appendChild(image);
+    return imageContainer;
 };
 const createButtonOptions = (options, correctAnswer) => {
     const buttonContainer = document.createElement('div');

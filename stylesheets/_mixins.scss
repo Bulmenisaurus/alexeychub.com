@@ -19,3 +19,14 @@
     -ms-user-select: none;
     /* Internet Explorer/Edge */
 }
+
+@mixin super-centered($use-grid: true) {
+    @if $use-grid {
+        display: grid;
+        place-items: center;
+    } @else {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

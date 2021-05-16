@@ -27,7 +27,7 @@ interface MinecraftBlock {
     least_similar_name: string;
 }
 
-const minecraftBlockImage = (blockname: string) => {
+const minecraftBlockImage = (blockname: string, imageAlt: string) => {
     const imageContainer = document.createElement('div');
     imageContainer.classList.add('image-container', 'js-generated')
 
@@ -37,6 +37,7 @@ const minecraftBlockImage = (blockname: string) => {
     image.classList.add('block-image');
 
     imageContainer.appendChild(image);
+    image.alt = `picture of a minecraft ${imageAlt}`;
 
     return imageContainer;
 };
@@ -71,7 +72,7 @@ const createButtonOptions = (options: string[], correctAnswer: string) => {
 
 const createQuizQuestion = (imageUrl: string, options: string[], answer: string) => {
 
-    const blockImage = minecraftBlockImage(imageUrl);
+    const blockImage = minecraftBlockImage(imageUrl, answer);
     const buttonGroup = createButtonOptions(options, answer);
 
     document.querySelectorAll('.js-generated').forEach((e) => e.remove());

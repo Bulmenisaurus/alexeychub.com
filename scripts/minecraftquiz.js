@@ -22,7 +22,7 @@ const getMinecraftBlocks = () => __awaiter(void 0, void 0, void 0, function* () 
     return yield (yield fetch('https://bulmenisaurus.github.io/assets/data/blocks.json')).json();
 });
 const minecraftBlocks = getMinecraftBlocks();
-const minecraftBlockImage = (blockname) => {
+const minecraftBlockImage = (blockname, imageAlt) => {
     const imageContainer = document.createElement('div');
     imageContainer.classList.add('image-container', 'js-generated');
     const image = document.createElement('img');
@@ -30,6 +30,7 @@ const minecraftBlockImage = (blockname) => {
     image.src = imageSrc;
     image.classList.add('block-image');
     imageContainer.appendChild(image);
+    image.alt = `picture of a minecraft ${imageAlt}`;
     return imageContainer;
 };
 const createButtonOptions = (options, correctAnswer) => {
@@ -58,7 +59,7 @@ const createButtonOptions = (options, correctAnswer) => {
     return buttonContainer;
 };
 const createQuizQuestion = (imageUrl, options, answer) => {
-    const blockImage = minecraftBlockImage(imageUrl);
+    const blockImage = minecraftBlockImage(imageUrl, answer);
     const buttonGroup = createButtonOptions(options, answer);
     document.querySelectorAll('.js-generated').forEach((e) => e.remove());
     document.body.appendChild(blockImage);

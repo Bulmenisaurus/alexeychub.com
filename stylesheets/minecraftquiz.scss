@@ -44,6 +44,8 @@ header {
     .block-image {
         /* ↓ is so that the tiny 16x16 images don't get interpolated and blurred */
         image-rendering: crisp-edges;
+        /* chrome seems to only like pixelated */
+        image-rendering: pixelated;
         text-align: center;
         height: 15vmin;
         width: 15vmin;

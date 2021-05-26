@@ -53,7 +53,7 @@ blockquote {
 }
 
 button {
-    @include blocky(true);
+    @include blocky($accent: true);
 }
 
 /* ===========

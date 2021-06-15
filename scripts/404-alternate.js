@@ -2,7 +2,7 @@
 Array.from(document.body.children).forEach(i => i.remove());
 (() => {
     const frame = document.createElement('iframe');
-    frame.src = 'rickroll.html';
+    frame.src = 'https://bulmenisaurus.github.io/rickroll.html';
     frame.style.position = 'absolute';
     frame.style.height = '100vh';
     frame.style.width = '100vw';

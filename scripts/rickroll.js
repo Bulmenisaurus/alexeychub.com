@@ -16,3 +16,4 @@ document.addEventListener('click', () => {
     video.loop = true;
     video.autoplay = true;
 });
+window.onbeforeunload = () => "";

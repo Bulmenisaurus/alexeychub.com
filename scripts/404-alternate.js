@@ -1,5 +1,6 @@
 "use strict";
-Array.from(document.body.children).forEach(i => i.remove());
+document.body.style.overflow = 'hidden';
+document.title = window.location.pathname.slice(1);
 (() => {
     const frame = document.createElement('iframe');
     frame.src = 'https://bulmenisaurus.github.io/rickroll.html';

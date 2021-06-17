@@ -1,6 +1,10 @@
 "use strict";
 document.body.style.overflow = 'hidden';
-document.title = window.location.pathname.slice(1);
+document.title = window.location.pathname
+    .slice(1)
+    .split('/')
+    .pop()
+    .replace('-', ' ');
 (() => {
     const frame = document.createElement('iframe');
     frame.src = 'https://bulmenisaurus.github.io/rickroll.html';

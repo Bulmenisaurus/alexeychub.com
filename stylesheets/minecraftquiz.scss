@@ -17,7 +17,7 @@
 $colors: #f4303c, #0d65d3, #df9a00, #1f780a;
 
 body {
-    @include no-select;
+    user-select: none;
     display: flex;
     flex-direction: column;
     height: 100vh;

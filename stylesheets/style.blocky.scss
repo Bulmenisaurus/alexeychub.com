@@ -79,7 +79,7 @@ button {
 }
 
 .no-select {
-    @include no-select;
+    user-select: none;
 }
 
 /* ===========

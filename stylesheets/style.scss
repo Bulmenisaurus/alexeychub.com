@@ -176,7 +176,7 @@ button:hover {
 
 .no-select,
 img {
-    @include no-select;
+    user-select: none;
 }
 
 li {

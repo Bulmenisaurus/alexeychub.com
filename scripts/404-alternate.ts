@@ -16,5 +16,5 @@ document.title = window.location.pathname
 
     [frame.style.top, frame.style.right, frame.style.bottom, frame.style.left] = ['0px', '0px', '0px', '0px'];
 
-    document.body.append(frame)
+    document.body.append(frame);
 })();
